@@ -279,31 +279,5 @@
   }
 </script>
 
-<!-- Sidebar Sign Out handler (waits for sidebar to load) -->
-<script>
-  // Run this after everything loads, including fetch
-  window.addEventListener('load', function() {
-    setTimeout(() => {
-      const sidebarSignOut = document.getElementById('sidebarSignOut');
-
-      console.log("Looking for sidebarSignOut:", sidebarSignOut); // Debug
-
-      if (sidebarSignOut) {
-        sidebarSignOut.addEventListener('click', function(e) {
-          e.preventDefault();
-          console.log("Sidebar Sign Out clicked!");
-
-          loginOverlay.style.display = 'flex';               // Show login
-          dashboardContent.classList.add('d-none');          // Hide dashboard
-          localStorage.removeItem('mycprc_loggedIn');        // Clear state
-          document.getElementById('loginForm')?.reset();     // Reset form
-        });
-      } else {
-        console.log("sidebarSignOut ID NOT FOUND — check sidebar.html");
-      }
-    }, 800);
-  });
-</script>
-
 </body>
 </html>

@@ -66,7 +66,7 @@
         <form id="wizardForm" action="http://localhost:3000/submit" method="POST">
 
         <div class="wizard-step active">
-            <h5 class="mb-3">BORANG 7 : KEJADIAN PENYAKIT BERJANGKIT DI KALANGAN MANGSA BANJIR</h5>
+            <h5 class="mb-3">BORANG 15 : Aktiviti Kawalan Keselamatan Makanan di Pusat Pemindahan Sementara (PPS) Semasa Banjir</h5>
 
             <div class="row g-3">
                 <div class="col-md-6">
@@ -96,90 +96,107 @@
                 <label class="form-label">Tarikh Laporan</label>
                 <input type="date" class="form-control" id="tarikh_laporan" name="tarikh_laporan" required>
             </div>
-            <h6 class="mt-4 mb-3">Jenis Penyakit Berjangkit</h6>
+
+            <div class="col-md-4">
+                      <label class="form-label">Bil PPS Dilawati</label>
+                      <input type="number" class="form-control" min="0" value="0"
+                      id="pps_dilawati" name="pps_dilawati" 
+                      >
+            </div>
+
+            <h6 class="mt-4 mb-3">Premis Penyediaan Makanan</h6>
               <div class="row g-3">
                   <div class="col-md-4">
-                      <label class="form-label">AGE</label>
+                      <label class="form-label">Bil Memuaskan</label>
                       <input type="number" class="form-control" min="0" value="0"
-                      id="age" name="age" 
+                      id="bil_memuaskan" name="bil_memuaskan" 
                       >
                   </div>
 
                   <div class="col-md-4">
-                      <label class="form-label">ARI</label>
+                      <label class="form-label">Bil Tidak Memuaskan</label>
                       <input type="number" class="form-control" min="0" value="0"
-                      id="ari" name="ari"
+                      id="bil_tidak_memuaskan" name="bil_tidak_memuaskan"
                       >
                   </div>
 
                   <div class="col-md-4">
-                      <label class="form-label">Konjunktivitis</label>
+                      <label class="form-label">Bil Tindakan Pembetulan</label>
                       <input type="number" class="form-control" min="0" value="0"
-                      id="konjunktivitis" name="konjunktivitis"
+                      id="bil_pembetulan" name="bil_pembetulan"
                       >
                   </div>
-
-                  <div class="col-md-4">
-                      <label class="form-label">Skin Infection</label>
-                      <input type="number" class="form-control" min="0" value="0"
-                      id="skin_infection" name="skin_infection"
-                      >
-                  </div>
-
-                  <div class="col-md-4">
-                      <label class="form-label">Demam (Tiada Simptom Lain)</label>
-                      <input type="number" class="form-control" min="0" value="0"
-                      id="demam" name="demam"
-                      >
-                  </div>
-
-                  <div class="col-md-4">
-                      <label class="form-label">HFMD</label>
-                      <input type="number" class="form-control" min="0" value="0"
-                      id="hfmd" name="hfmd"
-                      >
-                  </div>
-
-                  <div class="col-md-4">
-                      <label class="form-label">Tifoid</label>
-                      <input type="number" class="form-control" min="0" value="0"
-                      id="tifoid" name="tifoid"
-                      >
-                  </div>
-
-                  <div class="col-md-4">
-                      <label class="form-label">Chicken Pox</label>
-                      <input type="number" class="form-control" min="0" value="0"
-                      id="chicken_pox" name="chicken_pox"
-                      >
-                  </div>
-
-                  <div class="col-md-4">
-                      <label class="form-label">Leptospirosis</label>
-                      <input type="number" class="form-control" min="0" value="0"
-                      id="leptospirosis" name="leptospirosis"
-                      >
-                  </div>
-
-                  <div class="col-md-4">
-                      <label class="form-label">Other Notifiable Diseases</label>
-                      <input type="number" class="form-control" min="0" value="0"
-                      id="other_diseases" name="other_diseases"
-                      >
-                  </div>
-
-                  <div class="col-md-6">
-                    <label class="form-label">Jumlah Keseluruhan Penyakit</label>
-                    <p><span id="jumlah_penyakit_pps"></span></p>
-                </div>
-
               </div>
-        </div>           
+
+            <h6 class="mt-4 mb-3">Pendidikan Kesihatan</h6>
+              <div class="row g-3">
+                  <div class="col-md-3">
+                      <label class="form-label">Bil Sesi</label>
+                      <input type="number" class="form-control" min="0" value="0"
+                      id="bil_sesi" name="bil_sesi" 
+                      >
+                  </div>
+
+                  <div class="col-md-3">
+                      <label class="form-label">Bil Peserta</label>
+                      <input type="number" class="form-control" min="0" value="0"
+                      id="bil_peserta" name="bil_peserta"
+                      >
+                  </div>
+
+                  <div class="col-md-3">
+                      <label class="form-label">Kumulatif Sesi</label>
+                      <input type="number" class="form-control" min="0" value="0"
+                      id="kumulatif_sesi" name="kumulatif_sesi"
+                      >
+                  </div>
+
+                  <div class="col-md-3">
+                      <label class="form-label">Kumulatif Peserta</label>
+                      <input type="number" class="form-control" min="0" value="0"
+                      id="kumulatif_peserta" name="kumulatif_peserta"
+                      >
+                  </div>
+              </div>
+
+              <h6 class="mt-4 mb-3">Pengendali Makanan</h6>
+              <div class="row g-3">
+                  <div class="col-md-3">
+                      <label class="form-label">Bil Pengendali</label>
+                      <input type="number" class="form-control" min="0" value="0"
+                      id="bil_pengendali" name="bil_pengendali" 
+                      >
+                  </div>
+
+                  <div class="col-md-3">
+                      <label class="form-label">Bil Terima Suntikan</label>
+                      <input type="number" class="form-control" min="0" value="0"
+                      id="bil_terima_suntikan" name="bil_terima_suntikan"
+                      >
+                  </div>
+              </div>
+
+              <h6 class="mt-4 mb-3">Aduan Makanan</h6>
+              <div class="row g-3">
+                  <div class="col-md-3">
+                      <label class="form-label">Bil Aduan</label>
+                      <input type="number" class="form-control" min="0" value="0"
+                      id="bil_aduan" name="bil_aduan" 
+                      >
+                  </div>
+
+                  <div class="col-md-3">
+                      <label class="form-label">Kumulatif Aduan</label>
+                      <input type="number" class="form-control" min="0" value="0"
+                      id="bil_kum_aduan" name="bil_kum_aduan"
+                      >
+                  </div>
+              </div>
         <!-- NAVIGATION -->
         <div class="d-flex justify-content-start mt-4 gap-2">
-        <button type="button" class="btn btn-secondary" id="prevBtn">Back</button>
-        <button type="button" class="btn btn-primary" id="nextBtn">Next</button>
+        <button type="button" class="btn btn-primary" id="">Hantar</button>
         </div>
+      </div>
         </form>
         </div>
       </div>
@@ -201,35 +218,12 @@
 <script src="assets/js/flood_form.js"></script>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
-
-function sumPenyakit() {
-    const ids = [
-        'age',
-        'ari',
-        'konjunktivitis',
-        'skin_infection',
-        'demam',
-        'hfmd',
-        'tifoid',
-        'chicken_pox',
-        'leptospirosis',
-        'other_diseases'
-    ];
-
-    let total = 0;
-
-    ids.forEach(id => {
-        const value = parseInt(document.getElementById(id).value, 10) || 0;
-        total += value;
-    });
-
-    document.getElementById('jumlah_penyakit_pps').textContent = total;
-}
-
-document.querySelectorAll('input[type="number"]').forEach(input => {
-    input.addEventListener('input', sumPenyakit);
+initNegeriDaerah({
+  negeriId: "negeri",
+  daerahId: "daerah",
+  lainWrapperId: "daerahLainWrapper",
+  lainInputId: "daerahLain"
 });
 </script>
-
 </body>
 </html>

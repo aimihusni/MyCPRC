@@ -66,7 +66,7 @@
         <form id="wizardForm" action="http://localhost:3000/submit" method="POST">
 
         <div class="wizard-step active">
-            <h5 class="mb-3">BORANG 15 : Aktiviti Kawalan Keselamatan Makanan di Pusat Pemindahan Sementara (PPS) Semasa Banjir</h5>
+            <h5 class="mb-3">BORANG 12 : Kemasukan Mangsa Banjir ke Hospital yang dirujuk dari Pusat Pemindahan Sementara (PPS)</h5>
 
             <div class="row g-3">
                 <div class="col-md-6">
@@ -97,107 +97,65 @@
                 <input type="date" class="form-control" id="tarikh_laporan" name="tarikh_laporan" required>
             </div>
 
-            <div class="col-md-4">
-                      <label class="form-label">Bil PPS Dilawati</label>
-                      <input type="number" class="form-control" min="0" value="0"
-                      id="pps_dilawati" name="pps_dilawati" 
-                      >
-            </div>
-
-            <h6 class="mt-4 mb-3">Premis Penyediaan Makanan</h6>
+            <h6 class="mt-4 mb-3">Jumlah Harian Mangsa Masuk Wad</h6>
               <div class="row g-3">
                   <div class="col-md-4">
-                      <label class="form-label">Bil Memuaskan</label>
+                      <label class="form-label">Lelaki Dewasa</label>
                       <input type="number" class="form-control" min="0" value="0"
-                      id="bil_memuaskan" name="bil_memuaskan" 
+                      id="bil_lelaki" name="bil_lelaki" 
                       >
                   </div>
 
                   <div class="col-md-4">
-                      <label class="form-label">Bil Tidak Memuaskan</label>
+                      <label class="form-label">Perempuan Dewasa</label>
                       <input type="number" class="form-control" min="0" value="0"
-                      id="bil_tidak_memuaskan" name="bil_tidak_memuaskan"
+                      id="bil_perempuan" name="bil_perempuan"
                       >
                   </div>
 
                   <div class="col-md-4">
-                      <label class="form-label">Bil Tindakan Pembetulan</label>
+                      <label class="form-label">Kanak-Kanak</label>
                       <input type="number" class="form-control" min="0" value="0"
-                      id="bil_pembetulan" name="bil_pembetulan"
+                      id="bil_kanak_kanak" name="bil_kanak_kanak"
                       >
                   </div>
               </div>
 
-            <h6 class="mt-4 mb-3">Pendidikan Kesihatan</h6>
+            <h6 class="mt-4 mb-3">Kemasukan Mangsa Banjir ke Hospital</h6>
               <div class="row g-3">
                   <div class="col-md-3">
-                      <label class="form-label">Bil Sesi</label>
+                      <label class="form-label">Antenatal</label>
                       <input type="number" class="form-control" min="0" value="0"
-                      id="bil_sesi" name="bil_sesi" 
+                      id="bil_antenatal" name="bil_antenatal" 
                       >
                   </div>
 
                   <div class="col-md-3">
-                      <label class="form-label">Bil Peserta</label>
+                      <label class="form-label">Posnatal</label>
                       <input type="number" class="form-control" min="0" value="0"
-                      id="bil_peserta" name="bil_peserta"
+                      id="bil_posnatal" name="bil_posnatal"
                       >
                   </div>
 
                   <div class="col-md-3">
-                      <label class="form-label">Kumulatif Sesi</label>
+                      <label class="form-label">Haemodialisis</label>
                       <input type="number" class="form-control" min="0" value="0"
-                      id="kumulatif_sesi" name="kumulatif_sesi"
+                      id="bil_haemodialisis" name="bil_haemodialisis"
                       >
                   </div>
 
                   <div class="col-md-3">
-                      <label class="form-label">Kumulatif Peserta</label>
+                      <label class="form-label">Paliatif</label>
                       <input type="number" class="form-control" min="0" value="0"
-                      id="kumulatif_peserta" name="kumulatif_peserta"
+                      id="bil_paliatif" name="bil_paliatif"
                       >
                   </div>
               </div>
-
-              <h6 class="mt-4 mb-3">Pengendali Makanan</h6>
-              <div class="row g-3">
-                  <div class="col-md-3">
-                      <label class="form-label">Bil Pengendali</label>
-                      <input type="number" class="form-control" min="0" value="0"
-                      id="bil_pengendali" name="bil_pengendali" 
-                      >
-                  </div>
-
-                  <div class="col-md-3">
-                      <label class="form-label">Bil Terima Suntikan</label>
-                      <input type="number" class="form-control" min="0" value="0"
-                      id="bil_terima_suntikan" name="bil_terima_suntikan"
-                      >
-                  </div>
-              </div>
-
-              <h6 class="mt-4 mb-3">Aduan Makanan</h6>
-              <div class="row g-3">
-                  <div class="col-md-3">
-                      <label class="form-label">Bil Aduan</label>
-                      <input type="number" class="form-control" min="0" value="0"
-                      id="bil_aduan" name="bil_aduan" 
-                      >
-                  </div>
-
-                  <div class="col-md-3">
-                      <label class="form-label">Kumulatif Aduan</label>
-                      <input type="number" class="form-control" min="0" value="0"
-                      id="bil_kum_aduan" name="bil_kum_aduan"
-                      >
-                  </div>
-              </div>
+        </div>           
         <!-- NAVIGATION -->
         <div class="d-flex justify-content-start mt-4 gap-2">
-        <button type="button" class="btn btn-secondary" id="prevBtn">Back</button>
-        <button type="button" class="btn btn-primary" id="nextBtn">Next</button>
+        <button type="button" class="btn btn-primary" id="">Hantar</button>
         </div>
-      </div>
         </form>
         </div>
       </div>
@@ -218,13 +176,6 @@
 <script src="assets/js/negeri-daerah.js"></script>
 <script src="assets/js/flood_form.js"></script>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script>
-initNegeriDaerah({
-  negeriId: "negeri",
-  daerahId: "daerah",
-  lainWrapperId: "daerahLainWrapper",
-  lainInputId: "daerahLain"
-});
-</script>
+
 </body>
 </html>

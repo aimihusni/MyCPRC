@@ -66,106 +66,84 @@
         <form id="wizardForm" action="http://localhost:3000/submit" method="POST">
 
         <div class="wizard-step active">
-            <h5 class="mb-3">BORANG 15 : ANGGOTA KKM TERJEJAS BANJIR</h5>
+            <h5 class="mb-3">BORANG 6 : MANGSA BANJIR DIPERIKSA DAN PENYAKIT DIKESAN DI PUSAT PEMINDAHAN SEMENTARA (PPS)</h5>
 
-            <div class="row g-3 mb-3">
+            <div class="row g-3">
                 <div class="col-md-6">
                 <label class="form-label">Negeri</label>
                 <select class="form-select" id="negeri" name="negeri" required>
-                    <option value="">-- Sila Pilih Negeri --</option>
+                <option value="">-- Sila Pilih Negeri --</option>
+                <option value="Johor"> JOHOR</option>
+                <option value="Kedah"> KEDAH</option>
+                <option value="Kelantan"> KELANTAN</option>
+                <option value="Melaka"> MELAKA</option>
+                <option value="Negeri Sembilan"> NEGERI SEMBILAN</option>
+                <option value="Pahang"> PAHANG</option>
+                <option value="Perak"> PERAK</option>
+                <option value="Perlis"> PERLIS</option>
+                <option value="Pulau Pinang"> PULAU PINANG</option>
+                <option value="Sabah"> SABAH</option>
+                <option value="Sarawak"> SARAWAK</option>
+                <option value="Selangor"> SELANGOR</option>
+                <option value="Terengganu"> TERENGGANU</option>
+                <option value="WP Labuan"> WP LABUAN</option>
+                <option value="WPKL & Putrajaya"> WPKL & Putrajaya</option>
                 </select>
                 </div>
-
-                <div class="col-md-6">
-                <label class="form-label">Daerah</label>
-                <select class="form-select" id="daerah" name="daerah" required>
-                    <option value="">-- Sila Pilih Daerah --</option>
-                    <option value="Lain-Lain">Lain-lain</option>
-                </select>
-                </div>
-
-                <div class="col-md-6 d-none" id="daerahLainWrapper">
-                <label class="form-label">Sila Nyatakan Daerah</label>
-                <input type="text" class="form-control" id="daerahLain" name="daerahLain" placeholder="Nama Daerah">
-                </div>
             </div>
 
-            <div class="row g-3 mb-3">
-                <div class="col-md-6">
-                <label class="form-label">Nama Anggota</label>
-                <textarea id="nama_anggota" class="form-control" placeholder="Nama Penuh"></textarea>
+            <div class="col-md-6">
+                <label class="form-label">Tarikh Laporan</label>
+                <input type="date" class="form-control" id="tarikh_laporan" name="tarikh_laporan" required>
             </div>
 
-            <div class="row g-3 mb-3">
-                <div class="col-md-6">
-                <label class="form-label">Jawatan</label>
-                <textarea id="jawatan" class="form-control" placeholder="Contoh: Pembantu Kesihatan Awam"></textarea>
-            </div>
 
             <div class="row g-3">
-                <div class="col-md-6">
-                <label class="form-label">Kategori Tempat Bertugas</label>
-                <select class="form-select" id="kategori_tempat_bertugas" name="kategori_tempat_bertugas" required>
-                <option value="">-- Sila Pilih Kategori --</option>
-                <option value="Ibu Pejabat"> Ibu Pejabat</option>
-                <option value="JKN"> JKN</option>
-                <option value="PKD"> PKD</option>
-                <option value="Pergigian"> Pergigian</option>
-                <option value="Hospital"> Hospital</option>
-                <option value="Institusi"> Institusi</option>
-                </select>
+                <div class="col-md-4">
+                    <label class="form-label">Kes Yang Diperiksa</label>
+                    <input type="number" class="form-control" min="0" value="0"
+                    id="kes_diperiksa" name="kes_diperiksa" 
+                    >
                 </div>
-            </div>
 
-            <div class="row g-3 mb-3">
-                <div class="col-md-6">
-                <label class="form-label">Nama Tempat Bertugas</label>
-                <textarea id="tempat_bertugas" class="form-control" placeholder="Contoh: Klinik Kesihatan Nilai"></textarea>
-            </div>
-
-            <div class="row g-3">
-                <div class="col-md-6">
-                <label class="form-label">Status</label>
-                <select class="form-select" id="status_terjejas" name="status_terjejas" required>
-                <option value="">-- Sila Pilih Status --</option>
-                <option value="Rumah Terjejas"> Rumah Terjejas</option>
-                <option value="Laluan Terjejas"> Laluan Terjejas</option>
-                </select>
+                <div class="col-md-4">
+                    <label class="form-label">Penyakit Berjangkit</label>
+                    <input type="number" class="form-control" min="0" value="0"
+                    id="penyakit_berjangkit" name="penyakit_berjangkit"
+                    >
                 </div>
-            </div>
 
-            <div class="row g-3">
-                <div class="col-md-6">
-                <label class="form-label">Hadir Bekerja</label>
-                <select class="form-select" id="hadir_bekerja" name="hadir_bekerja" required>
-                <option value="">-- Sila Pilih Status --</option>
-                <option value="Ya"> Ya</option>
-                <option value="Tidak"> Tidak</option>
-                </select>
+                <div class="col-md-4">
+                    <label class="form-label">Penyakit Tidak Berjangkit</label>
+                    <input type="number" class="form-control" min="0" value="0"
+                    id="penyakit_tidak_berjangkit" name="penyakit_tidak_berjangkit"
+                    >
                 </div>
-            </div>
 
-            <div class="row g-3">
-                <div class="col-md-6">
-                <label class="form-label">Berada di PPS</label>
-                <select class="form-select" id="berada_di_pps" name="berada_di_pps" required>
-                <option value="">-- Sila Pilih Status --</option>
-                <option value="Ya"> Ya</option>
-                <option value="Tidak"> Tidak</option>
-                </select>
+                <div class="col-md-4">
+                    <label class="form-label">Kecederaan</label>
+                    <input type="number" class="form-control" min="0" value="0"
+                    id="kecederaan" name="kecederaan"
+                    >
                 </div>
-            </div>
 
-            <div class="row g-3 mb-3">
+                <div class="col-md-4">
+                    <label class="form-label">Kejadian Wabak</label>
+                    <input type="number" class="form-control" min="0" value="0"
+                    id="kejadian_wabak" name="kejadian_wabak"
+                    >
+                </div>
+
                 <div class="col-md-6">
-                <label class="form-label">Catatan</label>
-                <textarea id="catatan" class="form-control" placeholder="Jika terdapat maklumat tambahan"></textarea>
-            </div>
+                    <label class="form-label">Jumlah Keseluruhan Penyakit</label>
+                    <p><span id="jumlah_penyakit_pps"></span></p>
+                </div>
+                  
+              </div>
         </div>           
         <!-- NAVIGATION -->
         <div class="d-flex justify-content-start mt-4 gap-2">
-        <button type="button" class="btn btn-secondary" id="prevBtn">Back</button>
-        <button type="button" class="btn btn-primary" id="nextBtn">Next</button>
+        <button type="button" class="btn btn-primary" id="">Hantar</button>
         </div>
         </form>
         </div>
@@ -183,17 +161,31 @@
 <!-- Load Header & Footer -->
 <script src="assets/js/common.js"></script>
 
+<!--Wizard-->
 <script src="assets/js/wizard-form.js"></script>
 <script src="assets/js/negeri-daerah.js"></script>
 <script src="assets/js/flood_form.js"></script>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
-initNegeriDaerah({
-  negeriId: "negeri",
-  daerahId: "daerah",
-  lainWrapperId: "daerahLainWrapper",
-  lainInputId: "daerahLain"
-});
+  const numOneInput = document.getElementById('penyakit_berjangkit');
+  const numTwoInput = document.getElementById('penyakit_tidak_berjangkit');
+  const numThreeInput = document.getElementById('kecederaan');
+  const resultSpan = document.getElementById('jumlah_penyakit_pps');
+  
+  function calculateSum() {
+    const numOne = parseFloat(numOneInput.value) || 0;
+    const numTwo = parseFloat(numTwoInput.value) || 0;
+    const numThree = parseFloat(numThreeInput.value) || 0;
+    const sum = numOne + numTwo + numThree;
+    
+    resultSpan.textContent = sum;
+}
+
+// Attach event listeners to the input fields for the 'input' event
+numOneInput.addEventListener('input', calculateSum);
+numTwoInput.addEventListener('input', calculateSum);
+numThreeInput.addEventListener('input', calculateSum);
+
 </script>
 </body>
 </html>

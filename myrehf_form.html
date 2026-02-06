@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DRP</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Search CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet">
+  
+  <!-- jQuery (REQUIRED for Select2) -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- Select2 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
+
+  <!-- Main CSS -->
+  <link href="assets/css/main.css" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div id="header"></div>
+
+<!-- BODY -->
+<div class="container-fluid">
+  <div class="row">
+
+    <!-- LEFT PANEL -->
+    <!-- LEFT PANEL -->
+    <aside class="col-md-3 col-lg-2 sidebar p-0" id="sidebar-placeholder">
+      <!-- Sidebar will be loaded here -->
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="col-md-9 col-lg-10 p-4">
+      <div class="card shadow-sm border-1">
+        <div class="card-body">
+          <h4 class="card-title mb-3">MALAYSIA RESILIENT HEALTHCARE FACILITIES</h4>          
+        </div>
+        <div class="card-body">'
+        <form id="wizardForm" data-free-mode="true">'
+        <div class="mb-4">
+            <ul class="nav nav-pills justify-content-center" id="stepIndicator">
+                <li class="nav-item">
+                    <button type="button" class="nav-link active" >1</button>
+                </li>
+                <li class="nav-item">
+                    <button type="button" class="nav-link" >2</button>
+                </li>
+                <li class="nav-item">
+                    <button type="button" class="nav-link">3</button>
+                </li>
+                <li class="nav-item">
+                    <button type="button" class="nav-link">4</button>
+                </li>
+                <li class="nav-item">
+                    <button type="button" class="nav-link">5</button>
+                </li>
+                <li class="nav-item">
+                    <button type="button" class="nav-link">6</button>
+                </li>
+                <li class="nav-item">
+                    <button type="button" class="nav-link">7</button>
+                </li>
+            </ul>
+        </div>
+        
+        <!-- ================= STEP 1 ================= -->
+        <div class="wizard-step active">
+            <h5 class="mb-3">ABOUT FACILITIES</h5>
+
+            <div class="row g-3">
+                <div class="col-md-6">
+                <label class="form-label">Negeri</label>
+                <select class="form-select" id="negeri_fasiliti" name="negeri_fasiliti" required>
+                <option value="">-- Sila Pilih Negeri --</option>
+                </select>
+                </div>
+            </div>
+
+            <div class="row g-3">
+                <div class="col-md-6">
+                <label class="form-label">Daerah</label>
+                <select class="form-select" id="daerah_fasiliti" name="daerah_fasiliti" required>
+                    <option value="">-- Sila Pilih Daerah --</option>
+                    <option value="Lain-Lain">Lain-lain</option>
+                </select>
+                </div>
+            
+                <div class="col-md-6 d-none" id="daerahLainWrapperFasiliti">
+                <label class="form-label">Sila Nyatakan Daerah</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="daerahLainFasiliti"
+                    name="daerahLainFasiliti"
+                    placeholder="Nama Daerah"
+                >
+                </div>
+            </div>
+            
+            <div class="mb-3">
+                <div class="col-md-6">
+                    <label class="form-label required">Mukim</label>
+                    <input id="mukim_fasiliti" name="mukim_fasiliti" class="form-control text-uppercase">
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <div class="col-md-6">
+                    <label class="form-label required">nama Fasiliti</label>
+                    <textarea id="namaFasiliti" class="form-control" rows="2" placeholder="Contoh: Hospital Putrajaya"></textarea>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Alamat Penuh</label>
+                <textarea id="alamatFasiliti" class="form-control" rows="2" placeholder="Contoh: Hospital Putrajaya, Pusat Pentadbiran Kerajaan Persekutuan, Presint 7, 62250 Putrajaya"></textarea>
+            </div>
+
+            <button type="button" class="btn btn-outline-primary btn-sm mb-3" id="lokasiFasiliti">Cari Lokasi Berdasarkan Alamat</button>
+
+            <div id="map_fasiliti" style="height:350px;"></div>
+
+            <!-- Simpan koordinat -->
+            <input type="hidden" name="latitude_fasiliti" id="latitude_fasiliti" required>
+            <input type="hidden" name="longitude_fasiliti" id="longitude_fasiliti" required>
+
+            <!-- Display koordinat live -->
+            <div class="mt-2">
+            <strong>Latitude:</strong> <span id="latDisplayFasiliti">-</span> |
+            <strong>Longitude:</strong> <span id="lngDisplayFasiliti">-</span>
+            </div>
+            </div>
+        
+        <!-- ================= STEP 2 ================= -->
+        <div class="wizard-step">
+            <h5 class="mb-3">SECTION A : EMERGENCY MANAGEMENT</h5>
+            
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label class="form-label required">A1.1 Does the healthcare facility have designated representatives from the health workforce actively engaged with community disaster planning committees to strengthen risk reduction and post-disaster recovery through adaptation efforts?</label>
+                    <select id="a1_1" name="a1_1" class="form-select" required>
+                        <option value="">-- Please select one --</option>
+                        <option value="0">The healthcare facility has no designated representative participating in any community disaster planning committee.</option>
+                        <option value="1">The healthcare facility has a designated representative, and participates occasionally in a community disaster planning committee with limited cross-sectoral involvement.</option>
+                        <option value="2">The healthcare facility has an actively participating representative in a community disaster planning committee with broad cross-sectoral representation.</option>
+                    </select>
+                </div>
+            </div>   
+        </div>
+            
+        <!-- ================= STEP 3 ================= -->
+        <div class="wizard-step">
+            <h5 class="mb-3">SECTION B : HEALTH WORKFORCE RESILIENCE AND WELLBEING</h5>
+
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label class="form-label required">B1.1 Does the healthcare facility have a drinking-water and/or food contigency plan during emergencies?</label>
+                    <select id="b2_2" name="b2_2" class="form-select" required>
+                        <option value="">-- Please select one --</option>
+                        <option value="0">Contingency plan for water and/or food for emergencies are non-existent.</option>
+                        <option value="1">Contingency plan exist, food and/or drinking-water is guaranteed for less than 72 hours.</option>
+                        <option value="2">Food and/or drinking-water for emergencies is guaranteed for at least 72 hours.</option>
+                    </select>
+                </div>
+            </div>    
+        </div>
+
+        <!-- ================= STEP 4 ================= -->
+        <div class="wizard-step">
+            <h5 class="mb-3">SECTION C : HEALTH SERVICES</h5>
+
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label class="form-label required">C1.1 Does the healthcare facility have a plan to transfer critical equipment and medical supplies to another health care facility or to a secure storage during emergency events?</label>
+                    <select id="c1_1" name="c1_1" class="form-select" required>
+                        <option value="">-- Please select one --</option>
+                        <option value="0">Policies and procedures do not exist.</option>
+                        <option value="1">Policies and procedures are available but have not been tested for emergency and disaster situations.</option>
+                        <option value="2">Procedures exist, resources are available and they have been tested for emergency and disaster situations.</option>
+                    </select>
+                </div>
+            </div>    
+        </div>
+
+        <!-- ================= STEP 5 ================= -->
+        <div class="wizard-step">
+            <h5 class="mb-3">SECTION D : WATER SUPPLY</h5>
+
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label class="form-label required">D1.1 Is there any water quality test done by staff or any third party up to the national standards?</label>
+                    <select id="d1_1" name="d1_1" class="form-select" required>
+                        <option value="">-- Please select one --</option>
+                        <option value="0">No testing takes place or no national standards exist.</option>
+                        <option value="1">Water quality tested but not routinely or regularly.</option>
+                        <option value="2">Water quality routinely and regularly tested according to national standards.</option>
+                    </select>
+                </div>
+            </div>    
+        </div>
+
+        <!-- ================= STEP 6 ================= -->
+        <div class="wizard-step">
+            <h5 class="mb-3">SECTION E : ENERGY</h5>
+
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label class="form-label required">E1.1 Does the healthcare facility use appliance thermometers in its refrigerators and freezers to verify the safe storage temperatures of food, vaccines, and other crucial medical supplies that require refrigeration?</label>
+                    <select id="e1_1" name="e1_1" class="form-select" required>
+                        <option value="">-- Please select one --</option>
+                        <option value="0">Does not consistently utilize appliance thermometers in its refrigerators and freezers.</option>
+                        <option value="1">Has some appliance thermometers in place for refrigerators and freezers, but their use may be inconsistent, or monitoring protocols may be informal.</option>
+                        <option value="2">Consistently employs and regularly calibrates appliance thermometers in all refrigerators and freezers, with established protocols for continuous monitoring.</option>
+                    </select>
+                </div>
+            </div>    
+        </div>
+
+        <!-- ================= STEP 7 ================= -->
+        <div class="wizard-step">
+            <h5 class="mb-3">SECTION F : INFRASTRUCTURE</h5>
+
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label class="form-label required">F1.1 Is the healthcare facility is abide by local authorities occupancy's rules/law?</label>
+                    <select id="f1_1" name="f1_1" class="form-select" required>
+                        <option value="">-- Please select one --</option>
+                        <option value="0">Has not been approved by local authorities and not abide to local law.</option>
+                        <option value="1">Partially approved/waiting for approval from local authorities.</option>
+                        <option value="2">Approved by local authorities and abide to local rules.</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- NAVIGATION -->
+        <div class="d-flex justify-content-start mt-4 gap-2">
+            <button type="button" class="btn btn-secondary" id="prevBtn">Back</button>
+            <button type="button" class="btn btn-primary" id="nextBtn">Next</button>
+        </div>
+        </form>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div id="footer"></div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Load Header & Footer -->
+<script src="assets/js/common.js"></script>
+
+<script src="assets/js/wizard-form.js"></script>
+
+<script src="assets/js/doce_form.js"></script>
+
+<script src="assets/js/negeri-daerah.js"></script>
+
+<script>
+initNegeriDaerah({
+  negeriId: "negeri_fasiliti",
+  daerahId: "daerah_fasiliti",
+  lainWrapperId: "daerahLainWrapperFasiliti",
+  lainInputId: "daerahLainFasiliti"
+});
+
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  initMap(
+    'map_fasiliti',
+    'latitude_fasiliti',
+    'longitude_fasiliti',
+    'latDisplayFasiliti',
+    'lngDisplayFasiliti',
+    'cariLokasiFasiliti',
+    'alamatLokasiFasiliti'
+  );
+});
+</script>
+
+
+<script src="assets/js/drp_form.js"></script>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+</body>
+</html>

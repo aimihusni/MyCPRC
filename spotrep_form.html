@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SPOTREP Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Search CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet">
+  
+  <!-- jQuery (REQUIRED for Select2) -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- Select2 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  
+
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
+
+  <!-- Main CSS -->
+  <link href="assets/css/main.css" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div id="header"></div>
+
+<!-- BODY -->
+<div class="container-fluid">
+  <div class="row">
+
+    <!-- LEFT PANEL -->
+    <aside class="col-md-3 col-lg-2 sidebar p-0" id="sidebar-placeholder">
+      <!-- Sidebar will be loaded here -->
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="col-md-9 col-lg-10 p-4">
+      <div class="card shadow-sm border-1">
+        <div class="card-body">
+          <h4 class="card-title mb-3">SITREP</h4>
+          <p class="card-text text-muted">
+            Ini merupakan borang laporan susulan bagi Kejadian Bencana, Wabak, Krisis dan Kecemasan (CPRC). 
+            Sila lengkapkan maklumat yang diperlukan di setiap bahagian sebelum menghantar laporan ini.
+          </p>
+        </div>
+        <div class="card-body">
+        <form id="wizardForm" data-free-mode="true">
+            
+            <div class="wizard-step active">
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body">
+                        <div class="col-12">
+                            <label class="form-label">Tajuk SPOTREP</label>
+                            <textarea class="form-control" rows="3" id="tajuk_spotrep" name="tajuk_spotrep" required></textarea>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body">
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <label class="form-label">Tarikh Kejadian</label>
+                            <input type="text" class="form-control" id="tarikh_kejadian" name="tarikh_kejadian" required>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label class="form-label">Tempat Kejadian</label>
+                            <input type="text" class="form-control" id="tempat_kejadian" name="tempat_kejadian" required>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label class="form-label">Sumber Maklumat</label>
+                            <input type="text" class="form-control" id="sumber_maklumat" name="sumber_maklumat" required>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body">
+                        <div class="col-12">
+                            <label class="form-label">Naratif</label>
+                            <textarea class="form-control" rows="3" id="naratif_kejadian" name="naratif_kejadian" required></textarea>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="col-12">
+                            <label class="form-label">Tindakan Awal</label>
+                            <textarea class="form-control" rows="3" id="tindakan_awal" name="tindakan_awal" required></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <!-- NAVIGATION -->
+        <div class="d-flex justify-content-start mt-4 gap-2">
+            <button type="button" class="btn btn-primary" id="">Hantar</button>
+        </div>
+
+        </form>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div id="footer"></div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Load Header & Footer -->
+<script src="assets/js/common.js"></script>
+<!--Wizard-->
+<script src="assets/js/wizard-form.js"></script>
+
+<script src="assets/js/doce_form.js"></script>
+
+<script src="assets/js/negeri-daerah.js"></script>
+
+<script>
+initNegeriDaerah({
+  negeriId: "negeri",
+  daerahId: "daerah",
+  lainWrapperId: "daerahLainWrapper",
+  lainInputId: "daerahLain"
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  initMap(
+    'map_doce',
+    'latitude_doce',
+    'longitude_doce',
+    'latDisplay_doce',
+    'lngDisplay_doce',
+    'cariLokasiDOCE',
+    'alamatLokasiDOCE'
+  );
+});
+</script>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+</body>
+</html>

@@ -66,7 +66,7 @@
         <form id="wizardForm" action="http://localhost:3000/submit" method="POST">
 
         <div class="wizard-step active">
-            <h5 class="mb-3">BORANG 11 : AKTIVITI KESELAMATAN BEKALAN AIR MINUM KAWASAN SEMASA BANJIR</h5>
+            <h5 class="mb-3">BORANG 15 : Aktiviti Kawalan Keselamatan Makanan di Pusat Pemindahan Sementara (PPS) Semasa Banjir</h5>
 
             <div class="row g-3">
                 <div class="col-md-6">
@@ -96,66 +96,107 @@
                 <label class="form-label">Tarikh Laporan</label>
                 <input type="date" class="form-control" id="tarikh_laporan" name="tarikh_laporan" required>
             </div>
-            <h6 class="mt-4 mb-3">Keselamatan Bekalan Air</h6>
+
+            <div class="col-md-4">
+                      <label class="form-label">Bil PPS Dilawati</label>
+                      <input type="number" class="form-control" min="0" value="0"
+                      id="pps_dilawati" name="pps_dilawati" 
+                      >
+            </div>
+
+            <h6 class="mt-4 mb-3">Premis Penyediaan Makanan</h6>
               <div class="row g-3">
                   <div class="col-md-4">
-                      <label class="form-label">Bil. Sampel</label>
+                      <label class="form-label">Bil Memuaskan</label>
                       <input type="number" class="form-control" min="0" value="0"
-                      id="bil_sampel" name="bil_sampel" 
+                      id="bil_memuaskan" name="bil_memuaskan" 
                       >
                   </div>
 
                   <div class="col-md-4">
-                      <label class="form-label">Bil. Pelanggaran pH</label>
+                      <label class="form-label">Bil Tidak Memuaskan</label>
                       <input type="number" class="form-control" min="0" value="0"
-                      id="langgar_ph" name="langgar_ph"
+                      id="bil_tidak_memuaskan" name="bil_tidak_memuaskan"
                       >
                   </div>
 
                   <div class="col-md-4">
-                      <label class="form-label">Bil. Pelanggaran Baki Klorin</label>
+                      <label class="form-label">Bil Tindakan Pembetulan</label>
                       <input type="number" class="form-control" min="0" value="0"
-                      id="langgar_baki_klorin" name="langgar_baki_klorin"
-                      >
-                  </div>
-
-                  <div class="col-md-4">
-                      <label class="form-label">Bil. Pelanggaran NTU</label>
-                      <input type="number" class="form-control" min="0" value="0"
-                      id="langgar_ntu" name="langgar_ntu"
-                      >
-                  </div>
-
-                  <div class="col-md-4">
-                      <label class="form-label">Bil. Pelanggaran E.coli (Ujian Colilert)</label>
-                      <input type="number" class="form-control" min="0" value="0"
-                      id="langgar_colilert" name="langgar_colilert"
+                      id="bil_pembetulan" name="bil_pembetulan"
                       >
                   </div>
               </div>
 
-            <h6 class="mt-4 mb-3">Bil. Telaga Dimasukkan Klorin</h6>
+            <h6 class="mt-4 mb-3">Pendidikan Kesihatan</h6>
               <div class="row g-3">
-                  <div class="col-md-4">
-                      <label class="form-label">Bil. Telaga Diperiksa</label>
+                  <div class="col-md-3">
+                      <label class="form-label">Bil Sesi</label>
                       <input type="number" class="form-control" min="0" value="0"
-                      id="telaga_diperiksa" name="telaga_diperiksa" 
+                      id="bil_sesi" name="bil_sesi" 
                       >
                   </div>
 
-                  <div class="col-md-4">
-                      <label class="form-label">Bil. Telaga Diklorin</label>
+                  <div class="col-md-3">
+                      <label class="form-label">Bil Peserta</label>
                       <input type="number" class="form-control" min="0" value="0"
-                      id="telaga_diklorin" name="telaga_diklorin"
+                      id="bil_peserta" name="bil_peserta"
+                      >
+                  </div>
+
+                  <div class="col-md-3">
+                      <label class="form-label">Kumulatif Sesi</label>
+                      <input type="number" class="form-control" min="0" value="0"
+                      id="kumulatif_sesi" name="kumulatif_sesi"
+                      >
+                  </div>
+
+                  <div class="col-md-3">
+                      <label class="form-label">Kumulatif Peserta</label>
+                      <input type="number" class="form-control" min="0" value="0"
+                      id="kumulatif_peserta" name="kumulatif_peserta"
                       >
                   </div>
               </div>
-        </div>           
+
+              <h6 class="mt-4 mb-3">Pengendali Makanan</h6>
+              <div class="row g-3">
+                  <div class="col-md-3">
+                      <label class="form-label">Bil Pengendali</label>
+                      <input type="number" class="form-control" min="0" value="0"
+                      id="bil_pengendali" name="bil_pengendali" 
+                      >
+                  </div>
+
+                  <div class="col-md-3">
+                      <label class="form-label">Bil Terima Suntikan</label>
+                      <input type="number" class="form-control" min="0" value="0"
+                      id="bil_terima_suntikan" name="bil_terima_suntikan"
+                      >
+                  </div>
+              </div>
+
+              <h6 class="mt-4 mb-3">Aduan Makanan</h6>
+              <div class="row g-3">
+                  <div class="col-md-3">
+                      <label class="form-label">Bil Aduan</label>
+                      <input type="number" class="form-control" min="0" value="0"
+                      id="bil_aduan" name="bil_aduan" 
+                      >
+                  </div>
+
+                  <div class="col-md-3">
+                      <label class="form-label">Kumulatif Aduan</label>
+                      <input type="number" class="form-control" min="0" value="0"
+                      id="bil_kum_aduan" name="bil_kum_aduan"
+                      >
+                  </div>
+              </div>
         <!-- NAVIGATION -->
         <div class="d-flex justify-content-start mt-4 gap-2">
-        <button type="button" class="btn btn-secondary" id="prevBtn">Back</button>
-        <button type="button" class="btn btn-primary" id="nextBtn">Next</button>
+        <button type="button" class="btn btn-primary" id="">Hantar</button>
         </div>
+      </div>
         </form>
         </div>
       </div>
@@ -176,6 +217,13 @@
 <script src="assets/js/negeri-daerah.js"></script>
 <script src="assets/js/flood_form.js"></script>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
+<script>
+initNegeriDaerah({
+  negeriId: "negeri",
+  daerahId: "daerah",
+  lainWrapperId: "daerahLainWrapper",
+  lainInputId: "daerahLain"
+});
+</script>
 </body>
 </html>

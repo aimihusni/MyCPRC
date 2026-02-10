@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SITREP Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Search CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet">
+  
+  <!-- jQuery (REQUIRED for Select2) -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- Select2 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  
+
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
+
+  <!-- Main CSS -->
+  <link href="assets/css/main.css" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div id="header"></div>
+
+<!-- BODY -->
+<div class="container-fluid">
+  <div class="row">
+
+    <!-- LEFT PANEL -->
+    <aside class="col-md-3 col-lg-2 sidebar p-0" id="sidebar-placeholder">
+      <!-- Sidebar will be loaded here -->
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="col-md-9 col-lg-10 p-4">
+      <div class="card shadow-sm border-1">
+        <div class="card-body">
+          <h4 class="card-title mb-3">SITREP</h4>
+          <p class="card-text text-muted">
+            Ini merupakan borang laporan susulan bagi Kejadian Bencana, Wabak, Krisis dan Kecemasan (CPRC). 
+            Sila lengkapkan maklumat yang diperlukan di setiap bahagian sebelum menghantar laporan ini.
+          </p>
+        </div>
+        <div class="card-body">
+        <form id="wizardForm" data-free-mode="true">
+            
+            <div class="wizard-step active">
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body">
+                        <div class="col-12">
+                            <label class="form-label">Tajuk SITREP</label>
+                            <textarea class="form-control" rows="3" id="tajuk_sitrep" name="tajuk_sitrep" required></textarea>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body">
+                    <h6 class="card-title text-primary mb-3">Ringkasan Kejadian</h6>
+
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <label class="form-label">Tarikh Kejadian</label>
+                            <input type="text" class="form-control" id="tarikh_kejadian" name="tarikh_kejadian" required>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label class="form-label">Tempat Kejadian</label>
+                            <input type="text" class="form-control" id="tempat_kejadian" name="tempat_kejadian" required>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label class="form-label">Masa Notifikasi MEOCC ke CPRC Negeri</label>
+                            <input type="text" class="form-control" id="masa_notifikasi" name="masa_notifikasi" required>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body">
+                        <div class="col-12">
+                            <label class="form-label">Kronologi Kejadian</label>
+                            <textarea class="form-control" rows="3" id="kronologi_kejadian" name="kronologi_kejadian" required></textarea>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="col-12">
+                            <label class="form-label">Agensi Terlibat</label>
+                            <textarea class="form-control" rows="3" id="agensi_terlibat" name="agensi_terlibat" required></textarea>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="col-12">
+                            <label class="form-label">Bilangan Mangsa (Status Semasa serta Masa & Tarikh)</label>
+                            <textarea class="form-control" rows="3" id="mangsa_semasa" name="mangsa_semasa" required></textarea>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="col-md-4">
+                            <label class="form-label">Jumlah Kematian</label>
+                            <textarea class="form-control" id="kematian" name="kematian" required></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body">
+                        <div class="col-12">
+                            <label class="form-label">Status Mangsa</label>
+                            <textarea class="form-control" rows="3" id="status_mangsa" name="status_mangsa" required></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <!-- NAVIGATION -->
+        <div class="d-flex justify-content-start mt-4 gap-2">
+            <button type="button" class="btn btn-primary" id="">Hantar</button>
+        </div>
+
+        </form>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div id="footer"></div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Load Header & Footer -->
+<script src="assets/js/common.js"></script>
+<!--Wizard-->
+<script src="assets/js/wizard-form.js"></script>
+
+<script src="assets/js/doce_form.js"></script>
+
+<script src="assets/js/negeri-daerah.js"></script>
+
+<script>
+initNegeriDaerah({
+  negeriId: "negeri",
+  daerahId: "daerah",
+  lainWrapperId: "daerahLainWrapper",
+  lainInputId: "daerahLain"
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  initMap(
+    'map_doce',
+    'latitude_doce',
+    'longitude_doce',
+    'latDisplay_doce',
+    'lngDisplay_doce',
+    'cariLokasiDOCE',
+    'alamatLokasiDOCE'
+  );
+});
+</script>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+</body>
+</html>

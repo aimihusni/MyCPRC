@@ -66,7 +66,7 @@
         <form id="wizardForm" action="http://localhost:3000/submit" method="POST">
 
         <div class="wizard-step active">
-            <h5 class="mb-3">BORANG 7 : KEJADIAN PENYAKIT BERJANGKIT DI KALANGAN MANGSA BANJIR</h5>
+            <h5 class="mb-3">BORANG 12 : Kemasukan Mangsa Banjir ke Hospital yang dirujuk dari Pusat Pemindahan Sementara (PPS)</h5>
 
             <div class="row g-3">
                 <div class="col-md-6">
@@ -96,89 +96,65 @@
                 <label class="form-label">Tarikh Laporan</label>
                 <input type="date" class="form-control" id="tarikh_laporan" name="tarikh_laporan" required>
             </div>
-            <h6 class="mt-4 mb-3">Jenis Penyakit Berjangkit</h6>
+
+            <h6 class="mt-4 mb-3">Jumlah Harian Mangsa Masuk Wad</h6>
               <div class="row g-3">
                   <div class="col-md-4">
-                      <label class="form-label">AGE</label>
+                      <label class="form-label">Lelaki Dewasa</label>
                       <input type="number" class="form-control" min="0" value="0"
-                      id="age" name="age" 
+                      id="bil_lelaki" name="bil_lelaki" 
                       >
                   </div>
 
                   <div class="col-md-4">
-                      <label class="form-label">ARI</label>
+                      <label class="form-label">Perempuan Dewasa</label>
                       <input type="number" class="form-control" min="0" value="0"
-                      id="ari" name="ari"
+                      id="bil_perempuan" name="bil_perempuan"
                       >
                   </div>
 
                   <div class="col-md-4">
-                      <label class="form-label">Konjunktivitis</label>
+                      <label class="form-label">Kanak-Kanak</label>
                       <input type="number" class="form-control" min="0" value="0"
-                      id="konjunktivitis" name="konjunktivitis"
+                      id="bil_kanak_kanak" name="bil_kanak_kanak"
+                      >
+                  </div>
+              </div>
+
+            <h6 class="mt-4 mb-3">Kemasukan Mangsa Banjir ke Hospital</h6>
+              <div class="row g-3">
+                  <div class="col-md-3">
+                      <label class="form-label">Antenatal</label>
+                      <input type="number" class="form-control" min="0" value="0"
+                      id="bil_antenatal" name="bil_antenatal" 
                       >
                   </div>
 
-                  <div class="col-md-4">
-                      <label class="form-label">Skin Infection</label>
+                  <div class="col-md-3">
+                      <label class="form-label">Posnatal</label>
                       <input type="number" class="form-control" min="0" value="0"
-                      id="skin_infection" name="skin_infection"
+                      id="bil_posnatal" name="bil_posnatal"
                       >
                   </div>
 
-                  <div class="col-md-4">
-                      <label class="form-label">Demam (Tiada Simptom Lain)</label>
+                  <div class="col-md-3">
+                      <label class="form-label">Haemodialisis</label>
                       <input type="number" class="form-control" min="0" value="0"
-                      id="demam" name="demam"
+                      id="bil_haemodialisis" name="bil_haemodialisis"
                       >
                   </div>
 
-                  <div class="col-md-4">
-                      <label class="form-label">HFMD</label>
+                  <div class="col-md-3">
+                      <label class="form-label">Paliatif</label>
                       <input type="number" class="form-control" min="0" value="0"
-                      id="hfmd" name="hfmd"
+                      id="bil_paliatif" name="bil_paliatif"
                       >
                   </div>
-
-                  <div class="col-md-4">
-                      <label class="form-label">Tifoid</label>
-                      <input type="number" class="form-control" min="0" value="0"
-                      id="tifoid" name="tifoid"
-                      >
-                  </div>
-
-                  <div class="col-md-4">
-                      <label class="form-label">Chicken Pox</label>
-                      <input type="number" class="form-control" min="0" value="0"
-                      id="chicken_pox" name="chicken_pox"
-                      >
-                  </div>
-
-                  <div class="col-md-4">
-                      <label class="form-label">Leptospirosis</label>
-                      <input type="number" class="form-control" min="0" value="0"
-                      id="leptospirosis" name="leptospirosis"
-                      >
-                  </div>
-
-                  <div class="col-md-4">
-                      <label class="form-label">Other Notifiable Diseases</label>
-                      <input type="number" class="form-control" min="0" value="0"
-                      id="other_diseases" name="other_diseases"
-                      >
-                  </div>
-
-                  <div class="col-md-6">
-                    <label class="form-label">Jumlah Keseluruhan Penyakit</label>
-                    <p><span id="jumlah_penyakit_pps"></span></p>
-                </div>
-
               </div>
         </div>           
         <!-- NAVIGATION -->
         <div class="d-flex justify-content-start mt-4 gap-2">
-        <button type="button" class="btn btn-secondary" id="prevBtn">Back</button>
-        <button type="button" class="btn btn-primary" id="nextBtn">Next</button>
+        <button type="button" class="btn btn-primary" id="">Hantar</button>
         </div>
         </form>
         </div>
@@ -200,36 +176,6 @@
 <script src="assets/js/negeri-daerah.js"></script>
 <script src="assets/js/flood_form.js"></script>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script>
-
-function sumPenyakit() {
-    const ids = [
-        'age',
-        'ari',
-        'konjunktivitis',
-        'skin_infection',
-        'demam',
-        'hfmd',
-        'tifoid',
-        'chicken_pox',
-        'leptospirosis',
-        'other_diseases'
-    ];
-
-    let total = 0;
-
-    ids.forEach(id => {
-        const value = parseInt(document.getElementById(id).value, 10) || 0;
-        total += value;
-    });
-
-    document.getElementById('jumlah_penyakit_pps').textContent = total;
-}
-
-document.querySelectorAll('input[type="number"]').forEach(input => {
-    input.addEventListener('input', sumPenyakit);
-});
-</script>
 
 </body>
 </html>

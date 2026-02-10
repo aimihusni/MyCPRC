@@ -1,7 +1,7 @@
 <!-- sidebar.html -->
-<div class="sidebar-container">
+<div class="sidebar-wrapper">
   <!-- Toggle button (hamburger / close) -->
-  <button id="sidebar-toggle-btn" class="toggle-btn d-lg-none">
+  <button id="sidebar-toggle" class="sidebar-toggle">
     <i class="bi bi-list" id="toggle-icon"></i>
   </button>
 
@@ -60,19 +60,20 @@
     </ul>
   </div>
 
-  <!-- Overlay for mobile (click to close sidebar) -->
-  <div id="sidebar-overlay" class="sidebar-overlay d-lg-none"></div>
+  <!-- Overlay for mobile (click to close) -->
+  <div id="sidebar-overlay" class="sidebar-overlay"></div>
 </div>
 
 <style>
   /* ==========================================
-     SIDEBAR TOGGLE + FULL-SCREEN CONTENT
+     SIDEBAR SLIDE + FULL-SCREEN CONTENT
   ========================================== */
 
-  .sidebar-container {
+  .sidebar-wrapper {
     position: relative;
   }
 
+  /* Sidebar */
   .sidebar {
     position: fixed;
     top: 0;
@@ -88,7 +89,7 @@
     overflow-y: auto;
   }
 
-  /* Hidden on mobile by default */
+  /* Hidden by default on mobile */
   @media (max-width: 991px) {
     .sidebar {
       transform: translateX(-100%);
@@ -97,13 +98,14 @@
 
   /* When open */
   .sidebar.open {
-    transform: translateX(0) !important;
+    transform: translateX(0);
   }
 
-  /* Main content shifts when sidebar open */
+  /* Main content expands when sidebar closed */
   #main-content {
     transition: margin-left 0.3s ease;
     margin-left: 0;
+    width: 100%;
   }
 
   .sidebar.open ~ #main-content {
@@ -111,7 +113,7 @@
   }
 
   /* Toggle button */
-  .toggle-btn {
+  .sidebar-toggle {
     position: fixed;
     top: 1rem;
     left: 1rem;
@@ -130,13 +132,13 @@
     justify-content: center;
   }
 
-  .sidebar.open ~ .toggle-btn {
+  .sidebar.open ~ .sidebar-toggle {
     left: 260px;
   }
 
   /* Hide toggle on desktop */
   @media (min-width: 992px) {
-    .toggle-btn {
+    .sidebar-toggle {
       display: none;
     }
     #main-content {
@@ -144,7 +146,7 @@
     }
   }
 
-  /* Overlay (dark background when sidebar open on mobile) */
+  /* Overlay */
   .sidebar-overlay {
     position: fixed;
     inset: 0;
@@ -211,33 +213,29 @@
 </style>
 
 <script>
-  // JavaScript for toggle
-  const toggleBtn = document.getElementById('sidebar-toggle-btn');
+  // JavaScript to toggle sidebar
+  const toggleBtn = document.getElementById('sidebar-toggle');
   const sidebar = document.getElementById('sidebar');
   const overlay = document.getElementById('sidebar-overlay');
   const toggleIcon = document.getElementById('toggle-icon');
 
-  if (toggleBtn && sidebar) {
-    toggleBtn.addEventListener('click', () => {
-      sidebar.classList.toggle('open');
-      toggleIcon.classList.toggle('bi-list');
-      toggleIcon.classList.toggle('bi-x-lg');
-    });
+  toggleBtn.addEventListener('click', () => {
+    sidebar.classList.toggle('open');
+    toggleIcon.classList.toggle('bi-list');
+    toggleIcon.classList.toggle('bi-x-lg');
+  });
 
-    // Close when clicking overlay (mobile)
-    if (overlay) {
-      overlay.addEventListener('click', () => {
-        sidebar.classList.remove('open');
-        toggleIcon.classList.add('bi-list');
-        toggleIcon.classList.remove('bi-x-lg');
-      });
-    }
-  }
+  // Close when clicking overlay
+  overlay.addEventListener('click', () => {
+    sidebar.classList.remove('open');
+    toggleIcon.classList.add('bi-list');
+    toggleIcon.classList.remove('bi-x-lg');
+  });
 
-  // Optional: close sidebar when clicking sign-out
+  // Optional: close sidebar after clicking sign-out
   document.getElementById('sidebarSignOut')?.addEventListener('click', (e) => {
     e.preventDefault();
-    // Your sign-out logic here...
+    // Your sign-out code here...
     sidebar.classList.remove('open');
     toggleIcon.classList.add('bi-list');
     toggleIcon.classList.remove('bi-x-lg');

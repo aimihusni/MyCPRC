@@ -33,7 +33,29 @@
     <main class="col-md-9 col-lg-10 px-4 py-4">
 
       <div class="d-flex justify-content-between align-items-center mb-4">
-        <h4 class="mb-0">Dashboard</h4>
+        <h4 class="mb-0">Dashboard Banjir</h4>
+      </div>
+
+      <div class="main-cards">
+      <div class="card surveillance">
+        <div class="card-body">
+              <h2 class="text-center">AMARAN HUJAN BERTERUSAN</h2>
+              <img class="alert" src="https://www.met.gov.my/data/AmaranHujanLebat.jpg" alt="Amaran Hujan">
+            </div>
+      </div>
+      
+      <div class="card surveillance">
+        <div class="card-body test">
+              <h2 class="text-center">AMARAN RIBUT PETIR</h2>
+              <img src="https://www.met.gov.my/data/AmaranRibutPetir.jpg" alt="Amaran Ribut">
+            </div>
+      </div>
+      </div>
+
+      <br>
+
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h4 class="mb-0">Dashboard Pengurusan Banjir</h4>
 
         <!-- BUTTON ISI FORM -->
         <a href="flood_form3.html" class="btn btn-primary">
@@ -131,7 +153,13 @@
     .then(res => res.text())
     .then(data => document.getElementById("footer").innerHTML = data);
 </script>
-
+<style>
+  .card-body img{
+  max-width: 100%; /* Ensures the image doesn't exceed the container's width */
+  max-height: 100%;    /* Maintains the image's aspect ratio */
+  display: block;  /* Helps with alignment and margin issues */
+  }
+</style>
 <script src="assets/js/wizard-form.js"></script>
 
 </body>

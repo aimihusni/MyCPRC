@@ -30,7 +30,7 @@
 
       <!-- TITLE + BUTTON -->
       <div class="d-flex justify-content-between align-items-center mb-4">
-        <h4 class="mb-0">Laporan</h4>
+        <h4 class="mb-0">Dashboard Pelaporan Harian Bencana, Wabak, Krisis & Kecemasan</h4>
 
         <div>
           <a href="form.html?type=hre" class="btn btn-primary me-2">
@@ -163,8 +163,13 @@
 
 <!-- Load Header & Footer -->
 <script>
-  fetch("header.html").then(res => res.text()).then(data => header.innerHTML = data);
-  fetch("footer.html").then(res => res.text()).then(data => footer.innerHTML = data);
+  fetch("header.html")
+    .then(res => res.text())
+    .then(data => document.getElementById("header").innerHTML = data);
+
+  fetch("footer.html")
+    .then(res => res.text())
+    .then(data => document.getElementById("footer").innerHTML = data);
 </script>
 
 <!-- Dashboard JS -->

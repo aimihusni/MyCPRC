@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>MyCPRC</title>
+  <title>MyCPRC Reporting</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Bootstrap CSS -->
@@ -24,101 +24,101 @@
 <div class="container-fluid">
   <div class="row">
 
-    <!-- LEFT PANEL -->
-    <!-- LEFT PANEL -->
-    <aside class="col-md-3 col-lg-2 sidebar p-0" id="sidebar-placeholder">
-      <!-- Sidebar will be loaded here -->
+    <!-- LEFT PANEL – fixed ID to match fetch script -->
+    <aside class="col-md-3 col-lg-2 p-0" id="sidebar-container">
+      <!-- Sidebar will be loaded here from sidebar.html -->
     </aside>
 
     <!-- MAIN CONTENT -->
     <main class="col-md-9 col-lg-10 p-4">
 
       <!-- ===== Welcome Card ===== -->
-    <div class="card welcome mb-4">
-      <div class="icon-circle">
-        <img src="https://img.icons8.com/ios-filled/50/ffffff/home.png" alt="Welcome Icon">
-      </div>
-      <h2>Selamat Datang,</h2>
-      <p> Laman utama untuk papan pemuka, pelaporan dan analitik.</p>
-    </div>
-
-    <!-- ===== Main Cards ===== -->
-    <div class="main-cards">
-
-      <!-- Preparedness -->
-      <div class="card preparedness">
+      <div class="card welcome mb-4">
         <div class="icon-circle">
-          <img src="https://img.icons8.com/ios-filled/50/ffffff/shield.png" alt="Preparedness Icon">
+          <img src="https://img.icons8.com/ios-filled/50/ffffff/home.png" alt="Welcome Icon">
         </div>
-        <h2 class="text-center">Preparedness</h2>
-        <ul class="sub-options">
-          <li><a href="landingDRP.html">District Risk Profile</a></li>
-          <li><a href="landingDRM.html">Disaster Resources Management</a></li>
-        </ul>
+        <h2>Selamat Datang,</h2>
+        <p> Laman utama untuk papan pemuka, pelaporan dan analitik.</p>
       </div>
 
-      <!-- Surveillance -->
-      <div class="card surveillance">
-        <div class="icon-circle">
-          <img src="https://img.icons8.com/ios-filled/50/ffffff/graph.png" alt="Surveillance Icon">
-        </div>
-        <h2 class="text-center">Surveillance</h2>
-        <ul class="sub-options">
-          <li><a href="#">Sentiment Analysis</a></li>
-          <li><a href="#">SPOTREP/SITREP</a></li>
-          <li><a href="#">Rumour Surveillance</a></li>
-        </ul>
-      </div>
+      <!-- ===== Main Cards ===== -->
+      <div class="main-cards">
 
-      <!-- Response -->
-      <div class="card response">
-        <div class="icon-circle">
-          <img src="assets\img\lifebuoy_icon_244142.webp" alt="Response Icon">
+        <!-- Preparedness -->
+        <div class="card preparedness">
+          <div class="icon-circle">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/shield.png" alt="Preparedness Icon">
+          </div>
+          <h2 class="text-center">Preparedness</h2>
+          <ul class="sub-options">
+            <li><a href="landingDRP.html">District Risk Profile</a></li>
+            <li><a href="landingDRM.html">Disaster Resources Management</a></li>
+          </ul>
         </div>
-        <h2 class="text-center">Response</h2>
-        <ul class="sub-options">
-          <li><a href="landingDOCE.html">DOCE Event Reporting</a></li>
-          <li><a href="landingFlood.html">Flood Management</a></li>
-          <li><a href="#">Disease Specific</a></li>
-        </ul>
-      </div>
-    </div>
-    
-    <div class="main-cards">
-      <!-- MyReHF -->
-      <div class="card preparedness">
-        <div class="icon-circle">
-          <img src="https://img.icons8.com/ios-filled/50/ffffff/shield.png" alt="Preparedness Icon">
-        </div>
-        <h2 class="text-center">MyReHF</h2>
-        <ul class="sub-options">
-          <li><a href="landingMyReHF.html">Health Facilities</a></li>
-        </ul>
-      </div>
 
-      <!-- VISTA -->
-      <div class="card surveillance">
-        <div class="icon-circle">
-          <img src="https://img.icons8.com/ios-filled/50/ffffff/graph.png" alt="Surveillance Icon">
+        <!-- Surveillance -->
+        <div class="card surveillance">
+          <div class="icon-circle">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/graph.png" alt="Surveillance Icon">
+          </div>
+          <h2 class="text-center">Surveillance</h2>
+          <ul class="sub-options">
+            <li><a href="landingSentiment.html">Sentiment Analysis</a></li>
+            <li><a href="landingSitrep.html">SPOTREP/SITREP</a></li>
+            <li><a href="landingRumour.html">Rumour Surveillance</a></li>
+          </ul>
         </div>
-        <h2 class="text-center">Respiratory Pathogen Sentinel Surveillance</h2>
-        <ul class="sub-options">
-          <li><a href="landingILI.html">ILI Surveillance</a></li>
-          <li><a href="landingSARI.html">SARI Surveillance</a></li>
-        </ul>
-      </div>
 
-      <!-- MyEMT -->
-      <div class="card response">
-        <div class="icon-circle">
-          <img src="assets\img\lifebuoy_icon_244142.webp" alt="Response Icon">
+        <!-- Response -->
+        <div class="card response">
+          <div class="icon-circle">
+            <img src="assets\img\lifebuoy_icon_244142.webp" alt="Response Icon">
+          </div>
+          <h2 class="text-center">Response</h2>
+          <ul class="sub-options">
+            <li><a href="landingDOCE.html">DOCE Event Reporting</a></li>
+            <li><a href="landingFlood.html">Flood Management</a></li>
+            <li><a href="landingSpecific.html">Disease Specific</a></li>
+          </ul>
         </div>
-        <h2 class="text-center">MyEMT</h2>
-        <ul class="sub-options">
-          <li><a href="landingMyEMT.html">MyEMT Reporting</a></li>
-        </ul>
       </div>
-    </div>
+      
+      <div class="main-cards">
+
+        <!-- MyReHF -->
+        <div class="card preparedness">
+          <div class="icon-circle">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/shield.png" alt="Preparedness Icon">
+          </div>
+          <h2 class="text-center">MyReHF</h2>
+          <ul class="sub-options">
+            <li><a href="landingHealthFacilities.html">Health Facilities</a></li>
+          </ul>
+        </div>
+
+        <!-- VISTA -->
+        <div class="card surveillance">
+          <div class="icon-circle">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/graph.png" alt="Surveillance Icon">
+          </div>
+          <h2 class="text-center">Respiratory Pathogen Sentinel Surveillance</h2>
+          <ul class="sub-options">
+            <li><a href="landingSurveillanceSARI.html">SARI Surveillance</a></li>
+            <li><a href="landingSurveillanceILI.html">ILI Surveillance</a></li>
+          </ul>
+        </div>
+
+        <!-- MyEMT -->
+        <div class="card response">
+          <div class="icon-circle">
+            <img src="assets\img\lifebuoy_icon_244142.webp" alt="Response Icon">
+          </div>
+          <h2 class="text-center">MyEMT</h2>
+          <ul class="sub-options">
+            <li><a href="landingMyemt.html">MyEMT Reporting</a></li>
+          </ul>
+        </div>
+      </div>
     </main>
   </div>
 </div>
@@ -139,24 +139,24 @@
     .then(res => res.text())
     .then(data => document.getElementById("footer").innerHTML = data);
 </script>
-<!-- Load Sidebar -->
+
+<!-- Load Sidebar – now matches the correct ID -->
 <script>
   fetch("sidebar.html")
     .then(res => res.text())
-    .then(data => document.getElementById("sidebar-container").innerHTML = data);
+    .then(data => {
+      document.getElementById("sidebar-container").innerHTML = data;
+    })
+    .catch(err => console.error("Failed to load sidebar:", err));
 </script>
-<script src="assets/js/wizard-form.js">
 
-</script>
+<script src="assets/js/wizard-form.js"></script>
+
 <!-- Improved Sidebar Sign Out (waits for sidebar to load) -->
 <script>
-  // Run this after everything loads, including fetch
   window.addEventListener('load', function() {
-    // Give fetch a little time to complete (0.5–1 second delay)
     setTimeout(() => {
       const sidebarSignOut = document.getElementById('sidebarSignOut');
-      const loginOverlay = document.getElementById('loginOverlay');
-      const dashboardContent = document.getElementById('dashboardContent');
 
       console.log("Looking for sidebarSignOut:", sidebarSignOut); // Debug
 
@@ -164,16 +164,12 @@
         sidebarSignOut.addEventListener('click', function(e) {
           e.preventDefault();
           console.log("Sidebar Sign Out clicked!");
-
-          loginOverlay.style.display = 'flex';               // Show login
-          dashboardContent.classList.add('d-none');          // Hide dashboard
-          localStorage.removeItem('mycprc_loggedIn');        // Clear state
-          document.getElementById('loginForm')?.reset();     // Reset form
+          window.location.href = 'https://login-b73cc.web.app';
         });
       } else {
-        console.log("sidebarSignOut ID NOT FOUND — check sidebar.html");
+        console.log("sidebarSignOut ID NOT FOUND – check sidebar.html");
       }
-    }, 800); // 800ms delay — adjust to 1500 if still not found
+    }, 800);
   });
 </script>
 

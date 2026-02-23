@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>MyCPRC</title>
+  <title>MyCPRC Manual</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Bootstrap CSS -->
@@ -20,51 +20,49 @@
 <!-- HEADER -->
 <div id="header"></div>
 
-<!-- BODY -->
 <div class="container-fluid">
   <div class="row">
 
-    <!-- LEFT PANEL -->
-    <!-- LEFT PANEL -->
-    <aside class="col-md-3 col-lg-2 sidebar p-0" id="sidebar-placeholder">
-      <!-- Sidebar will be loaded here -->
+    <!-- LEFT SIDEBAR - fixed ID to match fetch script -->
+    <aside class="col-md-3 col-lg-2 p-0" id="sidebar-container">
+      <!-- Sidebar content will be loaded here from sidebar.html -->
     </aside>
 
     <!-- MAIN CONTENT -->
     <main class="col-md-9 col-lg-10 p-4">
 
       <!-- ===== Welcome Card ===== -->
-    <div class="card welcome mb-4">
-      <h2>USER MANUALS</h2>
-      <h6></h6>
-    </div>
+      <div class="card welcome mb-4">
+        <h2>USER MANUALS</h2>
+        <h6></h6>
+      </div>
 
-    <!-- ===== Main Cards ===== -->
-    <div class="main-cards">
-      <div class="card surveillance">
-        <div class="text-center">
-        <iframe
-          src="https://www.youtube.com/embed/6xeVdkfaPtA?si=uSJaNifUnMbFrAjM" 
-          title="YouTube video player" 
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-          referrerpolicy="strict-origin-when-cross-origin" 
-          allowfullscreen></iframe>
+      <!-- ===== Main Cards ===== -->
+      <div class="main-cards">
+        <div class="card surveillance">
+          <div class="text-center">
+            <iframe
+              src="https://www.youtube.com/embed/6xeVdkfaPtA?si=uSJaNifUnMbFrAjM" 
+              title="YouTube video player" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              referrerpolicy="strict-origin-when-cross-origin" 
+              allowfullscreen></iframe>
+          </div>
+        </div>
+        
+        <div class="card surveillance">
+          <div class="text-center">
+            <iframe
+              src="https://www.youtube.com/embed/k7ZSHxljMXk?si=BKLWH6rvQKwIDK-i" 
+              title="YouTube video player" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              referrerpolicy="strict-origin-when-cross-origin" 
+              allowfullscreen></iframe>
+          </div>
         </div>
       </div>
-      
-      <div class="card surveillance">
-        <div class="text-center">
-         <iframe
-          src="https://www.youtube.com/embed/k7ZSHxljMXk?si=BKLWH6rvQKwIDK-i" 
-          title="YouTube video player" 
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-          referrerpolicy="strict-origin-when-cross-origin" 
-          allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
     </main>
   </div>
 </div>
@@ -85,49 +83,43 @@
     .then(res => res.text())
     .then(data => document.getElementById("footer").innerHTML = data);
 </script>
-<!-- Load Sidebar -->
+
+<!-- Load Sidebar – now matches the ID -->
 <script>
   fetch("sidebar.html")
     .then(res => res.text())
-    .then(data => document.getElementById("sidebar-container").innerHTML = data);
+    .then(data => {
+      document.getElementById("sidebar-container").innerHTML = data;
+    })
+    .catch(err => console.error("Failed to load sidebar:", err));
 </script>
-<style>
-  .card iframe{
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  height: auto;
-  border: 0;
-}
-</style>
-<script src="assets/js/wizard-form.js">
 
-</script>
+<style>
+  .card iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    border: 0;
+  }
+</style>
+
+<script src="assets/js/wizard-form.js"></script>
+
 <!-- Improved Sidebar Sign Out (waits for sidebar to load) -->
 <script>
-  // Run this after everything loads, including fetch
   window.addEventListener('load', function() {
-    // Give fetch a little time to complete (0.5–1 second delay)
     setTimeout(() => {
       const sidebarSignOut = document.getElementById('sidebarSignOut');
-      const loginOverlay = document.getElementById('loginOverlay');
-      const dashboardContent = document.getElementById('dashboardContent');
-
-      console.log("Looking for sidebarSignOut:", sidebarSignOut); // Debug
 
       if (sidebarSignOut) {
         sidebarSignOut.addEventListener('click', function(e) {
           e.preventDefault();
-          console.log("Sidebar Sign Out clicked!");
-
-          loginOverlay.style.display = 'flex';               // Show login
-          dashboardContent.classList.add('d-none');          // Hide dashboard
-          localStorage.removeItem('mycprc_loggedIn');        // Clear state
-          document.getElementById('loginForm')?.reset();     // Reset form
+          window.location.href = 'https://login-b73cc.web.app';
         });
       } else {
-        console.log("sidebarSignOut ID NOT FOUND — check sidebar.html");
+        console.log("sidebarSignOut not found – make sure sidebar loaded");
       }
-    }, 800); // 800ms delay — adjust to 1500 if still not found
+    }, 800);
   });
 </script>
 

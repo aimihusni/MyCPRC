@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>MyReHF</title>
+  <title>SARI Surveillance</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Bootstrap CSS -->
@@ -33,10 +33,10 @@
     <main class="col-md-9 col-lg-10 px-4 py-4">
 
       <div class="d-flex justify-content-between align-items-center mb-4">
-        <h4 class="mb-0">Dashboard Malaysia Resilient Healthcare Facilities (MyReHF)</h4>
+        <h4 class="mb-0">Dashboard</h4>
 
         <!-- BUTTON ISI FORM -->
-        <a href="myrehf_form.html" class="btn btn-primary">
+        <a href="#" class="btn btn-primary">
           <i class="bi bi-plus-circle me-1"></i> Isi Borang Baharu
         </a>
       </div>
@@ -83,7 +83,7 @@
             <thead class="table-light">
               <tr>
                 <th>Tarikh</th>
-                <th>Hospital</th>
+                <th>Borang</th>
                 <th>Status</th>
                 <th class="text-end">Tindakan</th>
               </tr>
@@ -91,7 +91,7 @@
             <tbody>
               <tr>
                 <td>12/01/2026</td>
-                <td>Hospital Putrajaya</td>
+                <td>Borang A</td>
                 <td><span class="badge bg-success">Submitted</span></td>
                 <td class="text-end">
                   <button class="btn btn-sm btn-outline-primary">View</button>
@@ -99,7 +99,7 @@
               </tr>
               <tr>
                 <td>10/01/2026</td>
-                <td>Hospital Cyberjaya</td>
+                <td>Borang A</td>
                 <td><span class="badge bg-warning text-dark">Draft</span></td>
                 <td class="text-end">
                   <button class="btn btn-sm btn-outline-secondary">Edit</button>
@@ -131,6 +131,8 @@
     .then(res => res.text())
     .then(data => document.getElementById("footer").innerHTML = data);
 </script>
+
 <script src="assets/js/wizard-form.js"></script>
+
 </body>
 </html>

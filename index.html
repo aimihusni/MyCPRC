@@ -1,17 +1,26 @@
 <script>
-  // Check if coming from your login domain
-  const referrer = document.referrer;
-  const allowedOrigin = 'https://login-b73cc.web.app';
+  // Run ONLY on dashboard pages – force login first
+  (function() {
+    const loginUrl = 'https://login-b73cc.web.app';
+    const currentUrl = window.location.href;
 
-  if (!referrer || !referrer.startsWith(allowedOrigin)) {
-    // Not coming from login → force redirect to login
-    window.location.replace('https://login-b73cc.web.app');
-  }
+    // Skip if already on login page
+    if (currentUrl.startsWith(loginUrl)) {
+      return; // Do NOT redirect
+    }
 
-  // Optional: also check localStorage token from login
-  if (!localStorage.getItem('mycprc_loggedIn')) {
-    window.location.replace('https://login-b73cc.web.app');
-  }
+    // Check if coming from login (via referrer or token)
+    const referrer = document.referrer;
+    const isFromLogin = referrer && referrer.startsWith(loginUrl);
+
+    // Optional: also check a flag you set after successful login
+    const isLoggedIn = localStorage.getItem('mycprc_loggedIn') === 'true';
+
+    if (!isFromLogin && !isLoggedIn) {
+      // Not coming from login and no token → force redirect to login
+      window.location.replace(loginUrl + '?redirect=' + encodeURIComponent(currentUrl));
+    }
+  })();
 </script>
 <!DOCTYPE html>
 <html lang="en">

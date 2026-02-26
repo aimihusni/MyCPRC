@@ -1,3 +1,18 @@
+<script>
+  // Check if coming from your login domain
+  const referrer = document.referrer;
+  const allowedOrigin = 'https://login-b73cc.web.app';
+
+  if (!referrer || !referrer.startsWith(allowedOrigin)) {
+    // Not coming from login → force redirect to login
+    window.location.replace('https://login-b73cc.web.app');
+  }
+
+  // Optional: also check localStorage token from login
+  if (!localStorage.getItem('mycprc_loggedIn')) {
+    window.location.replace('https://login-b73cc.web.app');
+  }
+</script>
 <!DOCTYPE html>
 <html lang="en">
 <head>

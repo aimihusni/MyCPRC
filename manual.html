@@ -1,3 +1,28 @@
+<script>
+  // Run ONLY on dashboard/protected pages – force login first
+  (function() {
+    const loginUrl = 'https://login-b73cc.web.app';
+    const currentUrl = window.location.href;
+
+    // Skip if already on login page (prevents redirect loop)
+    if (currentUrl.startsWith(loginUrl)) {
+      return; // Do NOT redirect
+    }
+
+    // Check if coming from login (via referrer)
+    const referrer = document.referrer;
+    const isFromLogin = referrer && referrer.startsWith(loginUrl);
+
+    // Check if user has "logged in" flag from successful login
+    const isLoggedIn = localStorage.getItem('mycprc_loggedIn') === 'true';
+
+    // If not from login AND no flag → force redirect to login
+    if (!isFromLogin && !isLoggedIn) {
+      // Add original URL so login can redirect back after success
+      window.location.replace(loginUrl + '?redirect=' + encodeURIComponent(currentUrl));
+    }
+  })();
+</script>
 <!DOCTYPE html>
 <html lang="en">
 <head>

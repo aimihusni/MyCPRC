@@ -127,10 +127,11 @@
             </div>
 
             <div class="mb-3">
-                <label class="form-label">Alamat Penuh</label>
-                <textarea id="alamatFasiliti" class="form-control" rows="2" placeholder="Contoh: Hospital Putrajaya, Pusat Pentadbiran Kerajaan Persekutuan, Presint 7, 62250 Putrajaya"></textarea>
+                <div class="col-md-6">
+                    <label class="form-label">Alamat Penuh</label>
+                    <textarea id="alamatFasiliti" class="form-control" rows="2" placeholder="Contoh: Hospital Putrajaya, Pusat Pentadbiran Kerajaan Persekutuan, Presint 7, 62250 Putrajaya"></textarea>
+                </div>
             </div>
-
             <button type="button" class="btn btn-outline-primary btn-sm mb-3" id="lokasiFasiliti">Cari Lokasi Berdasarkan Alamat</button>
 
             <div id="map_fasiliti" style="height:350px;"></div>
@@ -146,108 +147,2901 @@
             </div>
         </div>
         
-        <!-- ================= STEP 2 ================= -->
+        <!-- ================= STEP 2 : EMERGENCY MANAGEMENT ================= -->
         <div class="wizard-step">
             <h5 class="mb-3">SECTION A : EMERGENCY MANAGEMENT</h5>
             
-            <div class="row g-3">
-                <div class="col-md-6">
-                    <label class="form-label required">A1.1 Does the healthcare facility have designated representatives from the health workforce actively engaged with community disaster planning committees to strengthen risk reduction and post-disaster recovery through adaptation efforts?</label>
-                    <select id="a1_1" name="a1_1" class="form-select" required>
-                        <option value="">-- Please select one --</option>
-                        <option value="0">The healthcare facility has no designated representative participating in any community disaster planning committee.</option>
-                        <option value="1">The healthcare facility has a designated representative, and participates occasionally in a community disaster planning committee with limited cross-sectoral involvement.</option>
-                        <option value="2">The healthcare facility has an actively participating representative in a community disaster planning committee with broad cross-sectoral representation.</option>
-                    </select>
+            <div class="row">
+                <div class="mb-3">
+                <label class="form-label required">1. Have the major internal and external risks that could severely disrupt health facility operations been identified and described through a 5x5 risk matrix (within the last 1-year)</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em1" id="em1_0" value="0" required>
+                <label class="form-check-label" for="em1_0">No</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em1" id="em1_1" value="1" required>
+                <label class="form-check-label" for="em1_1">Somewhat</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em1" id="em1_2" value="2" required>
+                <label class="form-check-label" for="em1_2">Yes</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">2. Does the health facility monitor, receive, and act upon alerts and early warnings related to changing external environmental conditions (e.g., air quality, extreme weather events, volcano)?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em2" id="em2_0" value="0" required>
+                <label class="form-check-label" for="em2_0">No, do not receive, monitor or act on alerts or early warnings</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em2" id="em2_1" value="1" required>
+                <label class="form-check-label" for="em2_1">Somewhat functional but gaps remain for the HF receive, monitor and act upon early warnings</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em2" id="em2_2" value="2" required>
+                <label class="form-check-label" for="em2_2">Yes, the health facility is well-linked and coordinated with the early warning mechanisms in-country to act upon alerts/warnings</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">3. Does the health facility have procedures and tools to assess and report,damage and monitor disruption to health services due to emergencies?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em3" id="em3_0" value="0" required>
+                <label class="form-check-label" for="em3_0">Procedures to assess damage, report, and monitor do not exist or exist only as a document</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em3" id="em3_1" value="1" required>
+                <label class="form-check-label" for="em3_1">Procedures/tools to assess damage and monitor disruption exist, personnel have been trained, but procedures have not updated or practised.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em3" id="em3_2" value="2" required>
+                <label class="form-check-label" for="em3_2">Procedures/tools to assess damage and monitor disruption exist, personnel have been trained, and procedures are updated and have been practised.</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">4. Are designated staff well-trained and ready to assess and report damage and/or disruption of health service operations in the event of an emergency</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em4" id="em4_0" value="0" required>
+                <label class="form-check-label" for="em4_0">No, not at all</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em4" id="em4_1" value="1" required>
+                <label class="form-check-label" for="em4_1">Staff can support assessments with support from province or national level</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em4" id="em4_2" value="2" required>
+                <label class="form-check-label" for="em4_2">Staff are ready to assess without needing support from province or national level</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">5. Does the health facility have a mechanism to alert staff to potential risks, including relevant external alerts (e.g. severe weather, environmental warnings) and provide clear safety guidance on appropriate protective actions during an emergencies?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em5" id="em5_0" value="0" required>
+                <label class="form-check-label" for="em5_0">No clear system or mechanism in place</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em5" id="em5_1" value="1" required>
+                <label class="form-check-label" for="em5_1">Mechanism exists but not consistently functioning</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em5" id="em5_2" value="2" required>
+                <label class="form-check-label" for="em5_2">Internal staff communication mechanism in place and well-functioning</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">6. Is there a cybersecurity system and plan in place to protect the health facility and its assets (e.g. patient records, telecommunications, data, cloud storage)</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em6" id="em6_0" value="0" required>
+                <label class="form-check-label" for="em6_0">The health facility does not have a computer security system plan and procedures in place;</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em6" id="em6_1" value="1" required>
+                <label class="form-check-label" for="em6_1">The health facility has a basic cyber security plan in place but it is not monitored</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em6" id="em6_2" value="2" required>
+                <label class="form-check-label" for="em6_2">The health facility has a cyber security plan in place and it is updated regularly.</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">7. Does the health facility have an established and well-functioning health facility incident management system (or equivalent) and emergency operations centre [EOC] (or equivalent) to manage any major emergency or disaster responses, including coordination with stakeholders and local authorities (e.g. police, NDMO, fire, search and rescue)?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em7" id="em7_0" value="0" required>
+                <label class="form-check-label" for="em7_0">No arrangements for health facility incident management
+                exist or EOC</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em7" id="em7_1" value="1" required>
+                <label class="form-check-label" for="em7_1">Staff assigned to key health facility incident management
+                positions for emergencies but with no written procedures to operationalize its functions or convene through the EOC</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em7" id="em7_2" value="2" required>
+                <label class="form-check-label" for="em7_2">health facility incident management procedures exist and are fully
+                operational with properly trained personnel to assume different coordination roles and responsibilities through a coordinated EOC (or equivalent)</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">8. Is the health facility emergency response plan linked to the overall local (whole-of-government) emergency response plan?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em8" id="em8_0" value="0" required>
+                <label class="form-check-label" for="em8_0">The plans are not linked or there is no documentation that demonstrates linkage;</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em8" id="em8_1" value="1" required>
+                <label class="form-check-label" for="em8_1">Plans are linked officially but not operational;</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em8" id="em8_2" value="2" required>
+                <label class="form-check-label" for="em8_2">Plans are well-linked and operational.</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">9. Does the health facility have direct communication and coordination mechanisms with water providers to support continuity of, and safety of, water supply, including during emergencies?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em9" id="em9_0" value="0" required>
+                <label class="form-check-label" for="em9_0">No direct or formal communication or coordination with water providers</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em9" id="em9_1" value="1" required>
+                <label class="form-check-label" for="em9_1">Some communication exists, but it is informal or irregular. Coordination may occur during supply issues but is not proactive.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em9" id="em9_2" value="2" required>
+                <label class="form-check-label" for="em9_2">Regular and scheduled communication with service providers with established and documented  response plan is operational to supportwater continuity and safety at all times, including during emergencies</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">10. Does the health facility have a community listening mechanism set-up  and functioning  to facilitate two-way communication during both emergency and non-emergency situations?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em10" id="em10_0" value="0" required>
+                <label class="form-check-label" for="em10_0">None in place</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em10" id="em10_1" value="1" required>
+                <label class="form-check-label" for="em10_1">The community listening exists but information is not yet used to inform decisions</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em10" id="em10_2" value="2" required>
+                <label class="form-check-label" for="em10_2">Yes, the mechanism is in place, fully functional and results are used to inform decision making in emergency and non-emergency situations</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">11. Does the health facility have the ability in collaboration with local health authorities to communicate risks to the right people, fast, in a way they trust and can act on?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em11" id="em11_0" value="0" required>
+                <label class="form-check-label" for="em11_0">None are available</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em11" id="em11_1" value="1" required>
+                <label class="form-check-label" for="em11_1">Some ability to communicate but system needs strengthening to be more effective</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em11" id="em11_2" value="2" required>
+                <label class="form-check-label" for="em11_2">Strong mechanism to communicate risks effectively</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">12. Is the health facility's Emergency and Disaster Response Plan OR its SOPs up to date, operational and known by personnel</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em12" id="em12_0" value="0" required>
+                <label class="form-check-label" for="em12_0">The plan does not exist or a document is not available;</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em12" id="em12_1" value="1" required>
+                <label class="form-check-label" for="em12_1">The plan exists but it is not updated within the last two years, and/or it has not been distributed, and/or it has not been used in simulation exercises;</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em12" id="em12_2" value="2" required>
+                <label class="form-check-label" for="em12_2">The plan exists, it is operational, it is updated (within the last two years), it has been distributed, and it has been used in simulation exercises.</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">13. Based on the risk profile, does the health facility have SOPs, clinical management guidelines and other contingency plans to manage all identified major emergency risks (e.g. high-impact/high likelihood and high-impact/low likelihood)</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em13" id="em13_0" value="0" required>
+                <label class="form-check-label" for="em13_0">Plan/SOPs do not address managing likely internal or external emergencies</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em13" id="em13_1" value="1" required>
+                <label class="form-check-label" for="em13_1">The plan/SOPs only address some of the major emergency risks that could disrupt health facility operations (based on risk matrix)</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em13" id="em13_2" value="2" required>
+                <label class="form-check-label" for="em13_2">The plan/SOPs address all major emergency risks that could disrupt health facility operations (based on risk matrix)</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">14. Verify that the plan indicates the type of signal as well as how, when and who is responsible for activating and deactivating the plan.</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em14" id="em14_0" value="0" required>
+                <label class="form-check-label" for="em14_0">Procedures are not addressed or are addressed only in the document;</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em14" id="em14_1" value="1" required>
+                <label class="form-check-label" for="em14_1">Procedures are included in the plan, but personnel are not familiar;</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em14" id="em14_2" value="2" required>
+                <label class="form-check-label" for="em14_2">Procedures are included and personnel are familiar with them.</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">15. Does the health facility have funds specifically budgeted for emergencies, with allocations available for both preparedness and response activities?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em15" id="em15_0" value="0" required>
+                <label class="form-check-label" for="em15_0">Funds have not been allocated or there is no documentation showing budget</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em15" id="em15_1" value="1" required>
+                <label class="form-check-label" for="em15_1">Budget exists but only guarantees for disaster and emergency preparedness activities or only for disaster and emergency response activities;</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em15" id="em15_2" value="2" required>
+                <label class="form-check-label" for="em15_2">Funds allocated for both disaster and emergency preparedness and response activities.</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">16. Does the health facility’s plan specify actions to ensure continuity of essential health services and service delivery during an emergency or disaster (including WASH, energy, staff, and supplies)</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em16" id="em16_0" value="0" required>
+                <label class="form-check-label" for="em16_0">Actions are not included or are addressed only in document</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em16" id="em16_1" value="1" required>
+                <label class="form-check-label" for="em16_1">Actions are included, but resources are not available;</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em16" id="em16_2" value="2" required>
+                <label class="form-check-label" for="em16_2">Actions are included, resources available and have been completely implemented.</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">17. Does the health facility have staffing procedures to ensure continuity of operations during emergencies and disasters occurring at nights, weekends, or holidays, consistent with its role in the health system?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em17" id="em17_0" value="0" required>
+                <label class="form-check-label" for="em17_0">Procedures do not exist or there is no documentation on the procedures;</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em17" id="em17_1" value="1" required>
+                <label class="form-check-label" for="em17_1">Procedures exist, but personnel have not been trained;</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em17" id="em17_2" value="2" required>
+                <label class="form-check-label" for="em17_2">Procedures exist and personnel trained.</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">18. Does the plan identifies physical space that can be equipped and expanded to provide health services?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em18" id="em18_0" value="0" required>
+                <label class="form-check-label" for="em18_0">Space for expansion has not been identified or there is no documentation regarding expansion;</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em18" id="em18_1" value="1" required>
+                <label class="form-check-label" for="em18_1">Areas for expansion have been identified and personnel have been trained to undertake the expansion, but there are no resources for expansion;</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em18" id="em18_2" value="2" required>
+                <label class="form-check-label" for="em18_2">Procedures exists, personnel have been trained and resources are in place to carry out expansion of space.</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">19. Are there SOPs in place and tested for evacuating occupants of the health facility including special considerations for people with vulnerabilities (people with disabilities, critical patients, older adults, children)</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em19" id="em19_0" value="0" required>
+                <label class="form-check-label" for="em19_0">Procedures do not exist or there is no documentation on the procedures;</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em19" id="em19_1" value="1" required>
+                <label class="form-check-label" for="em19_1">Procedures exist but may not be comprehensive to include special considerations for vulnerable people; some staff trained on how to manage evacuations but gaps remain</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em19" id="em19_2" value="2" required>
+                <label class="form-check-label" for="em19_2">Procedures exist with special consideration for people with vulnerabilities and personnel trained, and evacuation routes are clearly marked and unobstructed</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">20. Designated spokesperson(s)
+                Is there a designated person (and back-up focal point) who is responsible for communication with the public and the media in the event of an emergency</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em20" id="em20_0" value="0" required>
+                <label class="form-check-label" for="em20_0">Procedures do not exist or there is no documentation on the procedures;</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em20" id="em20_1" value="1" required>
+                <label class="form-check-label" for="em20_1">Procedures exist, but personnel have not been trained;</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em20" id="em20_2" value="2" required>
+                <label class="form-check-label" for="em20_2">Procedures exist with trained personnel identified</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">21. Does the facility have documented procedures and resources for regular maintenance and emergency restoration of standard and alternate communication systems?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em21" id="em21_0" value="0" required>
+                <label class="form-check-label" for="em21_0">Documented procedures and maintenance/ inspection records do not exist;</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em21" id="em21_1" value="1" required>
+                <label class="form-check-label" for="em21_1">Documented procedures exist, maintenance/inspection records are up to date, personnel have been trained, but resources are not available;</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em21" id="em21_2" value="2" required>
+                <label class="form-check-label" for="em21_2">Documented procedures exist, maintenance/inspection records are up to date, personnel have been trained, and resources are in place for implementing regular maintenance and emergency restoration.</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">22. Does the health facility have emergency security procedures and measures to address range of security/violent threats to workforce, patients and the facility, including prevention protocols, incident reporting and protections to vulnerable staff</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em22" id="em22_0" value="0" required>
+                <label class="form-check-label" for="em22_0">Procedures and measures do not exist or there is no documentation on the procedures;</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em22" id="em22_1" value="1" required>
+                <label class="form-check-label" for="em22_1">Some measures or procedures to address security risks (e.g. basic security presence or procedures) but are limited in scope or not systematically applied</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em22" id="em22_2" value="2" required>
+                <label class="form-check-label" for="em22_2">Procedures are documented, well coordinated with security personnel or relevant authorities, and workers have been trained in the process, including incident reporting and prevention.</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">23. Does the response plan includes actions to address the specific needs of persons with disabilities, older adults and other vulnerable populations during an emergency?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em23" id="em23_0" value="0" required>
+                <label class="form-check-label" for="em23_0">Procedures do not exist or there is no documentation on the procedures;</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em23" id="em23_1" value="1" required>
+                <label class="form-check-label" for="em23_1">Procedures exist, but are not applied</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em23" id="em23_2" value="2" required>
+                <label class="form-check-label" for="em23_2">Procedures are documented and personnel have been trained in the process.</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">24. Are simulation exercises and drills are conducted during the year to test the emergency response plan OR procedures?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em24" id="em24_0" value="0" required>
+                <label class="form-check-label" for="em24_0">Simulation exercises or drills testing the emergency response plans or procedures have taken place in the last year</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em24" id="em24_1" value="1" required>
+                <label class="form-check-label" for="em24_1">Simulation exercises and drills have been carried out in the last year, but not part of the health facility's Emergency and Disaster Response Plan/SOPs;</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em24" id="em24_2" value="2" required>
+                <label class="form-check-label" for="em24_2">Simulation exercises and drills have been carried out in the last year and the health facility Emergency and Disaster Response Plan/SOPs have been updated according to the outcome of these exercises.</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">25. Are there procedures for documenting lessons learned from emergency response (e.g. post-incident reporting, after-action review) and integrating learnings into updating health facility response protocols?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em25" id="em25_0" value="0" required>
+                <label class="form-check-label" for="em25_0">There are no procedures in place</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em25" id="em25_1" value="1" required>
+                <label class="form-check-label" for="em25_1">There are written procedures in place but staff are not ready to apply</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em25" id="em25_2" value="2" required>
+                <label class="form-check-label" for="em25_2">Procedures are in place to review, staff are ready to document lessons learned, and apply the lessons to future emergency response</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">26. Does the health facility have a recovery plan (including consideration for 'build back better')?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em26" id="em26_0" value="0" required>
+                <label class="form-check-label" for="em26_0">Recovery plan is not documented.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em26" id="em26_1" value="1" required>
+                <label class="form-check-label" for="em26_1">Documented plan is complete, but not easily accessible, not up-to-date (more than 12 months since last review/update).</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em26" id="em26_2" value="2" required>
+                <label class="form-check-label" for="em26_2">Documented plan is complete, easily accessible, and reviewed/updated at least annually.</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">27. Does the healthcare facility have critical support services  (e.g. radiology, imaging, laboratory, pharmacy, sterilization services, radiotherapy) and operating theatres that are safely located and protected from local hazards during emergency events?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em27" id="em27_0" value="0" required>
+                <label class="form-check-label" for="em27_0">Critical services and operating theatres are located in high-risk areas with no protective measures in place during emergency events.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em27" id="em27_1" value="1" required>
+                <label class="form-check-label" for="em27_1">Critical services and operating theatres are located in high-risk areas with sufficient protective measures in place during emergency events</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em27" id="em27_2" value="2" required>
+                <label class="form-check-label" for="em27_2">Critical services and operating theatres are located in low-risk areas with all protective measures in place during emergency events.</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">29. Does the health care facility have a plan for relocating and protecting facility assets (medical devices, medicines, mobile equipment and other supplies)  that may be damaged during an emergency event?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em28" id="em28_0" value="0" required>
+                <label class="form-check-label" for="em28_0">Procedures do not exist</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em28" id="em28_1" value="1" required>
+                <label class="form-check-label" for="em28_1">Procedures exist but they have not been tested for emergency and disaster situations.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em28" id="em28_2" value="2" required>
+                <label class="form-check-label" for="em28_2">Procedures exist, resources are available and they have been tested for emergency and disaster situations.</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">29. Does the health facility have protocols and trained staff for managing mass casualty incidents, including triage and surge of emergency care?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em29" id="em29_0" value="0" required>
+                <label class="form-check-label" for="em29_0">No protocols or training are in place for managing mass casualty incidents.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em29" id="em29_1" value="1" required>
+                <label class="form-check-label" for="em29_1">Protocols for mass casualty management exist, but staff training or surge capacity arrangements are limited or not regularly implemented.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="em29" id="em29_2" value="2" required>
+                <label class="form-check-label" for="em29_2">Comprehensive protocols and regularly trained staff are in place for managing mass casualty incidents, including triage procedures and surge of emergency care.</label>
+                </div>
+
                 </div>
             </div>   
         </div>
             
-        <!-- ================= STEP 3 ================= -->
+        <!-- ================= STEP 3 : HEALTH WORKFORCE RESILIENCE AND WELLBEING ================= -->
         <div class="wizard-step">
             <h5 class="mb-3">SECTION B : HEALTH WORKFORCE RESILIENCE AND WELLBEING</h5>
 
             <div class="row g-3">
-                <div class="col-md-6">
-                    <label class="form-label required">B1.1 Does the healthcare facility have a drinking-water and/or food contigency plan during emergencies?</label>
-                    <select id="b2_2" name="b2_2" class="form-select" required>
-                        <option value="">-- Please select one --</option>
-                        <option value="0">Contingency plan for water and/or food for emergencies are non-existent.</option>
-                        <option value="1">Contingency plan exist, food and/or drinking-water is guaranteed for less than 72 hours.</option>
-                        <option value="2">Food and/or drinking-water for emergencies is guaranteed for at least 72 hours.</option>
-                    </select>
+                <div class="mb-3">
+                <label class="form-label required">1. Is there an updated directory (every quarter) with contact information for staff, authorities and key emergency support services  needed in an emergency?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he1" id="he1_0" value="0" required>
+                <label class="form-check-label" for="he1_0">Directory does not exist or it is not available for inspection;</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he1" id="he1_1" value="1" required>
+                <label class="form-check-label" for="he1_1">Directory exists but it is not updated, hospital leaders are nor aware of it, or it only contains contact information for hospital staff;</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he1" id="he1_2" value="2" required>
+                <label class="form-check-label" for="he1_2">Directory of internal and external authorities exists, it is updated (within the last 3 months) and emergency managers are familiar with it</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">2. Are emergency and disaster response duties—including continuity of essential health services—assigned, documented, and communicated to responsible personnel?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he2" id="he2_0" value="0" required>
+                <label class="form-check-label" for="he2_0">Duties Not assigned, documented or communicated</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he2" id="he2_1" value="1" required>
+                <label class="form-check-label" for="he2_1">Duties assigned but not documented or well-communicated</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he2" id="he2_2" value="2" required>
+                <label class="form-check-label" for="he2_2">Duties assigned, communicated, and documented</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">3. Have the training and learning priorities been developed for all staff (medical, para-medical, non-medical eg WASH) based on major risks?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he3" id="he3_0" value="0" required>
+                <label class="form-check-label" for="he3_0">No, there are no training priorities identified related to emergency readiness or climate resilience</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he3" id="he3_1" value="1" required>
+                <label class="form-check-label" for="he3_1">Training priorities have been identified but there is not a comprehensive plan is in place to address gaps within the health facility staff</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he3" id="he3_2" value="2" required>
+                <label class="form-check-label" for="he3_2">Fully, a comprehensive training and capacity building schedule for the facility's workforce (including medical, paramedical and non-medical staff)  has been developed and funded, aligned with likely emergency and disaster scenarios and building climate resilience</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">4. Is there a learning/capacity building/training programme in place to prepare the clinical workforce to be ready to respond to likely emergencies, including climate related health risks</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he4" id="he4_0" value="0" required>
+                <label class="form-check-label" for="he4_0">There is no such learning or capacity building programme in place for medical staff</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he4" id="he4_1" value="1" required>
+                <label class="form-check-label" for="he4_1">Training competencies and learning programme is  in place to manage routine roles, emergencies and build climate resilience but gaps remain</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he4" id="he4_2" value="2" required>
+                <label class="form-check-label" for="he4_2">There is a comprehensive (informed by seasonal calendar) training programme in place to ensure workforce readiness to manage emergency and disaster risks and build climate resilience</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">5. Is there a learning/capacity building/training programme in place for critical non-medical competences needed in emergencies (e.g. waste management during outbreaks, lab specimen collection, generator operation during power outages)</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he5" id="he5_0" value="0" required>
+                <label class="form-check-label" for="he5_0">There is no such learning or capacity building programme in place for non-medical staff</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he5" id="he5_1" value="1" required>
+                <label class="form-check-label" for="he5_1">Training competencies and learning programme is  in place to manage routine roles, emergencies and build climate resilience but gaps remain</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he5" id="he5_2" value="2" required>
+                <label class="form-check-label" for="he5_2">There is a comprehensive (informed by seasonal calendar) training programme in place to ensure workforce routine competency, readiness to manage emergency and disaster risks and build climate resilience</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">6. Is the hospital/facility connected to or coordinated with a national, regional or network-based mechanism for mobilizing surge workforce before or during emergencies ?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he6" id="he6_0" value="0" required>
+                <label class="form-check-label" for="he6_0">Not coordinated or integrated into any central surge mechanism system</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he6" id="he6_1" value="1" required>
+                <label class="form-check-label" for="he6_1">Coordinated and partially integrated into a surge workforce mechanism</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he6" id="he6_2" value="2" required>
+                <label class="form-check-label" for="he6_2">Fully integrated into a coordinated surge workforce system</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">7. Are there technical and administrative procedures, resources, and orientation processes in place to assign duties to additional medical and non-medical workforce during emergencies?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he7" id="he7_0" value="0" required>
+                <label class="form-check-label" for="he7_0">Procedures do not exist, roles are assigned ad-hoc with limited guidance OR minimal training to support mobilized personnel</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he7" id="he7_1" value="1" required>
+                <label class="form-check-label" for="he7_1">Basic procedures are in place; staff have received some orientation but role assignments may vary per department</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he7" id="he7_2" value="2" required>
+                <label class="form-check-label" for="he7_2">Functions are assigned, staff are well- trained and there are comprehensive technical and administrative procedures in place.</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">8. Does the health care facility have a plan or SOPs for arranging/recruiting extra staffing for emergency situations (including volunteers, students, retirees, military) with special provisions for administrative requirements (licensing, insurance, temporary credentialing, contracting and liability)?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he8" id="he8_0" value="0" required>
+                <label class="form-check-label" for="he8_0">Documented procedures do not exist OR exist on paper only</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he8" id="he8_1" value="1" required>
+                <label class="form-check-label" for="he8_1">The facility has some informal arrangements or procedures but it is not comprehensive or regularly updated</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he8" id="he8_2" value="2" required>
+                <label class="form-check-label" for="he8_2">Well-defined and documented SOPs and agreements for mobilizing extra staff with clear roles and responsibilities and administrative requirements</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">9. Does the health facility have SOPs or policies on how to integrate surge support (neighboring provinces, national OR international) to respond to an emergency within the facility</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he9" id="he9_0" value="0" required>
+                <label class="form-check-label" for="he9_0">Documented procedures do not exist OR exist on paper only</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he9" id="he9_1" value="1" required>
+                <label class="form-check-label" for="he9_1">The facility has some informal arrangements or procedures but it is not comprehensive or regularly updated</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he9" id="he9_2" value="2" required>
+                <label class="form-check-label" for="he9_2">Well-defined and documented SOPs and agreements for mobilizing extra staff with clear roles and responsibilities</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">10. Are there occupational health and safety programs for health workforce during routine operations and emergency situations, inclusive of major components (e.g. risk assessment, incident reporting, periodic medical checks for high-risk staff, training in ergonomics, sharps safety, radiation safety)?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he10" id="he10_0" value="0" required>
+                <label class="form-check-label" for="he10_0">There are no formal occupational health and safety program for health facility workforce or only isolated measures implemented but not consistent</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he10" id="he10_1" value="1" required>
+                <label class="form-check-label" for="he10_1">There are occupational health and safety programs in place but only partially implemented during routine and emergency periods</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he10" id="he10_2" value="2" required>
+                <label class="form-check-label" for="he10_2">A structured occupational health and safety program is established, covering routine and emergency situations, with regular risk assessments, incident reporting, medical checks, and training across all relevant areas.</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">11. Does the health facility have clear guidance or procedures to alert staff about safety measures or alerts received (e.g. weather alerts, outbreak alerts, safety on premises, etc)?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he11" id="he11_0" value="0" required>
+                <label class="form-check-label" for="he11_0">No clear guidance or documents on safety measures</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he11" id="he11_1" value="1" required>
+                <label class="form-check-label" for="he11_1">Have clear guidance and documents but not disseminated</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he11" id="he11_2" value="2" required>
+                <label class="form-check-label" for="he11_2">There is clear guidance and documents communicated to all staff</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">12. Does the workforce safety programme have exposure protocols in place, documented and actively implemented?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he12" id="he12_0" value="0" required>
+                <label class="form-check-label" for="he12_0">No formal post-exposure protocols exist for workforce, or they are informal and not consistently applied.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he12" id="he12_1" value="1" required>
+                <label class="form-check-label" for="he12_1">Protocols are documented and partially implemented but not consistently applied during routine and emergency situations</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he12" id="he12_2" value="2" required>
+                <label class="form-check-label" for="he12_2">Exposure protocols are formally established, regularly reviewed, and consistently implemented across all relevant staff for both routine and emergency situations</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">13. Does the hospital have sufficient and appropriate PPE to protect staff from infectious hazards?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he13" id="he13_0" value="0" required>
+                <label class="form-check-label" for="he13_0">The hospital does not havesufficient PPE access (in-stock or access to a central stock)</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he13" id="he13_1" value="1" required>
+                <label class="form-check-label" for="he13_1">Equipment is available OR accessible through a central stock but there is only enough for regular, daily use;</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he13" id="he13_2" value="2" required>
+                <label class="form-check-label" for="he13_2">Hospital has sufficient equipment (access or in-stock) for use in an emergency or disaster.</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">14. Is training and monitoring in place to promote and monitor rational use of personal protective equipment (PPE) during outbreak scenarios?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he14" id="he14_0" value="0" required>
+                <label class="form-check-label" for="he14_0">Little or no training or monitoring is in place, rational PPE use is not promoted or enforced</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he14" id="he14_1" value="1" required>
+                <label class="form-check-label" for="he14_1">Training on PPE use is provided to some staff or conducted occasionally but monitoring or implementation is inconsistent</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he14" id="he14_2" value="2" required>
+                <label class="form-check-label" for="he14_2">The health facility has a comprehensive structured training program and consistent monitoring mechanisms in place among relevant staff</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">15. Are health facility staff vaccinated according to national immunization guidelines?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he15" id="he15_0" value="0" required>
+                <label class="form-check-label" for="he15_0">Few or no staff vaccinated, no systematic monitoring</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he15" id="he15_1" value="1" required>
+                <label class="form-check-label" for="he15_1">Partial vaccine coverage, records may be inconsistent</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he15" id="he15_2" value="2" required>
+                <label class="form-check-label" for="he15_2">All staff are vaccinated according to the national immunization policy, vaccine records are up to date and tracked in the health facility, and new staff are oriented to the national policy.</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">16. Does the health care facility have a clear guidance and visual aids to alert staff on safety measures</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he16" id="he16_0" value="0" required>
+                <label class="form-check-label" for="he16_0">No clear guidance or documents on safety measures</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he16" id="he16_1" value="1" required>
+                <label class="form-check-label" for="he16_1">Have clear guidance and documents but not disseminated fully</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he16" id="he16_2" value="2" required>
+                <label class="form-check-label" for="he16_2">There is clear guidance and documents communicated to all staff</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">17. Are arrangments in place to support health workers ability to report to duty during emergencies (e.g. transportation support or assistance related to family responsibilities)</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he17" id="he17_0" value="0" required>
+                <label class="form-check-label" for="he17_0">No arrangements are in place to support health workers’ ability to report to duty during emergencies.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he17" id="he17_1" value="1" required>
+                <label class="form-check-label" for="he17_1">Some arrangements exist to support health workers’ ability to report to duty during emergencies, but these are limited in scope or not systematically organized.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he17" id="he17_2" value="2" required>
+                <label class="form-check-label" for="he17_2">High:Comprehensive arrangements are in place to support health workers’ ability to report to duty during emergencies, including mechanisms to address transportation or family-related barriers.</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">18. Are mechanisms in place to support the mental health and psychosocial well-being of health workers and other affected personnel during emergencies, including early identification of distress and access to appropriate psychosocial support?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he18" id="he18_0" value="0" required>
+                <label class="form-check-label" for="he18_0">There is no psychosocial services available during emergency periods</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he18" id="he18_1" value="1" required>
+                <label class="form-check-label" for="he18_1">There are some psychosocial support services available for health facility personnel but do not meet full demand during emergency periods</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he18" id="he18_2" value="2" required>
+                <label class="form-check-label" for="he18_2">There are appropriate psychosocial services available that meet demand of health workers and affected personnel during emergency periods</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">19. Does the facility have sick leave options for healthcare personnel that encourage the reporting of potentially infectious exposures or illnesses, appropriate use of sick leave, and adherence to work restrictions?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he19" id="he19_0" value="0" required>
+                <label class="form-check-label" for="he19_0">The health facility has no specific or clear sick leave options in place for health care worker exposure or illness to potentially infectious pathogens.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he19" id="he19_1" value="1" required>
+                <label class="form-check-label" for="he19_1">The health facility has sick leave options in place but they do not specifically encourage reporting of potential infectious exposures or ilnesses  support adherence to work restricitions</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he19" id="he19_2" value="2" required>
+                <label class="form-check-label" for="he19_2">There are sick leave plans practised that support reporting of potentially infectious exposure or illness, support appropriate use of sick leave and supports adherence to work restrictions</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">20. Are arrangements in place to provide safe rest areas and adequate recovery time for health workers during prolonged emergency response?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he20" id="he20_0" value="0" required>
+                <label class="form-check-label" for="he20_0">No arrangements are in place to ensure safe rest areas or adequate recovery time for health workers during prolonged emergency response.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he20" id="he20_1" value="1" required>
+                <label class="form-check-label" for="he20_1">Some arrangements exist to provide rest areas or allow recovery time for health workers, but these are limited or not systematically organized.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he20" id="he20_2" value="2" required>
+                <label class="form-check-label" for="he20_2">Comprehensive arrangements are in place to ensure safe rest areas and adequate recovery time for health workers during prolonged emergency response.</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">21. Are healthcare personnel trained and tested annually on Chemical, Biological, Radiation Nuclear (CBRN) response and procedures?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he21" id="he21_0" value="0" required>
+                <label class="form-check-label" for="he21_0">Health workforce training and drills are not available</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he21" id="he21_1" value="1" required>
+                <label class="form-check-label" for="he21_1">Health workforce  training and drills are available but not conducted annually;</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he21" id="he21_2" value="2" required>
+                <label class="form-check-label" for="he21_2">Health workforce  are trained and tested at least annually.</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">22. Are health care staff appropriately trained in radiation protection and monitored by a dosimetry service?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he22" id="he22_0" value="0" required>
+                <label class="form-check-label" for="he22_0">Staff not trained or monitored</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he22" id="he22_1" value="1" required>
+                <label class="form-check-label" for="he22_1">Staff partially trained but not monitored</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he22" id="he22_2" value="2" required>
+                <label class="form-check-label" for="he22_2">Staff trained and monitored</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">23. Are health care staff trained to effectively communicate the benefits and risks of radiation exposure to patients?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he23" id="he23_0" value="0" required>
+                <label class="form-check-label" for="he23_0">Staff not trained.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he23" id="he23_1" value="1" required>
+                <label class="form-check-label" for="he23_1">Staff partially trained.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he23" id="he23_2" value="2" required>
+                <label class="form-check-label" for="he23_2">Staff fully trained.</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">24. Are health facility staff aware of and implementing national procedures and guidelines on rational use of radiological imaging?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he24" id="he24_0" value="0" required>
+                <label class="form-check-label" for="he24_0">Procedures and guidelines not established</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he24" id="he24_1" value="1" required>
+                <label class="form-check-label" for="he24_1">Procedures and guidelines known, but not sufficient or not fully implemented</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he24" id="he24_2" value="2" required>
+                <label class="form-check-label" for="he24_2">Procedures and guidelines known and implemented</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">25. Are health care staff trained to on chemical safety proceedures including accessing toxicology centres?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he25" id="he25_0" value="0" required>
+                <label class="form-check-label" for="he25_0">Staff not trained.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he25" id="he25_1" value="1" required>
+                <label class="form-check-label" for="he25_1">Staff partially trained.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he25" id="he25_2" value="2" required>
+                <label class="form-check-label" for="he25_2">Staff fully trained.</label>
+                </div>
+
                 </div>
             </div>    
         </div>
 
-        <!-- ================= STEP 4 ================= -->
+        <!-- ================= STEP 4 : HEALTH SERVICES ================= -->
         <div class="wizard-step">
             <h5 class="mb-3">SECTION C : HEALTH SERVICES</h5>
 
             <div class="row g-3">
-                <div class="col-md-6">
-                    <label class="form-label required">C1.1 Does the healthcare facility have a plan to transfer critical equipment and medical supplies to another health care facility or to a secure storage during emergency events?</label>
-                    <select id="c1_1" name="c1_1" class="form-select" required>
-                        <option value="">-- Please select one --</option>
-                        <option value="0">Policies and procedures do not exist.</option>
-                        <option value="1">Policies and procedures are available but have not been tested for emergency and disaster situations.</option>
-                        <option value="2">Procedures exist, resources are available and they have been tested for emergency and disaster situations.</option>
-                    </select>
+                <div class="mb-3">
+                <label class="form-label required">1a. Does the health care facility have protocols that define essential services that must be maintained during an emergency and plans and resources to maintain them?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he1" id="he1_0" value="0" required>
+                <label class="form-check-label" for="he1_0">Protocol does not exist or exists but facility does not have resources needed to maintain essential services.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he1" id="he1_1" value="1" required>
+                <label class="form-check-label" for="he1_1">Protocol exists and resources are available but has not been tested for emergency/disaster situations</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he1" id="he1_2" value="2" required>
+                <label class="form-check-label" for="he1_2">Protocols exists, resources are available, and have been tested for emergency/ disaster situations</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">1b. If yes to question 1a, which of the following services are inclued in the services to be maintained?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he2" id="he2_0" value="0" required>
+                <label class="form-check-label" for="he2_0">Primary care visits; family planning and contraception; resopnse to sexual violence; antenatal care; simple child birth;  immunizaiton services; NCD services (diagnosis and treatment); communicable disease services (diagnosis and treatment); MPHSS</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he2" id="he2_1" value="1" required>
+                <label class="form-check-label" for="he2_1">None</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he2" id="he2_2" value="2" required>
+                <label class="form-check-label" for="he2_2">None</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">1c. If yes to question 1a, do these protocols define the trigger points for when the health care facilty moves to only essential services (and when it moves back to full services)?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he3" id="he3_0" value="0" required>
+                <label class="form-check-label" for="he3_0">There are no defined trigger points in the protocol</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he3" id="he3_1" value="1" required>
+                <label class="form-check-label" for="he3_1">Trigger points are defined but have not been tested in emergency/disaster situations</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he3" id="he3_2" value="2" required>
+                <label class="form-check-label" for="he3_2">Trigger points are defined and have been tested for emergency/disaster situations</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">1d. If yes to question 1a, do these protocols define which staff (i.e., by proportion of staff time) can pivot to meet the new needs during an emergency, while the rest maintain the essential services?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he4" id="he4_0" value="0" required>
+                <label class="form-check-label" for="he4_0">The protocols do not include discussion of staffing for emergencies versus essential services</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he4" id="he4_1" value="1" required>
+                <label class="form-check-label" for="he4_1">The protocols include discussion of staffing for emergencies versus essential services but they have not been tested for emergency/disaster situations</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he4" id="he4_2" value="2" required>
+                <label class="form-check-label" for="he4_2">The protocols include discussion of staffing for emergencies versus essential services and have been tested for emergency/disaster situations</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">2. Does the health care facility have a continuity plan, supported by procedures, training and resources, for the continuity of essential clinical support services (e.g.,  sterilization,  laundry) during emergency events?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he5" id="he5_0" value="0" required>
+                <label class="form-check-label" for="he5_0">Plan and procedures do not exist</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he5" id="he5_1" value="1" required>
+                <label class="form-check-label" for="he5_1">Plan and procedures exist but they have not been tested for emergency and disaster situations.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he5" id="he5_2" value="2" required>
+                <label class="form-check-label" for="he5_2">Plan and procedures exist, resources are available and they have been tested for emergency and disaster situations.</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">3. Does the health care facility have a plan on continuity of operational processes, including providing services at other facilities, evacuation centres, engaging telemedicine or mobile teams in the local communities during emergency events?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he6" id="he6_0" value="0" required>
+                <label class="form-check-label" for="he6_0">Procedures do not exist</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he6" id="he6_1" value="1" required>
+                <label class="form-check-label" for="he6_1">Procedures exist but they have not been tested for emergency and disaster situations .</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he6" id="he6_2" value="2" required>
+                <label class="form-check-label" for="he6_2">Procedures exist, resources are available and they have been tested for emergency and disaster situations.</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">4. Does the health facility follow the appropriate SOPs on triage, resuscitation, stabilization and treatment, based on facility type and context?  have available, that staff has been trained, and that equipment and triage cards are available.</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he7" id="he7_0" value="0" required>
+                <label class="form-check-label" for="he7_0">SOPs and policies have been used to define procedures in the facilities</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he7" id="he7_1" value="1" required>
+                <label class="form-check-label" for="he7_1">SOPs and policies have been used to define procedures in the facilities, but there are no resources to implement the procedures (trained personnel, equipment and funding);</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he7" id="he7_2" value="2" required>
+                <label class="form-check-label" for="he7_2">SOPs and policies have been used to define procedures in the facilities, but there are no re and have been succesfully implemented.</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">5. Does the health care facility have a primary and alternative supply of medical gases (e.g. oxygen) to support operations during an emergency event and restoration after the emergency?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he8" id="he8_0" value="0" required>
+                <label class="form-check-label" for="he8_0">Supply covers less than 7 days maximum capacity during emergency event.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he8" id="he8_1" value="1" required>
+                <label class="form-check-label" for="he8_1">Supply covers between 7-14 days maximum capacity during emergency event.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he8" id="he8_2" value="2" required>
+                <label class="form-check-label" for="he8_2">Supply covers more than 14 days maximum capacity during emergency event.</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">6. Does the health  facility have established procedures for monitoring supplies and needs and ensuring continuity of supply chain for medical and non-medical equipment and supplies (e.g. procurement,  transport, storage of medical devices, pharmaceuticals, vaccines, laboratory supplies, parenteral nutrition and blood supplies)?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he9" id="he9_0" value="0" required>
+                <label class="form-check-label" for="he9_0">Policies and procedures do not exist.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he9" id="he9_1" value="1" required>
+                <label class="form-check-label" for="he9_1">Policies and procedures are available but have not been tested for emergency and disaster situations.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he9" id="he9_2" value="2" required>
+                <label class="form-check-label" for="he9_2">Procedures exist, resources are available and they have been tested for emergency and disaster situations.</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">7. Does the health facility have availability of life support supplies and equipment (including mechanical volume ventilators, crash carts for cardiopulmonary arrest) that remains accessible and useable during emergency events?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he10" id="he10_0" value="0" required>
+                <label class="form-check-label" for="he10_0">There is no available life support supplies and equipment</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he10" id="he10_1" value="1" required>
+                <label class="form-check-label" for="he10_1">Supply covers less than 72 hours at maximum capacity during emergency events.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he10" id="he10_2" value="2" required>
+                <label class="form-check-label" for="he10_2">Supply guaranteed for at least 72 hours at maximum facility capacity.</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">8. Does the health facility have a mechanism for providing prompt maintenance, repair and restoration of equipment and infrastructure (such as water, sanitation, waste, energy) required for essential services during emergency events?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he11" id="he11_0" value="0" required>
+                <label class="form-check-label" for="he11_0">Policies and procedures do not exist.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he11" id="he11_1" value="1" required>
+                <label class="form-check-label" for="he11_1">Policies and procedures are available but have not been tested for emergency and disaster situations.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he11" id="he11_2" value="2" required>
+                <label class="form-check-label" for="he11_2">Procedures exist, resources are available and they have been tested for emergency and disaster situations.</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">9. Does the health facility have procedures to ensure the current condition and safety of storage areas for medical gas tanks and/or cylinders and medical gas distribution system (e.g. valves, pipes, connections) within the facility that are adequately protected from local hazards?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he12" id="he12_0" value="0" required>
+                <label class="form-check-label" for="he12_0">Policies and procedures do not exist.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he12" id="he12_1" value="1" required>
+                <label class="form-check-label" for="he12_1">Policies and procedures are available but have not been tested for emergency and disaster situations.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he12" id="he12_2" value="2" required>
+                <label class="form-check-label" for="he12_2">Procedures exist, resources are available and they have been tested for emergency and disaster situations.</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">10. Does the health facility have identified local suppliers and vendors during emergency events?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he13" id="he13_0" value="0" required>
+                <label class="form-check-label" for="he13_0">Policies and procedures do not exist.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he13" id="he13_1" value="1" required>
+                <label class="form-check-label" for="he13_1">Policies and procedures are available but have not been tested for emergency and disaster situations.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he13" id="he13_2" value="2" required>
+                <label class="form-check-label" for="he13_2">Procedures exist, resources are available and they have been tested for emergency and disaster situations.</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">11. Are procedures and designated areas for the safe storing and dispensing of pharmaceuticals availlable including in emergencies?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he14" id="he14_0" value="0" required>
+                <label class="form-check-label" for="he14_0">Procedures not established or areas not designated</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he14" id="he14_1" value="1" required>
+                <label class="form-check-label" for="he14_1">Procedures established, but not sufficient or not fully implemented, and/or no designated area not sufficiently safe</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he14" id="he14_2" value="2" required>
+                <label class="form-check-label" for="he14_2">Procedures established and implemented with a designated area for the safe storing and dispensing of medicines</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">12. Syndromic Surveillance
+                Does the health care facility have syndromic surveillance to support early detection of priority hazards (e.g., dehydration, acute watery diarrhoea, febrile illness, respiratory illness)?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he15" id="he15_0" value="0" required>
+                <label class="form-check-label" for="he15_0">Policies and procedures for syndromic surveillance do not exist, and the facility does not conduct syndromic surveillance</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he15" id="he15_1" value="1" required>
+                <label class="form-check-label" for="he15_1">Procedures exist and syndromic surveillance is conducted; however, data are not routinely analysed or used for early detection</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he15" id="he15_2" value="2" required>
+                <label class="form-check-label" for="he15_2">Syndromic surveillance is routinely conducted, analysed, and used for early detection and reporting.</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">13. Event-based surveillance 
+                Does the health care facility have event-based surveillance (EBS) to detect and report unusual health events/hazards?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he16" id="he16_0" value="0" required>
+                <label class="form-check-label" for="he16_0">Policies and procedures for EBS do not exist, and the facility does not conduct event‑based surveillance</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he16" id="he16_1" value="1" required>
+                <label class="form-check-label" for="he16_1">Policies and procedures for EBS exist and surveillance is conducted; however, reporting and use of signals for early detection are not routinely applied</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he16" id="he16_2" value="2" required>
+                <label class="form-check-label" for="he16_2">EBS is routinely implemented, with signals detected, verified, analysed and used for early detection and reporting</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">14. Surveillance data reporting and information system
+                Does the health care facility have a scalable information management system (e.g. DHIS2, Excel-based, or paper-based) that can support increased surveillance demands during emergencies (e.g., additional diseases/conditions, increased reporting frequency)?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he17" id="he17_0" value="0" required>
+                <label class="form-check-label" for="he17_0">No formalized surveillance data reporting and information management system in place</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he17" id="he17_1" value="1" required>
+                <label class="form-check-label" for="he17_1">System exists but has limited functionality, scalability, or surge capacity during emergencies</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he17" id="he17_2" value="2" required>
+                <label class="form-check-label" for="he17_2">System is functional and can accommodate increased surveillance demands during emergencies</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">15. Surveillance continuity during emergencies
+                Does the health facility have contingency arrangements in place to ensure continuity of surveillance (e.g., simplified reporting tools, backup communication methods, or alternate data‑flow processes) during emergencies that disrupt normal operations?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he18" id="he18_0" value="0" required>
+                <label class="form-check-label" for="he18_0">The facility has no contingency arrangements in place to ensure continuity of surveillance</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he18" id="he18_1" value="1" required>
+                <label class="form-check-label" for="he18_1">While some measures exist, they are incomplete, informal or not consistently implemented</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he18" id="he18_2" value="2" required>
+                <label class="form-check-label" for="he18_2">The facility has well-defined and functional contigency arrangements that can be activated during disruptions</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">16. Surveillance workforce
+                Does the health facility have adequately trained staff to maintain surveillance functions, including surge staffing arrangements during emergencies?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he19" id="he19_0" value="0" required>
+                <label class="form-check-label" for="he19_0">The facility lacks trained surveillance staff and has no surge arrangements in place.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he19" id="he19_1" value="1" required>
+                <label class="form-check-label" for="he19_1">The facility has designated staff with some relevant training, but gaps exist or surge arrangements are not in place</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he19" id="he19_2" value="2" required>
+                <label class="form-check-label" for="he19_2">The facility has trained surveillance staff and has established surge staffing arrangements that can be activated during emergencies</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">17. Triage, resuscitation, stabilization and treatment</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he20" id="he20_0" value="0" required>
+                <label class="form-check-label" for="he20_0">Procedures have not been defined or there is no documentation or procedures;</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he20" id="he20_1" value="1" required>
+                <label class="form-check-label" for="he20_1">Procedures have been defined, but there are no resources to implement the procedures (trained personnel, equipment and funding);</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he20" id="he20_2" value="2" required>
+                <label class="form-check-label" for="he20_2">Procedures have been defined and there are resources to implement the procedures (trained personnel, equipment and funding).</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">18. Transport of patients and logistical support</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he21" id="he21_0" value="0" required>
+                <label class="form-check-label" for="he21_0">Vehicles for patient transport and logistical support are not considered in the plan;</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he21" id="he21_1" value="1" required>
+                <label class="form-check-label" for="he21_1">Vehicles and logistical support are considered in the plan, but there are not enough resources (owned or agreements);</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="he21" id="he21_2" value="2" required>
+                <label class="form-check-label" for="he21_2">Vehicles and logistical support are considered in the plan, and there are enough resources (owned by the health facility and/or agreements).</label>
+                </div>
+
                 </div>
             </div>    
         </div>
 
-        <!-- ================= STEP 5 ================= -->
+        <!-- ================= STEP 5 : WATER SUPPLY ================= -->
         <div class="wizard-step">
             <h5 class="mb-3">SECTION D : WATER SUPPLY</h5>
 
             <div class="row g-3">
-                <div class="col-md-6">
-                    <label class="form-label required">D1.1 Is there any water quality test done by staff or any third party up to the national standards?</label>
-                    <select id="d1_1" name="d1_1" class="form-select" required>
-                        <option value="">-- Please select one --</option>
-                        <option value="0">No testing takes place or no national standards exist.</option>
-                        <option value="1">Water quality tested but not routinely or regularly.</option>
-                        <option value="2">Water quality routinely and regularly tested according to national standards.</option>
-                    </select>
+                <div class="mb-3">
+                <label class="form-label required">Pre-question: Please select all water sources that are in use in this health care facility</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa1" id="wa1_0" value="0" required>
+                <label class="form-check-label" for="wa1_0">None</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa1" id="wa1_1" value="1" required>
+                <label class="form-check-label" for="wa1_1">None</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa1" id="wa1_2" value="2" required>
+                <label class="form-check-label" for="wa1_2">None</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">1. Does the faciity have an improved, reliable, safe and sufficient water supply to meet all needs of the facility?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa2" id="wa2_0" value="0" required>
+                <label class="form-check-label" for="wa2_0">The facility does not have an improved, reliable and/or safe water supply.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa2" id="wa2_1" value="1" required>
+                <label class="form-check-label" for="wa2_1">The facility has an improved water supply but it is:
+                - not always functioning at all times and/or 
+                - is not sufficient for all facility needs and/or 
+                - water does not reliably meet national water safety standards</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa2" id="wa2_2" value="2" required>
+                <label class="form-check-label" for="wa2_2">The facility has an improved water supply, that is reliable (including a back up source for periods increased need), that meets the needs for all water uses of the facility and meets national water safety standards</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">2. Is water (for all uses) treated regularly on site with a proven technology?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa3" id="wa3_0" value="0" required>
+                <label class="form-check-label" for="wa3_0">No water treatment occurs on site or only for some uses of water</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa3" id="wa3_1" value="1" required>
+                <label class="form-check-label" for="wa3_1">Water treatment occurs on site but not for all uses and/or water treatment is not done using a proven technology</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa3" id="wa3_2" value="2" required>
+                <label class="form-check-label" for="wa3_2">Water for all uses is regularly treated on site using a proven technology.</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">3. Does the health facility provide sufficient and safe drinking water by any method to staff, patients and visitors, including during emergencies?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa4" id="wa4_0" value="0" required>
+                <label class="form-check-label" for="wa4_0">Drinking water is not available, or is not sufficient for staff, patients and visitors and/or is not safe to drink</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa4" id="wa4_1" value="1" required>
+                <label class="form-check-label" for="wa4_1">Drinking water only partially available or is not safe (see notes) and/or is not sufficient during emergencies</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa4" id="wa4_2" value="2" required>
+                <label class="form-check-label" for="wa4_2">Sufficient drinking water is available for all users for both routine use and emergencies,  and is safe (see notes)</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">4. Does the health facility have sufficient, safe and functioning water reserves for health facility services that functions during emergencies?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa5" id="wa5_0" value="0" required>
+                <label class="form-check-label" for="wa5_0">No emergency water reserves for health facility services</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa5" id="wa5_1" value="1" required>
+                <label class="form-check-label" for="wa5_1">Water reserves are available but does not function during emergency, there are not sufficient reserves</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa5" id="wa5_2" value="2" required>
+                <label class="form-check-label" for="wa5_2">Facility has sufficient  water reserves, storage tanks are safely stored and can function during emergency</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">5. Does the health facility have water reduction (e.g. signages, low flow fictures, water sensor pipes) and reuse (greywater and/storm water capture for washing, cleaning, watering plants and toilet flushing) strategies by any methods to reduce water wastage?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa6" id="wa6_0" value="0" required>
+                <label class="form-check-label" for="wa6_0">No water-saving  or reuse measures implemented and leaking pipes or taps common and water wastage observed</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa6" id="wa6_1" value="1" required>
+                <label class="form-check-label" for="wa6_1">Some water-saving and reuse practices in place  but inconsistent maintenance and practice.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa6" id="wa6_2" value="2" required>
+                <label class="form-check-label" for="wa6_2">Facility has structured water conservation plan (including frequent monitoring and repair of leaking pipes) and greywater/stormwater capture and reuse system that is implemented and evaluated</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">Pre-question: Please select all sanitation facilities that are in use in this health care facility</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa7" id="wa7_0" value="0" required>
+                <label class="form-check-label" for="wa7_0">None</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa7" id="wa7_1" value="1" required>
+                <label class="form-check-label" for="wa7_1">None</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa7" id="wa7_2" value="2" required>
+                <label class="form-check-label" for="wa7_2">None</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">6. Does the health facility have a sufficient number of improved and usable toilets for patients and staff  that meet the needs for all users (accessible and support safe menstrual hygiene)?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa8" id="wa8_0" value="0" required>
+                <label class="form-check-label" for="wa8_0">Outpatient -
+                The health care facility does not have a sufficient number of toilets and/or existing toilets are not improved or usable
+
+                Inpatient -
+                The health care facility does not have a sufficient number of toilets and/or existing toilets are not improved or usable</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa8" id="wa8_1" value="1" required>
+                <label class="form-check-label" for="wa8_1">Only outpatient:
+                - The health facility has at least one improved and usable toilet for patient use and one for staff but they are not fully functioning, available or accessible for all
+
+                Facilities with inpatients:
+                - The health facility has improved and usable toilets but not at sufficient ratios or not at least one accessible for all</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa8" id="wa8_2" value="2" required>
+                <label class="form-check-label" for="wa8_2">Only outpatient:
+                - The health facility has at least one improved and usable toilet for patient use and one for staff that are functioning and at least on that is or accessible for all
+
+                Facilities with inpatients:
+                - The health facility has improved and usable toilets for staff and patients  at sufficient ratios with at least one that is accessible for all</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">7. Do all toilets have a functioning hand washing station (soap and water available)  within 5 metres?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa9" id="wa9_0" value="0" required>
+                <label class="form-check-label" for="wa9_0">Handwashing stations  are not available, not functioning or further than 5m for most toilets</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa9" id="wa9_1" value="1" required>
+                <label class="form-check-label" for="wa9_1">Handwashing stations are available near some toilets but not consistent and/or not all are functioning</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa9" id="wa9_2" value="2" required>
+                <label class="form-check-label" for="wa9_2">Handwashing stations are available and functional within 5m of all toilets</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">8. Does the health facility, by any method, have a functioning and well-maintained system for the safe management of wastewater (wastewater, faecal sludge, greywater), including during emergencies and in response to environmental hazards ?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa10" id="wa10_0" value="0" required>
+                <label class="form-check-label" for="wa10_0">System for wastewater disposal does not exist or system does not function</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa10" id="wa10_1" value="1" required>
+                <label class="form-check-label" for="wa10_1">System is in fair condition, but little or no evidence of compliance and maintenance and/or it does not function safely during emergencies and environmental hazards</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa10" id="wa10_2" value="2" required>
+                <label class="form-check-label" for="wa10_2">Wastewater disposal system is in good condition with good capacity and evidence of compliance and maintenance and functions well during emergencies and environmental hazards</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">9. Does the facility have stormwater (i.e. rainwater) and
+                functioning greywater drainage system in place to prevent vector (i.e. mosquito) borne disease and flooding?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa11" id="wa11_0" value="0" required>
+                <label class="form-check-label" for="wa11_0">No drainage system in place.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa11" id="wa11_1" value="1" required>
+                <label class="form-check-label" for="wa11_1">Drainage system in place but not sufficient for volume of stormwater or greywater or is often blocked</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa11" id="wa11_2" value="2" required>
+                <label class="form-check-label" for="wa11_2">Drainage system exists, is functional (not blocked) and successfully diverts water away from facility into safe
+                natural filtration area (e.g. not directly into households or community area.</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">10. Does the health facility have any kind of risk assessment plan to protect its water and sanitation systems from all hazards?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa12" id="wa12_0" value="0" required>
+                <label class="form-check-label" for="wa12_0">No risks assessment or plan exists, or the existing plan does not cover water and sanitation risks from environmental or climate hazards.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa12" id="wa12_1" value="1" required>
+                <label class="form-check-label" for="wa12_1">A plan exists but is outdated, incomplete, or only partially covers climate/environmental risks. Limited evidence of implementation or integration into facility operations.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa12" id="wa12_2" value="2" required>
+                <label class="form-check-label" for="wa12_2">The facility has a current risk assessment process and plan to manage water and sanitation risks from environmental hazards, with clear actions and regular updates as part of emergency preparedness and routine maintenance</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">11. Is non-infectious (general) waste, infectious waste, and sharps waste correctly segregated at all waste generation points?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa13" id="wa13_0" value="0" required>
+                <label class="form-check-label" for="wa13_0">Functional waste collection containers are not available in proximity to where waste is generated.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa13" id="wa13_1" value="1" required>
+                <label class="form-check-label" for="wa13_1">Functional waste collection containers are available but not for all categories, all generation points or waste not consistently segregated correctly.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa13" id="wa13_2" value="2" required>
+                <label class="form-check-label" for="wa13_2">Functional waste collection containers are available in close proximity to all waste generation points for all waste types and waste is consistently segregated correctly.</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">12. Is non-infectious (general) waste, infectious waste, and sharps waste  correctly safely stored, managed and disposed of?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa14" id="wa14_0" value="0" required>
+                <label class="form-check-label" for="wa14_0">Health care waste is not safely stored, treated or disposed of.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa14" id="wa14_1" value="1" required>
+                <label class="form-check-label" for="wa14_1">Some but not all types of waste are safely stored, managed and disposed of but not all systems functional and safe for all types of waste.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa14" id="wa14_2" value="2" required>
+                <label class="form-check-label" for="wa14_2">All waste types are safely managed across the waste management chain , that is-  transported, stored in a dedicated fenced area, treated and disposed of according to national standards.</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">13. Are provisions in place for the safe management and disposal of pharmaceuticals (including radiopharmaceuticals), pathological and radioactive waste, including in emergencies?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa15" id="wa15_0" value="0" required>
+                <label class="form-check-label" for="wa15_0">There are no systems in place to safely manage and dispose of pharmaceutical, chemical, pathological and radioactive waste</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa15" id="wa15_1" value="1" required>
+                <label class="form-check-label" for="wa15_1">Policies and procedures are in place to safely manage and dispose of only some waste  and/or waste management systems are not fully in place or function for all waste</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa15" id="wa15_2" value="2" required>
+                <label class="form-check-label" for="wa15_2">Systems are fully in place to safely manage and dispose of pharmaceutical, chemical, pathological and radioactive waste, and systems are fully implemented</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">14. Are heath facility staff trained to manage all health care waste for routine waste management and for emergencies or disasters?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa16" id="wa16_0" value="0" required>
+                <label class="form-check-label" for="wa16_0">Health facility does not have  staff trained on health waste management.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa16" id="wa16_1" value="1" required>
+                <label class="form-check-label" for="wa16_1">Health facility has staff trained, but not regularly or for all waste types or note for both routine and emergency scenarios</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa16" id="wa16_2" value="2" required>
+                <label class="form-check-label" for="wa16_2">Health facility has staff regularly trained to manage all health care waste for routine waste management and for climate-related emergencies and disasters.</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">15. Is there an emergency waste management plan in place to safely manage waste during and after an emergency?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa17" id="wa17_0" value="0" required>
+                <label class="form-check-label" for="wa17_0">There is no emergency plan in place and/or systems fail during emergencies with no backup</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa17" id="wa17_1" value="1" required>
+                <label class="form-check-label" for="wa17_1">Some emergency procedures in place but not fully tested or adequately resourced</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa17" id="wa17_2" value="2" required>
+                <label class="form-check-label" for="wa17_2">Robust, tested emergency response plan in place and backup waste systems are available and functional, and necessary restoration and maintenance in place</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">16. Is personal protective equipment and a designated functional and regularly tested system for decontamination of patients, staff and equipment  available for chemical or radiological  hazards?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa18" id="wa18_0" value="0" required>
+                <label class="form-check-label" for="wa18_0">No personal protective equipment is available for immediate use by facility staff, and/or no , designated area or equipment for chemical or radiological decontamination.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa18" id="wa18_1" value="1" required>
+                <label class="form-check-label" for="wa18_1">Basic decontamination capacity exists (e.g. shower or containment area), but is limited in scope, PPE, equipment, or readiness.
+                Some staff are trained, but response may be delayed or improvised.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa18" id="wa18_2" value="2" required>
+                <label class="form-check-label" for="wa18_2">The facility has a designated decontamination area, appropriate PPE and equipment, and clear protocols for chemical and radiological hazards. Staff are trained, and the system is tested regularly as part of emergency preparedness</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">17. Does the facility have PPE available for non-clinical uses (i.e. waste management, environmental cleaning, laboratory) and promote and monitor rationale use of personal protective equipment (PPE) (e.g. gloves only used when indicated)?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa19" id="wa19_0" value="0" required>
+                <label class="form-check-label" for="wa19_0">PPE is not regularly available ofr non-clinical uses and no training or monitoring occurs for rational use.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa19" id="wa19_1" value="1" required>
+                <label class="form-check-label" for="wa19_1">PPE is available for most but not all non-clinical uses and/or rational use of PPE is not promoted or monitroed</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa19" id="wa19_2" value="2" required>
+                <label class="form-check-label" for="wa19_2">PPE is regularly available for non-clinical uses and rational use is promoted and monitored.</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">18. Are there infection prevention and control (IPC) standard operating procedures (SOPs) in place?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa20" id="wa20_0" value="0" required>
+                <label class="form-check-label" for="wa20_0">Policies and procedures do not exist; standard precautions for IPC are not followed routinely. Staff not trained.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa20" id="wa20_1" value="1" required>
+                <label class="form-check-label" for="wa20_1">IPC procedures exist but may be outdated, inconsistently implemented, or not monitored. The level of resources required for emergency and disaster situations, including epidemics, is not available</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa20" id="wa20_2" value="2" required>
+                <label class="form-check-label" for="wa20_2">Policies and procedures exist, IPC measures are in place, personnel have been trained, and resources are available to implement measures at maximum hospital capacity in emergency and disaster situations.</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">19. Does the health facility have single patient rooms or an isolation area with functioning WASH services and IPC protocols in place for triaging and cohorting patients to respond to a suspected/confirmed infectious disease risks?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa21" id="wa21_0" value="0" required>
+                <label class="form-check-label" for="wa21_0">No, the health facility does not have single rooms or an isolation area to manage infectious disease risks.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa21" id="wa21_1" value="1" required>
+                <label class="form-check-label" for="wa21_1">Yes, the health facility has a isolation area but it is not fully operational or does not have functioning WASH services and IPC protocols in place</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa21" id="wa21_2" value="2" required>
+                <label class="form-check-label" for="wa21_2">The health facility has single patient rooms and/or an isolation area to manage infectious disease risks with functioning WASH services and IPC protocols in place.</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">20. Are functioning hand hygiene stations available at all points of care, including in the delivery rooms?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa22" id="wa22_0" value="0" required>
+                <label class="form-check-label" for="wa22_0">Fewer than 75% of points of care have functioning hand hygiene stations</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa22" id="wa22_1" value="1" required>
+                <label class="form-check-label" for="wa22_1">At least 75% of points of care have functioning hand hygiene stations</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa22" id="wa22_2" value="2" required>
+                <label class="form-check-label" for="wa22_2">All points of care have functioning hand hygiene stations</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">21. Are functioning hand hygiene stations available in non-clinical areas (e.g. waiting and public areas, sluice rooms, waste disposal area)?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa23" id="wa23_0" value="0" required>
+                <label class="form-check-label" for="wa23_0">No functioning hand hygiene stations available</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa23" id="wa23_1" value="1" required>
+                <label class="form-check-label" for="wa23_1">Present and functioning hand hygiene stations available in some but not all areas</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa23" id="wa23_2" value="2" required>
+                <label class="form-check-label" for="wa23_2">Present and functioning hand hygiene stations available in all areas</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">22. [Facilities with in-patient services]
+                Is there at least one (1) shower or bathing area available per 40 inpatients or per ward (whichever is lower) that is functioning, accessible and usable for all</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa24" id="wa24_0" value="0" required>
+                <label class="form-check-label" for="wa24_0">Shower or bathing station is not present, not functioning and/or not accessible</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa24" id="wa24_1" value="1" required>
+                <label class="form-check-label" for="wa24_1">Shower or bathing station is accessible and functioning but doesn't meet at least one to 40 inpatients ratio and/or does not meet the needs for women</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa24" id="wa24_2" value="2" required>
+                <label class="form-check-label" for="wa24_2">Shower or bathing stations are functional, accessible and at least one to  40 inpatient ratio, are lit adequately at all times, and there is at least dedicated for use by women that locks</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">23. Does the health facility have a sufficient number of dedicated cleaning staff (or staff assigned cleaning duties) available daily or as needed, with allocated time to perform cleaning tasks?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa25" id="wa25_0" value="0" required>
+                <label class="form-check-label" for="wa25_0">No staff or no dedicated staff for cleaning responsibilities available</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa25" id="wa25_1" value="1" required>
+                <label class="form-check-label" for="wa25_1">Dedicated staff for cleaning responsibilities available but cleaning is not regularly performed or not fully done at the time dedicated or as required</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa25" id="wa25_2" value="2" required>
+                <label class="form-check-label" for="wa25_2">Dedicated staff for cleaning responsibilities or time dedicated for cleaning available and cleaning regularly performed and done at the time required.</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">24. Does the health facility have a clear and detailed cleaning policy or protocol for the facility or ward that is visibly displayed, actively implemented, and regularly monitored, including for outbreak and emergency scenarios?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa26" id="wa26_0" value="0" required>
+                <label class="form-check-label" for="wa26_0">No clear and detailed cleaning policy or protocol available</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa26" id="wa26_1" value="1" required>
+                <label class="form-check-label" for="wa26_1">There is a clear and detailed cleaning policy or protocol available, but it is not clearly displayed, or not implemented, and/or not routinely monitored</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa26" id="wa26_2" value="2" required>
+                <label class="form-check-label" for="wa26_2">Clear and detailed cleaning policy or protocol available and  clearly displayed, implemented, and regularly monitored that covers emergency and outbreak scenarios</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">25. Are dedicated cleaning staff (or staff assigned cleaning duties) trained in standard operating procedures for environmental cleaning, including IPC protocols for routine and outbreak scenarios?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa27" id="wa27_0" value="0" required>
+                <label class="form-check-label" for="wa27_0">There is no formal training programme; ad-hoc peer demonstration only and/or the majority of staff unaware of current SOPs.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa27" id="wa27_1" value="1" required>
+                <label class="form-check-label" for="wa27_1">Initial orientation given to cleaning staff but no scheduled refreshers and/or outbreak-specific procedures covered superficially or only for select staff and/or training records incomplete.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa27" id="wa27_2" value="2" required>
+                <label class="form-check-label" for="wa27_2">Dedicated cleaning staff receive comprehensive induction and have at least an annual refresher for all staff and competency assessment documented and outbreak / high-risk cleaning modules included and compliance monitored; remedial training provided as needed.</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">26. Are appropriate and well-maintained cleaning materials available in sufficient quantity for use and safely stored across all relevant areas and surfaces in the facility?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa28" id="wa28_0" value="0" required>
+                <label class="form-check-label" for="wa28_0">Cleaning materials are not sufficient, broken, or in poor condition and/or they are shared across inappropriate zones and/or expired or unsuitable cleaning solutions and/or is there is not safe place to store them</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa28" id="wa28_1" value="1" required>
+                <label class="form-check-label" for="wa28_1">Cleaning materials available but not fully adequate for all areas and/or some equipment  not available, mixed use persists and/or there is not safe place to store cleaning materials</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa28" id="wa28_2" value="2" required>
+                <label class="form-check-label" for="wa28_2">The are sufficient, well-maintained cleaning materials, segregated by area and correct agents used, clearly labeled, stock levels monitored and maintained, materials safely stored.</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">27. Does the facility have a reliable and diversified supply chain or stockpile system to ensure continued access to essential cleaning materials during emergencies or disruptions?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa29" id="wa29_0" value="0" required>
+                <label class="form-check-label" for="wa29_0">The is no written procurement / buffer-stock plan and/or single supplier only. Stock-outs or expired items documented in the last 12 months.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa29" id="wa29_1" value="1" required>
+                <label class="form-check-label" for="wa29_1">A written policy exists but ≤ 14-day buffer or still relies on single supplier and there are occasional stock-outs mitigated by urgent purchases and/or manual stock cards, updated irregularly.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa29" id="wa29_2" value="2" required>
+                <label class="form-check-label" for="wa29_2">Formal contingency plan with ≥ 30-day buffer for critical items, there are multiple vetted suppliers or framework contracts, real-time stock monitoring; no stock-outs in last 12 months and regular audits and rotation to prevent expiry.</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">28. (Facilities with in-patient services)
+                Is the food in the health facility prepared and handled hygienically using clean hands, clean surfaces, and clean utensils with appropriate cold storage?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa30" id="wa30_0" value="0" required>
+                <label class="form-check-label" for="wa30_0">Food is not hygienically handled and prepared, on dirty surfaces and utensils</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa30" id="wa30_1" value="1" required>
+                <label class="form-check-label" for="wa30_1">Food is mostly hygienically handled but not consistently and cold storage not available or reliable.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa30" id="wa30_2" value="2" required>
+                <label class="form-check-label" for="wa30_2">Food is hygienically handled and prepared, on clean surfaces and utensils and cold storage is reliable</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">29. (Facilities with in-patient services)
+                Are the kitchen storage areas and prepared food adequately protected from pests, including flies, rodents, cockroaches, and other animals, with no evidence of infestation?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa31" id="wa31_0" value="0" required>
+                <label class="form-check-label" for="wa31_0">Stored food and prepared food are not protected from pests</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa31" id="wa31_1" value="1" required>
+                <label class="form-check-label" for="wa31_1">Stored food and prepared food  are partially protected from pests</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa31" id="wa31_2" value="2" required>
+                <label class="form-check-label" for="wa31_2">Stored food and prepared food are fully protected from pests with no evidence of infestation at all</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">30. Are laundry facilities clean, well-maintained, and sufficient to meet daily operational needs, including timely processing of patient linen between uses and with separate operations for cleaning materials?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa32" id="wa32_0" value="0" required>
+                <label class="form-check-label" for="wa32_0">There is no laundry system or reliance on informal or irregular services. Dirty linen visibly accumulated and/or equipment not functioning.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa32" id="wa32_1" value="1" required>
+                <label class="form-check-label" for="wa32_1">Laundry exists but with some gaps—e.g. delayed turnaround, inadequate clean/dirty flow, inconsistent maintenance, or limited records, mixed processing for cleaning materials and linen.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa32" id="wa32_2" value="2" required>
+                <label class="form-check-label" for="wa32_2">Facility has functioning laundry that meets daily demand and there is clear segregation of clean and dirty areas, there are records available showing regular linen change and national standards met. If outsourced, contractor is audited regularly.</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">31. Does the facility have electricity from any source that is available, reliable and sufficient for the facility needs, excluding from stand-alone powered medical devices?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa33" id="wa33_0" value="0" required>
+                <label class="form-check-label" for="wa33_0">No, the facility does not have a reliable source of electricity beyond standalone electrical medical devices/appliances</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa33" id="wa33_1" value="1" required>
+                <label class="form-check-label" for="wa33_1">The facility has a source of electricity but it does not meet all needs of the facility and/or there are regular periods without power, or with low voltage or voltage fluctuations</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa33" id="wa33_2" value="2" required>
+                <label class="form-check-label" for="wa33_2">The facility has a reliable source of electricity at all times the facility is open for services that meets all energy needs of the facility (this can include electricity from primary and secondary sources).</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">32. Other than the main or primary source, does the facility have one or more secondary or backup source(s) of electricity that provide/s reliable and consistent electricity when required, including for emergencies?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa34" id="wa34_0" value="0" required>
+                <label class="form-check-label" for="wa34_0">No there is no secondary electricity source and/or it is not functioning</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa34" id="wa34_1" value="1" required>
+                <label class="form-check-label" for="wa34_1">There is a secondary source but it does not provide sufficient power for all facility needs and/or does not provide reliable back up supply (e.g. voltage flunctuations, or solar battery not charged, insufficient fuel available for generator)</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa34" id="wa34_2" value="2" required>
+                <label class="form-check-label" for="wa34_2">The secondary power source provides consistent, reliable electricity, including during emergencies for all facility needs</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">33. Is there a renewable power source available/generated onsite at the facility?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa35" id="wa35_0" value="0" required>
+                <label class="form-check-label" for="wa35_0">There is no renewable energy source used by the facility</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa35" id="wa35_1" value="1" required>
+                <label class="form-check-label" for="wa35_1">There is renewable energy supply (such as a solar photovoltaic system) but it is not functioning or in use</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa35" id="wa35_2" value="2" required>
+                <label class="form-check-label" for="wa35_2">There is a renewable energy source on site that is reliable and resilient to disasters (protected during weather events, sufficient battery storage for energy needs)</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">34. Has an energy needs assessment been conducted within the last 3 years?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa36" id="wa36_0" value="0" required>
+                <label class="form-check-label" for="wa36_0">Energy needs assessment showed inadequate energy system for the facility</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa36" id="wa36_1" value="1" required>
+                <label class="form-check-label" for="wa36_1">Energy needs assessment showed partially adequate energy system for the facility and no recommendation implemented</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="wa36" id="wa36_2" value="2" required>
+                <label class="form-check-label" for="wa36_2">An energy needs assessment showed adequate energy system or recommendations were implemented from partially adequate.</label>
+                </div>
+
                 </div>
             </div>    
         </div>
 
-        <!-- ================= STEP 6 ================= -->
+        <!-- ================= STEP 6 : ENERGY ================= -->
         <div class="wizard-step">
             <h5 class="mb-3">SECTION E : ENERGY</h5>
 
             <div class="row g-3">
-                <div class="col-md-6">
-                    <label class="form-label required">E1.1 Does the healthcare facility use appliance thermometers in its refrigerators and freezers to verify the safe storage temperatures of food, vaccines, and other crucial medical supplies that require refrigeration?</label>
-                    <select id="e1_1" name="e1_1" class="form-select" required>
-                        <option value="">-- Please select one --</option>
-                        <option value="0">Does not consistently utilize appliance thermometers in its refrigerators and freezers.</option>
-                        <option value="1">Has some appliance thermometers in place for refrigerators and freezers, but their use may be inconsistent, or monitoring protocols may be informal.</option>
-                        <option value="2">Consistently employs and regularly calibrates appliance thermometers in all refrigerators and freezers, with established protocols for continuous monitoring.</option>
-                    </select>
-                </div>
-            </div>    
+
+                    <div class="mb-3">
+                    <label class="form-label required">1. Are Environmental Sustainability elements in place at the health facility?</label>
+
+                    <div class="form-check">
+                    <input class="form-check-input" type="radio" name="en1" id="en1_0" value="0" required>
+                    <label class="form-check-label" for="en1_0">None of the elements are currently in place</label>
+                    </div>
+
+                    <div class="form-check">
+                    <input class="form-check-input" type="radio" name="en1" id="en1_1" value="1" required>
+                    <label class="form-check-label" for="en1_1">At least one of the elements in place</label>
+                    </div>
+
+                    <div class="form-check">
+                    <input class="form-check-input" type="radio" name="en1" id="en1_2" value="2" required>
+                    <label class="form-check-label" for="en1_2">Two or more elements currently in place  and operational.</label>
+                    </div>
+
+                    </div>
+
+                    <div class="mb-3">
+                    <label class="form-label required">2. Do clinicians / medical professionals incorporate environmental sustainability concepts within their clinical practices ?</label>
+
+                    <div class="form-check">
+                    <input class="form-check-input" type="radio" name="en2" id="en2_0" value="0" required>
+                    <label class="form-check-label" for="en2_0">The facility does not have measures in place to promote or guide rational prescribing practices.</label>
+                    </div>
+
+                    <div class="form-check">
+                    <input class="form-check-input" type="radio" name="en2" id="en2_1" value="1" required>
+                    <label class="form-check-label" for="en2_1">Rational use is encouraged through general awareness or individual practice, but there are no consistent protocols or monitoring mechanisms.</label>
+                    </div>
+
+                    <div class="form-check">
+                    <input class="form-check-input" type="radio" name="en2" id="en2_2" value="2" required>
+                    <label class="form-check-label" for="en2_2">Clear guidance or protocols supporting rational prescribing exist, prescribing practices are periodically reviewed or discussed.</label>
+                    </div>
+
+                    </div>
+
+                    <div class="mb-3">
+                    <label class="form-label required">3. Does the facility identify which medicines and anaesthetic gases have a high carbon impact and use lower‑carbon alternatives when it is clinically appropriate?</label>
+
+                    <div class="form-check">
+                    <input class="form-check-input" type="radio" name="en3" id="en3_0" value="0" required>
+                    <label class="form-check-label" for="en3_0">The facility does not check or track high‑carbon medicines or gases, and no alternatives are considered.</label>
+                    </div>
+
+                    <div class="form-check">
+                    <input class="form-check-input" type="radio" name="en3" id="en3_1" value="1" required>
+                    <label class="form-check-label" for="en3_1">The facility is aware of some high‑carbon products and considers lower‑carbon options in a few cases, but this is not consistent.</label>
+                    </div>
+
+                    <div class="form-check">
+                    <input class="form-check-input" type="radio" name="en3" id="en3_2" value="2" required>
+                    <label class="form-check-label" for="en3_2">The facility routinely identifies high‑carbon medicines and gases and actively switches to lower‑carbon alternatives whenever clinically appropriate.</label>
+                    </div>
+
+                    </div>
+
+                    <div class="mb-3">
+                    <label class="form-label required">4. Does the facility use environmental sustainability criteria in the procurement and sourcing of supplies ?</label>
+
+                    <div class="form-check">
+                    <input class="form-check-input" type="radio" name="en4" id="en4_0" value="0" required>
+                    <label class="form-check-label" for="en4_0">Procurement decisions do not include environmental sustainability criteria</label>
+                    </div>
+
+                    <div class="form-check">
+                    <input class="form-check-input" type="radio" name="en4" id="en4_1" value="1" required>
+                    <label class="form-check-label" for="en4_1">Environmental sustainability is taken into account, but not applied systematically</label>
+                    </div>
+
+                    <div class="form-check">
+                    <input class="form-check-input" type="radio" name="en4" id="en4_2" value="2" required>
+                    <label class="form-check-label" for="en4_2">Environmental sustainability criteria integrated into procurement decisions, and sustainable/energy-efficient equipment is routinely selected and in use.</label>
+                    </div>
+
+                    </div>
+
+                    <div class="mb-3">
+                    <label class="form-label required">5. Does the health facility have identified local suppliers and vendors during emergency events?</label>
+
+                    <div class="form-check">
+                    <input class="form-check-input" type="radio" name="en5" id="en5_0" value="0" required>
+                    <label class="form-check-label" for="en5_0">Policies and procedures do not exist.</label>
+                    </div>
+
+                    <div class="form-check">
+                    <input class="form-check-input" type="radio" name="en5" id="en5_1" value="1" required>
+                    <label class="form-check-label" for="en5_1">Policies and procedures are available but have not been tested for emergency and disaster situations.</label>
+                    </div>
+
+                    <div class="form-check">
+                    <input class="form-check-input" type="radio" name="en5" id="en5_2" value="2" required>
+                    <label class="form-check-label" for="en5_2">Procedures exist, resources are available and they have been tested for emergency and disaster situations.</label>
+                    </div>
+
+                    </div>
+
+                    <div class="mb-3">
+                    <label class="form-label required">6. Are energy-efficient equipment and devices purchased and used where possible?</label>
+
+                    <div class="form-check">
+                    <input class="form-check-input" type="radio" name="en6" id="en6_0" value="0" required>
+                    <label class="form-check-label" for="en6_0">Energy efficiency is not a procurement priority</label>
+                    </div>
+
+                    <div class="form-check">
+                    <input class="form-check-input" type="radio" name="en6" id="en6_1" value="1" required>
+                    <label class="form-check-label" for="en6_1">Some energy-efficient equipment, such as air conditioners, are prioritized</label>
+                    </div>
+
+                    <div class="form-check">
+                    <input class="form-check-input" type="radio" name="en6" id="en6_2" value="2" required>
+                    <label class="form-check-label" for="en6_2">All equipment is replaced with energy efficient models</label>
+                    </div>
+
+                    </div>
+
+                    <div class="mb-3">
+                    <label class="form-label required">7. Is food waste monitored and are food waste reduction strategies in place?</label>
+
+                    <div class="form-check">
+                    <input class="form-check-input" type="radio" name="en7" id="en7_0" value="0" required>
+                    <label class="form-check-label" for="en7_0">Food waste is neither monitored nor subject to specific reduction measures.</label>
+                    </div>
+
+                    <div class="form-check">
+                    <input class="form-check-input" type="radio" name="en7" id="en7_1" value="1" required>
+                    <label class="form-check-label" for="en7_1">Some efforts to reduce food waste exist (e.g., informal tracking, ad hoc initiatives), but monitoring is irregular or reduction strategies are not comprehensive.</label>
+                    </div>
+
+                    <div class="form-check">
+                    <input class="form-check-input" type="radio" name="en7" id="en7_2" value="2" required>
+                    <label class="form-check-label" for="en7_2">Food waste is routinely measured or estimated, and targeted reduction measures (e.g., portion control, menu planning, redistribution, composting) are implemented and reviewed.</label>
+                    </div>
+
+                    </div>
+
+                    <div class="mb-3">
+                    <label class="form-label required">8. Are meal options available that emphasize locally sourcing, vegetables, whole grains, and legumes, with reduced amounts of animal products?</label>
+
+                    <div class="form-check">
+                    <input class="form-check-input" type="radio" name="en8" id="en8_0" value="0" required>
+                    <label class="form-check-label" for="en8_0">Meals are not specifically designed to incorporate local sourcing, seasonality, or a shift toward plant-based options.</label>
+                    </div>
+
+                    <div class="form-check">
+                    <input class="form-check-input" type="radio" name="en8" id="en8_1" value="1" required>
+                    <label class="form-check-label" for="en8_1">Some meals reflect these principles (e.g., occasional seasonal or plant-forward options), but this is not a consistent or menu-wide approach.</label>
+                    </div>
+
+                    <div class="form-check">
+                    <input class="form-check-input" type="radio" name="en8" id="en8_2" value="2" required>
+                    <label class="form-check-label" for="en8_2">Menus routinely include locally sourced and seasonal options with a strong emphasis on plant-based ingredients, and reduced animal-product meals are regularly offered.</label>
+                    </div>
+
+                    </div>
+
+                    <div class="mb-3">
+                    <label class="form-label required">9. Are there waste reduction systems in place and used where possible?</label>
+
+                    <div class="form-check">
+                    <input class="form-check-input" type="radio" name="en9" id="en9_0" value="0" required>
+                    <label class="form-check-label" for="en9_0">There are no waste reduction mechanisms in place</label>
+                    </div>
+
+                    <div class="form-check">
+                    <input class="form-check-input" type="radio" name="en9" id="en9_1" value="1" required>
+                    <label class="form-check-label" for="en9_1">Some waste reduction mechanisms are in place but for all</label>
+                    </div>
+
+                    <div class="form-check">
+                    <input class="form-check-input" type="radio" name="en9" id="en9_2" value="2" required>
+                    <label class="form-check-label" for="en9_2">Waste reduction mechanisms are in place and fully functional</label>
+                    </div>
+
+                    </div>
+
+            </div>
         </div>
 
-        <!-- ================= STEP 7 ================= -->
+        <!-- ================= STEP 7 : INFRASTRUCTURE ================= -->
         <div class="wizard-step">
             <h5 class="mb-3">SECTION F : INFRASTRUCTURE</h5>
 
             <div class="row g-3">
-                <div class="col-md-6">
-                    <label class="form-label required">F1.1 Is the healthcare facility is abide by local authorities occupancy's rules/law?</label>
-                    <select id="f1_1" name="f1_1" class="form-select" required>
-                        <option value="">-- Please select one --</option>
-                        <option value="0">Has not been approved by local authorities and not abide to local law.</option>
-                        <option value="1">Partially approved/waiting for approval from local authorities.</option>
-                        <option value="2">Approved by local authorities and abide to local rules.</option>
-                    </select>
+
+                <div class="mb-3">
+                <label class="form-label required">1. Does the health facility abide by local and national regulations and codes (including fires)?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in1" id="in1_0" value="0" required>
+                <label class="form-check-label" for="in1_0">Has not been approved by local authorities and not abide to local law</label>
                 </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in1" id="in1_1" value="1" required>
+                <label class="form-check-label" for="in1_1">Partially approved/waiting for approval from local authorities</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in1" id="in1_2" value="2" required>
+                <label class="form-check-label" for="in1_2">Approved by local authorities and abide to local rules</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">2. Is the health facility building & roof structure, sewarage system, cold water system or etc (including piping) in good condition?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in2" id="in2_0" value="0" required>
+                <label class="form-check-label" for="in2_0">Major damage or systems disrupted and no repairs completed</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in2" id="in2_1" value="1" required>
+                <label class="form-check-label" for="in2_1">Moderate damage or only partially repaired</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in2" id="in2_2" value="2" required>
+                <label class="form-check-label" for="in2_2">Minor or no damage or fully repaired and inspected by engineers.</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">3. Is the health facility electrical plan room, generator set, uninterruptable power supply (UPS), IPS (including wiring system) etc in good condition?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in3" id="in3_0" value="0" required>
+                <label class="form-check-label" for="in3_0">Major damage or systems disrupted and no repairs completed</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in3" id="in3_1" value="1" required>
+                <label class="form-check-label" for="in3_1">Moderate damage or only partially repaired</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in3" id="in3_2" value="2" required>
+                <label class="form-check-label" for="in3_2">Minor or no damage or fully repaired and inspected by engineers.</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">4. Is the health facility ventilation system, air conditioning system, medical gases system, hot water system, vertical transportation or etc (including piping & wiring) in good condition?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in4" id="in4_0" value="0" required>
+                <label class="form-check-label" for="in4_0">Major damage or systems disrupted and no repairs completed</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in4" id="in4_1" value="1" required>
+                <label class="form-check-label" for="in4_1">Moderate damage or only partially repaired</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in4" id="in4_2" value="2" required>
+                <label class="form-check-label" for="in4_2">Minor or no damage or fully repaired and inspected by engineers.</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">5. Are the health facility’s critical services and equipment located in areas that are protected from local hazards such as flooding, landslides, or other environmental risks?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in5" id="in5_0" value="0" required>
+                <label class="form-check-label" for="in5_0">Critical services are not identified or identified but have no measures taken to protect the critical services; subject to damage, failure and disruption of critical services and health facility operations in emergencies and disasters</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in5" id="in5_1" value="1" required>
+                <label class="form-check-label" for="in5_1">Critical services are identified but partial measures are taken to protect the critical services; subject to damage with some disruption of critical services and health facility operations in emergencies or disasters</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in5" id="in5_2" value="2" required>
+                <label class="form-check-label" for="in5_2">Critical services are identified and many measures are taken to protect the critical services; high probability that critical services and health facility will operate with no or limited disruption in emergencies and disasters</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">6. Does the health facility have multiple, clear, and redundant access routes (land, air, or water) that are protected from localized hazards like flooding and landslides?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in6" id="in6_0" value="0" required>
+                <label class="form-check-label" for="in6_0">Access routes likely to be blocked or damaged, affecting facility operations.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in6" id="in6_1" value="1" required>
+                <label class="form-check-label" for="in6_1">Access routes may have some issues, but operations can continue.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in6" id="in6_2" value="2" required>
+                <label class="form-check-label" for="in6_2">Multiple access routes are mostly clear, with little or no risk to operations.</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">7. Does the health facility have an implemented plan to ensure structural and equipment resilience by regularly reviewing building design baselines against building codes and updated hazard assessment (wind, flood levels, extreme heat, earthquake)?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in7" id="in7_0" value="0" required>
+                <label class="form-check-label" for="in7_0">No plan to ensure that the structure and equipment are resilient to all hazards and impacts</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in7" id="in7_1" value="1" required>
+                <label class="form-check-label" for="in7_1">Plan to ensure that the structure and equipment are resilient to all hazards and impacts but not implemented</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in7" id="in7_2" value="2" required>
+                <label class="form-check-label" for="in7_2">Plan developed and implemented to ensure that the structure and equipment are resilient to all hazards documented and their impacts</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">8. Does the health facility have a plan to consider permanently relocating?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in8" id="in8_0" value="0" required>
+                <label class="form-check-label" for="in8_0">No plan to consider relocating the facility</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in8" id="in8_1" value="1" required>
+                <label class="form-check-label" for="in8_1">The plan to relocate the facility had been considered but not implemented</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in8" id="in8_2" value="2" required>
+                <label class="form-check-label" for="in8_2">The plan to relocate the facility had been considered and implemented</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">9. Are the health facility’s windows, doors, and roofing structures designed to withstand strong winds (up to 250 kph) and other physical impacts?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in9" id="in9_0" value="0" required>
+                <label class="form-check-label" for="in9_0">Not designed or outdated structures</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in9" id="in9_1" value="1" required>
+                <label class="form-check-label" for="in9_1">Partially designed for wind but lacks full coverage or certification</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in9" id="in9_2" value="2" required>
+                <label class="form-check-label" for="in9_2">Fully reinforced and certified to resist high wind speeds</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">10. Are the health facility’s roofs, pavements, and insulation designed to reduce indoor heat during extreme temperatures or high solar exposure?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in10" id="in10_0" value="0" required>
+                <label class="form-check-label" for="in10_0">No heat mitigation features present</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in10" id="in10_1" value="1" required>
+                <label class="form-check-label" for="in10_1">Some heat-resilient design features (e.g., reflective paint, partial insulation)</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in10" id="in10_2" value="2" required>
+                <label class="form-check-label" for="in10_2">Comprehensive thermal design (e.g., insulation, reflective roofs, climate-adapted materials)</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">11. Does the health facility have effective systems (e.g., ventilation, air filters,  cooling devices,  green roofs, reflective paint etc) to maintain indoor environmental quality and comfort  ?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in11" id="in11_0" value="0" required>
+                <label class="form-check-label" for="in11_0">No indoor environmental quality or heat-related risks management system</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in11" id="in11_1" value="1" required>
+                <label class="form-check-label" for="in11_1">Limited use of portable or basic systems</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in11" id="in11_2" value="2" required>
+                <label class="form-check-label" for="in11_2">Fully equipped with HVAC systems and indoor environmental quality controls . Comprehensive and updated heat-risk guidance is available and includes maintenance protocols for critical infrastructure.</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">12. Does the health facility ensure indoor air quality is sufficient to reduce transmission of airborne infectious agents and other airborne pollutants as part of standard infection prevention and control SOPs?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in12" id="in12_0" value="0" required>
+                <label class="form-check-label" for="in12_0">No HVAC</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in12" id="in12_1" value="1" required>
+                <label class="form-check-label" for="in12_1">None</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in12" id="in12_2" value="2" required>
+                <label class="form-check-label" for="in12_2">None</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">13. Does the health facility have procedures and resources for the emergency repair or restoration of critical systems, including HVAC, during system failure or extreme conditions including airborne contamination from ash and fire particulate matter?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in13" id="in13_0" value="0" required>
+                <label class="form-check-label" for="in13_0">No emergency maintenance plans or backup resources available</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in13" id="in13_1" value="1" required>
+                <label class="form-check-label" for="in13_1">Some reactive maintenance procedures exist, but not documented or tested</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in13" id="in13_2" value="2" required>
+                <label class="form-check-label" for="in13_2">Detailed, documented, and tested emergency procedures and maintenance protocols are in place, with accessible backup systems or repair services</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">14. Are HVAC systems optimised to avoid unnecessary ventilation, heating or cooling?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in14" id="in14_0" value="0" required>
+                <label class="form-check-label" for="in14_0">HVAC systems operate without specific measures to reduce unnecessary ventilation or heating/cooling.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in14" id="in14_1" value="1" required>
+                <label class="form-check-label" for="in14_1">Some measures in place, but optimization is inconsistent or not routinely reviewed.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in14" id="in14_2" value="2" required>
+                <label class="form-check-label" for="in14_2">HVAC systems regularly assessed and adjusted</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">15. Does the health facility have a fire safety/smoke detection system (inside the facility) with sufficient water supply or chemical foam for fire supression?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in15" id="in15_0" value="0" required>
+                <label class="form-check-label" for="in15_0">Facility does not have a fire safety system to detect smoke/fires rapidly.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in15" id="in15_1" value="1" required>
+                <label class="form-check-label" for="in15_1">Facility has fire safety/smoke detection system, personnel have been trained, but procdures, pesonnel and equipment have not been updated or tested annually.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in15" id="in15_2" value="2" required>
+                <label class="form-check-label" for="in15_2">Up-to-date plans, procedures and equipment for fire safety/smoke detection, personnel have been trained, and procedures have been used or tested at least annually with sufficient water or chemical foam for supression.</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">16. Has the health facility experienced any major structural damage or failure in the past that may impact its current safety and functionality?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in16" id="in16_0" value="0" required>
+                <label class="form-check-label" for="in16_0">Yes – Significant unresolved structural issues still present.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in16" id="in16_1" value="1" required>
+                <label class="form-check-label" for="in16_1">Yes – Damage occurred in the past but has been partially addressed</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in16" id="in16_2" value="2" required>
+                <label class="form-check-label" for="in16_2">No history of major structural failure, or previous issues have been fully repaired and certified safe</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">17. Are all emergency exits and evacuation pathways clearly labeled, kept free of obstructions, and consistently maintained to guarantee that everyone, including patients, staff, and visitors, can safely and quickly evacuate during an emergency?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in17" id="in17_0" value="0" required>
+                <label class="form-check-label" for="in17_0">Emergency exits are frequently or permanently obstructed. Exit signs are missing, damaged, unlit, or unclear. Evacuation routes are not clearly marked, contain hazards</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in17" id="in17_1" value="1" required>
+                <label class="form-check-label" for="in17_1">Emergency exits are generally clear, but occasional or temporary obstructions may occur. Exit signs are present and functional, though some may be dim or require minor repair. Evacuation routes are mostly clear and marked, but may have isolated minor hazards or areas where lighting is suboptimal.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in17" id="in17_2" value="2" required>
+                <label class="form-check-label" for="in17_2">All emergency exits are consistently and completely clear of any obstructions. Exit signs are highly visible, well-lit, and universally understood. Evacuation routes are clearly marked with consistent signage, well-lit throughout, free of all hazards, and regularly inspected and maintained.</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">18. Does the healthcare facility have the fuel storage located in a safe and secure site, adequately protected from local hazard?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in18" id="in18_0" value="0" required>
+                <label class="form-check-label" for="in18_0">Fuel storage are located in high-risk areas with no protective measures in place during emergency events.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in18" id="in18_1" value="1" required>
+                <label class="form-check-label" for="in18_1">Fuel storage are located in high-risk areas with sufficient protective measures in place during emergency events</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in18" id="in18_2" value="2" required>
+                <label class="form-check-label" for="in18_2">Fuel storage are located in low-risk areas with all protective measures in place during emergency events.</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">19. Is LED lighting standard across clinical and non-clinical areas?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in19" id="in19_0" value="0" required>
+                <label class="form-check-label" for="in19_0">LED lighting is not in use, or only minimal pilot installations exist.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in19" id="in19_1" value="1" required>
+                <label class="form-check-label" for="in19_1">LED lighting is installed in some areas (e.g., selected wards, offices, or common areas), but conventional lighting remains widely in use.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in19" id="in19_2" value="2" required>
+                <label class="form-check-label" for="in19_2">LED lighting is installed in all or nearly all clinical and non-clinical areas, with remaining fixtures scheduled for replacement.</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">20. Is there sufficient lighting both for routine and in emergencies, in key locations (reception, bathrooms, corredors, exits, carpark, etc) for safety of staff especially women at night ?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in20" id="in20_0" value="0" required>
+                <label class="form-check-label" for="in20_0">Mostareas do not have suffiecient lighting either for routine or emergencies</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in20" id="in20_1" value="1" required>
+                <label class="form-check-label" for="in20_1">Most areas have sufficient lighting for routine or but not emergencies, or there are major gaps in lighting, such as bathroomsemergencies</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in20" id="in20_2" value="2" required>
+                <label class="form-check-label" for="in20_2">All areas have sufficient lighting for routine and emergencies</label>
+                </div>
+
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label required">21. Does the health facility have availability of equipment and supplies to protect against mosquito borne diseases?</label>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in21" id="in21_0" value="0" required>
+                <label class="form-check-label" for="in21_0">equipment and supplies are not available.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in21" id="in21_1" value="1" required>
+                <label class="form-check-label" for="in21_1">equipment and supplies available for parts of the facility or broken.</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="in21" id="in21_2" value="2" required>
+                <label class="form-check-label" for="in21_2">equipment and supplies available cover all facility</label>
+                </div>
+
+                </div>
+
             </div>
         </div>
-
 
         <!-- NAVIGATION -->
         <div class="d-flex justify-content-start mt-4 gap-2">

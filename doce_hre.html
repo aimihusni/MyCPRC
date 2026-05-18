@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HRE Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Main CSS -->
+  <link href="assets/css/main.css" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div id="header"></div>
+
+<!-- BODY -->
+<div class="container-fluid">
+  <div class="row">
+
+    <!-- SIDEBAR -->
+    <aside class="col-md-3 col-lg-2 sidebar p-0" id="sidebar-placeholder"></aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="col-md-9 col-lg-10 p-4">
+
+      <div class="card shadow-sm border-1">
+        
+        <!-- PAGE HEADER -->
+        <div class="card-body">
+          <h4 class="card-title mb-3">DOCE - Health Related Event (HRE)</h4>
+          <p class="text-muted">
+            Sila lengkapkan maklumat yang diperlukan di setiap bahagian sebelum menghantar laporan ini.
+          </p>
+        </div>
+
+        <!-- PAGE CONTENT -->
+        <div class="card-body">
+          
+          <!-- CONTENT START HERE -->
+          
+          <div class="card-body">
+
+                <form id="wizardForm" novalidate>
+
+                    <div class="mb-4">
+                        <ul class="nav nav-pills justify-content-center" id="stepIndicator">
+
+                            <li class="nav-item">
+                                <button type="button" class="nav-link active" data-step="0">1</button>
+                            </li>
+
+                            <li class="nav-item">
+                                <button type="button" class="nav-link" data-step="1">2</button>
+                            </li>
+
+                            <li class="nav-item">
+                                <button type="button" class="nav-link" data-step="2">3</button>
+                            </li>
+
+                            <li class="nav-item">
+                                <button type="button" class="nav-link" data-step="3">4</button>
+                            </li>
+
+                            <li class="nav-item">
+                                <button type="button" class="nav-link" data-step="4">5</button>
+                            </li>
+
+
+
+                        </ul>
+                    </div>
+
+
+                <!-- BAHAGIAN 1 : MAKLUMAT KEJADIAN -->
+                <div class="wizard-step active">
+                  <h5 class="mb-3">BAHAGIAN 1 : MAKLUMAT KEJADIAN</h5>
+
+                  <div class="card p-3 mb-4 shadow-sm">
+
+                  <div class="mb-3">
+                    <label>Tarikh & Masa</label>
+                    <input type="datetime-local"
+                          class="form-control"
+                          id="basic_hre_time"
+                          name="basic_hre_time"
+                          required>
+                  </div>
+
+                  <script>
+                  document.addEventListener("DOMContentLoaded", function () {
+                    
+                      const now = new Date();
+
+                      // Format for datetime-local
+                      now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+
+                      document.getElementById("basic_hre_time").value =
+                          now.toISOString().slice(0,16);
+
+                  });
+                  </script>
+
+                    <div class="mb-3">
+                      <label>Apa yang anda ingin laporkan (Jika bencana, sila nyatakan)</label>
+                      <textarea class="form-control" name="basic_hre_report" rows="3" required></textarea>
+                    </div>
+
+                    <div class="mb-3">
+                      <label>Apa yang telah terjadi</label>
+                      <textarea class="form-control" name="event_hre_what" rows="2" required></textarea>
+                    </div>
+
+                    <div class="mb-3">
+                      <label>Terangkan bagaimana dan kenapa ia terjadi</label>
+                      <textarea class="form-control" name="event_hre_how" rows="3"></textarea>
+                    </div>
+
+                    <div class="mb-3">
+                      <label>Gejala & onset (jika berkaitan)</label>
+                      <textarea class="form-control" name="event_hre_symptoms" rows="3"></textarea>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-6 mb-3">
+                        <label>Bila kejadian berlaku</label>
+                        <input type="datetime-local" class="form-control" name="event_hre_when" required>
+                      </div>
+
+                      <div class="col-md-6 mb-3">
+                        <label>Di mana kejadian berlaku</label>
+                        <input type="text" class="form-control" name="event_hre_where" placeholder="Nama kg, daerah, institusi, sekolah, dll.">
+                      </div>
+                    </div>
+
+                  </div>
+                  <!-- WIZARD BUTTON -->
+                  <div class="d-flex justify-content-start gap-2 mt-4">
+                    <button type="button" class="btn btn-primary next-step"> Seterusnya </button>
+                  </div>
+
+
+                </div>
+
+                <!-- 2. VICTIMS -->
+                <div class="wizard-step">
+                  <h5 class="mb-3">BAHAGIAN 2 : MAKLUMAT MANGSA</h5>
+
+                  <div class="card mb-4 shadow-sm">
+                    <div class="card-body">
+
+                      <!-- BASIC INFO -->
+                      <div class="row">
+                        <div class="col-md-3 mb-3">
+                          <label>Bilangan Mangsa / Terdedah</label>
+                          <input type="number" class="form-control" name="victim_hre_no" min="0">
+                        </div>
+
+                        <div class="col-md-3 mb-3">
+                          <label>Bilangan keluarga terlibat</label>
+                          <input type="number" class="form-control" name="victim_hre_family" min="0">
+                        </div>
+                      </div>
+
+                      <hr>
+
+                      <!-- OTHER INFO -->
+                      <div class="row">
+
+                        <div class="col-md-3 mb-3">
+                          <label>Bilangan masuk wad</label>
+                          <input type="number" class="form-control" name="victim_hre_ward" min="0">
+                        </div>
+
+                        <div class="col-md-3 mb-3">
+                          <label>Bilangan discaj</label>
+                          <input type="number" class="form-control" name="victim_hre_discaj" min="0">
+                        </div>
+
+                        <div class="col-md-3 mb-3">
+                          <label>Dirawat sebagai pesakit luar</label>
+                          <input type="number" class="form-control" name="victim_hre_luar" min="0">
+                        </div>
+
+                        <div class="col-md-3 mb-3">
+                          <label>Sokongan psikologi</label>
+                          <input type="number" class="form-control" name="victim_hre_psiko" min="0">
+                        </div>
+
+                        <div class="col-md-3 mb-3">
+                          <label>Kematian</label>
+                          <input type="number" class="form-control" name="victim_hre_die" min="0">
+                        </div>
+
+                      </div>
+
+                    </div>
+                  </div>
+                      
+                      <!-- AGE TABLE -->
+                      <table class="table table-bordered text-center">
+                        <thead class="table-light">
+                          <tr>
+                            <th rowspan="2">Kumpulan Umur</th>
+                            <th colspan="2">Jumlah Kes</th>
+                          </tr>
+                          <tr>
+                            <th>Lelaki</th>
+                            <th>Perempuan</th>
+                          </tr>
+                        </thead>
+
+                        <tbody>
+                          <tr>
+                            <td>0 - 1 tahun</td>
+                            <td><input type="number" class="form-control male"></td>
+                            <td><input type="number" class="form-control female"></td>
+                          </tr>
+
+                          <tr>
+                            <td>1 - 5 tahun</td>
+                            <td><input type="number" class="form-control male"></td>
+                            <td><input type="number" class="form-control female"></td>
+                          </tr>
+
+                          <tr>
+                            <td>6 - 18 tahun</td>
+                            <td><input type="number" class="form-control male"></td>
+                            <td><input type="number" class="form-control female"></td>
+                          </tr>
+
+                          <tr>
+                            <td>19 - 50 tahun</td>
+                            <td><input type="number" class="form-control male"></td>
+                            <td><input type="number" class="form-control female"></td>
+                          </tr>
+
+                          <tr>
+                            <td>&gt; 50 tahun</td>
+                            <td><input type="number" class="form-control male"></td>
+                            <td><input type="number" class="form-control female"></td>
+                          </tr>
+
+                          <!-- TOTAL -->
+                          <tr class="table-secondary fw-bold">
+                            <td>Total</td>
+                            <td><input type="number" class="form-control" id="total_male" readonly></td>
+                            <td><input type="number" class="form-control" id="total_female" readonly></td>
+                          </tr>
+
+                          <!-- KADAR SERANGAN -->
+                          <tr>
+                            <td>Kadar Serangan</td>
+                            <td colspan="2">
+                              <input type="text" class="form-control" placeholder="Contoh: Kadar Serangan">
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                    
+                  
+
+
+                  <!-- AUTO TOTAL -->
+                  <script>
+                  function calculateTotals() {
+                      let maleTotal = 0;
+                      let femaleTotal = 0;
+
+                      document.querySelectorAll(".male").forEach(input => {
+                          maleTotal += Number(input.value) || 0;
+                      });
+
+                      document.querySelectorAll(".female").forEach(input => {
+                          femaleTotal += Number(input.value) || 0;
+                      });
+
+                      document.getElementById("total_male").value = maleTotal;
+                      document.getElementById("total_female").value = femaleTotal;
+                  }
+
+                  // Listen to changes
+                  document.querySelectorAll(".male, .female").forEach(input => {
+                      input.addEventListener("input", calculateTotals);
+                  });
+                  </script>
+
+                  <!-- WIZARD BUTTON -->
+                  <div class="d-flex justify-content-start gap-2 mt-4">
+
+                    <!-- Previous -->
+                    <button type="button" class="btn btn-secondary prev-step"> Kembali </button>
+
+                    <!-- Next -->
+                    <button type="button" class="btn btn-primary next-step"> Seterusnya </button>
+
+                  </div>
+
+                </div> 
+
+                <!-- 3. EVACUATION CENTER  -->
+                <div class="wizard-step">
+                  <h5 class="mb-3">BAHAGIAN 3 : MAKLUMAT PUSAT PEMINDAHAN</h5>
+
+                  <div class="card mb-4 shadow-sm">
+                    <div class="card-body">
+
+                      <div class="row">
+                        <div class="col-md-3 mb-3">
+                          <label>Pusat pemindahan dibuka?</label>
+                          <select class="form-control" name="pp_open">
+                            <option value="">-- Pilih --</option>
+                            <option value="ya">Ya</option>
+                            <option value="tidak">Tidak</option>
+                          </select>
+                        </div>
+
+                        <div class="col-md-3 mb-3">
+                          <label>Bilangan pusat pemindahan</label>
+                          <input type="number" class="form-control" name="pp_count" min="0">
+                        </div>
+
+                        <div class="col-md-3 mb-3">
+                          <label>Lokasi pusat pemindahan</label>
+                          <input type="text" class="form-control" name="pp_location">
+                        </div>
+
+                        <div class="col-md-3 mb-3">
+                          <label>Bilangan mangsa terlibat</label>
+                          <input type="number" class="form-control" name="pp_victim" min="0">
+                        </div>
+                      </div>
+
+                      <hr>
+
+                      <div class="mb-3">
+                        <label>Penilaian pusat pemindahan</label>
+                        <textarea class="form-control" name="pp_assessment" rows="3"
+                          placeholder="Sila beri ulasan tentang penilaian yang dibuat..."></textarea>
+                      </div>
+
+                      <hr>
+
+                      <div class="mb-3">
+                        <label>Lain-lain maklumat berkaitan</label>
+                        <textarea class="form-control" name="pp_other_info" rows="3"
+                          placeholder="Contoh: Fasiliti kesihatan, anggota terlibat, pelancong, agensi lain..."></textarea>
+                      </div>
+
+                      <hr>
+
+                      <!-- Tarikh penutupan -->
+                      <div class="row">
+                        <div class="col-md-3 mb-3">
+                          <label>Tarikh penutupan pusat pemindahan</label>
+                          <input type="date" class="form-control" name="pp_close_date">
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+
+                  <!-- WIZARD BUTTON -->
+                  <div class="d-flex justify-content-start gap-2 mt-4">
+
+                    <!-- Previous -->
+                    <button type="button" class="btn btn-secondary prev-step"> Kembali </button>
+
+                    <!-- Next -->
+                    <button type="button" class="btn btn-primary next-step"> Seterusnya </button>
+
+                  </div>
+
+                </div>
+
+                <!-- 4. ASSISTANCE -->
+                <div class="wizard-step">
+                  <h5 class="mb-3">BAHAGIAN 4 : PASUKAN BANTUAN DIPERLUKAN</h5>
+
+                  <div class="card mb-4 shadow-sm">
+                    <div class="card-body">
+
+                      <div class="table-responsive">
+                        <table class="table table-bordered text-center">
+
+                          <thead class="table-light">
+                            <tr>
+                              <th>Pasukan</th>
+                              <th>Status Diperlukan</th>
+                              <th>Bilangan Pasukan</th>
+                            </tr>
+                          </thead>
+
+                          <tbody>
+                            <tr>
+                              <td>Pasukan Kesihatan</td>
+                              <td>
+                                <select class="form-control" name="team_health_status">
+                                  <option value="tidak">Tidak</option>
+                                  <option value="ya">Ya</option>
+                                </select>
+                              </td>
+                              <td>
+                                <input type="number" class="form-control" name="team_health_no" value="0" min="0">
+                              </td>
+                            </tr>
+
+                            <tr>
+                              <td>Pasukan Perubatan</td>
+                              <td>
+                                <select class="form-control" name="team_medical_status">
+                                  <option value="tidak">Tidak</option>
+                                  <option value="ya">Ya</option>
+                                </select>
+                              </td>
+                              <td>
+                                <input type="number" class="form-control" name="team_medical_no" value="0" min="0">
+                              </td>
+                            </tr>
+
+                            <tr>
+                              <td>Pasukan MHPRT</td>
+                              <td>
+                                <select class="form-control" name="team_mhprt_status">
+                                  <option value="tidak">Tidak</option>
+                                  <option value="ya">Ya</option>
+                                </select>
+                              </td>
+                              <td>
+                                <input type="number" class="form-control" name="team_mhprt_no" value="0" min="0">
+                              </td>
+                            </tr>
+
+                          </tbody>
+                        </table>
+                      </div>
+
+                    </div>
+                  </div>
+
+                  <!-- WIZARD BUTTON -->
+                  <div class="d-flex justify-content-start gap-2 mt-4">
+
+                    <!-- Previous -->
+                    <button type="button" class="btn btn-secondary prev-step"> Kembali </button>
+
+                    <!-- Next -->
+                    <button type="button" class="btn btn-primary next-step"> Seterusnya </button>
+
+                  </div>
+
+                </div>
+                
+
+                <!-- 5. REPORT PREPARED BY -->
+                <div class="wizard-step">
+                  <h5 class="mb-3">BAHAGIAN 5 : REPORT PREPARED BY</h5>
+
+                  <div class="card mb-4 shadow-sm">
+                    <div class="card-body">
+
+                      <!-- Pegawai Kesihatan Daerah -->
+                      <h6 class="mb-3">Pegawai Kesihatan Daerah</h6>
+
+                      <div class="row">
+                        <div class="col-md-3 mb-3">
+                          <label>Nama</label>
+                          <input type="text" class="form-control" name="pkd_name">
+                        </div>
+
+                        <div class="col-md-3 mb-3">
+                          <label>Jawatan</label>
+                          <input type="text" class="form-control" name="pkd_designation">
+                        </div>
+
+                        <div class="col-md-3 mb-3">
+                          <label>No Telefon</label>
+                          <input type="text" class="form-control" name="pkd_phone">
+                        </div>
+
+                        <div class="col-md-3 mb-3">
+                          <label>Tarikh & Masa</label>
+                          <input type="datetime-local" class="form-control" name="pkd_datetime">
+                        </div>
+                      </div>
+
+                      <div class="mb-3">
+                        <label>Ulasan</label>
+                        <textarea class="form-control" name="pkd_comment" rows="3"></textarea>
+                      </div>
+
+                      <hr>
+
+                      <!-- CPRC Negeri -->
+                      <h6 class="mb-3">Pegawai Ketua Petugas CPRC Negeri</h6>
+
+                      <div class="row">
+                        <div class="col-md-3 mb-3">
+                          <label>Nama</label>
+                          <input type="text" class="form-control" name="cprc_name">
+                        </div>
+
+                        <div class="col-md-3 mb-3">
+                          <label>Jawatan</label>
+                          <input type="text" class="form-control" name="cprc_designation">
+                        </div>
+
+                        <div class="col-md-3 mb-3">
+                          <label>No Telefon</label>
+                          <input type="text" class="form-control" name="cprc_phone">
+                        </div>
+
+                        <div class="col-md-3 mb-3">
+                          <label>Tarikh & Masa</label>
+                          <input type="datetime-local" class="form-control" name="cprc_datetime">
+                        </div>
+                      </div>
+
+                      <hr>
+
+                      <!-- Additional blank signature/remarks block -->
+                      <h6 class="mb-3">Maklumat Tambahan (Jika Ada)</h6>
+
+                      <div class="row">
+                        <div class="col-md-3 mb-3">
+                          <label>Nama</label>
+                          <input type="text" class="form-control" name="extra_name">
+                        </div>
+
+                        <div class="col-md-3 mb-3">
+                          <label>Jawatan</label>
+                          <input type="text" class="form-control" name="extra_designation">
+                        </div>
+
+                        <div class="col-md-3 mb-3">
+                          <label>No Telefon</label>
+                          <input type="text" class="form-control" name="extra_phone">
+                        </div>
+
+                        <div class="col-md-3 mb-3">
+                          <label>Tarikh & Masa</label>
+                          <input type="datetime-local" class="form-control" name="extra_datetime">
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                  <!-- WIZARD BUTTON -->
+                  <div class="d-flex justify-content-start gap-2 mt-4">
+
+                    <!-- Previous -->
+                    <button type="button" class="btn btn-secondary prev-step"> Kembali </button>
+
+                    <div>
+
+                      <!-- Next -->
+                      <button type="button" class="btn btn-primary next-step"> Seterusnya </button>
+
+                      <!-- Submit -->
+                      <button type="submit" class="btn btn-success submit-btn"> Hantar </button>
+
+                    </div>
+
+                  </div>
+
+                </div>
+                
+                </form>  
+              
+                    
+          </div>
+
+          <!-- CONTENT FINISH HERE -->
+
+        </div>
+
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<!--
+<script src="assets/js/doce_hre.js"></script>
+-->
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const steps = document.querySelectorAll(".wizard-step");
+    const navButtons = document.querySelectorAll("#stepIndicator .nav-link");
+
+    function showStep(stepIndex) {
+
+        // Hide all steps
+        steps.forEach(step => {
+            step.classList.remove("active");
+        });
+
+        // Remove active from all nav buttons
+        navButtons.forEach(btn => {
+            btn.classList.remove("active");
+        });
+
+        // Show selected step
+        steps[stepIndex].classList.add("active");
+
+        // Activate nav button
+        navButtons[stepIndex].classList.add("active");
+    }
+
+    // Click navigation
+    navButtons.forEach(button => {
+        button.addEventListener("click", function () {
+
+            const step = this.getAttribute("data-step");
+
+            showStep(step);
+        });
+    });
+
+    // Show first step on load
+    showStep(0);
+
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const form = document.getElementById("wizardForm");
+
+    const steps = document.querySelectorAll(".wizard-step");
+    const navButtons = document.querySelectorAll("#stepIndicator .nav-link");
+
+    const nextButtons = document.querySelectorAll(".next-step");
+    const prevButtons = document.querySelectorAll(".prev-step");
+    const submitButtons = document.querySelectorAll(".submit-btn");
+
+    let currentStep = 0;
+
+    // SHOW STEP
+    function showStep(stepIndex) {
+
+        // Hide all steps
+        steps.forEach(step => {
+            step.classList.remove("active");
+        });
+
+        // Remove active nav
+        navButtons.forEach(btn => {
+            btn.classList.remove("active");
+        });
+
+        // Show selected step
+        steps[stepIndex].classList.add("active");
+        navButtons[stepIndex].classList.add("active");
+
+        currentStep = stepIndex;
+
+        // PREVIOUS BUTTON
+        prevButtons.forEach(btn => {
+            btn.style.display = currentStep === 0 ? "none" : "inline-block";
+        });
+
+        // NEXT BUTTON
+        nextButtons.forEach(btn => {
+            btn.style.display = currentStep === steps.length - 1 ? "none" : "inline-block";
+        });
+
+        // SUBMIT BUTTON
+        submitButtons.forEach(btn => {
+            btn.style.display = currentStep === steps.length - 1 ? "inline-block" : "none";
+        });
+    }
+
+    // NAVIGATION CLICK
+    navButtons.forEach(button => {
+
+        button.addEventListener("click", function () {
+
+            const step = parseInt(this.getAttribute("data-step"));
+
+            showStep(step);
+
+        });
+
+    });
+
+    // NEXT BUTTON
+    nextButtons.forEach(button => {
+
+        button.addEventListener("click", function () {
+
+            if (currentStep < steps.length - 1) {
+
+                showStep(currentStep + 1);
+
+            }
+
+        });
+
+    });
+
+    // PREVIOUS BUTTON
+    prevButtons.forEach(button => {
+
+        button.addEventListener("click", function () {
+
+            if (currentStep > 0) {
+
+                showStep(currentStep - 1);
+
+            }
+
+        });
+
+    });
+
+    // FORM SUBMIT
+    form.addEventListener("submit", function (e) {
+
+        e.preventDefault();
+
+        alert("Laporan berjaya dihantar!");
+
+        // Uncomment after dah connect db and go through prod
+        // form.submit();
+
+    });
+    
+
+    // DEFAULT
+    showStep(0);
+
+});
+</script>
+
+
+<!-- FOOTER -->
+<div id="footer"></div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Common Layout JS -->
+<script src="assets/js/common.js"></script>
+<script src="assets/js/wizard-form.js"></script>
+</body>
+</html>

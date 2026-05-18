@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <title>ILI Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Main CSS -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    body { font-size: 14px; }
+    label { font-weight: 500; font-size: 14px; }
+    .wizard-step { display: none; }
+    .wizard-step.active { display: block; }
+  </style>
+</head>
+
+<body>
+
+<div id="header"></div>
+
+<div class="container-fluid">
+  <div class="row">
+
+    <aside class="col-md-3 col-lg-2 p-0 sidebar" id="sidebar-placeholder"></aside>
+
+    <main class="col-md-9 col-lg-10 p-4">
+
+      <div class="card shadow-sm">
+
+        <!-- HEADER -->
+        <div class="card-body border-bottom">
+          <h4 class="mb-1">Borang ILI Surveillance</h4>
+          <p class="text-muted mb-0">Sila lengkapkan semua maklumat dengan betul sebelum menghantar laporan ini.</p>
+        </div>
+
+        <div class="card-body">
+
+          <!-- STEP NAV -->
+          <ul class="nav nav-pills justify-content-center mb-4" id="stepIndicator">
+            <li class="nav-item"><button class="nav-link active" data-step="0">1</button></li>
+            <li class="nav-item"><button class="nav-link" data-step="1">2</button></li>
+            <li class="nav-item"><button class="nav-link" data-step="2">3</button></li>
+            <li class="nav-item"><button class="nav-link" data-step="3">4</button></li>
+          </ul>
+
+          <form id="iliForm">
+
+            <!-- 1. patient info -->
+            <div class="wizard-step active">
+              <h5>1. MAKLUMAT PESAKIT</h5>
+
+              <div class="card p-3 mb-3">
+
+                <div class="mb-3">
+                  <label>No. Makmal</label>
+                  <input type="text" class="form-control" name="lab_number" 
+                  placeholder="Contoh: MKAJB/CL/2024/00000"
+                  required>
+                </div>
+
+                <div class="mb-3">
+                  <label>Nama Pesakit</label>
+                  <input type="text" class="form-control" name="patient_name" required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">No. Pengenalan (Tanpa (-))</label>
+                    <input type="number" class="form-control" name="identification_number" 
+                    placeholder="Contoh: 101010101010"
+                    required>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label>Tarikh Onset</label>
+                    <input type="date" class="form-control" name="date_onset" required>
+                  </div>
+
+                  <div class="col-md-6 mb-3">
+                    <label>Program</label>
+                    <select class="form-select" name="program">
+                      <option>ILI Surveillance</option>
+                    </select>
+                  </div>
+                </div>
+
+              </div>
+
+              <button type="button" class="btn btn-primary next-step">Seterusnya</button>
+            </div>
+
+            <!-- 2. sample details -->
+            <div class="wizard-step">
+              <h5>2. MAKLUMAT SAMPEL</h5>
+
+              <div class="card p-3 mb-3">
+
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label>Tarikh Ambil Sampel</label>
+                    <input type="date" class="form-control" name="date_collect">
+                  </div>
+
+                  <div class="col-md-6 mb-3">
+                    <label>Minggu Epidemiologi</label>
+                    <input type="number" class="form-control" name="epid_week_date_collect">
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label>Locality (Penghantar)</label>
+                  <input type="text" class="form-control" name="locality_name_sender" 
+                  placeholder="Contoh: Klinik Kesihatan .......... ">
+                </div>
+
+                <div class="mb-3">
+                  <label>Negeri</label>
+                  <select class="form-select" name="state">
+                    <option disabled selected>Pilih...</option>
+                    <option>Johor</option>
+                    <option>Kedah</option>
+                    <option>Kelantan</option>
+                    <option>Melaka</option>
+                    <option>Negeri Sembilan</option>
+                    <option>Pahang</option>
+                    <option>Perak</option>
+                    <option>Perlis</option>
+                    <option>Pulau Pinang</option>
+                    <option>Sabah</option>
+                    <option>Sarawak</option>
+                    <option>Selangor</option>
+                    <option>Terengganu</option>
+                    <option>WP Kuala Lumpur</option>
+                    <option>WP Labuan</option>
+                    <option>WP Putrajaya</option>
+                  </select>
+                </div>
+
+              </div>
+
+              <div class="d-flex gap-2">
+                <button type="button" class="btn btn-secondary prev-step">Kembali</button>
+                <button type="button" class="btn btn-primary next-step">Seterusnya</button>
+              </div>
+            </div>
+
+            <!-- 3. result pcr -->
+            <div class="wizard-step">
+              <h5>3. KEPUTUSAN PCR</h5>
+
+              <div class="card p-3 mb-3">
+
+                <div class="mb-3">
+                  <label>Keputusan Influenza A</label>
+                  <select class="form-select" name="final_result_1">
+                    <option disabled selected>Pilih...</option>
+                    <option>Influenza A H1N1 Virus</option>
+                    <option>Influenza A H3 Virus</option>
+                    <option>Influenza B Virus</option>
+                    <option>Negative</option>
+                    <option>Reject</option>
+                  </select>
+                </div>
+
+                <div class="mb-3">
+                  <label>Keputusan Influenza B</label>
+                  <select class="form-select" name="final_result_2">
+                    <option disabled selected>Pilih...</option>
+                    <option>Not Applicable</option>
+                    <option>Influenza Virus B</option>
+                    <option>Respiratory Syncytial Virus</option>
+                  </select>
+                </div>
+
+                <div class="mb-3">
+                  <label>COVID-19 PCR</label>
+                  <select class="form-select" name="pcr_corona_virus">
+                    <option disabled selected>Pilih...</option>
+                    <option>Coronavirus (COVID-19) not detected</option>
+                    <option>Coronavirus (COVID-19) Detected</option>
+                    <option>Inconclusive</option>
+                  </select>
+                </div>
+
+              </div>
+
+              <div class="d-flex gap-2">
+                <button type="button" class="btn btn-secondary prev-step">Kembali</button>
+                <button type="button" class="btn btn-primary next-step">Seterusnya</button>
+              </div>
+            </div>
+
+            <!-- 4. verification -->
+            <div class="wizard-step">
+              <h5>4. PENGESAHAN</h5>
+
+              <div class="card p-3 mb-3">
+
+                <div class="mb-3">
+                  <label>Tarikh Pengesahan</label>
+                  <input type="date" class="form-control" name="date_received">
+                </div>
+
+                <div class="mb-3">
+                <label>Bulan Terima Sampel</label>
+                <select class="form-select" name="month_received_sample" required>
+
+                    <option value="" disabled selected>Pilih bulan</option>
+
+                    <option value="1">Januari</option>
+                    <option value="2">Februari</option>
+                    <option value="3">Mac</option>
+                    <option value="4">April</option>
+                    <option value="5">Mei</option>
+                    <option value="6">Jun</option>
+                    <option value="7">Julai</option>
+                    <option value="8">Ogos</option>
+                    <option value="9">September</option>
+                    <option value="10">Oktober</option>
+                    <option value="11">November</option>
+                    <option value="12">Disember</option>
+
+                </select>
+                </div>
+
+              </div>
+
+              <div class="d-flex gap-2">
+                <button type="button" class="btn btn-secondary prev-step">Kembali</button>
+                <button type="submit" class="btn btn-success">Hantar</button>
+              </div>
+            </div>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<div id="footer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/common.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const steps = document.querySelectorAll(".wizard-step");
+  const nav = document.querySelectorAll("#stepIndicator .nav-link");
+  let current = 0;
+
+  function showStep(i) {
+    steps.forEach((s, idx) => s.classList.toggle("active", idx === i));
+    nav.forEach((b, idx) => b.classList.toggle("active", idx === i));
+    current = i;
+  }
+
+  document.querySelectorAll(".next-step").forEach(b => {
+    b.addEventListener("click", () => {
+      if (current < steps.length - 1) showStep(current + 1);
+    });
+  });
+
+  document.querySelectorAll(".prev-step").forEach(b => {
+    b.addEventListener("click", () => {
+      if (current > 0) showStep(current - 1);
+    });
+  });
+
+  nav.forEach(b => {
+    b.addEventListener("click", () => showStep(parseInt(b.dataset.step)));
+  });
+
+  showStep(0);
+
+});
+</script>
+
+</body>
+</html>

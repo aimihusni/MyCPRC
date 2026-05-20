@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <title>Rumor Survelan Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- MAIN CSS (JANGAN UBAH) -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- SAFE OVERRIDE (UNTUK CONSISTENT FONT SAHAJA) -->
+  <style>
+    body {
+      font-size: 14px;
+    }
+
+    label, p, input, select, textarea {
+      font-size: 14px !important;
+    }
+
+    h4, h5, h6 {
+      font-weight: 600;
+    }
+
+    .wizard-step {
+      display: none;
+    }
+
+    .wizard-step.active {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER (JANGAN BUANG) -->
+<div id="header"></div>
+
+<div class="container-fluid">
+  <div class="row">
+
+    <!-- SIDEBAR (JANGAN BUANG) -->
+    <aside class="col-md-3 col-lg-2 p-0 sidebar" id="sidebar-placeholder"></aside>
+
+    <!-- MAIN -->
+    <main class="col-md-9 col-lg-10 p-4">
+
+      <div class="card shadow-sm">
+
+        <!--  
+        <div class="card-body border-bottom">
+          <h4 class="mb-1">RUMOR SURVELAN FORM</h4>
+          <p class="text-muted mb-0">
+            Sila lengkapkan maklumat sebelum hantar.
+          </p>
+        </div>
+        -->
+
+        <!-- CONTENT -->
+        <div class="card-body">
+            <!-- STEP 1: EBS FORM -->
+            <div class="wizard-step active">
+            <h5>PEMANTAUAN EVENT BASED SURVEILLANCE (EBS)</h5>
+
+            <p class="text-muted">
+                Pengumpulan maklumat melalui media sosial (Facebook, X, TikTok, dll)
+            </p>
+
+            <!-- Tarikh Bertugas -->
+            <div class="card p-3 mb-3">
+                <label>Tarikh Bertugas <span class="text-danger">*</span></label>
+                <input type="date" class="form-control my-duty-date" required>
+            </div>
+
+            <!-- Tajuk -->
+            <div class="card p-3 mb-3">
+                <label>Tajuk Berita / Kejadian / Maklumat <span class="text-danger">*</span></label>
+                <input type="text" class="form-control my-title" required
+                placeholder="Contoh: Permainan video ganas jejas kesihatan mental">
+            </div>
+
+            <!-- Sumber -->
+            <div class="card p-3 mb-3">
+                <label>Sumber Berita / Kejadian / Maklumat <span class="text-danger">*</span></label>
+                <input type="text" class="form-control my-source" required
+                placeholder="Contoh: Astro Awani, Kosmo, Facebook">
+            </div>
+
+            <!-- Tarikh berita keluar -->
+            <div class="card p-3 mb-3">
+                <label>Tarikh Berita / Maklumat Dikeluarkan <span class="text-danger">*</span></label>
+                <input type="date" class="form-control my-news-date" required>
+            </div>
+
+            <!-- Masa -->
+            <div class="card p-3 mb-3">
+                <label>Masa Berita / Maklumat Dikeluarkan <span class="text-danger">*</span></label>
+                <input type="time" class="form-control my-news-time" required>
+            </div>
+
+            <!-- Maklumat -->
+            <div class="card p-3 mb-3">
+                <label>Maklumat Berita / Kejadian <span class="text-danger">*</span></label>
+                <textarea class="form-control my-details" rows="5" required
+                placeholder="Copy paste berita / posting / maklumat"></textarea>
+            </div>
+
+            <!-- Link -->
+            <div class="card p-3 mb-3">
+                <label>Pautan Berita / Maklumat <span class="text-danger">*</span></label>
+                <input type="url" class="form-control my-link" required
+                placeholder="https://...">
+            </div>
+
+            <!-- Kategori -->
+            <div class="card p-3 mb-3">
+                <label>Kategori ESRA <span class="text-danger">*</span></label>
+
+                <select class="form-select my-esra" required>
+                <option value="" disabled selected hidden>-- Pilih --</option>
+                <option value="Merah">Merah</option>
+                <option value="Kuning">Kuning</option>
+                <option value="Hijau">Hijau</option>
+                <option value="Tidak dapat ditentukan">Tidak dapat ditentukan</option>
+                </select>
+            </div>
+
+            <div class="d-flex justify-content-start">
+                <button type="button" class="btn btn-primary next-step">
+                Seterusnya
+                </button>
+            </div>
+
+            <script>
+                document.querySelectorAll(".next-step").forEach(btn => {
+                btn.addEventListener("click", () => {
+
+                    const currentStepEl = document.querySelector(".wizard-step.active");
+                    const inputs = currentStepEl.querySelectorAll("input, textarea, select");
+
+                    for (let i = 0; i < inputs.length; i++) {
+                    if (!inputs[i].checkValidity()) {
+                        inputs[i].reportValidity();
+                        return; // stop step change
+                    }
+                    }
+
+                    if (current < steps.length - 1) showStep(current + 1);
+                });
+                }); 
+            </script>
+          
+
+        </div>
+
+    </main>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div id="footer"></div>
+
+<!-- JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/common.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const steps = document.querySelectorAll(".wizard-step");
+  const nav = document.querySelectorAll("#stepIndicator .nav-link");
+
+  let current = 0;
+
+  function showStep(i) {
+
+    steps.forEach((s, idx) => {
+      s.classList.toggle("active", idx === i);
+    });
+
+    nav.forEach((b, idx) => {
+      b.classList.toggle("active", idx === i);
+    });
+
+    current = i;
+  }
+
+  document.querySelectorAll(".next-step").forEach(btn => {
+    btn.addEventListener("click", () => {
+      if (current < steps.length - 1) showStep(current + 1);
+    });
+  });
+
+  document.querySelectorAll(".prev-step").forEach(btn => {
+    btn.addEventListener("click", () => {
+      if (current > 0) showStep(current - 1);
+    });
+  });
+
+  nav.forEach(btn => {
+    btn.addEventListener("click", function () {
+      showStep(parseInt(this.dataset.step));
+    });
+  });
+
+  showStep(0);
+
+});
+</script>
+
+</body>
+</html>

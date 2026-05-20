@@ -66,282 +66,221 @@
               </div>
             </div>
 
-            <!-- 2. SARINGAN BERITA -->
+            <!-- 2. saringan berita -->
             <div class="wizard-step">
 
               <h5 class="mb-3">BAHAGIAN 1: SARINGAN BERITA</h5>
 
-              <!-- MALAYSIA -->
-
               <div class="card shadow-sm mb-4">
 
                 <div class="card-header bg-primary text-white">
-                  <strong>A. MALAYSIA</strong>
+                  <strong>REKOD SARINGAN BERITA</strong>
                 </div>
 
                 <div class="card-body">
 
                   <div class="row g-3">
 
-                    <div class="col-md-2">
-                      <label>Tarikh</label>
-                      <input type="date" class="form-control my-date">
-                    </div>
-
+                    <!-- TYPE -->
                     <div class="col-md-3">
-                      <label>Jumlah Berita / Isu</label>
-                      <input type="text" class="form-control my-issue">
-                    </div>
-
-                    <div class="col-md-7">
-                      <label>Tajuk Berita / Isu</label>
-                      <input type="text" class="form-control my-title">
-                    </div>
-
-                    <div class="col-md-4">
-                      <label>Kategori Berita / Isu</label>
-                      <select class="form-select my-category">
-                        <option value="">-- Pilih --</option>
-                        <option>Lain-lain</option>
-                        <option>Penyakit Berjangkit</option>
-                        <option>Penyakit Tidak Berjangkit</option>
+                      <label>Peringkat berita</label>
+                      <select class="form-select my-level" required>
+                        <option value="Malaysia">Malaysia</option>
+                        <option value="Antarabangsa">Antarabangsa</option>
                       </select>
                     </div>
-
-                    <div class="col-md-4">
-                      <label>Sumber</label>
-                      <input type="text" class="form-control my-source">
-                    </div>
-
-                    <div class="col-md-2">
-                      <label>Mukasurat</label>
-                      <input type="text" class="form-control my-page">
-                    </div>
-
-                    <div class="col-md-2">
-                      <label>Kod Warna</label>
-                      <select class="form-select my-color">
-                        <option value="">--</option>
-                        <option>Merah</option>
-                        <option>Kuning</option>
-                        <option>Hijau</option>
-                      </select>
-                    </div>
-
-                    <div class="col-md-6">
-                      <label>Kata Kunci</label>
-                      <input type="text" class="form-control my-keyword">
-                    </div>
-
-                    <div class="col-md-6">
-                      <label>Tindakan / Maklumbalas</label>
-                      <select class="form-select my-action">
-                        <option value="">-- Pilih --</option>
-
-                        <option>INCEMH</option>
-                        <option>KETUA SEKTOR HIV/AIDS DAN STD</option>
-                        <option>KETUA SEKTOR KAWALAN PENYAKIT & PENCEGAHAN PENYAKIT CVD/DIABETIS/KANSER</option>
-                        <option>KETUA SEKTOR KAWALAN TEMBAKAU DAN FCTC</option>
-                        <option>KETUA SEKTOR KAWALAN VPD & FWBD</option>
-                        <option>KETUA SEKTOR PENGURUSAN BENCANA, WABAK, KRISIS & KECEMASAN (DOCE)</option>
-                        <option>KETUA SEKTOR PENYAKIT BAWAAN VEKTOR</option>
-                        <option>KETUA SEKTOR PENYAKIT HIV</option>
-                        <option>KETUA SEKTOR PENYAKIT TIBI DAN KUSTA</option>
-                        <option>KETUA SEKTOR PENYAKIT TIDAK BERJANGKIT DAN NCEMH</option>
-                        <option>KETUA SEKTOR PENYAKIT ZOONOSIS</option>
-                        <option>KETUA SEKTOR SURVELAN</option>
-                        <option>KETUA SEKTOR SURVELAN PENYAKIT</option>
-                        <option>KETUA SEKTOR ZOONOSIS</option>
-                        <option>MAKLUMAN</option>
-                        <option>PUSAT KECEMERLANGAN KESIHATAN MENTAL KEBANGSAAN (NCEMH)</option>
-
-                      </select>
-                    </div>
-
-                    <div class="col-12">
-                      <label>Catatan</label>
-                      <input type="text" class="form-control my-note">
-                    </div>
-
-                  </div>
-
-                  <div class="mt-3">
-                    <button class="btn btn-primary" type="button" onclick="addMalaysia()">
-                      + Tambah Rekod Malaysia
-                    </button>
-                  </div>
-
-                </div>
-              </div>
-
-              <!-- TABLE MALAYSIA -->
-              <div class="card shadow-sm mb-4">
-
-                <div class="card-header bg-light">
-                  <strong>REKOD MALAYSIA</strong>
-                </div>
-
-                <div class="card-body table-responsive">
-
-                  <table class="table table-striped table-bordered text-center">
-                    <thead class="table-dark">
-                      <tr>
-                        <th>Tarikh</th>
-                        <th>Isu</th>
-                        <th>Tajuk</th>
-                        <th>Kategori</th>
-                        <th>Kod Warna</th>
-                        <th>Kata Kunci</th>
-                        <th>Tindakan</th>
-                      </tr>
-                    </thead>
-                    <tbody id="myTableBody"></tbody>
-                  </table>
-
-                </div>
-              </div>
-              <!-- SUMMARY MALAYSIA -->
-              <div class="card shadow-sm mt-3">
-
-                <div class="card-header bg-light">
-                  <strong>RINGKASAN KOD WARNA (MALAYSIA)</strong>
-                </div>
-
-                <div class="card-body">
-
-                  <table class="table table-bordered text-center mb-0">
-                    <tr>
-                      <th>Kod Warna</th>
-                      <th>Jumlah</th>
-                    </tr>
-                    <tr>
-                      <td>Merah</td>
-                      <td id="myMerah">0</td>
-                    </tr>
-                    <tr>
-                      <td>Kuning</td>
-                      <td id="myKuning">0</td>
-                    </tr>
-                    <tr>
-                      <td>Hijau</td>
-                      <td id="myHijau">0</td>
-                    </tr>
-                    <tr class="table-secondary fw-bold">
-                      <td>Total</td>
-                      <td id="myTotal">0</td>
-                    </tr>
-                  </table>
-
-                </div>
-              </div>
-
-              <br>
-
-              <!-- INTERNATIONAL -->
-
-              <div class="card shadow-sm mb-4">
-
-                <div class="card-header bg-success text-white">
-                  <strong>B. ANTARABANGSA</strong>
-                </div>
-
-                <div class="card-body">
-
-                  <div class="row g-3">
 
                     <div class="col-md-2">
                       <label>Tarikh</label>
-                      <input type="date" class="form-control int-date">
+                      <input type="date" class="form-control my-date" required>
                     </div>
 
                     <div class="col-md-3">
-                      <label>Jumlah Berita / Isu</label>
-                      <input type="text" class="form-control int-issue">
+                      <label>Jumlah Isu</label>
+                      <input type="number" class="form-control my-issue" min="0" readonly>
                     </div>
 
-                    <div class="col-md-7">
-                      <label>Tajuk Berita / Isu</label>
-                      <input type="text" class="form-control int-title">
+                    <div class="col-md-4">
+                      <label>Tajuk</label>
+                      <input type="text" class="form-control my-title" required>
                     </div>
 
                     <div class="col-md-4">
                       <label>Kategori</label>
-                      <select class="form-select int-category">
-                        <option value="">-- Pilih --</option>
-                        <option>Lain-lain</option>
+                      <select class="form-select my-category" required>
+                        <option value="" disabled selected hidden>-- Pilih --</option>
                         <option>Penyakit Berjangkit</option>
                         <option>Penyakit Tidak Berjangkit</option>
+                        <option>Lain-lain</option>
                       </select>
                     </div>
 
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                       <label>Sumber</label>
-                      <input type="text" class="form-control int-source">
+
+                      <select class="form-select my-source" id="sourceSelect" required>
+                        <option value="" disabled selected hidden>-- Pilih Sumber --</option>
+
+                        <option>THE STAR</option>
+                        <option>AA</option>
+                        <option>AIR TIME</option>
+                        <option>ARAB NEWS</option>
+                        <option>ASIA NEW NETWORK</option>
+                        <option>ASTRO AWANI</option>
+                        <option>BERITA HARIAN</option>
+                        <option>BBC NEWS</option>
+                        <option>BERNAMA</option>
+                        <option>BULETIN TV3</option>
+                        <option>CBS NEWS</option>
+                        <option>CIDRAP</option>
+                        <option>CNA</option>
+                        <option>CNN</option>
+                        <option>CODE BLUE</option>
+                        <option>DAILY POST DIGITAL</option>
+                        <option>DOCTORS WITHOUT BORDERS</option>
+                        <option>EIOS</option>
+                        <option>FACEBOOK</option>
+                        <option>FMT</option>
+                        <option>FREE MALAYSIA TODAY</option>
+                        <option>GLOBAL TIMES</option>
+                        <option>HARIAN METRO</option>
+                        <option>HEALTH</option>
+                        <option>INDIAN TODAY</option>
+                        <option>KOSMO</option>
+                        <option>LAMAN X</option>
+                        <option>LIVE MINT</option>
+                        <option>MALAY MAIL</option>
+                        <option>METMALAYSIA</option>
+                        <option>METRO</option>
+                        <option>NATURAL NEWS</option>
+                        <option>NDTV WORLD</option>
+                        <option>NEW STRAITS TIMES</option>
+                        <option>NEWS CENTRAL</option>
+                        <option>NIPPON.COM</option>
+                        <option>OBSERVER</option>
+                        <option>OUTBREAK NEWS TODAY</option>
+                        <option>PROMED</option>
+                        <option>RELIEF WEB</option>
+                        <option>SIN CHEW DAILY</option>
+                        <option>SINAR HARIAN</option>
+                        <option>SOUTH CHINA MORNING POST</option>
+                        <option>THE GUARDIAN</option>
+                        <option>THE INDIA BUSINESS LIVE</option>
+                        <option>THE INDIAN EXPRESS</option>
+                        <option>THE STAR</option>
+                        <option>THE STRAITS TIMES</option>
+                        <option>THE SUN</option>
+                        <option>THE TIMES OF INDIA</option>
+                        <option>UTUSAN MALAYSIA</option>
+                        <option>WHO</option>
+                        <option>WORLD HEALTH</option>
+                        <option>YAHOO NEWS</option>
+
+                        <option value="OTHER">LAIN-LAIN</option>
+                      </select>
+
+                        <script>
+                          document.addEventListener("DOMContentLoaded", function () {
+
+                            const sourceSelect = document.getElementById("sourceSelect");
+                            const otherField = document.getElementById("sourceOtherField");
+                            const otherInput = document.querySelector(".my-source-other");
+
+                            sourceSelect.addEventListener("change", function () {
+
+                              if (this.value === "OTHER") {
+                                otherField.classList.remove("d-none");
+                                otherInput.required = true;
+                              } else {
+                                otherField.classList.add("d-none");
+                                otherInput.required = false;
+                                otherInput.value = "";
+                              }
+
+                            });
+
+                          });
+                        </script>
+
+
+                      <!-- OTHER FIELD -->
+                      <div id="sourceOtherField" class="mt-2 d-none">
+                        <label>Sila nyatakan sumber</label>
+                        <input type="text" class="form-control my-source-other" required>
+                      </div>
                     </div>
 
                     <div class="col-md-2">
                       <label>Kod Warna</label>
-                      <select class="form-select int-color">
-                        <option value="">--</option>
-                        <option>Merah</option>
-                        <option>Kuning</option>
-                        <option>Hijau</option>
+
+                      <select class="form-select my-color" required>
+                        <option value="" disabled selected hidden>-- Pilih --</option>
+
+                        <option value="Merah">
+                          🔴 Merah
+                        </option>
+
+                        <option value="Kuning">
+                          🟡 Kuning
+                        </option>
+
+                        <option value="Hijau" >
+                          🟢 Hijau
+                        </option>
+
                       </select>
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-3">
                       <label>Kata Kunci</label>
-                      <input type="text" class="form-control int-keyword">
+                      <input type="text" class="form-control my-keyword" required>
                     </div>
 
                     <div class="col-md-6">
-                      <label>Tindakan / Maklumbalas</label>
-                      <select class="form-select int-action">
-                        <option value="">-- Pilih --</option>
-
-                        <option>INCEMH</option>
-                        <option>KETUA SEKTOR HIV/AIDS DAN STD</option>
-                        <option>KETUA SEKTOR KAWALAN PENYAKIT & PENCEGAHAN PENYAKIT CVD/DIABETIS/KANSER</option>
-                        <option>KETUA SEKTOR KAWALAN TEMBAKAU DAN FCTC</option>
-                        <option>KETUA SEKTOR KAWALAN VPD & FWBD</option>
-                        <option>KETUA SEKTOR PENGURUSAN BENCANA, WABAK, KRISIS & KECEMASAN (DOCE)</option>
-                        <option>KETUA SEKTOR PENYAKIT BAWAAN VEKTOR</option>
-                        <option>KETUA SEKTOR PENYAKIT HIV</option>
-                        <option>KETUA SEKTOR PENYAKIT TIBI DAN KUSTA</option>
-                        <option>KETUA SEKTOR PENYAKIT TIDAK BERJANGKIT DAN NCEMH</option>
-                        <option>KETUA SEKTOR PENYAKIT ZOONOSIS</option>
-                        <option>KETUA SEKTOR SURVELAN</option>
-                        <option>KETUA SEKTOR SURVELAN PENYAKIT</option>
-                        <option>KETUA SEKTOR ZOONOSIS</option>
-                        <option>MAKLUMAN</option>
-                        <option>PUSAT KECEMERLANGAN KESIHATAN MENTAL KEBANGSAAN (NCEMH)</option>
-
+                      <label>Tindakan</label>
+                      <select class="form-select my-action" required>
+                        <option value="" disabled selected hidden>-- Pilih --</option>
+                          <option>INCEMH</option> 
+                          <option>KETUA SEKTOR HIV/AIDS DAN STD</option> 
+                          <option>KETUA SEKTOR KAWALAN PENYAKIT & PENCEGAHAN PENYAKIT CVD/DIABETIS/KANSER</option> 
+                          <option>KETUA SEKTOR KAWALAN TEMBAKAU DAN FCTC</option> 
+                          <option>KETUA SEKTOR KAWALAN VPD & FWBD</option> 
+                          <option>KETUA SEKTOR PENGURUSAN BENCANA, WABAK, KRISIS & KECEMASAN (DOCE)</option> 
+                          <option>KETUA SEKTOR PENYAKIT BAWAAN VEKTOR</option> 
+                          <option>KETUA SEKTOR PENYAKIT HIV</option> 
+                          <option>KETUA SEKTOR PENYAKIT TIBI DAN KUSTA</option> 
+                          <option>KETUA SEKTOR PENYAKIT TIDAK BERJANGKIT DAN NCEMH</option> 
+                          <option>KETUA SEKTOR PENYAKIT ZOONOSIS</option> 
+                          <option>KETUA SEKTOR SURVELAN</option> 
+                          <option>KETUA SEKTOR SURVELAN PENYAKIT</option> 
+                          <option>KETUA SEKTOR ZOONOSIS</option>  
+                          <option>PUSAT KECEMERLANGAN KESIHATAN MENTAL KEBANGSAAN (NCEMH)</option>
+                          <option>MAKLUMAN</option>
                       </select>
                     </div>
 
                   </div>
 
                   <div class="mt-3">
-                    <button class="btn btn-success" type="button" onclick="addInternational()">
-                      + Tambah Rekod Antarabangsa
+                    <button class="btn btn-primary" type="button" onclick="addRecord()">
+                      + Tambah Rekod
                     </button>
                   </div>
 
                 </div>
               </div>
 
-              <!-- TABLE INTERNATIONAL  -->
-              <div class="card shadow-sm">
-
+              <!-- TABLE -->
+              <div class="card shadow-sm mb-4">
                 <div class="card-header bg-light">
-                  <strong>REKOD ANTARABANGSA</strong>
+                  <strong>REKOD SARINGAN BERITA</strong>
                 </div>
 
                 <div class="card-body table-responsive">
-
-                  <table class="table table-striped table-bordered text-center">
+                  <table class="table table-bordered text-center">
                     <thead class="table-dark">
                       <tr>
+                        <th>Peringkat</th>
                         <th>Tarikh</th>
                         <th>Isu</th>
                         <th>Tajuk</th>
@@ -351,170 +290,191 @@
                         <th>Tindakan</th>
                       </tr>
                     </thead>
-                    <tbody id="intTableBody"></tbody>
+                    <tbody id="tableBody"></tbody>
                   </table>
-
                 </div>
               </div>
-              <!-- SUMMARY INTERNATIONAL -->
-              <div class="card shadow-sm mt-3">
 
+              <!-- SUMMARY -->
+              <div class="card shadow-sm">
                 <div class="card-header bg-light">
-                  <strong>RINGKASAN KOD WARNA (ANTARABANGSA)</strong>
+                  <strong>RINGKASAN WARNA MENGIKUT PERINGKAT</strong>
                 </div>
 
                 <div class="card-body">
 
-                  <table class="table table-bordered text-center mb-0">
-                    <tr>
-                      <th>Kod Warna</th>
-                      <th>Jumlah</th>
-                    </tr>
-                    <tr>
-                      <td>Merah</td>
-                      <td id="intMerah">0</td>
-                    </tr>
-                    <tr>
-                      <td>Kuning</td>
-                      <td id="intKuning">0</td>
-                    </tr>
-                    <tr>
-                      <td>Hijau</td>
-                      <td id="intHijau">0</td>
-                    </tr>
-                    <tr class="table-secondary fw-bold">
-                      <td>Total</td>
-                      <td id="intTotal">0</td>
-                    </tr>
+                <div class="table-responsive">
+                  <table class="table table-bordered text-center align-middle shadow-sm mb-0">
+
+                    <thead class="table-dark">
+                      <tr>
+                        <th>Peringkat</th>
+                        <th>Malaysia</th>
+                        <th>Antarabangsa</th>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+
+                      <tr>
+                        <td class="fw-semibold">Merah</td>
+                        <td id="myRed" class="fw-bold text-danger">0</td>
+                        <td id="intRed" class="fw-bold text-danger">0</td>
+                      </tr>
+
+                      <tr>
+                        <td class="fw-semibold">Kuning</td>
+                        <td id="myYellow" class="fw-bold text-warning">0</td>
+                        <td id="intYellow" class="fw-bold text-warning">0</td>
+                      </tr>
+
+                      <tr>
+                        <td class="fw-semibold">Hijau</td>
+                        <td id="myGreen" class="fw-bold text-success">0</td>
+                        <td id="intGreen" class="fw-bold text-success">0</td>
+                      </tr>
+
+                    </tbody>
+
+                    <tfoot class="table-secondary fw-bold">
+                      <tr>
+                        <td>Total</td>
+                        <td id="myTotal">0</td>
+                        <td id="intTotal">0</td>
+                      </tr>
+                    </tfoot>
+
                   </table>
+                </div>
 
                 </div>
               </div>
+
               <!-- NAV -->
               <div class="d-flex justify-content-between mt-4">
                 <button type="button" class="btn btn-secondary prev-step">Kembali</button>
                 <button type="button" class="btn btn-primary next-step">Seterusnya</button>
               </div>
 
-            </div>  
+            </div>
+
 
             <script>
 
-            let malaysiaData = [];
-            let internationalData = [];
+            let data = [];
+            let lastIssue = 0;
 
-            function addMalaysia() {
+            // init
+            document.addEventListener("DOMContentLoaded", function () {
+              const issueInput = document.querySelector(".my-issue");
+              issueInput.value = 1;
+              lastIssue = 1;
+            });
 
-              const data = {
-                date: document.querySelector(".my-date").value,
-                issue: document.querySelector(".my-issue").value, // STRING
-                title: document.querySelector(".my-title").value,
-                color: document.querySelector(".my-color").value,
-                keyword: document.querySelector(".my-keyword").value,
-                action: document.querySelector(".my-action").value
+            function addRecord() {
+
+              const level = document.querySelector(".my-level").value;
+              const date = document.querySelector(".my-date").value;
+              const issueInput = document.querySelector(".my-issue");
+              const title = document.querySelector(".my-title").value.trim();
+              const category = document.querySelector(".my-category").value;
+              const color = document.querySelector(".my-color").value;
+              const keyword = document.querySelector(".my-keyword").value.trim();
+              const action = document.querySelector(".my-action").value;
+
+              // manual validation (html lepas)
+              if (!level || !date || !title || !category || !color || !action) {
+                alert("Sila lengkapkan semua maklumat wajib.");
+                return;
+              }
+
+              const item = {
+                level,
+                date,
+                issue: Number(issueInput.value),
+                title,
+                category,
+                color,
+                keyword,
+                action
               };
 
-              malaysiaData.push(data);
+              data.push(item);
 
-              renderMalaysia();
-              updateMalaysiaSummary();
+              // update last issue
+              lastIssue = item.issue;
+
+              // auto increment
+              issueInput.value = lastIssue + 1;
+
+              renderTable();
+              updateSummary();
+
+              // optional: reset fields lain
+              document.querySelector(".my-title").value = "";
+              document.querySelector(".my-keyword").value = "";
+              document.querySelector(".my-category").selectedIndex = 0;
+              document.querySelector(".my-color").selectedIndex = 0;
+              document.querySelector(".my-action").selectedIndex = 0;
             }
 
-            function addInternational() {
+            function renderTable() {
 
-              const data = {
-                date: document.querySelector(".int-date").value,
-                issue: document.querySelector(".int-issue").value, // STRING
-                title: document.querySelector(".int-title").value,
-                color: document.querySelector(".int-color").value,
-                keyword: document.querySelector(".int-keyword").value,
-                action: document.querySelector(".int-action").value
-              };
-
-              internationalData.push(data);
-
-              renderInternational();
-              updateInternationalSummary();
-            }
-
-            /* RENDER TABLE  */
-
-            function renderMalaysia() {
-
-              const tbody = document.getElementById("myTableBody");
+              const tbody = document.getElementById("tableBody");
               tbody.innerHTML = "";
 
-              malaysiaData.forEach(item => {
+              data.forEach(i => {
 
                 tbody.innerHTML += `
                   <tr>
-                    <td>${item.date || ""}</td>
-                    <td>${item.issue || ""}</td>
-                    <td>${item.title || ""}</td>
-                    <td>${item.color || ""}</td>
-                    <td>${item.keyword || ""}</td>
-                    <td>${item.action || ""}</td>
+                    <td>${i.level ?? ""}</td>
+                    <td>${i.date ?? ""}</td>
+                    <td>${i.issue ?? ""}</td>
+                    <td>${i.title ?? ""}</td>
+                    <td>${i.category ?? ""}</td>
+                    <td>${i.color ?? ""}</td>
+                    <td>${i.keyword ?? ""}</td>
+                    <td>${i.action ?? ""}</td>
                   </tr>
                 `;
               });
             }
 
-            function renderInternational() {
+            function updateSummary() {
 
-              const tbody = document.getElementById("intTableBody");
-              tbody.innerHTML = "";
+              let my = { red:0, yellow:0, green:0, total:0 };
+              let int = { red:0, yellow:0, green:0, total:0 };
 
-              internationalData.forEach(item => {
+              data.forEach(i => {
 
-                tbody.innerHTML += `
-                  <tr>
-                    <td>${item.date || ""}</td>
-                    <td>${item.issue || ""}</td>
-                    <td>${item.title || ""}</td>
-                    <td>${item.color || ""}</td>
-                    <td>${item.keyword || ""}</td>
-                    <td>${item.action || ""}</td>
-                  </tr>
-                `;
-              });
-            }
+                if (i.level === "Malaysia") {
 
-            /* SUMMARY (BASED ON RECORD COUNT) */
+                  if (i.color === "Merah") my.red++;
+                  if (i.color === "Kuning") my.yellow++;
+                  if (i.color === "Hijau") my.green++;
+                  my.total++;
 
-            function updateMalaysiaSummary() {
+                } else {
 
-              let merah = 0, kuning = 0, hijau = 0;
-
-              malaysiaData.forEach(i => {
-                if (i.color === "Merah") merah++;
-                if (i.color === "Kuning") kuning++;
-                if (i.color === "Hijau") hijau++;
+                  if (i.color === "Merah") int.red++;
+                  if (i.color === "Kuning") int.yellow++;
+                  if (i.color === "Hijau") int.green++;
+                  int.total++;
+                }
               });
 
-              document.getElementById("myMerah").innerText = merah;
-              document.getElementById("myKuning").innerText = kuning;
-              document.getElementById("myHijau").innerText = hijau;
-              document.getElementById("myTotal").innerText = malaysiaData.length;
-            }
+              document.getElementById("myRed").innerText = my.red;
+              document.getElementById("myYellow").innerText = my.yellow;
+              document.getElementById("myGreen").innerText = my.green;
+              document.getElementById("myTotal").innerText = my.total;
 
-            function updateInternationalSummary() {
-
-              let merah = 0, kuning = 0, hijau = 0;
-
-              internationalData.forEach(i => {
-                if (i.color === "Merah") merah++;
-                if (i.color === "Kuning") kuning++;
-                if (i.color === "Hijau") hijau++;
-              });
-
-              document.getElementById("intMerah").innerText = merah;
-              document.getElementById("intKuning").innerText = kuning;
-              document.getElementById("intHijau").innerText = hijau;
-              document.getElementById("intTotal").innerText = internationalData.length;
+              document.getElementById("intRed").innerText = int.red;
+              document.getElementById("intYellow").innerText = int.yellow;
+              document.getElementById("intGreen").innerText = int.green;
+              document.getElementById("intTotal").innerText = int.total;
             }
 
             </script>
-
 
 
             <!-- 3. SURVEY KEJADIAN -->

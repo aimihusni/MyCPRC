@@ -53,7 +53,6 @@
 
       <div class="card shadow-sm">
 
-        <!-- -->
         <div class="card-body border-bottom">
           <h4 class="mb-1">EBS FORM</h4>
           <p class="text-muted mb-0">
@@ -63,48 +62,46 @@
 
         <!-- CONTENT -->
         <div class="card-body">
-
-            <!-- STEP 1 (EBS FORM) -->
-            <div class="wizard-step active">
-
+          
+            <form id="ebsForm">
               <div class="card p-3 mb-3">
                 <label>Tarikh Bertugas *</label>
-                <input type="date" class="form-control" required>
+                <input type="date" name="tarikh_bertugas" class="form-control" required>
               </div>
 
               <div class="card p-3 mb-3">
                 <label>Tajuk *</label>
-                <input type="text" class="form-control" required>
+                <input type="text" name="tajuk" class="form-control" required>
               </div>
 
               <div class="card p-3 mb-3">
                 <label>Sumber *</label>
-                <input type="text" class="form-control" required>
+                <input type="text" name="sumber" class="form-control" required>
               </div>
 
               <div class="card p-3 mb-3">
                 <label>Tarikh Berita *</label>
-                <input type="date" class="form-control" required>
+                <input type="date" name="tarikh_berita" class="form-control" required>
               </div>
 
               <div class="card p-3 mb-3">
                 <label>Masa *</label>
-                <input type="time" class="form-control" required>
+                <input type="time" name="masa" class="form-control" required>
               </div>
 
               <div class="card p-3 mb-3">
                 <label>Maklumat *</label>
-                <textarea class="form-control" rows="5" required></textarea>
+                <textarea name="maklumat" class="form-control" rows="5" required></textarea>
               </div>
 
               <div class="card p-3 mb-3">
                 <label>Pautan *</label>
-                <input type="url" class="form-control" required>
+                <input type="url" name="pautan" class="form-control" required>
               </div>
 
               <div class="card p-3 mb-3">
                 <label>Kategori ESRA *</label>
-                <select class="form-select" required>
+                <select name="kategori_esra" class="form-select" required>
                   <option value="" disabled selected hidden>-- Pilih --</option>
                   <option>Merah</option>
                   <option>Kuning</option>
@@ -113,42 +110,9 @@
                 </select>
               </div>
 
-              <div class="d-flex justify-content-start">
-                <button type="button" class="btn btn-primary next-step">
-                  Seterusnya
-                </button>
-              </div>
+              <button type="submit" class="btn btn-success">Hantar</button>
+            </form>
 
-            </div>
-
-            <div class="wizard-step">
-              <h5>BAHAGIAN 2</h5>
-
-              <div class="card p-3 mb-3">
-                <label>Contoh Field</label>
-                <input type="text" class="form-control">
-              </div>
-
-              <div class="d-flex justify-content-start gap-2">
-                <button type="button" class="btn btn-secondary prev-step">Kembali</button>
-                <button type="button" class="btn btn-primary next-step">Seterusnya</button>
-              </div>
-            </div>
-
-            <!-- STEP 3 -->
-            <div class="wizard-step">
-              <h5>BAHAGIAN 3</h5>
-
-              <div class="card p-3 mb-3">
-                <label>Contoh Field</label>
-                <input type="text" class="form-control">
-              </div>
-
-              <div class="d-flex justify-content-start gap-2">
-                <button type="button" class="btn btn-secondary prev-step">Kembali</button>
-                <button type="submit" class="btn btn-success">Hantar</button>
-              </div>
-            </div>
         </div>
       </div>
 
@@ -163,63 +127,21 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/common.js"></script>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-
-    const steps = document.querySelectorAll(".wizard-step");
-    const nav = document.querySelectorAll("#stepIndicator .nav-link");
-
-    let current = 0;
-
-    function showStep(i) {
-      steps.forEach((s, idx) => {
-        s.classList.toggle("active", idx === i);
-      });
-
-      nav.forEach((b, idx) => {
-        b.classList.toggle("active", idx === i);
-      });
-
-      current = i;
-    }
-
-    document.querySelectorAll(".next-step").forEach(btn => {
-      btn.addEventListener("click", () => {
-        if (current < steps.length - 1) showStep(current + 1);
-      });
-    });
-
-    document.querySelectorAll(".prev-step").forEach(btn => {
-      btn.addEventListener("click", () => {
-        if (current > 0) showStep(current - 1);
-      });
-    });
-
-    nav.forEach(btn => {
-      btn.addEventListener("click", function () {
-        showStep(parseInt(this.dataset.step));
-      });
-    });
-
-    showStep(0);
-
-  });
-</script>
 
 <!-- Load Header/Footer -->
 <script>
-  fetch("/header.html")
+  fetch("header.html")
     .then(res => res.text())
     .then(data => document.getElementById("header").innerHTML = data);
 
-  fetch("/footer.html")
+  fetch("footer.html")
     .then(res => res.text())
     .then(data => document.getElementById("footer").innerHTML = data);
 </script>
 
 <!-- Load Sidebar -->
 <script>
-  fetch("/sidebar.html")
+  fetch("sidebar.html")
     .then(res => res.text())
     .then(data => document.getElementById("sidebar-placeholder").innerHTML = data)
     .catch(err => console.error("Sidebar load failed:", err));

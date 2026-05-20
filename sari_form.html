@@ -321,6 +321,23 @@
     // Mula dengan Step 0
     showStep(0);
 </script>
+<!-- Load Header & Footer -->
+<script>
+  fetch("header.html")
+    .then(res => res.text())
+    .then(data => document.getElementById("header").innerHTML = data);
 
+  fetch("footer.html")
+    .then(res => res.text())
+    .then(data => document.getElementById("footer").innerHTML = data);
+</script>
+
+<!-- Load Sidebar -->
+<script>
+  fetch("sidebar.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("sidebar-placeholder").innerHTML = data)
+  .catch(err => console.error("Sidebar load failed:", err));
+</script>
 </body>
 </html>

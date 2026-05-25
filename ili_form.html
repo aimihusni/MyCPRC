@@ -37,6 +37,14 @@
 
         <!-- HEADER -->
         <div class="card-body border-bottom">
+
+          <!--BUTTON BACK-->
+          <div class="mb-3 d-flex justify-content-end">
+            <a href="landingSurveillanceILI.html" class="btn btn-primary">
+              <i class="bi bi-arrow-left me-1"></i> Kembali
+            </a>
+          </div>  
+
           <h4 class="mb-1">Borang ILI Surveillance</h4>
           <p class="text-muted mb-0">Sila lengkapkan semua maklumat dengan betul sebelum menghantar laporan ini.</p>
         </div>
@@ -111,14 +119,78 @@
 
                   <div class="col-md-6 mb-3">
                     <label>Minggu Epidemiologi</label>
-                    <input type="number" class="form-control" name="epid_week_date_collect">
+                    <input type="number" class="form-control" name="epid_week_date_collect" required>
                   </div>
                 </div>
 
                 <div class="mb-3">
                   <label>Locality (Penghantar)</label>
-                  <input type="text" class="form-control" name="locality_name_sender" 
-                  placeholder="Contoh: Klinik Kesihatan .......... ">
+
+                  <select class="form-select" name="locality_name_sender" required>
+                    <option value="" disabled selected>Pilih Locality...</option>
+
+                    <option>Hospital Tanah Merah</option>
+                    <option>Klinik Kesihatan Bandar Alor Setar</option>
+                    <option>Klinik Kesihatan Bandar Jerantut</option>
+                    <option>Klinik Kesihatan Bandar Kota Bharu</option>
+                    <option>Klinik Kesihatan Bandar Kuantan</option>
+                    <option>Klinik Kesihatan Bandar Pasir Mas</option>
+                    <option>Klinik Kesihatan Bandar Tenggara</option>
+                    <option>Klinik Kesihatan Batu Muda WPKL</option>
+                    <option>Klinik Kesihatan Bayan Baru</option>
+                    <option>Klinik Kesihatan Bintulu</option>
+                    <option>Klinik Kesihatan Bukit Kuda</option>
+                    <option>Klinik Kesihatan Buntong</option>
+                    <option>Klinik Kesihatan Chendering</option>
+                    <option>Klinik Kesihatan Cheras</option>
+                    <option>Klinik Kesihatan Gelang Patah</option>
+                    <option>Klinik Kesihatan Gua Musang</option>
+                    <option>Klinik Kesihatan Jalan Masjid</option>
+                    <option>Klinik Kesihatan Jalan Merbau</option>
+                    <option>Klinik Kesihatan Jalan Perak</option>
+                    <option>Klinik Kesihatan Jasin</option>
+                    <option>Klinik Kesihatan Jelapang</option>
+                    <option>Klinik Kesihatan Kangar</option>
+                    <option>Klinik Kesihatan Kelana Jaya</option>
+                    <option>Klinik Kesihatan Kok Lanas</option>
+                    <option>Klinik Kesihatan Kota Samarahan</option>
+                    <option>Klinik Kesihatan Kuah Langkawi</option>
+                    <option>Klinik Kesihatan Kuala Besut</option>
+                    <option>Klinik Kesihatan Kuala Lumpur</option>
+                    <option>Klinik Kesihatan Kulai</option>
+                    <option>Klinik Kesihatan Lahad Datu</option>
+                    <option>Klinik Kesihatan Lanang</option>
+                    <option>Klinik Kesihatan Luyang</option>
+                    <option>Klinik Kesihatan Maharani</option>
+                    <option>Klinik Kesihatan Mahmoodiah</option>
+                    <option>Klinik Kesihatan Manir</option>
+                    <option>Klinik Kesihatan Masai</option>
+                    <option>Klinik Kesihatan Masjid Tanah</option>
+                    <option>Klinik Kesihatan Membakut</option>
+                    <option>Klinik Kesihatan Menggatal</option>
+                    <option>Klinik Kesihatan Mengkibol</option>
+                    <option>Klinik Kesihatan Nilai</option>
+                    <option>Klinik Kesihatan Pengkalan Chepa</option>
+                    <option>Klinik Kesihatan Peringgit</option>
+                    <option>Klinik Kesihatan Presint 9</option>
+                    <option>Klinik Kesihatan Rantau Panjang (Kelantan)</option>
+                    <option>Klinik Kesihatan Rembau</option>
+                    <option>Klinik Kesihatan Sandakan</option>
+                    <option>Klinik Kesihatan Seberang Jaya</option>
+                    <option>Klinik Kesihatan Selayang Baru</option>
+                    <option>Klinik Kesihatan Senawang</option>
+                    <option>Klinik Kesihatan Simpang</option>
+                    <option>Klinik Kesihatan Sultan Ismail</option>
+                    <option>Klinik Kesihatan Sungai Chua</option>
+                    <option>Klinik Kesihatan Sungai Petani</option>
+                    <option>Klinik Kesihatan Taman Universiti</option>
+                    <option>Klinik Kesihatan Tandek</option>
+                    <option>Klinik Kesihatan Tanglin</option>
+                    <option>Klinik Kesihatan Tanjung Malim</option>
+                    <option>Klinik Kesihatan Tawau</option>
+                    <option>Klinik Kesihatan Temerloh</option>
+                    <option>Klinik Kesihatan Wp Labuan</option>
+                  </select>
                 </div>
 
                 <div class="mb-3">
@@ -206,7 +278,7 @@
 
                 <div class="mb-3">
                   <label>Tarikh Pengesahan</label>
-                  <input type="date" class="form-control" name="date_received">
+                  <input type="date" class="form-control" name="date_received" required>
                 </div>
 
                 <div class="mb-3">

@@ -49,6 +49,14 @@
 
         <!-- TITLE -->
         <div class="card-body border-bottom">
+
+          <!--BUTTON BACK-->
+          <div class="mb-3 d-flex justify-content-end">
+            <a href="landingSentiment.html" class="btn btn-primary">
+              <i class="bi bi-arrow-left me-1"></i> Kembali
+            </a>
+          </div>
+
           <h4 class="mb-1">Borang Analisis Sentimen Awam</h4>
           <p class="text-muted mb-0">
             Sila lengkapkan semua maklumat analisis sentimen sebelum dihantar.
@@ -68,23 +76,23 @@
 
                 <div class="mb-3">
                   <label>Tajuk Sentimen</label>
-                  <input type="text" class="form-control" name="sentiment_title" placeholder="Contoh: TB / Hantavirus">
+                  <input type="text" class="form-control" name="sentiment_title" placeholder="Contoh: TB / Hantavirus" required>
                 </div>
 
                 <div class="row">
                   <div class="col-md-6 mb-3">
                     <label>Tarikh Laporan</label>
-                    <input type="date" class="form-control" name="report_date">
+                    <input type="date" class="form-control" name="report_date" required>
                   </div>
 
                   <div class="col-md-3 mb-3">
                     <label>Tempoh Mula</label>
-                    <input type="date" class="form-control" name="period_start">
+                    <input type="date" class="form-control" name="period_start" required>
                   </div>
 
                   <div class="col-md-3 mb-3">
                     <label>Tempoh Tamat</label>
-                    <input type="date" class="form-control" name="period_end">
+                    <input type="date" class="form-control" name="period_end" required>
                   </div>
                 </div>
 
@@ -100,18 +108,18 @@
                 <div class="row">
                 <div class="col-md-4 mb-3">
                     <label>Jumlah Komen Keseluruhan</label>
-                    <input type="number" class="form-control" id="total_comments" name="total_comments">
+                    <input type="number" class="form-control" id="total_comments" name="total_comments" required>
                 </div>
 
                 <div class="col-md-4 mb-3">
                     <label>Komen Dianalisis</label>
-                    <input type="number" class="form-control" id="sample_comments" name="sample_comments">
+                    <input type="number" class="form-control" id="sample_comments" name="sample_comments" required>
                 </div>
 
                 <div class="col-md-4 mb-3">
                     <label>Platform</label>
                     <input type="text" class="form-control" name="platforms"
-                    placeholder="Facebook, Instagram, X (Twitter), Portal Berita">
+                    placeholder="Facebook, Instagram, X (Twitter), Portal Berita" required>
                 </div>
                 </div>
 
@@ -133,19 +141,19 @@
                     <tbody>
                     <tr>
                         <td>Positif</td>
-                        <td><input type="number" class="form-control count-input" id="positive_count"></td>
+                        <td><input type="number" class="form-control count-input" id="positive_count" required></td>
                         <td><input type="text" class="form-control percent-output" id="positive_percent" readonly></td>
                     </tr>
 
                     <tr>
                         <td>Neutral</td>
-                        <td><input type="number" class="form-control count-input" id="neutral_count"></td>
+                        <td><input type="number" class="form-control count-input" id="neutral_count" required></td>
                         <td><input type="text" class="form-control percent-output" id="neutral_percent" readonly></td>
                     </tr>
 
                     <tr>
                         <td>Negatif</td>
-                        <td><input type="number" class="form-control count-input" id="negative_count"></td>
+                        <td><input type="number" class="form-control count-input" id="negative_count" required></td>
                         <td><input type="text" class="form-control percent-output" id="negative_percent" readonly></td>
                     </tr>
 
@@ -163,41 +171,7 @@
             </div>
             </div>
 
-            <script>
-            document.addEventListener("DOMContentLoaded", function () {
-
-                const inputs = document.querySelectorAll(".count-input");
-
-                function calculate() {
-
-                    let positive = Number(document.getElementById("positive_count").value) || 0;
-                    let neutral = Number(document.getElementById("neutral_count").value) || 0;
-                    let negative = Number(document.getElementById("negative_count").value) || 0;
-
-                    let total = positive + neutral + negative;
-
-                    document.getElementById("total_count_all").value = total;
-
-                    function percent(value) {
-                        if (total === 0) return "0%";
-                        return ((value / total) * 100).toFixed(1) + "%";
-                    }
-
-                    document.getElementById("positive_percent").value = percent(positive);
-                    document.getElementById("neutral_percent").value = percent(neutral);
-                    document.getElementById("negative_percent").value = percent(negative);
-
-                    // total percent (confirm 100%)
-                    document.getElementById("total_percent_all").value =
-                        (total > 0 ? "100%" : "0%");
-                }
-
-                inputs.forEach(input => {
-                    input.addEventListener("input", calculate);
-                });
-
-            });
-            </script>
+            
 
             <!-- 3. tema dan narrative analysis -->
             <div class="card mb-4 shadow-sm">
@@ -210,7 +184,7 @@
                 </p>
 
                 <textarea class="form-control" name="main_narrative" rows="6"
-                  placeholder="Tulis analisis di sini..."></textarea>
+                  placeholder="Tulis analisis di sini..." required></textarea>
 
               </div>
             </div>
@@ -243,8 +217,8 @@
                     <tbody>
                     <tr>
                         <td class="row-no">1</td>
-                        <td><input type="text" class="form-control" name="cadangan[]"></td>
-                        <td><input type="text" class="form-control" name="unit[]"></td>
+                        <td><input type="text" class="form-control" name="cadangan[]" required></td>
+                        <td><input type="text" class="form-control" name="unit[]" required></td>
                         <td>
                         <button type="button" class="btn btn-danger btn-sm" onclick="removeRow(this)">
                             X
@@ -259,44 +233,9 @@
             </div>
             </div>
 
-            <script>
-            function addRow() {
 
-                const table = document.getElementById("intervensiTable").getElementsByTagName("tbody")[0];
 
-                const rowCount = table.rows.length;
 
-                const row = table.insertRow();
-
-                row.innerHTML = `
-                    <td class="row-no">${rowCount + 1}</td>
-                    <td><input type="text" class="form-control" name="cadangan[]"></td>
-                    <td><input type="text" class="form-control" name="unit[]"></td>
-                    <td>
-                        <button type="button" class="btn btn-danger btn-sm" onclick="removeRow(this)">X</button>
-                    </td>
-                `;
-
-                updateNumbers();
-            }
-
-            function removeRow(btn) {
-
-                const row = btn.closest("tr");
-                row.remove();
-
-                updateNumbers();
-            }
-
-            function updateNumbers() {
-
-                const rows = document.querySelectorAll("#intervensiTable tbody tr");
-
-                rows.forEach((row, index) => {
-                    row.querySelector(".row-no").innerText = index + 1;
-                });
-            }
-            </script>
 
             <!-- 5. link sentiment -->
             <div class="card mb-4 shadow-sm">
@@ -308,7 +247,7 @@
                 </p>
 
                 <textarea class="form-control" name="links" rows="4"
-                  placeholder="Masukkan URL posting..."></textarea>
+                  placeholder="Masukkan URL posting..." required></textarea>
 
               </div>
             </div>
@@ -356,6 +295,82 @@
   .catch(err => console.error("Sidebar load failed:", err));
 </script>
 
+<!--data engagement script-->
+            <script>
+            document.addEventListener("DOMContentLoaded", function () {
+
+                const inputs = document.querySelectorAll(".count-input");
+
+                function calculate() {
+
+                    let positive = Number(document.getElementById("positive_count").value) || 0;
+                    let neutral = Number(document.getElementById("neutral_count").value) || 0;
+                    let negative = Number(document.getElementById("negative_count").value) || 0;
+
+                    let total = positive + neutral + negative;
+
+                    document.getElementById("total_count_all").value = total;
+
+                    function percent(value) {
+                        if (total === 0) return "0%";
+                        return ((value / total) * 100).toFixed(1) + "%";
+                    }
+
+                    document.getElementById("positive_percent").value = percent(positive);
+                    document.getElementById("neutral_percent").value = percent(neutral);
+                    document.getElementById("negative_percent").value = percent(negative);
+
+                    // total percent (confirm 100%)
+                    document.getElementById("total_percent_all").value =
+                        (total > 0 ? "100%" : "0%");
+                }
+
+                inputs.forEach(input => {
+                    input.addEventListener("input", calculate);
+                });
+
+            });
+            </script>
+
+            <!--cadangan dan intervensi script-->
+            <script>
+            function addRow() {
+
+                const table = document.getElementById("intervensiTable").getElementsByTagName("tbody")[0];
+
+                const rowCount = table.rows.length;
+
+                const row = table.insertRow();
+
+                row.innerHTML = `
+                    <td class="row-no">${rowCount + 1}</td>
+                    <td><input type="text" class="form-control" name="cadangan[]"></td>
+                    <td><input type="text" class="form-control" name="unit[]"></td>
+                    <td>
+                        <button type="button" class="btn btn-danger btn-sm" onclick="removeRow(this)">X</button>
+                    </td>
+                `;
+
+                updateNumbers();
+            }
+
+            function removeRow(btn) {
+
+                const row = btn.closest("tr");
+                row.remove();
+
+                updateNumbers();
+            }
+
+            function updateNumbers() {
+
+                const rows = document.querySelectorAll("#intervensiTable tbody tr");
+
+                rows.forEach((row, index) => {
+                    row.querySelector(".row-no").innerText = index + 1;
+                });
+            }
+            </script>
 
 </body>
 </html>

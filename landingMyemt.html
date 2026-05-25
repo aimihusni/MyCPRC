@@ -24,92 +24,265 @@
   <div class="row">
 
     <!-- LEFT PANEL -->
-    <!-- LEFT PANEL -->
     <aside class="col-md-3 col-lg-2 sidebar p-0" id="sidebar-placeholder">
-      <!-- Sidebar will be loaded here -->
     </aside>
 
     <!-- MAIN CONTENT -->
     <main class="col-md-9 col-lg-10 px-4 py-4">
 
+      <!-- HEADER -->
       <div class="d-flex justify-content-between align-items-center mb-4">
-        <h4 class="mb-0">Dashboard</h4>
+        <h4 class="mb-0">Pengurusan Malaysia Emergency Medical Team (MyEMT)</h4>
 
-        <!-- BUTTON ISI FORM -->
-        <a href="emt_form.html" class="btn btn-primary">
-          <i class="bi bi-plus-circle me-1"></i> Isi Borang Baharu
-        </a>
+        <div class="d-flex justify-content-end gap-2 flex-wrap">
+
+          <!-- ADMIN ONLY -->
+          <a href="#" class="btn btn-outline-primary shadow-sm">
+            <i class="bi bi-gear me-1"></i> Pengurusan MyEMT
+          </a>
+
+        </div>
       </div>
 
-      <!-- SUMMARY CARDS -->
+      <!-- UNTUK PENGURUSAN MYEMT JE -->
       <div class="row g-3 mb-4">
 
-        <div class="col-md-4">
+        <div class="col-md-3">
           <div class="card shadow-sm">
             <div class="card-body">
-              <h6 class="text-muted">Jumlah Laporan</h6>
+              <h6 class="text-muted">Jumlah Pendaftaran</h6>
               <h3 class="mb-0">12</h3>
             </div>
           </div>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-3">
           <div class="card shadow-sm">
             <div class="card-body">
-              <h6 class="text-muted">Draft</h6>
+              <h6 class="text-muted">Dalam Semakan</h6>
               <h3 class="mb-0">3</h3>
             </div>
           </div>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-3">
           <div class="card shadow-sm">
             <div class="card-body">
-              <h6 class="text-muted">Submitted</h6>
+              <h6 class="text-muted">Diluluskan</h6>
               <h3 class="mb-0">9</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h6 class="text-muted">Ditolak</h6>
+              <h3 class="mb-0">1</h3>
             </div>
           </div>
         </div>
 
       </div>
 
-      <!-- RECENT REPORTS -->
+      <!-- TABLE -->
       <div class="card shadow-sm">
+
         <div class="card-header bg-white">
-          <strong>Laporan Terkini</strong>
+          <strong>Senarai Pendaftaran MyEMT</strong>
         </div>
+
         <div class="table-responsive">
+
           <table class="table table-striped mb-0">
+
             <thead class="table-light">
               <tr>
                 <th>Tarikh</th>
-                <th>Borang</th>
+                <th>Nama Pemohon</th>
+                <th>Jawatan</th>
+                <th>Fasiliti</th>
+                <th>Negeri</th>
                 <th>Status</th>
                 <th class="text-end">Tindakan</th>
               </tr>
             </thead>
+
             <tbody>
+
               <tr>
                 <td>12/01/2026</td>
-                <td>Borang A</td>
-                <td><span class="badge bg-success">Submitted</span></td>
+                <td>Aimi Afifah</td>
+                <td>Pegawai Perubatan</td>
+                <td>Klinik Kesihatan Kuala Lumpur</td>
+                <td>WP Kuala Lumpur</td>
+                <td><span class="badge bg-warning text-dark">Dalam Semakan</span></td>
+                <td class="text-end">
+                  <button class="btn btn-sm btn-outline-primary">View</button>
+                  <button class="btn btn-sm btn-outline-secondary">Edit</button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>10/01/2026</td>
+                <td>Nur Huda</td>
+                <td>Jururawat</td>
+                <td>Hospital Melaka</td>
+                <td>Melaka</td>
+                <td><span class="badge bg-success">Diluluskan</span></td>
                 <td class="text-end">
                   <button class="btn btn-sm btn-outline-primary">View</button>
                 </td>
               </tr>
+
               <tr>
-                <td>10/01/2026</td>
-                <td>Borang A</td>
-                <td><span class="badge bg-warning text-dark">Draft</span></td>
+                <td>08/01/2026</td>
+                <td>Ahmad Faiz</td>
+                <td>Paramedik</td>
+                <td>Klinik Kesihatan Johor Bahru</td>
+                <td>Johor</td>
+                <td><span class="badge bg-danger">Ditolak</span></td>
                 <td class="text-end">
-                  <button class="btn btn-sm btn-outline-secondary">Edit</button>
+                  <button class="btn btn-sm btn-outline-primary">View</button>
                 </td>
               </tr>
+
             </tbody>
+
           </table>
+
+        </div>
+
+      </div>
+
+      <br>
+
+
+      <!-- SEMUA USER  -->
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h4 class="mb-0">Permohonan Malaysia Emergency Medical Team (MyEMT)</h4>
+
+        <div class="d-flex justify-content-end gap-2 flex-wrap">
+
+          <!-- ALL USERS -->
+          <a href="emt_form.html" class="btn btn-success shadow-sm">
+            <i class="bi bi-plus-circle me-1"></i> Daftar MyEMT
+          </a>
+
         </div>
       </div>
 
+      <!-- SEMUA USER -->
+      <div class="row g-3 mb-4">
+
+        <div class="col-md-4">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h6 class="text-muted">Status Permohonan</h6>
+              <h3 class="mb-0 text-warning">Dalam Semakan</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h6 class="text-muted">Tarikh Hantar</h6>
+              <h3 class="mb-0">12/01/2026</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h6 class="text-muted">Kelayakan EMT</h6>
+              <h3 class="mb-0 text-primary">Belum Disahkan</h3>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- USER PROFILE CARD -->
+      <div class="card shadow-sm mb-4">
+        <div class="card-body">
+
+          <h5 class="mb-3">Maklumat Pemohon</h5>
+
+          <div class="row">
+            <div class="col-md-6">
+              <p><strong>Nama:</strong> Aimi Afifah</p>
+              <p><strong>IC:</strong> 101010101010</p>
+              <p><strong>Jawatan:</strong> Pegawai Perubatan</p>
+            </div>
+
+            <div class="col-md-6">
+              <p><strong>Fasiliti:</strong> Klinik Kesihatan Kuala Lumpur</p>
+              <p><strong>Negeri:</strong> WP Kuala Lumpur</p>
+              <p><strong>Tempoh Perkhidmatan:</strong> 3 Tahun</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- APPLICATION STATUS TABLE -->
+      <div class="card shadow-sm">
+
+        <div class="card-header bg-white">
+          <strong>Status Permohonan MyEMT</strong>
+        </div>
+
+        <div class="table-responsive">
+
+          <table class="table table-striped mb-0">
+
+            <thead class="table-light">
+              <tr>
+                <th>Tarikh Hantar</th>
+                <th>Fasa</th>
+                <th>Status</th>
+                <th>Komen</th>
+                <th class="text-end">Tindakan</th>
+              </tr>
+            </thead>
+
+            <tbody>
+
+              <tr>
+                <td>12/01/2026</td>
+                <td>Pendaftaran</td>
+                <td><span class="badge bg-warning text-dark">Dalam Semakan</span></td>
+                <td>-</td>
+                <td class="text-end">
+                  <button class="btn btn-sm btn-outline-primary">View</button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>--</td>
+                <td>Penilaian Kelayakan</td>
+                <td><span class="badge bg-secondary">Belum Bermula</span></td>
+                <td>-</td>
+                <td class="text-end">
+                  <button class="btn btn-sm btn-outline-secondary" disabled>Locked</button>
+                </td>
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+</div>
+      
     </main>
 
   </div>
@@ -132,7 +305,13 @@
     .then(data => document.getElementById("footer").innerHTML = data);
 </script>
 
-<script src="assets/js/wizard-form.js"></script>
+<!-- Load Sidebar -->
+<script>
+  fetch("sidebar.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("sidebar-placeholder").innerHTML = data)
+  .catch(err => console.error("Sidebar load failed:", err));
+</script>
 
 </body>
 </html>

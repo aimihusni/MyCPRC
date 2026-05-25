@@ -5,121 +5,150 @@
   <title>ILI Surveillance</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Bootstrap CSS -->
+  <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Bootstrap Icons -->
+  <!-- Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
 
-  <!-- Main CSS -->
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
   <link href="assets/css/main.css" rel="stylesheet">
 </head>
 
 <body>
 
-<!-- HEADER -->
 <div id="header"></div>
 
 <div class="container-fluid">
   <div class="row">
 
-    <!-- LEFT PANEL -->
-    <!-- LEFT PANEL -->
-    <aside class="col-md-3 col-lg-2 sidebar p-0" id="sidebar-placeholder">
-      <!-- Sidebar will be loaded here -->
-    </aside>
+    <aside class="col-md-3 col-lg-2 sidebar p-0" id="sidebar-placeholder"></aside>
 
-    <!-- MAIN CONTENT -->
     <main class="col-md-9 col-lg-10 px-4 py-4">
 
-      <div class="d-flex justify-content-between align-items-center mb-4">
-        <h4 class="mb-0">Dashboard</h4>
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h4 class="mb-0">ILI (Influenza-Like Illness) Surveillance Dashboard</h4>
 
-        <!-- BUTTON ISI FORM -->
         <a href="ili_form.html" class="btn btn-primary">
-          <i class="bi bi-plus-circle me-1"></i> Isi Borang Baharu
+          <i class="bi bi-plus-circle me-1"></i> Isi Borang ILI
         </a>
       </div>
 
-      <!-- SUMMARY CARDS -->
-      <div class="row g-3 mb-4">
+<div class="row g-3 mb-4">
 
-        <div class="col-md-4">
-          <div class="card shadow-sm">
-            <div class="card-body">
-              <h6 class="text-muted">Jumlah Laporan</h6>
-              <h3 class="mb-0">12</h3>
-            </div>
-          </div>
-        </div>
+  <!-- FILTER (LEFT SIDE) -->
+  <div class="col-md-4">
+    <div class="card shadow-sm h-100">
+      <div class="card-body">
 
-        <div class="col-md-4">
-          <div class="card shadow-sm">
-            <div class="card-body">
-              <h6 class="text-muted">Draft</h6>
-              <h3 class="mb-0">3</h3>
-            </div>
-          </div>
-        </div>
+        <h6 class="mb-3">Filter</h6>
 
-        <div class="col-md-4">
-          <div class="card shadow-sm">
-            <div class="card-body">
-              <h6 class="text-muted">Submitted</h6>
-              <h3 class="mb-0">9</h3>
-            </div>
-          </div>
+        <label>Cari Hospital/Klinik</label>
+        <input type="text" id="searchHospital" class="form-control mb-3" placeholder="Klinik Kesihatan .....">
+
+        <label>Filter Tarikh</label>
+        <input type="date" id="filterDate" class="form-control mb-3">
+
+        <button class="btn btn-secondary w-100" onclick="resetFilter()">Reset</button>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- CHART (RIGHT SIDE) -->
+  <div class="col-md-8">
+    <div class="card shadow-sm h-100">
+      <div class="card-body">
+
+        <h6 class="mb-3">Trend Terkini Kes ILI</h6>
+
+        <!-- SMALLER CHART AREA -->
+        <div style="height: 260px;">
+          <canvas id="iliChart"></canvas>
         </div>
 
       </div>
+    </div>
+  </div>
 
-      <!-- RECENT REPORTS -->
+</div>  
+      <!-- TABLE -->
       <div class="card shadow-sm">
         <div class="card-header bg-white">
-          <strong>Laporan Terkini</strong>
+          <strong>Rekod ILI Terkini</strong>
         </div>
+
         <div class="table-responsive">
-          <table class="table table-striped mb-0">
+          <table class="table table-striped mb-0" id="iliTable">
             <thead class="table-light">
               <tr>
                 <th>Tarikh</th>
-                <th>Borang</th>
+                <th>Tempat</th>
+                <th>Diagnosis</th>
                 <th>Status</th>
                 <th class="text-end">Tindakan</th>
               </tr>
             </thead>
+
             <tbody>
+
               <tr>
-                <td>12/01/2026</td>
-                <td>Borang A</td>
-                <td><span class="badge bg-success">Submitted</span></td>
+                <td class="date">2026-01-12</td>
+                <td class="hospital">Klinik Kesihatan Sultan Ismail</td>
+                <td>Influenza A H1N1 Virus</td>
+                <td>
+                  <span class="badge status-badge">Disahkan</span>
+                </td>
                 <td class="text-end">
                   <button class="btn btn-sm btn-outline-primary">View</button>
                 </td>
               </tr>
+
               <tr>
-                <td>10/01/2026</td>
-                <td>Borang A</td>
-                <td><span class="badge bg-warning text-dark">Draft</span></td>
+                <td class="date">2026-01-10</td>
+                <td class="hospital">Klinik Kesihatan Taman Universiti</td>
+                <td>Coronavirus (COVID-19) Detected</td>
+                <td>
+                  <span class="badge status-badge">Dalam Proses</span>
+                </td>
                 <td class="text-end">
                   <button class="btn btn-sm btn-outline-secondary">Edit</button>
                 </td>
               </tr>
+
+              <tr>
+                <td class="date">2026-01-08</td>
+                <td class="hospital">Klinik Kesihatan Presint 9</td>
+                <td>Respiratory Syncytial Virus</td>
+                <td>
+                  <span class="badge status-badge">Disahkan</span>  
+                </td>
+                <td class="text-end">
+                  <button class="btn btn-sm btn-outline-primary">View</button>
+                </td>
+              </tr>
+
             </tbody>
           </table>
         </div>
       </div>
 
     </main>
-
   </div>
 </div>
 
-<!-- FOOTER -->
 <div id="footer"></div>
 
-<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!--
+<script>
+  fetch("header.html").then(r => r.text()).then(d => document.getElementById("header").innerHTML = d);
+  fetch("footer.html").then(r => r.text()).then(d => document.getElementById("footer").innerHTML = d);
+</script>
+-->
 
 <!-- Load Header & Footer -->
 <script>
@@ -132,7 +161,94 @@
     .then(data => document.getElementById("footer").innerHTML = data);
 </script>
 
-<script src="assets/js/wizard-form.js"></script>
+<!-- Load Sidebar -->
+<script>
+  fetch("sidebar.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("sidebar-placeholder").innerHTML = data)
+  .catch(err => console.error("Sidebar load failed:", err));
+</script>
+
+<script>
+const searchHospital = document.getElementById("searchHospital");
+const dateFilter = document.getElementById("filterDate");
+const rows = document.querySelectorAll("#iliTable tbody tr");
+
+function filterTable() {
+  const hospitalValue = searchHospital.value.toLowerCase();
+  const dateValue = dateFilter.value;
+
+  rows.forEach(row => {
+    const hospital = row.querySelector(".hospital").textContent.toLowerCase();
+    const date = row.querySelector(".date").textContent;
+
+    const matchHospital = !hospitalValue || hospital.includes(hospitalValue);
+    const matchDate = !dateValue || date === dateValue;
+
+    row.style.display = (matchHospital && matchDate) ? "" : "none";
+  });
+}
+
+searchHospital.addEventListener("input", filterTable);
+dateFilter.addEventListener("input", filterTable);
+
+function resetFilter() {
+  searchHospital.value = "";
+  dateFilter.value = "";
+  filterTable();
+}
+</script>
+
+<!-- CHART -->
+<script>
+const ctx = document.getElementById('iliChart');
+
+new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+    datasets: [{
+      label: 'Kes ILI',
+      //DATA KENA TUKAR
+      data: [5, 9, 7, 12],
+      borderWidth: 2,
+      tension: 0.3
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { display: true }
+    }
+  }
+});
+
+</script>
+
+<!-- COLOUR BUTTON -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  document.querySelectorAll(".status-badge").forEach(function (badge) {
+
+    const text = badge.textContent.trim().toLowerCase();
+
+    if (text === "disahkan") {
+      badge.classList.add("bg-success");
+    } 
+    else if (text === "dalam proses") {
+      badge.classList.add("bg-warning", "text-dark");
+    } 
+    else {
+      badge.classList.add("bg-secondary");
+    }
+
+  });
+
+});
+</script>
+
 
 </body>
 </html>

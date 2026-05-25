@@ -34,6 +34,14 @@
         
         <!-- PAGE HEADER -->
         <div class="card-body">
+
+          <!--BUTTON BACK-->
+          <div class="mb-3 d-flex justify-content-end">
+            <a href="landingDOCE.html" class="btn btn-primary">
+              <i class="bi bi-arrow-left me-1"></i> Kembali
+            </a>
+          </div>
+
           <h4 class="card-title mb-3">DOCE - Health Related Event (HRE)</h4>
           <p class="text-muted">
             Sila lengkapkan maklumat yang diperlukan di setiap bahagian sebelum menghantar laporan ini.
@@ -84,6 +92,17 @@
 
                   <div class="card p-3 mb-4 shadow-sm">
 
+
+                  <div class="mb-3">
+                    <label>Tarikh & Masa</label>
+                    <input type="datetime-local"
+                          class="form-control"
+                          id="basic_hre_time"
+                          name="basic_hre_time"
+                          required>
+                  </div>
+
+                  <!--
                   <div class="mb-3">
                     <label>Tarikh & Masa</label>
                     <input type="datetime-local"
@@ -106,7 +125,7 @@
 
                   });
                   </script>
-
+                  -->
                     <div class="mb-3">
                       <label>Apa yang anda ingin laporkan (Jika bencana, sila nyatakan)</label>
                       <textarea class="form-control" name="basic_hre_report" rows="3" required></textarea>

@@ -36,10 +36,11 @@
 
         <div class="d-flex justify-content-end gap-2 flex-wrap">
 
-          <!-- ADMIN ONLY -->
-          <a href="#" class="btn btn-outline-primary shadow-sm">
+          <!-- ADMIN ONLY 
+          <a href="emt_deployform.html" class="btn btn-outline-primary shadow-sm">
             <i class="bi bi-gear me-1"></i> Pengurusan MyEMT
           </a>
+          -->
 
         </div>
       </div>
@@ -48,115 +49,175 @@
       <div class="row g-3 mb-4">
 
         <div class="col-md-3">
-          <div class="card shadow-sm">
-            <div class="card-body">
-              <h6 class="text-muted">Jumlah Pendaftaran</h6>
-              <h3 class="mb-0">12</h3>
+          <div class="card shadow-sm border-0 border-start border-primary border-4">
+            <div class="card-body d-flex align-items-center justify-content-between">
+
+              <div>
+                <h6 class="text-muted mb-1">Jumlah Pendaftaran</h6>
+                <h3 class="mb-0 fw-bold">12</h3>
+              </div>
+
+              <div class="text-primary fs-3">
+                <i class="bi bi-clipboard-data"></i>
+              </div>
+
             </div>
           </div>
         </div>
 
         <div class="col-md-3">
-          <div class="card shadow-sm">
-            <div class="card-body">
-              <h6 class="text-muted">Dalam Semakan</h6>
-              <h3 class="mb-0">3</h3>
+          <div class="card shadow-sm border-0 border-start border-warning border-4">
+            <div class="card-body d-flex align-items-center justify-content-between">
+
+              <div>
+                <h6 class="text-muted mb-1">Dalam Semakan</h6>
+                <h3 class="mb-0 fw-bold">3</h3>
+              </div>
+
+              <div class="text-warning fs-3">
+                <i class="bi bi-hourglass-split"></i>
+              </div>
+
             </div>
           </div>
         </div>
 
         <div class="col-md-3">
-          <div class="card shadow-sm">
-            <div class="card-body">
-              <h6 class="text-muted">Diluluskan</h6>
-              <h3 class="mb-0">9</h3>
+          <div class="card shadow-sm border-0 border-start border-success border-4">
+            <div class="card-body d-flex align-items-center justify-content-between">
+
+              <div>
+                <h6 class="text-muted mb-1">Diluluskan</h6>
+                <h3 class="mb-0 fw-bold">9</h3>
+              </div>
+
+              <div class="text-success fs-3">
+                <i class="bi bi-check-circle"></i>
+              </div>
+
             </div>
           </div>
         </div>
 
         <div class="col-md-3">
-          <div class="card shadow-sm">
-            <div class="card-body">
-              <h6 class="text-muted">Ditolak</h6>
-              <h3 class="mb-0">1</h3>
+          <div class="card shadow-sm border-0 border-start border-danger border-4">
+            <div class="card-body d-flex align-items-center justify-content-between">
+
+              <div>
+                <h6 class="text-muted mb-1">Ditolak</h6>
+                <h3 class="mb-0 fw-bold">1</h3>
+              </div>
+
+              <div class="text-danger fs-3">
+                <i class="bi bi-x-circle"></i>
+              </div>
+
             </div>
           </div>
         </div>
 
       </div>
 
-      <!-- TABLE -->
-      <div class="card shadow-sm">
+      <!-- FILTER LULUS TOLAK-->
+      <div class="d-flex gap-2 mb-3">
 
-        <div class="card-header bg-white">
-          <strong>Senarai Pendaftaran MyEMT</strong>
-        </div>
-
-        <div class="table-responsive">
-
-          <table class="table table-striped mb-0">
-
-            <thead class="table-light">
-              <tr>
-                <th>Tarikh</th>
-                <th>Nama Pemohon</th>
-                <th>Jawatan</th>
-                <th>Fasiliti</th>
-                <th>Negeri</th>
-                <th>Status</th>
-                <th class="text-end">Tindakan</th>
-              </tr>
-            </thead>
-
-            <tbody>
-
-              <tr>
-                <td>12/01/2026</td>
-                <td>Aimi Afifah</td>
-                <td>Pegawai Perubatan</td>
-                <td>Klinik Kesihatan Kuala Lumpur</td>
-                <td>WP Kuala Lumpur</td>
-                <td><span class="badge bg-warning text-dark">Dalam Semakan</span></td>
-                <td class="text-end">
-                  <button class="btn btn-sm btn-outline-primary">View</button>
-                  <button class="btn btn-sm btn-outline-secondary">Edit</button>
-                </td>
-              </tr>
-
-              <tr>
-                <td>10/01/2026</td>
-                <td>Nur Huda</td>
-                <td>Jururawat</td>
-                <td>Hospital Melaka</td>
-                <td>Melaka</td>
-                <td><span class="badge bg-success">Diluluskan</span></td>
-                <td class="text-end">
-                  <button class="btn btn-sm btn-outline-primary">View</button>
-                </td>
-              </tr>
-
-              <tr>
-                <td>08/01/2026</td>
-                <td>Ahmad Faiz</td>
-                <td>Paramedik</td>
-                <td>Klinik Kesihatan Johor Bahru</td>
-                <td>Johor</td>
-                <td><span class="badge bg-danger">Ditolak</span></td>
-                <td class="text-end">
-                  <button class="btn btn-sm btn-outline-primary">View</button>
-                </td>
-              </tr>
-
-            </tbody>
-
-          </table>
-
-        </div>
+        <select id="statusFilter" class="form-select w-auto">
+          <option value="all">Semua Status</option>
+          <option value="Dalam Semakan">Dalam Semakan</option>
+          <option value="Diluluskan">Diluluskan</option>
+          <option value="Ditolak">Ditolak</option>
+        </select>
 
       </div>
 
-      <br>
+      <!-- TABLE PENGURUSAN -->
+      <table class="table table-striped mb-0">
 
+        <thead class="table-light">
+          <tr>
+            <th>Tarikh</th>
+            <th>Nama Pemohon</th>
+            <th>Jawatan</th>
+            <th>Fasiliti</th>
+            <th>Negeri</th>
+            <th>Status</th>
+            <th class="text-end">Tindakan</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <!-- CONTOH 1 -->
+          <tr>
+            <td>12/01/2026</td>
+            <td>Aimi Afifah</td>
+            <td>Pegawai Perubatan</td>
+            <td>Klinik Kesihatan Kuala Lumpur</td>
+            <td>WP Kuala Lumpur</td>
+
+            <td class="status">
+              <span class="badge rounded-pill bg-warning text-dark px-3 py-2 status-text">
+                Dalam Semakan
+              </span>
+            </td>
+
+            <td class="text-end">
+              <a href="emt_deployform.html?id=1" class="btn btn-sm btn-outline-primary">
+                View
+              </a>
+            </td>
+          </tr>
+
+          <!-- CONTOH 2 -->
+          <tr>
+            <td>10/01/2026</td>
+            <td>Nur Huda</td>
+            <td>Jururawat</td>
+            <td>Hospital Melaka</td>
+            <td>Melaka</td>
+
+            <td class="status">
+              <span class="badge rounded-pill bg-success px-3 py-2 status-text">
+                Diluluskan
+              </span>
+            </td>
+
+            <td class="text-end">
+              <a href="emt_deployform.html?id=2" class="btn btn-sm btn-outline-primary">
+                View
+              </a>
+            </td>
+          </tr>
+
+          <!-- CONTOH 3 -->
+          <tr>
+            <td>08/01/2026</td>
+            <td>Ahmad Faiz</td>
+            <td>Paramedik</td>
+            <td>Klinik Kesihatan Johor Bahru</td>
+            <td>Johor</td>
+
+            <td class="status">
+              <span class="badge rounded-pill bg-danger px-3 py-2 status-text">
+                Ditolak
+              </span>
+            </td>
+
+            <td class="text-end">
+              <a href="emt_deployform.html?id=3" class="btn btn-sm btn-outline-primary">
+                View
+              </a>
+            </td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+      <br><br>
+
+      <!--line nak bahagi dulu, nnti dah filter admin user boleh buang-->
+      <hr class="my-4">
 
       <!-- SEMUA USER  -->
       <div class="d-flex justify-content-between align-items-center mb-4">
@@ -175,31 +236,68 @@
       <!-- SEMUA USER -->
       <div class="row g-3 mb-4">
 
-        <div class="col-md-4">
-          <div class="card shadow-sm">
-            <div class="card-body">
-              <h6 class="text-muted">Status Permohonan</h6>
-              <h3 class="mb-0 text-warning">Dalam Semakan</h3>
-            </div>
-          </div>
-        </div>
+        <div class="row g-3">
 
-        <div class="col-md-4">
-          <div class="card shadow-sm">
-            <div class="card-body">
-              <h6 class="text-muted">Tarikh Hantar</h6>
-              <h3 class="mb-0">12/01/2026</h3>
-            </div>
-          </div>
-        </div>
+          <!-- STATUS -->
+          <div class="col-md-4">
+            <div class="card shadow-sm border-0 h-100">
+              <div class="card-body d-flex align-items-center justify-content-between">
 
-        <div class="col-md-4">
-          <div class="card shadow-sm">
-            <div class="card-body">
-              <h6 class="text-muted">Kelayakan EMT</h6>
-              <h3 class="mb-0 text-primary">Belum Disahkan</h3>
+                <div>
+                  <h6 class="text-muted mb-1">Status Permohonan</h6>
+                  <h5 class="mb-0 fw-bold text-warning">
+                    Dalam Semakan
+                  </h5>
+                </div>
+
+                <div class="fs-3 text-warning">
+                  <i class="bi bi-hourglass-split"></i>
+                </div>
+
+              </div>
             </div>
           </div>
+
+          <!-- TARIKH -->
+          <div class="col-md-4">
+            <div class="card shadow-sm border-0 h-100">
+              <div class="card-body d-flex align-items-center justify-content-between">
+
+                <div>
+                  <h6 class="text-muted mb-1">Tarikh Hantar</h6>
+                  <h5 class="mb-0 fw-bold">
+                    12/01/2026
+                  </h5>
+                </div>
+
+                <div class="fs-3 text-primary">
+                  <i class="bi bi-calendar-event"></i>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- KELAYAKAN -->
+          <div class="col-md-4">
+            <div class="card shadow-sm border-0 h-100">
+              <div class="card-body d-flex align-items-center justify-content-between">
+
+                <div>
+                  <h6 class="text-muted mb-1">Kelayakan EMT</h6>
+                  <h5 class="mb-0 fw-bold text-secondary">
+                    Belum Disahkan
+                  </h5>
+                </div>
+
+                <div class="fs-3 text-primary">
+                  <i class="bi bi-shield-check"></i>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
         </div>
 
       </div>
@@ -256,7 +354,9 @@
                 <td><span class="badge bg-warning text-dark">Dalam Semakan</span></td>
                 <td>-</td>
                 <td class="text-end">
-                  <button class="btn btn-sm btn-outline-primary">View</button>
+                  <a href="emt_submitform.html" class="btn btn-sm btn-outline-primary">
+                    View
+                  </a>
                 </td>
               </tr>
 
@@ -266,7 +366,9 @@
                 <td><span class="badge bg-secondary">Belum Bermula</span></td>
                 <td>-</td>
                 <td class="text-end">
-                  <button class="btn btn-sm btn-outline-secondary" disabled>Locked</button>
+                  <a href="emt_submitform.html" class="btn btn-sm btn-outline-primary">
+                    View
+                  </a>
                 </td>
               </tr>
 
@@ -277,11 +379,6 @@
         </div>
 
       </div>
-
-    </main>
-
-  </div>
-</div>
       
     </main>
 
@@ -313,5 +410,75 @@
   .catch(err => console.error("Sidebar load failed:", err));
 </script>
 
+<!--status permohonan user-->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  document.querySelectorAll("tbody tr").forEach(row => {
+
+    const statusCell = row.querySelector(".status");
+    const approveBtn = row.querySelector(".btn-approve");
+    const rejectBtn = row.querySelector(".btn-reject");
+
+    function disableButtons() {
+      approveBtn.disabled = true;
+      rejectBtn.disabled = true;
+    }
+
+    // Disable jika sudah diproses
+    const currentStatus = statusCell.innerText.trim();
+
+    if (
+      currentStatus === "Diluluskan" ||
+      currentStatus === "Ditolak"
+    ) {
+      disableButtons();
+    }
+
+    // Lulus
+    approveBtn.addEventListener("click", function () {
+
+      statusCell.innerHTML =
+        '<span class="badge bg-success">Diluluskan</span>';
+
+      disableButtons();
+    });
+
+    // Gagal
+    rejectBtn.addEventListener("click", function () {
+
+      statusCell.innerHTML =
+        '<span class="badge bg-danger">Ditolak</span>';
+
+      disableButtons();
+    });
+
+  });
+
+});
+</script>
+
+<!--FILTER LULUS GAGAL-->
+<script>
+document.getElementById("statusFilter").addEventListener("change", function () {
+
+  const filter = this.value;
+  const rows = document.querySelectorAll("table tbody tr");
+
+  rows.forEach(row => {
+
+    const statusElement = row.querySelector(".status-text");
+    const status = statusElement ? statusElement.textContent.trim() : "";
+
+    if (filter === "all" || status === filter) {
+      row.style.display = "";
+    } else {
+      row.style.display = "none";
+    }
+
+  });
+
+});
+</script>
 </body>
 </html>

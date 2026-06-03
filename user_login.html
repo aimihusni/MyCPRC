@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Main CSS -->
+  <link href="assets/css/main.css" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div id="header"></div>
+
+<!-- BODY -->
+<div class="container-fluid">
+  <div class="row">
+
+    <!-- LEFT PANEL -->
+    <aside class="col-md-3 col-lg-2 sidebar p-0" id="sidebar-placeholder">
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="col-md-9 col-lg-10 p-4">
+
+      <!-- TITLE -->
+      <div class="welcome mb-4">
+        <h2>Login Akaun MyCPRC</h2>
+        <h6>Masukkan maklumat akaun untuk mengakses sistem MyCPRC</h6>
+      </div>
+
+      <!-- LOGIN FORM -->
+      <div class="main-cards d-flex justify-content-center">
+
+        <div class="card shadow-sm border-0 w-100" style="max-width: 600px;">
+
+          <div class="card-body text-dark">
+
+            <form id="loginForm">
+
+              <!-- EMAIL -->
+              <div class="mb-3">
+                <label class="text-dark">Email</label>
+                <input type="email"
+                       class="form-control"
+                       name="email"
+                       placeholder="nama@kkm.gov.my"
+                       required>
+              </div>
+
+              <!-- PASSWORD -->
+              <div class="mb-3">
+                <label class="text-dark">Password</label>
+                <input type="password"
+                       class="form-control"
+                       name="password"
+                       placeholder="Masukkan password"
+                       required>
+              </div>
+
+              <!-- REMEMBER ME -->
+              <div class="form-check mb-3">
+                <input class="form-check-input"
+                       type="checkbox"
+                       id="rememberMe">
+                <label class="form-check-label" for="rememberMe">
+                  Ingat Saya
+                </label>
+              </div>
+
+              <!-- TESTING BUTTON, AFTER DATA INTEGRATION BUANG -->
+
+                <button type="button"
+                        class="btn btn-primary w-100 mb-2"
+                        onclick="window.location.href='index.html'">
+                Login
+                </button>
+                
+                
+                <!-- LOGIN BUTTON DATA INTEGRATION
+                <button type="submit" class="btn btn-primary w-100 mb-2">
+                    Login
+                </button>
+                -->
+                <!--IF LOGIN SUCCESSFULL, GO TO INDEX.HTML
+                <script>
+                document.getElementById("loginForm").addEventListener("submit", function(e) {
+                    e.preventDefault();
+
+                    // TODO: Validate login here
+
+                    window.location.href = "index.html";
+                });
+                </script>
+                -->
+
+              <!-- REGISTER BUTTON -->
+              <a href="user_registration.html" class="btn btn-outline-secondary w-100">
+                Daftar Akaun Baharu
+              </a>
+
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div id="footer"></div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Load Header & Footer -->
+<script>
+  fetch("header.html")
+    .then(res => res.text())
+    .then(data => document.getElementById("header").innerHTML = data);
+
+  fetch("footer.html")
+    .then(res => res.text())
+    .then(data => document.getElementById("footer").innerHTML = data);
+</script>
+
+<!-- Load Sidebar -->
+<script>
+  fetch("sidebar.html")
+    .then(res => res.text())
+    .then(data => document.getElementById("sidebar-placeholder").innerHTML = data);
+</script>
+
+
+</body>
+</html>

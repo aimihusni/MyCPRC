@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MyEMT Deployment Review</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div id="header"></div>
+
+<div class="container-fluid">
+  <div class="row">
+
+    <aside class="col-md-3 col-lg-2 sidebar p-0" id="sidebar-placeholder"></aside>
+
+    <main class="col-md-9 col-lg-10 px-4 py-4">
+
+      <!-- TITLE -->
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+          <h4 class="mb-0">Semakan Permohonan MyEMT</h4>
+          <small class="text-muted">Semak maklumat lengkap pemohon sebelum kelulusan</small>
+        </div>
+
+          <!--BUTTON BACK-->
+          <div class="mb-3 d-flex justify-content-end">
+            <a href="landingMyemt.html" class="btn btn-primary">
+              <i class="bi bi-arrow-left me-1"></i> Kembali
+            </a>
+          </div>
+
+      </div>
+
+      <!-- STATUS CARD -->
+      <div class="card shadow-sm mb-3">
+        <div class="card-body d-flex justify-content-between align-items-center">
+          <div>
+            <h6 class="text-muted mb-1">Status Permohonan</h6>
+            <span id="statusBadge" class="badge bg-warning text-dark px-3 py-2">
+              Dalam Semakan
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- FORM VIEW -->
+
+      <!-- 1 -->
+      <div class="card shadow-sm mb-3">
+        <div class="card-header bg-white"><strong>1. Maklumat Pemohon</strong></div>
+        <div class="card-body">
+
+          <div class="row mb-2"><div class="col-md-4 text-muted">Nama</div><div class="col-md-8">Aimi Afifah</div></div>
+          <div class="row mb-2"><div class="col-md-4 text-muted">No Pengenalan</div><div class="col-md-8">101010101010</div></div>
+          <div class="row mb-2"><div class="col-md-4 text-muted">Umur</div><div class="col-md-8">29</div></div>
+          <div class="row mb-2"><div class="col-md-4 text-muted">Jantina</div><div class="col-md-8">Perempuan</div></div>
+          <div class="row mb-2"><div class="col-md-4 text-muted">Jawatan</div><div class="col-md-8">Pegawai Perubatan</div></div>
+          <div class="row mb-2"><div class="col-md-4 text-muted">Gred</div><div class="col-md-8">XX</div></div>
+          <div class="row mb-2"><div class="col-md-4 text-muted">Tempoh</div><div class="col-md-8">5 tahun</div></div>
+          <div class="row mb-2"><div class="col-md-4 text-muted">Negeri</div><div class="col-md-8">Kelantan</div></div>
+          <div class="row mb-2"><div class="col-md-4 text-muted">Fasiliti</div><div class="col-md-8">Klinik Kesihatan</div></div>
+          <div class="row mb-2"><div class="col-md-4 text-muted">Tempat Bekerja</div><div class="col-md-8">Klinik Kesihatan Kota Bharu</div></div>
+          <div class="row mb-2"><div class="col-md-4 text-muted">Alamat Rumah</div><div class="col-md-8">No 13, Jalan Batu Pahat, 00000, Selangor</div></div>
+          <div class="row mb-2"><div class="col-md-4 text-muted">Emel Pejabat</div><div class="col-md-8">test@kkm.gov.my</div></div>
+          <div class="row mb-2"><div class="col-md-4 text-muted">Emel Peribadi</div><div class="col-md-8">test@gmail.com.my</div></div>
+          <div class="row mb-2"><div class="col-md-4 text-muted">Telefon</div><div class="col-md-8">0123456789</div></div>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="card shadow-sm mb-3">
+        <div class="card-header bg-white"><strong>2. Maklumat Kecemasan</strong></div>
+        <div class="card-body">
+
+          <div class="row mb-2"><div class="col-md-4 text-muted">Waris</div><div class="col-md-8">Ali bin Ahmad</div></div>
+          <div class="row mb-2"><div class="col-md-4 text-muted">Hubungan</div><div class="col-md-8">Bapa</div></div>
+          <div class="row mb-2"><div class="col-md-4 text-muted">Alamat Rumah</div><div class="col-md-8">No 13, Jalan Batu Pahat, 00000, Selangor</div></div>
+          <div class="row mb-2"><div class="col-md-4 text-muted">Telefon</div><div class="col-md-8">0199999999</div></div>
+
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="card shadow-sm mb-3">
+        <div class="card-header bg-white"><strong>3. Profesional</strong></div>
+        <div class="card-body">
+
+          <div class="row mb-2"><div class="col-md-4 text-muted">Pernah menghadiri latihan bencana atau respons kecemasan?</div><div class="col-md-8">Ya</div></div>
+          <div class="row mb-2"><div class="col-md-4 text-muted">Pengalaman penugasan antarabangsa / misi kemanusiaan?</div><div class="col-md-8">Tidak</div></div>
+
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="card shadow-sm mb-3">
+        <div class="card-header bg-white"><strong>4. Kesihatan</strong></div>
+        <div class="card-body">
+
+          <div class="row mb-2"><div class="col-md-4 text-muted">Mempunyai keadaan perubatan yang boleh menjejaskan keupayaan bekerja dalam persekitaran bencana atau kecemasan</div><div class="col-md-8">Tiada</div></div>
+          <div class="row mb-2"><div class="col-md-4 text-muted">Menerima rawatan profesional atau kaunseling berkaitan kesihatan mental </div><div class="col-md-8">Tidak</div></div>
+          <div class="row mb-2"><div class="col-md-4 text-muted">Mempunyai alahan</div><div class="col-md-8">Tidak</div></div>
+          <div class="row mb-2"><div class="col-md-4 text-muted">Tinggi (cm)</div><div class="col-md-8">165cm</div></div>
+          <div class="row mb-2"><div class="col-md-4 text-muted">Berat (kg)</div><div class="col-md-8">60kg</div></div>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="card shadow-sm mb-4">
+        <div class="card-header bg-white"><strong>5. Deklarasi</strong></div>
+        <div class="card-body">
+
+          <p class="mb-0">
+            Saya bersetuju bahawa semua maklumat adalah benar dan bersedia untuk menyertai MyEMT.
+          </p>
+
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<div id="footer"></div>
+
+<!-- Load Header & Footer -->
+<script>
+  fetch("header.html")
+    .then(res => res.text())
+    .then(data => document.getElementById("header").innerHTML = data);
+
+  fetch("footer.html")
+    .then(res => res.text())
+    .then(data => document.getElementById("footer").innerHTML = data);
+</script>
+
+<!-- Load Sidebar -->
+<script>
+  fetch("sidebar.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("sidebar-placeholder").innerHTML = data)
+  .catch(err => console.error("Sidebar load failed:", err));
+</script>
+
+</body>
+</html>

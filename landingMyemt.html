@@ -36,12 +36,10 @@
 
         <div class="d-flex justify-content-end gap-2 flex-wrap">
 
-          <!-- ADMIN ONLY 
-          <a href="emt_deployform.html" class="btn btn-outline-primary shadow-sm">
-            <i class="bi bi-gear me-1"></i> Pengurusan MyEMT
+          <a href="emt_deployform.html" class="btn btn-primary rounded-pill shadow-sm px-3">
+            <i class="bi bi-gear-fill me-1"></i> Pengurusan ahli MyEMT
           </a>
-          -->
-
+        
         </div>
       </div>
 
@@ -162,11 +160,12 @@
             </td>
 
             <td class="text-end">
-              <a href="emt_deployform.html?id=1" class="btn btn-sm btn-outline-primary">
-                View
+              <a href="emt_deployform.html?id=1"
+                class="btn btn-sm btn-primary rounded-pill px-3">
+                <i class="bi bi-file-earmark-text me-1"></i>
+                Review
               </a>
             </td>
-          </tr>
 
           <!-- CONTOH 2 -->
           <tr>
@@ -209,29 +208,64 @@
               </a>
             </td>
           </tr>
-
         </tbody>
-
       </table>
-
       <br><br>
 
       <!--line nak bahagi dulu, nnti dah filter admin user boleh buang-->
       <hr class="my-4">
-
+      
       <!-- SEMUA USER  -->
       <div class="d-flex justify-content-between align-items-center mb-4">
         <h4 class="mb-0">Permohonan Malaysia Emergency Medical Team (MyEMT)</h4>
 
-        <div class="d-flex justify-content-end gap-2 flex-wrap">
+        <div class="dropdown">
 
-          <!-- ALL USERS -->
-          <a href="emt_form.html" class="btn btn-success shadow-sm">
-            <i class="bi bi-plus-circle me-1"></i> Daftar MyEMT
-          </a>
+          <button class="btn btn-primary btn-lg shadow rounded-pill px-4 dropdown-toggle"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false">
+            <i class="bi bi-grid-3x3-gap-fill me-2"></i>
+            MyEMT Modules
+          </button>
+
+          <ul class="dropdown-menu dropdown-menu-end shadow">
+
+            <li>
+              <a class="dropdown-item" href="emt_form.html">
+                <i class="bi bi-person-plus-fill me-2 text-success"></i>
+                Daftar MyEMT
+              </a>
+            </li>
+
+            <li>
+              <a class="dropdown-item" href="emt_healthform.html">
+                <i class="bi bi-file-medical-fill me-2 text-primary"></i>
+                Rekod Kesihatan MyEMT
+              </a>
+            </li>
+
+            <li><hr class="dropdown-divider"></li>
+
+            <li>
+              <a class="dropdown-item" href="emt_mds.html">
+                <i class="bi bi-clipboard2-pulse-fill me-2 text-dark"></i>
+                Borang EMT MDS
+              </a>
+            </li>
+
+            <li>
+              <a class="dropdown-item" href="emt_mds_plus.html">
+                <i class="bi bi-clipboard2-data-fill me-2 text-secondary"></i>
+                Borang EMT MDS+
+              </a>
+            </li>
+
+          </ul>
 
         </div>
       </div>
+
 
       <!-- SEMUA USER -->
       <div class="row g-3 mb-4">
@@ -480,5 +514,6 @@ document.getElementById("statusFilter").addEventListener("change", function () {
 
 });
 </script>
+
 </body>
 </html>

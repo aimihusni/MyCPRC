@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EMT Mission</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link href="assets/css/main.css" rel="stylesheet">
+
+    <style>
+    .mds-card{
+        border:1px solid #dee2e6;
+        border-radius:12px;
+        overflow:hidden;
+        margin-bottom:1rem;
+        box-shadow:0 .125rem .25rem rgba(0,0,0,.075);
+    }
+
+    .mds-card .card-header{
+        background:#0d6efd;
+        color:#fff;
+        font-weight:600;
+        padding:.75rem 1rem;
+    }
+
+    .mds-card .card-body{
+        background:#fff;
+        padding:1rem;
+    }
+
+    .form-check{
+        margin-bottom:.5rem;
+    }
+
+    .form-label{
+        font-weight:600;
+    }
+
+    .badge-soft{
+        background:#e9ecef;
+        color:#495057;
+        font-weight:500;
+    }
+
+    .section-title{
+        font-size:1.1rem;
+        font-weight:700;
+        margin-bottom:1rem;
+        padding-bottom:.5rem;
+        border-bottom:2px solid #dee2e6;
+    }
+
+    textarea{
+        resize:vertical;
+    }
+    </style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div id="header"></div>
+
+<div class="container-fluid">
+  <div class="row">
+
+    <!-- SIDEBAR -->
+    <aside class="col-md-3 col-lg-2 sidebar p-0" id="sidebar-placeholder"></aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="col-md-9 col-lg-10 px-4 py-4">
+      <!-- PAGE HEADER -->
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+          <h4 class="mb-0">Kemaskini maklumat misi EMT</h4>
+          <small class="text-muted">
+            Pengurusan operasi dan Misi EMT oleh Kementerian Kerajaan Malaysia.
+          </small>
+        </div>
+
+        <!--BUTTON BACK-->
+        <div class="mb-3 d-flex justify-content-end">
+            <a href="emt_crud.html" class="btn btn-primary">
+              <i class="bi bi-arrow-left me-1"></i> Kembali
+            </a>
+        </div>
+      </div>
+
+      <!-- STATUS / ACTION CARD -->
+      <div class="card shadow-sm mb-3">
+        <div class="card-body">
+            <!-- MISSION DETAILS -->
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <div>
+                            <h5 class="mb-1 fw-bold">EMT Sabah Flood Response</h5>
+                            <small class="text-muted">Butiran maklumat operasi misi</small>
+                        </div>
+                    </div>
+                    <div class="row g-3">
+                        <div class="col-md-3">
+                            <div class="p-2 border rounded bg-light">
+                                <small class="text-muted">Tarikh Mula</small>
+                                <div class="fw-semibold">01/06/2026</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="p-2 border rounded bg-light">
+                                <small class="text-muted">Anggaran Tamat</small>
+                                <div class="fw-semibold">15/06/2026</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="p-2 border rounded bg-light">
+                                <small class="text-muted">Tarikh Selesai</small>
+                                <div class="fw-semibold text-muted">-</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="p-2 border rounded bg-light">
+                            <small class="text-muted">Status</small>
+                                <div>
+                                    <span class="badge bg-primary">Sedang Dijalankan</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="my-3">
+
+            <!-- STEP-BY-STEP WIZARD -->
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <!-- STEP PROGRESS -->
+                    <ul class="nav nav-pills mb-4" id="missionWizard" role="tablist">
+                        <li class="nav-item">
+                            <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#step1">
+                            1. Misi
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" data-bs-toggle="pill" data-bs-target="#step2">
+                            2. Asset
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" data-bs-toggle="pill" data-bs-target="#step3">
+                            3. HR
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" data-bs-toggle="pill" data-bs-target="#step4">
+                            4. Logistik
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" data-bs-toggle="pill" data-bs-target="#step5">
+                            5. MDS
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" data-bs-toggle="pill" data-bs-target="#step6">
+                            6. Laporan
+                            </button>
+                        </li>
+                    </ul>
+                    <!-- STEP CONTENT -->
+                    <div class="tab-content">
+                        <!-- STEP 1: MISSION INFO -->
+                        <div class="tab-pane fade show active" id="step1">
+                            <h5 class="mb-3 fw-semibold text-dark">Maklumat Misi</h5>
+                            <!-- MAIN CARD -->
+                            <div class="card shadow-sm border-0 mb-3">
+                                <div class="card-body">
+                                    <!-- SECTION: BASIC INFO -->
+                                    <div class="mb-3">
+                                        <h6 class="fw-semibold border-bottom pb-2 mb-3 text-dark">
+                                        Maklumat Asas Misi
+                                        </h6>
+                                        <div class="row g-3">
+                                            <div class="col-md-6">
+                                                <small class="text-muted">Nama Misi</small>
+                                                <div class="fw-semibold">EMT Sabah Flood Response</div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <small class="text-muted">Tarikh Mula</small>
+                                                <div class="fw-semibold">01/06/2026</div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <small class="text-muted">Anggaran Tamat</small>
+                                                <div class="fw-semibold">15/06/2026</div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <small class="text-muted">Tarikh Selesai</small>
+                                                <div class="fw-semibold text-muted">-</div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <small class="text-muted">Status</small><br>
+                                                <span class="badge bg-secondary">
+                                                Sedang Dijalankan
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr class="my-3">
+
+                                    <!-- SECTION: MISSION DETAILS -->
+                                    <div class="mb-3">
+                                        <h6 class="fw-semibold border-bottom pb-2 mb-3 text-dark">
+                                        Butiran Operasi
+                                        </h6>
+                                        <div class="row g-3">
+                                            <div class="col-md-6">
+                                                <small class="text-muted">Jenis Misi</small>
+                                                <div class="fw-semibold">Bantuan Banjir</div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <small class="text-muted">Ketua Misi</small>
+                                                <div class="fw-semibold">Dr. Ahmad</div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <small class="text-muted">Lokasi</small>
+                                                <div class="fw-semibold">Sabah, Malaysia</div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <small class="text-muted">Catatan</small>
+                                                <div class="fw-semibold text-dark">
+                                                Misi bantuan banjir melibatkan pasukan perubatan kecemasan di kawasan terjejas.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- BUTTON -->
+                            <div class="d-flex justify-content-end">
+
+                                <a href="mission_edit.html"
+                                class="btn btn-outline-secondary rounded-pill shadow-sm px-4">
+                                    <i class="bi bi-pencil-square me-1"></i>
+                                    Kemaskini Maklumat EMT
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- STEP 2: ASSET -->
+                        <div class="tab-pane fade" id="step2">
+                            <!-- HEADER -->
+                            <div class="mb-3">
+                                <h5 class="fw-semibold mb-1">Senarai Asset EMT</h5>
+                                <p class="text-muted mb-0">
+                                Senarai peralatan EMT (generator, oxygen, kit kecemasan).
+                                </p>
+                            </div>
+                            <!-- CARD -->
+                            <div class="card shadow-sm border-0">
+                                <div class="table-responsive">
+                                    <table class="table table-hover align-middle mb-0">
+                                        <thead class="table-light">
+                                        <tr>
+                                            <th>Asset</th>
+                                            <th>Category</th>
+                                            <th class="text-center">Qty</th>
+                                            <th>Status</th>
+                                            <th>Location</th>
+                                            <th class="text-end">Action</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!-- ROW 1 -->
+                                            <tr>
+                                                <td class="fw-semibold">Generator</td>
+                                                <td>Electrical</td>
+                                                <td class="text-center">2</td>
+                                                <td>
+                                                <span class="badge bg-secondary">In Use</span>
+                                                </td>
+                                                <td>Sabah Ops</td>
+                                                <td class="text-end">
+                                                    <div class="btn-group">
+                                                        <a href="asset_view.html"
+                                                        class="btn btn-sm btn-outline-dark">
+                                                        View
+                                                        </a>
+                                                        <a href="asset_edit.html"
+                                                        class="btn btn-sm btn-outline-secondary">
+                                                        Edit
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <!-- ROW 2 -->
+                                            <tr>
+                                                <td class="fw-semibold">Oxygen Cylinder</td>
+                                                <td>Medical</td>
+                                                <td class="text-center">10</td>
+                                                <td>
+                                                <span class="badge bg-light text-dark border">Available</span>
+                                                </td>
+
+                                                <td>Warehouse</td>
+                                                <td class="text-end">
+                                                    <div class="btn-group">
+                                                        <a href="asset_view.html"
+                                                        class="btn btn-sm btn-outline-dark">
+                                                        View
+                                                        </a>
+                                                        <a href="asset_edit.html"
+                                                        class="btn btn-sm btn-outline-secondary">
+                                                        Edit
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <!-- ROW 3 -->
+                                            <tr>
+                                                <td class="fw-semibold">First Aid Kit</td>
+                                                <td>Medical</td>
+                                                <td class="text-center">5</td>
+                                                <td>
+                                                <span class="badge bg-secondary">In Use</span>
+                                                </td>
+                                                <td>Field Team</td>
+                                                <td class="text-end">
+                                                    <div class="btn-group">
+                                                        <a href="asset_view.html"
+                                                        class="btn btn-sm btn-outline-dark">
+                                                        View
+                                                        </a>
+                                                        <a href="asset_edit.html"
+                                                        class="btn btn-sm btn-outline-secondary">
+                                                        Edit
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <!-- ADD BUTTON -->
+                            <div class="d-flex justify-content-end mt-4">
+                                <a href="asset_add.html"
+                                class="btn btn-primary rounded-pill shadow-sm px-4">
+                                <i class="bi bi-plus-circle me-1"></i>
+                                Tambah Asset
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- STEP 3: HR -->
+                        <div class="tab-pane fade" id="step3">
+                            <!-- HEADER -->
+                            <div class="mb-3">
+                                <h5 class="mb-1 fw-semibold">Human Resources</h5>
+                                <p class="text-muted mb-0">
+                                Maklumat jumlah anggota EMT yang terlibat dalam misi.
+                                </p>
+                            </div>
+                            <!-- CARD -->
+                            <div class="card shadow-sm border-0">
+                                <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                                    <strong>Maklumat Human Resource EMT</strong>
+                                    <span class="badge bg-light text-dark border">Read Only</span>
+                                </div>
+                                <div class="card-body p-0">
+                                    <div class="table-responsive">
+                                        <table class="table table-hover align-middle mb-0">
+                                            <tbody>
+                                                <tr>
+                                                <td class="text-muted ps-3">Doktor</td>
+                                                <td class="fw-semibold text-end pe-3">2</td>
+                                                </tr>
+                                                <tr>
+                                                <td class="text-muted ps-3">Jururawat</td>
+                                                <td class="fw-semibold text-end pe-3">5</td>
+                                                </tr>
+                                                <tr>
+                                                <td class="text-muted ps-3">Paramedik</td>
+                                                <td class="fw-semibold text-end pe-3">3</td>
+                                                </tr>
+                                                <tr>
+                                                <td class="text-muted ps-3">Pegawai Farmasi</td>
+                                                <td class="fw-semibold text-end pe-3">1</td>
+                                                </tr>
+                                                <tr>
+                                                <td class="text-muted ps-3">Pegawai Kesihatan Awam</td>
+                                                <td class="fw-semibold text-end pe-3">1</td>
+                                                </tr>
+                                                <tr>
+                                                <td class="text-muted ps-3">Staf Sokongan</td>
+                                                <td class="fw-semibold text-end pe-3">4</td>
+                                                </tr>
+                                                <tr>
+                                                <td class="text-muted ps-3">Lain-lain</td>
+                                                <td class="fw-semibold text-end pe-3">0</td>
+                                                </tr>
+                                                <!-- TOTAL -->
+                                                <tr class="border-top bg-light">
+                                                <td class="fw-bold ps-3 py-3">Jumlah Keseluruhan</td>
+                                                <td class="fw-bold text-primary text-end pe-3 fs-6 py-3">
+                                                    16
+                                                </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- BUTTON -->
+                            <div class="d-flex justify-content-end gap-2 mt-4 flex-wrap">
+                                <a href="hr_edit.html"
+                                class="btn btn-outline-primary rounded-pill shadow-sm px-4">
+                                <i class="bi bi-pencil-square me-1"></i> Kemaskini Maklumat HR
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- STEP 4: LOGISTICS -->
+                        <div class="tab-pane fade" id="step4">
+                            <h5 class="mb-3 fw-semibold">Logistik</h5>
+                            <p class="text-muted">
+                                Pengurusan pengangkutan, storan dan pergerakan logistik misi EMT.
+                            </p>
+                            <!-- ================= TRANSPORT SECTION ================= -->
+                            <div class="card shadow-sm border-0 mb-4">
+                                <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                                    <strong>Pengangkutan EMT</strong>
+                                    <a href="logistik_transportAdd.html"
+                                    class="btn btn-sm btn-outline-secondary rounded-pill px-3">
+                                        <i class="bi bi-plus-circle me-1"></i> Tambah
+                                    </a>
+                                </div>
+                                <div class="card-body p-0">
+                                    <div class="table-responsive">
+                                        <table class="table table-hover align-middle mb-0">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th>Kenderaan</th>
+                                                    <th>No. Pendaftaran</th>
+                                                    <th>Kapasiti</th>
+                                                    <th>Status</th>
+                                                    <th>Pemandu</th>
+                                                    <th class="text-end">Tindakan</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="fw-semibold">Ambulans</td>
+                                                    <td>WXY1234</td>
+                                                    <td>4 Orang</td>
+                                                    <td><span class="badge bg-success">Digunakan</span></td>
+                                                    <td>Ahmad</td>
+                                                    <td class="text-end">
+                                                        <div class="btn-group btn-group-sm">
+                                                            <a href="logistik_transportView.html"
+                                                            class="btn btn-outline-secondary">
+                                                                View
+                                                            </a>
+                                                            <a href="logistik_transportEdit.html"
+                                                            class="btn btn-outline-dark">
+                                                                Edit
+                                                            </a>
+
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- ================= STORAGE SECTION ================= -->
+                            <div class="card shadow-sm border-0">
+                                <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                                    <strong>Storage / Crates</strong>
+                                    <a href="logistik_storageAdd.html"
+                                    class="btn btn-sm btn-outline-secondary rounded-pill px-3">
+                                        <i class="bi bi-plus-circle me-1"></i> Tambah
+                                    </a>
+                                </div>
+                                <div class="card-body p-0">
+                                    <div class="table-responsive">
+                                        <table class="table table-hover align-middle mb-0">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th>ID Crate</th>
+                                                    <th>Jenis</th>
+                                                    <th>Lokasi</th>
+                                                    <th>Status</th>
+                                                    <th class="text-end">Tindakan</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="fw-semibold">CRT001</td>
+                                                    <td>Medical Supply Crate</td>
+                                                    <td>Base Camp</td>
+                                                    <td><span class="badge bg-primary">Aktif</span></td>
+                                                    <td class="text-end">
+                                                        <div class="btn-group btn-group-sm">
+                                                            <a href="logistik_storageView.html"
+                                                            class="btn btn-outline-secondary">
+                                                                View
+                                                            </a>
+                                                            <a href="logistik_storageEdit.html"
+                                                            class="btn btn-outline-dark">
+                                                                Edit
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- STEP 5: MDS -->
+                        <div class="tab-pane fade" id="step5">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <div>
+                                    <h5 class="mb-0">MDS Report</h5>
+                                    <p class="text-muted mb-0">Rekod harian data pesakit dan aktiviti klinikal EMT.</p>
+                                </div>
+                                <a href="emt_healthform.html" class="btn btn-primary">
+                                    <i class="bi bi-plus-circle me-1"></i>
+                                    Tambah Rekod MDS
+                                </a>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-bordered align-middle">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>Date</th>
+                                            <th>Name</th>
+                                            <th>Age</th>
+                                            <th>Sex</th>
+                                            <th>Diagnosis</th>
+                                            <th>Medication</th>
+                                            <th>Outcome</th>
+                                            <th class="text-center">Tindakan</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>01/06/2026</td>
+                                            <td>Ahmad bin Ali</td>
+                                            <td>30</td>
+                                            <td>Male</td>
+                                            <td>Minor head injury</td>
+                                            <td>Wound dressing</td>
+                                            <td>Discharge</td>
+                                            <td class="text-center">
+                                                <a href="emt_mdsview.html" class="btn btn-sm btn-outline-primary">
+                                                    Lihat Rekod
+                                                </a>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>02/06/2026</td>
+                                            <td>Siti Nur Aisyah</td>
+                                            <td>20</td>
+                                            <td>Female (Non-pregnant)</td>
+                                            <td>Acute respiratory infection</td>
+                                            <td>Discharge with follow-up</td>
+                                            <td>Referral</td>
+                                            <td class="text-center">
+                                                <a href="emt_mdsview.html" class="btn btn-sm btn-outline-primary">
+                                                    Lihat Rekod
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="9" class="text-center text-muted">
+                                                Tiada rekod tambahan
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- STEP 6: REPORT -->
+                        <div class="tab-pane fade" id="step6">
+                            <h5>Laporan Misi</h5>
+                            <p class="text-muted">
+                            Jana laporan rasmi EMT untuk KKM dalam format PDF.
+                            </p>
+                            <button class="btn btn-dark">
+                            <i class="bi bi-file-earmark-pdf me-1"></i>
+                            Generate & Download PDF
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div id="footer"></div>
+
+<!-- LOAD HEADER / FOOTER / SIDEBAR -->
+<script>
+fetch("header.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("header").innerHTML = data);
+
+fetch("footer.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("footer").innerHTML = data);
+
+fetch("sidebar.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("sidebar-placeholder").innerHTML = data);
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- step 3 hr total auto calc-->
+<script>
+function calculateHRTotal() {
+
+    let doctor = parseInt(document.getElementById('doctor').value) || 0;
+    let nurse = parseInt(document.getElementById('nurse').value) || 0;
+    let paramedic = parseInt(document.getElementById('paramedic').value) || 0;
+    let pharmacist = parseInt(document.getElementById('pharmacist').value) || 0;
+    let publicHealth = parseInt(document.getElementById('publicHealth').value) || 0;
+    let support = parseInt(document.getElementById('support').value) || 0;
+    let others = parseInt(document.getElementById('others').value) || 0;
+
+    let total = doctor + nurse + paramedic + pharmacist + publicHealth + support + others;
+
+    document.getElementById('totalHR').value = total;
+}
+
+document.querySelectorAll('.hr-input').forEach(input => {
+    input.addEventListener('input', calculateHRTotal);
+});
+
+// initial calc
+calculateHRTotal();
+</script>
+
+<!-- button wizard -->
+<script>
+const tabs = [
+  "#step1",
+  "#step2",
+  "#step3",
+  "#step4",
+  "#step5",
+  "#step6"
+];
+
+function getActiveIndex() {
+  for (let i = 0; i < tabs.length; i++) {
+    if (document.querySelector(tabs[i]).classList.contains("active")) {
+      return i;
+    }
+  }
+  return 0;
+}
+
+function showTab(index) {
+  if (index < 0 || index >= tabs.length) return;
+
+  let triggerEl = document.querySelector(
+    `[data-bs-target="${tabs[index]}"]`
+  );
+
+  bootstrap.Tab.getOrCreateInstance(triggerEl).show();
+}
+
+document.querySelector(".btn-outline-secondary").addEventListener("click", function () {
+  let current = getActiveIndex();
+  showTab(current - 1);
+});
+
+document.querySelector(".btn-primary").addEventListener("click", function () {
+  let current = getActiveIndex();
+  showTab(current + 1);
+});
+</script>
+
+</body>
+</html>

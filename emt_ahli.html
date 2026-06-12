@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MyEMT AHLI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Main CSS -->
+  <link href="assets/css/main.css" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div id="header"></div>
+
+<div class="container-fluid">
+  <div class="row">
+
+    <!-- LEFT PANEL -->
+    <aside class="col-md-3 col-lg-2 sidebar p-0" id="sidebar-placeholder">
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="col-md-9 col-lg-10 px-4 py-4">
+
+      <!-- HEADER -->
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h4 class="mb-0">Pengurusan Malaysia Emergency Medical Team (MyEMT)</h4>
+
+        <div class="mb-3 d-flex justify-content-end">
+            <a href="landingMyemt.html" class="btn btn-primary">
+                <i class="bi bi-arrow-left me-1"></i> Kembali
+            </a>
+        </div>
+
+      </div>
+
+      <!-- UNTUK PENGURUSAN MYEMT JE -->
+      <div class="row g-3 mb-4">
+
+        <div class="col-md-3">
+          <div class="card shadow-sm border-0 border-start border-primary border-4">
+            <div class="card-body d-flex align-items-center justify-content-between">
+
+              <div>
+                <h6 class="text-muted mb-1">Jumlah Pendaftaran</h6>
+                <h3 class="mb-0 fw-bold">12</h3>
+              </div>
+
+              <div class="text-primary fs-3">
+                <i class="bi bi-clipboard-data"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="card shadow-sm border-0 border-start border-warning border-4">
+            <div class="card-body d-flex align-items-center justify-content-between">
+
+              <div>
+                <h6 class="text-muted mb-1">Dalam Semakan</h6>
+                <h3 class="mb-0 fw-bold">3</h3>
+              </div>
+
+              <div class="text-warning fs-3">
+                <i class="bi bi-hourglass-split"></i>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="card shadow-sm border-0 border-start border-success border-4">
+            <div class="card-body d-flex align-items-center justify-content-between">
+
+              <div>
+                <h6 class="text-muted mb-1">Diluluskan</h6>
+                <h3 class="mb-0 fw-bold">9</h3>
+              </div>
+
+              <div class="text-success fs-3">
+                <i class="bi bi-check-circle"></i>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="card shadow-sm border-0 border-start border-danger border-4">
+            <div class="card-body d-flex align-items-center justify-content-between">
+
+              <div>
+                <h6 class="text-muted mb-1">Ditolak</h6>
+                <h3 class="mb-0 fw-bold">1</h3>
+              </div>
+
+              <div class="text-danger fs-3">
+                <i class="bi bi-x-circle"></i>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- FILTER LULUS TOLAK-->
+      <div class="d-flex gap-2 mb-3">
+
+        <select id="statusFilter" class="form-select w-auto">
+          <option value="all">Semua Status</option>
+          <option value="Dalam Semakan">Dalam Semakan</option>
+          <option value="Diluluskan">Diluluskan</option>
+          <option value="Ditolak">Ditolak</option>
+        </select>
+
+      </div>
+
+      <!-- TABLE PENGURUSAN -->
+      <table class="table table-striped mb-0">
+
+        <thead class="table-light">
+          <tr>
+            <th>Tarikh</th>
+            <th>Nama Pemohon</th>
+            <th>Jawatan</th>
+            <th>Fasiliti</th>
+            <th>Negeri</th>
+            <th>Status</th>
+            <th class="text-end">Tindakan</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <!-- CONTOH 1 -->
+          <tr>
+            <td>12/01/2026</td>
+            <td>Aimi Afifah</td>
+            <td>Pegawai Perubatan</td>
+            <td>Klinik Kesihatan Kuala Lumpur</td>
+            <td>WP Kuala Lumpur</td>
+
+            <td class="status">
+              <span class="badge rounded-pill bg-warning text-dark px-3 py-2 status-text">
+                Dalam Semakan
+              </span>
+            </td>
+
+            <td class="text-end">
+              <a href="emt_deployform.html?id=1"
+                class="btn btn-sm btn-primary rounded-pill px-3">
+                <i class="bi bi-file-earmark-text me-1"></i>
+                Review
+              </a>
+            </td>
+
+          <!-- CONTOH 2 -->
+          <tr>
+            <td>10/01/2026</td>
+            <td>Nur Huda</td>
+            <td>Jururawat</td>
+            <td>Hospital Melaka</td>
+            <td>Melaka</td>
+
+            <td class="status">
+              <span class="badge rounded-pill bg-success px-3 py-2 status-text">
+                Diluluskan
+              </span>
+            </td>
+
+            <td class="text-end">
+              <a href="emt_deployform.html?id=2" class="btn btn-sm btn-outline-primary">
+                View
+              </a>
+            </td>
+          </tr>
+
+          <!-- CONTOH 3 -->
+          <tr>
+            <td>08/01/2026</td>
+            <td>Ahmad Faiz</td>
+            <td>Paramedik</td>
+            <td>Klinik Kesihatan Johor Bahru</td>
+            <td>Johor</td>
+
+            <td class="status">
+              <span class="badge rounded-pill bg-danger px-3 py-2 status-text">
+                Ditolak
+              </span>
+            </td>
+
+            <td class="text-end">
+              <a href="emt_deployform.html?id=3" class="btn btn-sm btn-outline-primary">
+                View
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br><br>
+      
+    </main>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div id="footer"></div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Load Header & Footer -->
+<script>
+  fetch("header.html")
+    .then(res => res.text())
+    .then(data => document.getElementById("header").innerHTML = data);
+
+  fetch("footer.html")
+    .then(res => res.text())
+    .then(data => document.getElementById("footer").innerHTML = data);
+</script>
+
+<!-- Load Sidebar -->
+<script>
+  fetch("sidebar.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("sidebar-placeholder").innerHTML = data)
+  .catch(err => console.error("Sidebar load failed:", err));
+</script>
+
+<!--status permohonan user-->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  document.querySelectorAll("tbody tr").forEach(row => {
+
+    const statusCell = row.querySelector(".status");
+    const approveBtn = row.querySelector(".btn-approve");
+    const rejectBtn = row.querySelector(".btn-reject");
+
+    function disableButtons() {
+      approveBtn.disabled = true;
+      rejectBtn.disabled = true;
+    }
+
+    // Disable jika sudah diproses
+    const currentStatus = statusCell.innerText.trim();
+
+    if (
+      currentStatus === "Diluluskan" ||
+      currentStatus === "Ditolak"
+    ) {
+      disableButtons();
+    }
+
+    // Lulus
+    approveBtn.addEventListener("click", function () {
+
+      statusCell.innerHTML =
+        '<span class="badge bg-success">Diluluskan</span>';
+
+      disableButtons();
+    });
+
+    // Gagal
+    rejectBtn.addEventListener("click", function () {
+
+      statusCell.innerHTML =
+        '<span class="badge bg-danger">Ditolak</span>';
+
+      disableButtons();
+    });
+
+  });
+
+});
+</script>
+
+<!--FILTER LULUS GAGAL-->
+<script>
+document.getElementById("statusFilter").addEventListener("change", function () {
+
+  const filter = this.value;
+  const rows = document.querySelectorAll("table tbody tr");
+
+  rows.forEach(row => {
+
+    const statusElement = row.querySelector(".status-text");
+    const status = statusElement ? statusElement.textContent.trim() : "";
+
+    if (filter === "all" || status === filter) {
+      row.style.display = "";
+    } else {
+      row.style.display = "none";
+    }
+
+  });
+
+});
+</script>
+
+</body>
+</html>

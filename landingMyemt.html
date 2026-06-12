@@ -34,184 +34,189 @@
       <div class="d-flex justify-content-between align-items-center mb-4">
         <h4 class="mb-0">Pengurusan Malaysia Emergency Medical Team (MyEMT)</h4>
 
-        <div class="d-flex justify-content-end gap-2 flex-wrap">
+        <!-- ACTION BUTTONS -->
+        <div class="d-flex justify-content-end mb-3">
+          <div class="dropdown">
+            <button class="btn btn-outline-secondary rounded-pill px-3 shadow-sm dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false">
 
-          <a href="emt_deployform.html" class="btn btn-primary rounded-pill shadow-sm px-3">
-            <i class="bi bi-gear-fill me-1"></i> Pengurusan ahli MyEMT
-          </a>
-        
+              <i class="bi bi-grid me-1"></i>
+              MyEMT Modul
+            </button>
+
+            <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+              <li>
+                <a class="dropdown-item" href="emt_ahli.html">
+                  <i class="bi bi-people me-2"></i>
+                  Pengurusan Ahli MyEMT
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="emt_crud.html">
+                  <i class="bi bi-diagram-3 me-2"></i>
+                  Pengurusan Misi EMT CRUD
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
 
-      <!-- UNTUK PENGURUSAN MYEMT JE -->
       <div class="row g-3 mb-4">
 
-        <div class="col-md-3">
-          <div class="card shadow-sm border-0 border-start border-primary border-4">
-            <div class="card-body d-flex align-items-center justify-content-between">
-
-              <div>
-                <h6 class="text-muted mb-1">Jumlah Pendaftaran</h6>
-                <h3 class="mb-0 fw-bold">12</h3>
+          <div class="col-md-3">
+              <div class="card border-0 shadow-sm">
+                  <div class="card-body">
+                      <small class="text-muted">Jumlah Ahli MyEMT</small>
+                      <h3 class="mb-0">186</h3>
+                  </div>
               </div>
-
-              <div class="text-primary fs-3">
-                <i class="bi bi-clipboard-data"></i>
-              </div>
-
-            </div>
           </div>
-        </div>
 
-        <div class="col-md-3">
-          <div class="card shadow-sm border-0 border-start border-warning border-4">
-            <div class="card-body d-flex align-items-center justify-content-between">
-
-              <div>
-                <h6 class="text-muted mb-1">Dalam Semakan</h6>
-                <h3 class="mb-0 fw-bold">3</h3>
+          <div class="col-md-3">
+              <div class="card border-0 shadow-sm">
+                  <div class="card-body">
+                      <small class="text-muted">Misi Aktif</small>
+                      <h3 class="mb-0">5</h3>
+                  </div>
               </div>
-
-              <div class="text-warning fs-3">
-                <i class="bi bi-hourglass-split"></i>
-              </div>
-
-            </div>
           </div>
-        </div>
 
-        <div class="col-md-3">
-          <div class="card shadow-sm border-0 border-start border-success border-4">
-            <div class="card-body d-flex align-items-center justify-content-between">
-
-              <div>
-                <h6 class="text-muted mb-1">Diluluskan</h6>
-                <h3 class="mb-0 fw-bold">9</h3>
+          <div class="col-md-3">
+              <div class="card border-0 shadow-sm">
+                  <div class="card-body">
+                      <small class="text-muted">Jumlah Rekod MDS</small>
+                      <h3 class="mb-0">1,254</h3>
+                  </div>
               </div>
-
-              <div class="text-success fs-3">
-                <i class="bi bi-check-circle"></i>
-              </div>
-
-            </div>
           </div>
-        </div>
 
-        <div class="col-md-3">
-          <div class="card shadow-sm border-0 border-start border-danger border-4">
-            <div class="card-body d-flex align-items-center justify-content-between">
-
-              <div>
-                <h6 class="text-muted mb-1">Ditolak</h6>
-                <h3 class="mb-0 fw-bold">1</h3>
+          <div class="col-md-3">
+              <div class="card border-0 shadow-sm">
+                  <div class="card-body">
+                      <small class="text-muted">Asset Berdaftar</small>
+                      <h3 class="mb-0">342</h3>
+                  </div>
               </div>
-
-              <div class="text-danger fs-3">
-                <i class="bi bi-x-circle"></i>
-              </div>
-
-            </div>
           </div>
-        </div>
 
       </div>
 
-      <!-- FILTER LULUS TOLAK-->
-      <div class="d-flex gap-2 mb-3">
+      <div class="card shadow-sm mb-4">
+          <div class="card-header bg-white">
+              <strong>Status Ahli MyEMT</strong>
+          </div>
 
-        <select id="statusFilter" class="form-select w-auto">
-          <option value="all">Semua Status</option>
-          <option value="Dalam Semakan">Dalam Semakan</option>
-          <option value="Diluluskan">Diluluskan</option>
-          <option value="Ditolak">Ditolak</option>
-        </select>
+          <div class="card-body">
 
+              <div class="row text-center">
+
+                  <div class="col-md-3">
+                      <h4 class="fw-bold">45</h4>
+                      <small class="text-muted">Doktor</small>
+                  </div>
+
+                  <div class="col-md-3">
+                      <h4 class="fw-bold">72</h4>
+                      <small class="text-muted">Jururawat</small>
+                  </div>
+
+                  <div class="col-md-3">
+                      <h4 class="fw-bold">38</h4>
+                      <small class="text-muted">Paramedik</small>
+                  </div>
+
+                  <div class="col-md-3">
+                      <h4 class="fw-bold">31</h4>
+                      <small class="text-muted">Lain-lain</small>
+                  </div>
+
+              </div>
+
+          </div>
       </div>
 
-      <!-- TABLE PENGURUSAN -->
-      <table class="table table-striped mb-0">
+      <div class="card shadow-sm mb-4">
+          <div class="card-header bg-white">
+              <strong>Misi EMT Sedang Berjalan</strong>
+          </div>
 
-        <thead class="table-light">
-          <tr>
-            <th>Tarikh</th>
-            <th>Nama Pemohon</th>
-            <th>Jawatan</th>
-            <th>Fasiliti</th>
-            <th>Negeri</th>
-            <th>Status</th>
-            <th class="text-end">Tindakan</th>
-          </tr>
-        </thead>
+          <div class="table-responsive">
 
-        <tbody>
+              <table class="table table-hover mb-0">
 
-          <!-- CONTOH 1 -->
-          <tr>
-            <td>12/01/2026</td>
-            <td>Aimi Afifah</td>
-            <td>Pegawai Perubatan</td>
-            <td>Klinik Kesihatan Kuala Lumpur</td>
-            <td>WP Kuala Lumpur</td>
+                  <thead class="table-light">
+                      <tr>
+                          <th>Nama Misi</th>
+                          <th>Lokasi</th>
+                          <th>Tarikh Mula</th>
+                          <th>Status</th>
+                      </tr>
+                  </thead>
 
-            <td class="status">
-              <span class="badge rounded-pill bg-warning text-dark px-3 py-2 status-text">
-                Dalam Semakan
-              </span>
-            </td>
+                  <tbody>
 
-            <td class="text-end">
-              <a href="emt_deployform.html?id=1"
-                class="btn btn-sm btn-primary rounded-pill px-3">
-                <i class="bi bi-file-earmark-text me-1"></i>
-                Review
-              </a>
-            </td>
+                      <tr>
+                          <td>EMT Sabah Flood Response</td>
+                          <td>Sabah</td>
+                          <td>01/06/2026</td>
+                          <td>
+                              <span class="badge bg-primary">
+                                  Sedang Dijalankan
+                              </span>
+                          </td>
+                      </tr>
 
-          <!-- CONTOH 2 -->
-          <tr>
-            <td>10/01/2026</td>
-            <td>Nur Huda</td>
-            <td>Jururawat</td>
-            <td>Hospital Melaka</td>
-            <td>Melaka</td>
+                      <tr>
+                          <td>EMT Johor Emergency Ops</td>
+                          <td>Johor</td>
+                          <td>20/06/2026</td>
+                          <td>
+                              <span class="badge bg-warning text-dark">
+                                  Dalam Perancangan
+                              </span>
+                          </td>
+                      </tr>
 
-            <td class="status">
-              <span class="badge rounded-pill bg-success px-3 py-2 status-text">
-                Diluluskan
-              </span>
-            </td>
+                  </tbody>
 
-            <td class="text-end">
-              <a href="emt_deployform.html?id=2" class="btn btn-sm btn-outline-primary">
-                View
-              </a>
-            </td>
-          </tr>
+              </table>
 
-          <!-- CONTOH 3 -->
-          <tr>
-            <td>08/01/2026</td>
-            <td>Ahmad Faiz</td>
-            <td>Paramedik</td>
-            <td>Klinik Kesihatan Johor Bahru</td>
-            <td>Johor</td>
+          </div>
+      </div>
 
-            <td class="status">
-              <span class="badge rounded-pill bg-danger px-3 py-2 status-text">
-                Ditolak
-              </span>
-            </td>
+      <div class="card shadow-sm">
+          <div class="card-header bg-white">
+              <strong>Aktiviti Terkini</strong>
+          </div>
 
-            <td class="text-end">
-              <a href="emt_deployform.html?id=3" class="btn btn-sm btn-outline-primary">
-                View
-              </a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <br><br>
+          <div class="card-body">
 
+              <ul class="list-group list-group-flush">
+
+                  <li class="list-group-item">
+                      Rekod MDS baharu ditambah oleh EMT Sabah Flood Response
+                  </li>
+
+                  <li class="list-group-item">
+                      Asset "Generator 5kVA" berjaya didaftarkan
+                  </li>
+
+                  <li class="list-group-item">
+                      Ahli MyEMT baharu diluluskan oleh pentadbir
+                  </li>
+
+                  <li class="list-group-item">
+                      Laporan misi Kelantan berjaya dijana
+                  </li>
+
+              </ul>
+
+          </div>
+      </div>
+      
       <!--line nak bahagi dulu, nnti dah filter admin user boleh buang-->
       <hr class="my-4">
       
@@ -221,12 +226,12 @@
 
         <div class="dropdown">
 
-          <button class="btn btn-primary btn-lg shadow rounded-pill px-4 dropdown-toggle"
-                  type="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false">
-            <i class="bi bi-grid-3x3-gap-fill me-2"></i>
-            MyEMT Modules
+          <button class="btn btn-outline-secondary rounded-pill px-3 shadow-sm dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false">
+            <i class="bi bi-grid-3x3-gap-fill me-1"></i>
+            MyEMT Modul
           </button>
 
           <ul class="dropdown-menu dropdown-menu-end shadow">
@@ -237,7 +242,7 @@
                 Daftar MyEMT
               </a>
             </li>
-
+            
             <li>
               <a class="dropdown-item" href="emt_healthform.html">
                 <i class="bi bi-file-medical-fill me-2 text-primary"></i>
@@ -245,22 +250,24 @@
               </a>
             </li>
 
+            <!--tengok balik, takde borang lagi-->
+            
             <li><hr class="dropdown-divider"></li>
-
+            
             <li>
-              <a class="dropdown-item" href="emt_mds.html">
+              <a class="dropdown-item" href="#">
                 <i class="bi bi-clipboard2-pulse-fill me-2 text-dark"></i>
-                Borang EMT MDS
+                Borang B-Course
               </a>
             </li>
 
             <li>
-              <a class="dropdown-item" href="emt_mds_plus.html">
+              <a class="dropdown-item" href="#">
                 <i class="bi bi-clipboard2-data-fill me-2 text-secondary"></i>
-                Borang EMT MDS+
+                Borang C-Course
               </a>
             </li>
-
+          
           </ul>
 
         </div>

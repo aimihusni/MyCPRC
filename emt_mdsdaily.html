@@ -88,159 +88,234 @@
         </div>
 
         <div class="mb-3 d-flex justify-content-end">
-            <a href="landingMyemt.html" class="btn btn-primary">
-                <i class="bi bi-arrow-left me-1"></i> Kembali
-            </a>
+          <a href="emt_crud.html" class="btn btn-primary">
+            <i class="bi bi-arrow-left me-1"></i> Kembali
+          </a>
         </div>
       </div>
 
-      <!-- STATUS / ACTION CARD -->
+      <!-- ================= DASHBOARD SUMMARY ================= -->
+      <div class="row g-3 mb-4">
+
+        <!-- JUMLAH REKOD -->
+        <div class="col-md-3">
+          <div class="card shadow-sm border-0 h-100">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <small class="text-muted d-block">
+                    Jumlah Rekod Hari Ini
+                  </small>
+                  <h2 class="fw-bold mb-0">36</h2>
+                  <small class="text-muted">
+                    Rekod MDS direkodkan
+                  </small>
+                </div>
+                <i class="bi bi-clipboard2-pulse fs-1 text-primary"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TRAUMA -->
+        <div class="col-md-3">
+          <div class="card shadow-sm border-0 h-100">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <small class="text-muted d-block">
+                    Kes Trauma
+                  </small>
+                  <h2 class="fw-bold mb-0">8</h2>
+                  <small class="text-muted">
+                    Kes kecederaan trauma
+                  </small>
+                </div>
+                <i class="bi bi-bandaid fs-1 text-secondary"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- INFECTIOUS -->
+        <div class="col-md-3">
+          <div class="card shadow-sm border-0 h-100">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <small class="text-muted d-block">
+                    Penyakit Berjangkit
+                  </small>
+                  <h2 class="fw-bold mb-0">12</h2>
+                  <small class="text-muted">
+                    Infectious disease
+                  </small>
+                </div>
+                <i class="bi bi-virus fs-1 text-secondary"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- EMERGENCY -->
+        <div class="col-md-3">
+          <div class="card shadow-sm border-0 h-100">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <small class="text-muted d-block">
+                    Kes Kecemasan
+                  </small>
+                  <h2 class="fw-bold mb-0">6</h2>
+                  <small class="text-muted">
+                    Medical & Surgical Emergency
+                  </small>
+                </div>
+                <i class="bi bi-hospital fs-1 text-secondary"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= FILTER SECTION ================= -->
       <div class="card shadow-sm mb-3">
-        <div class="card-body d-flex justify-content-between align-items-center">
+        <div class="card-body">
 
+          <div class="row g-3">
 
-            
+            <div class="col-md-3">
+              <label class="form-label">Tarikh</label>
+              <input type="date" class="form-control">
+            </div>
 
-<!-- ================= FORMAL SUMMARY TABLE ================= -->
-<div class="table-responsive w-100">
+            <div class="col-md-3">
+              <label class="form-label">Clinical Classification</label>
+              <select class="form-select">
+                <option selected>Semua</option>
+                <option>Trauma</option>
+                <option>Infectious Disease</option>
+                <option>Additional Conditions</option>
+                <option>Emergency</option>
+                <option>Other Key Diseases</option>
+              </select>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label">Outcome</label>
+              <select class="form-select">
+                <option selected>Semua</option>
+                <option>Discharge without medical follow-up</option>
+                <option>Discharge with medical follow-up</option>
+                <option>Discharge against medical advice</option>
+                <option>Referral</option>
+                <option>Admission</option>
+                <option>Dead on arrival</option>
+                <option>Death within facility</option>
+                <option>Requiring long-term rehabilitation</option>
+              </select>
+            </div>
+            <div class="col-md-3 d-flex align-items-end">
+              <button class="btn btn-primary w-100">
+                <i class="bi bi-funnel me-1"></i> Tapis
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
 
-  <div class="card shadow-sm border-0 w-100">
+      <!-- ================= TABLE ================= -->
+      <div class="card shadow-sm border-0">
 
-    <div class="card-header bg-white">
-      <strong>Senarai Ringkasan Laporan Harian MyEMT</strong>
-    </div>
+        <div class="card-header bg-white">
+          <strong>Senarai Ringkasan Laporan Harian MyEMT</strong>
+        </div>
 
-    <table class="table align-middle mb-0 w-100">
+        <div class="table-responsive">
+          <table class="table align-middle mb-0">
+            <thead class="table-light">
+              <tr>
+                <th>ID</th>
+                <th>Pesakit</th>
+                <th>Demografi</th>
+                <th>Clinical Summary</th>
+                <th>Outcome</th>
+                <th>Risk</th>
+                <th class="text-end">Tindakan</th>
+              </tr>
+            </thead>
 
-      <thead class="table-light">
-        <tr>
-          <th>ID</th>
-          <th>Pesakit</th>
-          <th>Demografi</th>
-          <th>Clinical Summary</th>
-          <th>Outcome</th>
-          <th>Risk Indicator</th>
-          <th class="text-end">Tindakan</th>
-        </tr>
-      </thead>
-
-      <tbody>
-
-        <!-- ROW 1 -->
-        <tr>
-          <td class="fw-semibold">MDS001</td>
-
-          <td>
-            <div class="fw-semibold">Aimi Afifah</div>
-            <small class="text-muted">05/06/2026</small>
-          </td>
-
-          <td>
-            Age: 29<br>
-            Female (Non-Pregnant)
-          </td>
-
-          <td>
-            Trauma<br>
-            <small class="text-muted">Major head / spine injury + respiratory infection</small>
-          </td>
-
-          <td>
-            Discharge with follow-up
-          </td>
-
-          <td>
-            Notifiable disease
-          </td>
-
-          <td class="text-end">
-            <a href="emt_mdsview.html?id=1"
-               class="btn btn-sm btn-outline-secondary rounded px-3">
-              Papar Maklumat
-            </a>
-          </td>
-        </tr>
-
-        <!-- ROW 2 -->
-        <tr>
-          <td class="fw-semibold">MDS002</td>
-
-          <td>
-            <div class="fw-semibold">Siti Nur</div>
-            <small class="text-muted">05/06/2026</small>
-          </td>
-
-          <td>
-            Age: 27<br>
-            Female (Pregnant)
-          </td>
-
-          <td>
-            Infectious Disease<br>
-            <small class="text-muted">Acute respiratory infection</small>
-          </td>
-
-          <td>
-            Referral
-          </td>
-
-          <td>
-            WASH concern
-          </td>
-
-          <td class="text-end">
-            <a href="emt_mdsview.html?id=2"
-               class="btn btn-sm btn-outline-secondary rounded px-3">
-              Papar Maklumat
-            </a>
-          </td>
-        </tr>
-
-        <!-- ROW 3 -->
-        <tr>
-          <td class="fw-semibold">MDS003</td>
-
-          <td>
-            <div class="fw-semibold">John Lee</div>
-            <small class="text-muted">05/06/2026</small>
-          </td>
-
-          <td>
-            Age: 51<br>
-            Male
-          </td>
-
-          <td>
-            Emergency<br>
-            <small class="text-muted">Medical emergency</small>
-          </td>
-
-          <td>
-            Admission
-          </td>
-
-          <td>
-            Supply issue
-          </td>
-
-          <td class="text-end">
-            <a href="emt_mdsview.html?id=3"
-               class="btn btn-sm btn-outline-secondary rounded px-3">
-              Papar Maklumat
-            </a>
-          </td>
-        </tr>
-
-      </tbody>
-
-    </table>
-
-  </div>
-</div>            
-
-    
-
-            
+            <tbody>
+              <tr>
+                <td class="fw-semibold">MDS001</td>
+                <td>
+                  <div class="fw-semibold">Aimi Afifah</div>
+                  <small class="text-muted">05/06/2026</small>
+                </td>
+                <td>
+                  29 Tahun<br>
+                  Female (Non-Pregnant)
+                </td>
+                <td>
+                  Trauma<br>
+                  <small class="text-muted">Head / spine injury</small>
+                </td>
+                <td>Discharge</td>
+                <td>Notifiable disease</td>
+                <td class="text-end">
+                  <a href="emt_mdsdailyview.html?id=1"
+                    class="btn btn-sm btn-outline-primary">
+                    Papar
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td class="fw-semibold">MDS002</td>
+                <td>
+                  <div class="fw-semibold">Siti Nur</div>
+                  <small class="text-muted">05/06/2026</small>
+                </td>
+                <td>
+                  27 Tahun<br>
+                  Female (Pregnant)
+                </td>
+                <td>
+                  Infectious Disease<br>
+                  <small class="text-muted">Respiratory infection</small>
+                </td>
+                <td>Referral</td>
+                <td>WASH concern</td>
+                <td class="text-end">
+                  <a href="emt_mdsview.html?id=2"
+                    class="btn btn-sm btn-outline-primary">
+                    Papar
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td class="fw-semibold">MDS003</td>
+                <td>
+                  <div class="fw-semibold">John Lee</div>
+                  <small class="text-muted">05/06/2026</small>
+                </td>
+                <td>
+                  51 Tahun<br>
+                  Male
+                </td>
+                <td>
+                  Emergency<br>
+                  <small class="text-muted">Medical emergency</small>
+                </td>
+                <td>Admission</td>
+                <td>Supply issue</td>
+                <td class="text-end">
+                  <a href="emt_mdsview.html?id=3"
+                    class="btn btn-sm btn-outline-primary">
+                    Papar
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </main>

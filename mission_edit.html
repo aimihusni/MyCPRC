@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MISSION ADD</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link href="assets/css/main.css" rel="stylesheet">
+
+    <style>
+    .mds-card{
+        border:1px solid #dee2e6;
+        border-radius:12px;
+        overflow:hidden;
+        margin-bottom:1rem;
+        box-shadow:0 .125rem .25rem rgba(0,0,0,.075);
+    }
+
+    .mds-card .card-header{
+        background:#0d6efd;
+        color:#fff;
+        font-weight:600;
+        padding:.75rem 1rem;
+    }
+
+    .mds-card .card-body{
+        background:#fff;
+        padding:1rem;
+    }
+
+    .form-check{
+        margin-bottom:.5rem;
+    }
+
+    .form-label{
+        font-weight:600;
+    }
+
+    .badge-soft{
+        background:#e9ecef;
+        color:#495057;
+        font-weight:500;
+    }
+
+    .section-title{
+        font-size:1.1rem;
+        font-weight:700;
+        margin-bottom:1rem;
+        padding-bottom:.5rem;
+        border-bottom:2px solid #dee2e6;
+    }
+
+    textarea{
+        resize:vertical;
+    }
+    </style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div id="header"></div>
+
+<div class="container-fluid">
+  <div class="row">
+
+    <!-- SIDEBAR -->
+    <aside class="col-md-3 col-lg-2 sidebar p-0" id="sidebar-placeholder"></aside>
+
+<!-- MAIN CONTENT -->
+<main class="col-md-9 col-lg-10 px-4 py-4">
+
+<!-- MAIN CONTENT -->
+<main class="col-md-9 col-lg-10 px-4 py-4">
+
+<!-- PAGE HEADER -->
+<div class="d-flex justify-content-between align-items-center mb-4">
+
+    <div>
+    <h4 class="mb-1">Kemaskini Maklumat Misi EMT</h4>
+
+    <small class="text-muted">
+        Sila semak dan kemaskini maklumat misi dengan tepat sebelum disimpan.
+    </small>
+    </div>
+
+    <!-- BUTTON BACK -->
+    <div class="mb-3 d-flex justify-content-end">
+    <a href="mission_detail.html" class="btn btn-primary">
+        <i class="bi bi-arrow-left me-1"></i> Kembali
+    </a>
+    </div>
+
+</div>
+
+<!-- FORM CARD -->
+<div class="card shadow-sm mb-4">
+    <div class="card-body">
+
+    <form>
+
+        <!-- STEP CONTENT -->
+        <div class="tab-content">
+
+        <!-- STEP 1: MISSION INFO -->
+        <div class="tab-pane fade show active" id="step1">
+
+            <h5 class="mb-3 fw-semibold">Maklumat Misi</h5>
+
+            <div class="row g-3">
+
+            <div class="col-md-6">
+                <label class="form-label">Nama Misi</label>
+                <input type="text" class="form-control"
+                    value="EMT Sabah Flood Response">
+            </div>
+
+            <div class="col-md-3">
+                <label class="form-label">Tarikh Mula</label>
+                <input type="date" class="form-control"
+                    value="2026-06-01">
+            </div>
+
+            <div class="col-md-3">
+                <label class="form-label">Anggaran Tamat</label>
+                <input type="date" class="form-control"
+                    value="2026-06-15">
+            </div>
+
+            <div class="col-md-3">
+                <label class="form-label">Tarikh Selesai</label>
+                <input type="date" class="form-control"
+                    value="">
+                <small class="text-muted">Kosong jika masih berjalan</small>
+            </div>
+
+            <div class="col-md-3">
+                <label class="form-label">Status Misi</label>
+
+                <select class="form-select">
+                    <option value="planning">Dalam Perancangan</option>
+                    <option value="active" selected>Sedang Dijalankan</option>
+                    <option value="completed">Selesai</option>
+                </select>
+
+                <small class="text-muted">
+                    Status semasa operasi EMT
+                </small>
+            </div>
+
+            </div>
+
+            <hr class="my-4">
+
+            <!-- OPTIONAL EXTRA INFO -->
+            <h6 class="fw-semibold mb-3">Maklumat Tambahan</h6>
+
+            <div class="row g-3">
+
+            <div class="col-md-6">
+                <label class="form-label">Nama Ketua Misi</label>
+                <input type="text" class="form-control"
+                    value="Dr. Ahmad Farid">
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label">Lokasi Misi</label>
+                <input type="text" class="form-control"
+                    value="Kota Kinabalu, Sabah">
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label">Jenis Misi</label>
+
+                <select class="form-select" id="jenisMisi" onchange="toggleJenisLain()">
+                    <option value="banjir" selected>Bantuan Banjir</option>
+                    <option value="gempa">Bantuan Gempa Bumi</option>
+                    <option value="perubatan">Penghantaran Perubatan</option>
+                    <option value="kecemasan">Sokongan Kecemasan</option>
+                    <option value="lain">Lain-lain</option>
+                </select>
+            </div>
+
+            <div class="col-md-6 d-none" id="jenisMisiLainBox">
+                <label class="form-label">Nyatakan Jenis Misi</label>
+                <input type="text" class="form-control"
+                    placeholder="Sila nyatakan jenis misi">
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label">Catatan</label>
+                <textarea class="form-control" rows="2">Operasi bantuan banjir fasa pertama berjalan lancar.</textarea>
+            </div>
+
+            </div>
+
+        </div>
+
+        </div>
+
+        <!-- SUBMIT BUTTON -->
+        <div class="d-flex justify-content-end mt-4">
+        <button type="submit" class="btn btn-primary rounded-pill shadow-sm px-4">
+            <i class="bi bi-check-circle me-1"></i> Kemaskini
+        </button>
+        </div>
+
+    </form>
+
+    </div>
+</div>
+
+</main>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div id="footer"></div>
+
+<!-- LOAD HEADER / FOOTER / SIDEBAR -->
+<script>
+fetch("header.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("header").innerHTML = data);
+
+fetch("footer.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("footer").innerHTML = data);
+
+fetch("sidebar.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("sidebar-placeholder").innerHTML = data);
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!--KALAU PILIH LAIN2-->
+<script>
+function toggleJenisLain() {
+  const select = document.getElementById("jenisMisi");
+  const box = document.getElementById("jenisMisiLainBox");
+
+  if (select.value === "lain") {
+    box.classList.remove("d-none");
+  } else {
+    box.classList.add("d-none");
+  }
+}
+</script>
+
+</body>
+</html>

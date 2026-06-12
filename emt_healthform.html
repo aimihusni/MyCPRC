@@ -115,6 +115,16 @@
                             <h5 class="fw-bold mb-3">Basic Information</h5>
 
                             <div class="row mb-3">
+
+                                <div class="col-md-6">
+                                    <label class="form-label">Date</label>
+                                    <input type="date" class="form-control">
+                                </div>
+
+                            </div>
+
+                            <div class="row mb-3">
+
                                 <div class="col-md-6">
                                     <label class="form-label">Age Value</label>
                                     <input type="number" class="form-control" min="0" step="1">
@@ -122,33 +132,80 @@
 
                                 <div class="col-md-6">
                                     <label class="form-label">Unit</label><br>
+
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="age_unit">
-                                        <label class="form-check-label">Month</label>
+                                        <input class="form-check-input" type="radio" name="age_unit" id="month">
+                                        <label class="form-check-label" for="month">Month</label>
                                     </div>
+
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="age_unit">
-                                        <label class="form-check-label">Year</label>
+                                        <input class="form-check-input" type="radio" name="age_unit" id="year">
+                                        <label class="form-check-label" for="year">Year</label>
                                     </div>
+
                                 </div>
+
                             </div>
 
                             <div class="mb-3">
                                 <label class="form-label">Age Group</label>
                                 <div class="row">
-                                    <div class="col-md-2"><input type="radio" name="age_group"> <1</div>
-                                    <div class="col-md-2"><input type="radio" name="age_group"> 1-4</div>
-                                    <div class="col-md-2"><input type="radio" name="age_group"> 5-17</div>
-                                    <div class="col-md-3"><input type="radio" name="age_group"> 18-64</div>
-                                    <div class="col-md-3"><input type="radio" name="age_group"> 65+</div>
+
+                                    <div class="col-md-2">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="age_group" id="g1">
+                                            <label class="form-check-label" for="g1">&lt;1</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-2">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="age_group" id="g2">
+                                            <label class="form-check-label" for="g2">1-4</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-2">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="age_group" id="g3">
+                                            <label class="form-check-label" for="g3">5-17</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="age_group" id="g4">
+                                            <label class="form-check-label" for="g4">18-64</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="age_group" id="g5">
+                                            <label class="form-check-label" for="g5">65+</label>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
 
                             <div class="mb-4">
                                 <label class="form-label fw-semibold">Sex</label>
-                                <div class="form-check"><input type="radio" name="sex"> Male</div>
-                                <div class="form-check"><input type="radio" name="sex"> Female (Non-pregnant)</div>
-                                <div class="form-check"><input type="radio" name="sex"> Female (Pregnant)</div>
+
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input" name="sex" id="male">
+                                    <label class="form-check-label" for="male">Male</label>
+                                </div>
+
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input" name="sex" id="female_non">
+                                    <label class="form-check-label" for="female_non">Female (Non-pregnant)</label>
+                                </div>
+
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input" name="sex" id="female_preg">
+                                    <label class="form-check-label" for="female_preg">Female (Pregnant)</label>
+                                </div>
                             </div>
 
                             <hr>

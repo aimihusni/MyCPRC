@@ -97,6 +97,8 @@
       <!-- STATUS / ACTION CARD -->
       <div class="card shadow-sm mb-3">
         <div class="card-body">
+
+
             <!-- MISSION DETAILS -->
             <div class="card shadow-sm border-0">
                 <div class="card-body">
@@ -177,6 +179,7 @@
                     </ul>
                     <!-- STEP CONTENT -->
                     <div class="tab-content">
+
                         <!-- STEP 1: MISSION INFO -->
                         <div class="tab-pane fade show active" id="step1">
                             <h5 class="mb-3 fw-semibold text-dark">Maklumat Misi</h5>
@@ -191,7 +194,7 @@
                                         <div class="row g-3">
                                             <div class="col-md-6">
                                                 <small class="text-muted">Nama Misi</small>
-                                                <div class="fw-semibold">EMT Sabah Flood Response</div>
+                                                <div class="fw-semibold">Operasi EMT Sabah </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <small class="text-muted">Tarikh Mula</small>
@@ -256,48 +259,61 @@
                             </div>
                         </div>
 
-                        <!-- STEP 2: ASSET -->
+                        <!-- STEP 2: ASET -->
                         <div class="tab-pane fade" id="step2">
+
                             <!-- HEADER -->
                             <div class="mb-3">
-                                <h5 class="fw-semibold mb-1">Senarai Asset EMT</h5>
+                                <h5 class="fw-semibold mb-1">Senarai Aset EMT</h5>
                                 <p class="text-muted mb-0">
-                                Senarai peralatan EMT (generator, oxygen, kit kecemasan).
+                                    Senarai peralatan EMT (penjana, oksigen, kit kecemasan).
                                 </p>
                             </div>
+
+                            <!-- ADD BUTTON -->
+                            <div class="d-flex justify-content-end mt-4">
+                                <a href="asset_add.html"
+                                class="btn btn-outline-dark rounded-pill shadow-sm px-4">
+                                    <i class="bi bi-plus-circle me-1"></i>
+                                    Tambah Aset
+                                </a>
+                            </div>
+
+
                             <!-- CARD -->
                             <div class="card shadow-sm border-0">
                                 <div class="table-responsive">
                                     <table class="table table-hover align-middle mb-0">
+
                                         <thead class="table-light">
-                                        <tr>
-                                            <th>Asset</th>
-                                            <th>Category</th>
-                                            <th class="text-center">Qty</th>
-                                            <th>Status</th>
-                                            <th>Location</th>
-                                            <th class="text-end">Action</th>
-                                        </tr>
+                                            <tr>
+                                                <th>Aset</th>
+                                                <th>Kategori</th>
+                                                <th class="text-center">Kuantiti</th>
+                                                <th>Status</th>
+                                                <th>Lokasi</th>
+                                                <th class="text-end">Tindakan</th>
+                                            </tr>
                                         </thead>
+
                                         <tbody>
+
                                             <!-- ROW 1 -->
                                             <tr>
-                                                <td class="fw-semibold">Generator</td>
-                                                <td>Electrical</td>
+                                                <td class="fw-semibold">Penjana (Generator)</td>
+                                                <td>Elektrik</td>
                                                 <td class="text-center">2</td>
                                                 <td>
-                                                <span class="badge bg-secondary">In Use</span>
+                                                    <span class="badge bg-secondary">Dalam Penggunaan</span>
                                                 </td>
-                                                <td>Sabah Ops</td>
+                                                <td>Operasi Sabah</td>
                                                 <td class="text-end">
                                                     <div class="btn-group">
-                                                        <a href="asset_view.html"
-                                                        class="btn btn-sm btn-outline-dark">
-                                                        View
+                                                        <a href="asset_view.html" class="btn btn-sm btn-outline-dark">
+                                                            Lihat
                                                         </a>
-                                                        <a href="asset_edit.html"
-                                                        class="btn btn-sm btn-outline-secondary">
-                                                        Edit
+                                                        <a href="asset_edit.html" class="btn btn-sm btn-outline-secondary">
+                                                            Kemaskini
                                                         </a>
                                                     </div>
                                                 </td>
@@ -305,23 +321,20 @@
 
                                             <!-- ROW 2 -->
                                             <tr>
-                                                <td class="fw-semibold">Oxygen Cylinder</td>
-                                                <td>Medical</td>
+                                                <td class="fw-semibold">Silinder Oksigen</td>
+                                                <td>Perubatan</td>
                                                 <td class="text-center">10</td>
                                                 <td>
-                                                <span class="badge bg-light text-dark border">Available</span>
+                                                    <span class="badge bg-light text-dark border">Tersedia</span>
                                                 </td>
-
-                                                <td>Warehouse</td>
+                                                <td>Gudang</td>
                                                 <td class="text-end">
                                                     <div class="btn-group">
-                                                        <a href="asset_view.html"
-                                                        class="btn btn-sm btn-outline-dark">
-                                                        View
+                                                        <a href="asset_view.html" class="btn btn-sm btn-outline-dark">
+                                                            Lihat
                                                         </a>
-                                                        <a href="asset_edit.html"
-                                                        class="btn btn-sm btn-outline-secondary">
-                                                        Edit
+                                                        <a href="asset_edit.html" class="btn btn-sm btn-outline-secondary">
+                                                            Kemaskini
                                                         </a>
                                                     </div>
                                                 </td>
@@ -329,39 +342,31 @@
 
                                             <!-- ROW 3 -->
                                             <tr>
-                                                <td class="fw-semibold">First Aid Kit</td>
-                                                <td>Medical</td>
+                                                <td class="fw-semibold">Kit Pertolongan Cemas</td>
+                                                <td>Perubatan</td>
                                                 <td class="text-center">5</td>
                                                 <td>
-                                                <span class="badge bg-secondary">In Use</span>
+                                                    <span class="badge bg-secondary">Dalam Penggunaan</span>
                                                 </td>
-                                                <td>Field Team</td>
+                                                <td>Pasukan Lapangan</td>
                                                 <td class="text-end">
                                                     <div class="btn-group">
-                                                        <a href="asset_view.html"
-                                                        class="btn btn-sm btn-outline-dark">
-                                                        View
+                                                        <a href="asset_view.html" class="btn btn-sm btn-outline-dark">
+                                                            Lihat
                                                         </a>
-                                                        <a href="asset_edit.html"
-                                                        class="btn btn-sm btn-outline-secondary">
-                                                        Edit
+                                                        <a href="asset_edit.html" class="btn btn-sm btn-outline-secondary">
+                                                            Kemaskini
                                                         </a>
                                                     </div>
                                                 </td>
                                             </tr>
+
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
 
-                            <!-- ADD BUTTON -->
-                            <div class="d-flex justify-content-end mt-4">
-                                <a href="asset_add.html"
-                                class="btn btn-primary rounded-pill shadow-sm px-4">
-                                <i class="bi bi-plus-circle me-1"></i>
-                                Tambah Asset
-                                </a>
-                            </div>
+
                         </div>
 
                         <!-- STEP 3: HR -->
@@ -426,10 +431,15 @@
 
                             <!-- BUTTON -->
                             <div class="d-flex justify-content-end gap-2 mt-4 flex-wrap">
+
                                 <a href="hr_edit.html"
-                                class="btn btn-outline-primary rounded-pill shadow-sm px-4">
-                                <i class="bi bi-pencil-square me-1"></i> Kemaskini Maklumat HR
+                                class="btn btn-outline-secondary rounded-pill shadow-sm px-4 text-dark">
+
+                                    <i class="bi bi-pencil-square me-1"></i>
+                                    Kemaskini Maklumat HR
+
                                 </a>
+
                             </div>
                         </div>
 
@@ -472,11 +482,11 @@
                                                         <div class="btn-group btn-group-sm">
                                                             <a href="logistik_transportView.html"
                                                             class="btn btn-outline-secondary">
-                                                                View
+                                                                Papar
                                                             </a>
                                                             <a href="logistik_transportEdit.html"
                                                             class="btn btn-outline-dark">
-                                                                Edit
+                                                                Kemaskini
                                                             </a>
 
                                                         </div>
@@ -491,7 +501,7 @@
                             <!-- ================= STORAGE SECTION ================= -->
                             <div class="card shadow-sm border-0">
                                 <div class="card-header bg-white d-flex justify-content-between align-items-center">
-                                    <strong>Storage / Crates</strong>
+                                    <strong>Penyimpanan / Crates</strong>
                                     <a href="logistik_storageAdd.html"
                                     class="btn btn-sm btn-outline-secondary rounded-pill px-3">
                                         <i class="bi bi-plus-circle me-1"></i> Tambah
@@ -512,18 +522,18 @@
                                             <tbody>
                                                 <tr>
                                                     <td class="fw-semibold">CRT001</td>
-                                                    <td>Medical Supply Crate</td>
-                                                    <td>Base Camp</td>
+                                                    <td>Crates Bekalan Perubatan</td>
+                                                    <td>Gudang</td>
                                                     <td><span class="badge bg-primary">Aktif</span></td>
                                                     <td class="text-end">
                                                         <div class="btn-group btn-group-sm">
                                                             <a href="logistik_storageView.html"
                                                             class="btn btn-outline-secondary">
-                                                                View
+                                                                Papar
                                                             </a>
                                                             <a href="logistik_storageEdit.html"
                                                             class="btn btn-outline-dark">
-                                                                Edit
+                                                                Kemaskini
                                                             </a>
                                                         </div>
                                                     </td>
@@ -534,41 +544,46 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- STEP 5: MDS -->
+
+                        
+                        <!-- ================= LANGKAH 5: MDS ================= -->
                         <div class="tab-pane fade" id="step5">
+
                             <div class="d-flex justify-content-between align-items-center mb-3">
                                 <div>
-                                    <h5 class="mb-0">MDS Report</h5>
-                                    <p class="text-muted mb-0">Rekod harian data pesakit dan aktiviti klinikal EMT.</p>
+                                    <h5 class="mb-0">Laporan MDS</h5>
+                                    <p class="text-muted mb-0">
+                                        Rekod harian data pesakit dan aktiviti klinikal EMT.
+                                    </p>
                                 </div>
-                                <a href="emt_healthform.html" class="btn btn-primary">
-                                    <i class="bi bi-plus-circle me-1"></i>
-                                    Tambah Rekod MDS
-                                </a>
                             </div>
+
                             <div class="table-responsive">
                                 <table class="table table-bordered align-middle">
+
                                     <thead class="table-light">
                                         <tr>
-                                            <th>Date</th>
-                                            <th>Name</th>
-                                            <th>Age</th>
-                                            <th>Sex</th>
+                                            <th>Tarikh</th>
+                                            <th>Nama</th>
+                                            <th>Umur</th>
+                                            <th>Jantina</th>
                                             <th>Diagnosis</th>
-                                            <th>Medication</th>
-                                            <th>Outcome</th>
+                                            <th>Ubat</th>
+                                            <th>Hasil Rawatan</th>
                                             <th class="text-center">Tindakan</th>
                                         </tr>
                                     </thead>
+
                                     <tbody>
+
                                         <tr>
                                             <td>01/06/2026</td>
                                             <td>Ahmad bin Ali</td>
                                             <td>30</td>
-                                            <td>Male</td>
-                                            <td>Minor head injury</td>
-                                            <td>Wound dressing</td>
-                                            <td>Discharge</td>
+                                            <td>Lelaki</td>
+                                            <td>Kecederaan kepala ringan</td>
+                                            <td>Balutan luka</td>
+                                            <td>Discaj</td>
                                             <td class="text-center">
                                                 <a href="emt_mdsview.html" class="btn btn-sm btn-outline-primary">
                                                     Lihat Rekod
@@ -580,16 +595,17 @@
                                             <td>02/06/2026</td>
                                             <td>Siti Nur Aisyah</td>
                                             <td>20</td>
-                                            <td>Female (Non-pregnant)</td>
-                                            <td>Acute respiratory infection</td>
-                                            <td>Discharge with follow-up</td>
-                                            <td>Referral</td>
+                                            <td>Perempuan (Tidak hamil)</td>
+                                            <td>Jangkitan pernafasan akut</td>
+                                            <td>Susulan rawatan</td>
+                                            <td>Rujukan</td>
                                             <td class="text-center">
                                                 <a href="emt_mdsview.html" class="btn btn-sm btn-outline-primary">
                                                     Lihat Rekod
                                                 </a>
                                             </td>
                                         </tr>
+
                                         <tr>
                                             <td colspan="9" class="text-center text-muted">
                                                 Tiada rekod tambahan
@@ -597,8 +613,21 @@
                                         </tr>
 
                                     </tbody>
+
                                 </table>
                             </div>
+
+                            <!-- BUTANG TAMBAH -->
+                            <div class="d-flex justify-content-end mt-4">
+                                <a href="emt_healthform.html"
+                                class="btn btn-outline-secondary rounded-pill shadow-sm px-4 text-dark">
+
+                                    <i class="bi bi-plus-circle me-1"></i>
+                                    Tambah Rekod MDS
+
+                                </a>
+                            </div>
+
                         </div>
 
                         <!-- STEP 6: REPORT -->

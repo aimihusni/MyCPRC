@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Borang Kesihatan Ahli</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link href="assets/css/main.css" rel="stylesheet">
+
+    <style>
+    .mds-card{
+        border:1px solid #dee2e6;
+        border-radius:12px;
+        overflow:hidden;
+        margin-bottom:1rem;
+        box-shadow:0 .125rem .25rem rgba(0,0,0,.075);
+    }
+
+    .mds-card .card-header{
+        background:#0d6efd;
+        color:#fff;
+        font-weight:600;
+        padding:.75rem 1rem;
+    }
+
+    .mds-card .card-body{
+        background:#fff;
+        padding:1rem;
+    }
+
+    .form-check{
+        margin-bottom:.5rem;
+    }
+
+    .form-label{
+        font-weight:600;
+    }
+
+    .badge-soft{
+        background:#e9ecef;
+        color:#495057;
+        font-weight:500;
+    }
+
+    .section-title{
+        font-size:1.1rem;
+        font-weight:700;
+        margin-bottom:1rem;
+        padding-bottom:.5rem;
+        border-bottom:2px solid #dee2e6;
+    }
+
+    textarea{
+        resize:vertical;
+    }
+    </style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div id="header"></div>
+
+<div class="container-fluid">
+  <div class="row">
+
+    <!-- SIDEBAR -->
+    <aside class="col-md-3 col-lg-2 sidebar p-0" id="sidebar-placeholder"></aside>
+
+<!-- MAIN CONTENT -->
+<!-- MAIN CONTENT -->
+<main class="col-md-9 col-lg-10 px-4 py-4">
+
+    <!-- PAGE HEADER -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h4 class="mb-0">Semakan Permohonan Ahli EMT</h4>
+            <small class="text-muted">
+                Semakan dan kelulusan rekod kesihatan pemohon EMT
+            </small>
+        </div>
+
+        <a href="course_application.html" class="btn btn-primary">
+            <i class="bi bi-arrow-left me-1"></i> Kembali
+        </a>
+    </div>
+
+    <!-- STATUS PERMOHONAN -->
+    <div class="card shadow-sm mb-4 border-0">
+        <div class="card-header bg-white fw-bold">
+            📋 Status Permohonan
+        </div>
+
+        <div class="card-body">
+
+            <div class="row g-3">
+
+                <div class="col-md-3">
+                    <div class="border rounded p-3 bg-light text-center">
+                        <small class="text-muted d-block">ID Permohonan</small>
+                        <h6 class="mb-0">EMT20260001</h6>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="border rounded p-3 bg-light text-center">
+                        <small class="text-muted d-block">Tarikh Mohon</small>
+                        <h6 class="mb-0">15/06/2026</h6>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="border rounded p-3 bg-light text-center">
+                        <small class="text-muted d-block">Kategori</small>
+                        <h6 class="mb-0">Doktor</h6>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="border rounded p-3 bg-light text-center">
+                        <small class="text-muted d-block">Status Semasa</small>
+                        <span class="badge bg-warning text-dark">
+                            Menunggu Semakan
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- MAKLUMAT PEMOHON -->
+    <div class="card shadow-sm mb-4">
+        <div class="card-header bg-white fw-bold">
+            🧍 Maklumat Pemohon
+        </div>
+
+        <div class="card-body">
+
+            <div class="row g-3">
+
+                <div class="col-md-6">
+                    <label class="form-label text-muted">Nama Penuh</label>
+                    <p class="fw-semibold">Muhammad Ali bin Abu Bakar</p>
+                </div>
+
+                <div class="col-md-3">
+                    <label class="form-label text-muted">No. Kad Pengenalan</label>
+                    <p class="fw-semibold">900101-10-1234</p>
+                </div>
+
+                <div class="col-md-3">
+                    <label class="form-label text-muted">Umur</label>
+                    <p class="fw-semibold">30 Tahun</p>
+                </div>
+
+                <div class="col-md-3">
+                    <label class="form-label text-muted">Jantina</label>
+                    <p class="fw-semibold">Lelaki</p>
+                </div>
+
+                <div class="col-md-3">
+                    <label class="form-label text-muted">No. Telefon</label>
+                    <p class="fw-semibold">012-3456789</p>
+                </div>
+
+                <div class="col-md-3">
+                    <label class="form-label text-muted">Jawatan</label>
+                    <p class="fw-semibold">Doktor</p>
+                </div>
+
+                <div class="col-md-3">
+                    <label class="form-label text-muted">Fasiliti</label>
+                    <p class="fw-semibold">Hospital Kuala Lumpur</p>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- RINGKASAN PENILAIAN -->
+    <div class="card shadow-sm mb-4">
+        <div class="card-header bg-white fw-bold">
+            🩺 Ringkasan Penilaian Kesihatan
+        </div>
+
+        <div class="card-body">
+
+            <div class="table-responsive">
+
+                <table class="table table-bordered align-middle">
+
+                    <thead class="table-light">
+                        <tr>
+                            <th>Kriteria</th>
+                            <th>Status</th>
+                            <th>Catatan</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>Status Kecergasan Perubatan</td>
+                            <td>
+                                <span class="badge bg-success">
+                                    Fit
+                                </span>
+                            </td>
+                            <td>Layak bertugas</td>
+                        </tr>
+
+                        <tr>
+                            <td>Vaksinasi EMT</td>
+                            <td>
+                                <span class="badge bg-success">
+                                    Lengkap
+                                </span>
+                            </td>
+                            <td>Tetanus, Hepatitis B, Influenza, COVID-19</td>
+                        </tr>
+
+                        <tr>
+                            <td>Risiko PTSD</td>
+                            <td>
+                                <span class="badge bg-success">
+                                    Rendah
+                                </span>
+                            </td>
+                            <td>Tiada isu kritikal</td>
+                        </tr>
+
+                        <tr>
+                            <td>Penyakit Kronik</td>
+                            <td>
+                                <span class="badge bg-secondary">
+                                    Tiada
+                                </span>
+                            </td>
+                            <td>-</td>
+                        </tr>
+
+                        <tr>
+                            <td>Kesesuaian Misi</td>
+                            <td>
+                                <span class="badge bg-success">
+                                    Sesuai
+                                </span>
+                            </td>
+                            <td>Boleh ditempatkan dalam semua misi EMT</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ULASAN PEGAWAI -->
+    <div class="card shadow-sm mb-4">
+        <div class="card-header bg-white fw-bold">
+            📝 Ulasan Pegawai Penyemak
+        </div>
+
+        <div class="card-body">
+
+            <div class="mb-3">
+                <label class="form-label">
+                    Catatan Semakan
+                </label>
+
+                <textarea class="form-control" rows="5"
+                    placeholder="Masukkan ulasan atau sebab kelulusan / penolakan..."></textarea>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- KEPUTUSAN -->
+    <div class="card shadow-sm border-0">
+        <div class="card-header bg-white fw-bold">
+            ✅ Keputusan Permohonan
+        </div>
+
+        <div class="card-body">
+
+            <div class="mb-4">
+
+                <label class="form-label fw-semibold">
+                    Keputusan Semakan
+                </label>
+
+                <div class="form-check">
+                    <input class="form-check-input"
+                        type="radio"
+                        name="keputusan"
+                        id="lulus">
+
+                    <label class="form-check-label text-success fw-semibold"
+                        for="lulus">
+                        Lulus Menyertai EMT
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input"
+                        type="radio"
+                        name="keputusan"
+                        id="gagal">
+
+                    <label class="form-check-label text-danger fw-semibold"
+                        for="gagal">
+                        Gagal Menyertai EMT
+                    </label>
+                </div>
+
+            </div>
+
+            <div class="row g-3">
+
+                <div class="col-md-6">
+                    <label class="form-label">
+                        Nama Pegawai Penyemak
+                    </label>
+
+                    <input type="text"
+                        class="form-control"
+                        placeholder="Nama pegawai">
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label">
+                        Tarikh Semakan
+                    </label>
+
+                    <input type="date"
+                        class="form-control">
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div class="d-flex justify-content-end gap-2">
+
+                <button class="btn btn-outline-secondary">
+                    Simpan Draf
+                </button>
+
+                <button class="btn btn-danger">
+                    Tolak Permohonan
+                </button>
+
+                <button class="btn btn-success">
+                    Luluskan Permohonan
+                </button>
+
+            </div>
+
+        </div>
+    </div>
+
+</main>
+
+
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div id="footer"></div>
+
+<!-- LOAD HEADER / FOOTER / SIDEBAR -->
+<script>
+fetch("header.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("header").innerHTML = data);
+
+fetch("footer.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("footer").innerHTML = data);
+
+fetch("sidebar.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("sidebar-placeholder").innerHTML = data);
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

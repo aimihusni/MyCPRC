@@ -88,7 +88,7 @@
         </div>
 
         <div class="mb-3 d-flex justify-content-end">
-            <a href="landingMyemt.html" class="btn btn-primary">
+            <a href="mission_detail.html" class="btn btn-primary">
                 <i class="bi bi-arrow-left me-1"></i> Kembali
             </a>
         </div>
@@ -101,434 +101,482 @@
             <!-- EMT DAILY REPORT FORM WRAPPER -->
             <form>
 
-                <!-- ================= EMT MDS FORM (CLEAN VERSION) ================= -->
+                <!-- ================= BORANG EMT MDS (VERSI BERSIH) ================= -->
                 <div class="container my-4">
 
                     <div class="card shadow-sm">
                         <div class="card-header bg-primary text-white">
-                            <strong>EMT Minimum Data Set (MDS)</strong>
+                            <strong>Set Data Minimum EMT (MDS)</strong>
                         </div>
 
-                        <div class="card-body">
+                <div class="card-body">
 
-                            <!-- ================= BASIC INFO ================= -->
-                            <h5 class="fw-bold mb-3">Basic Information</h5>
+                    <!-- ================= MAKLUMAT ASAS ================= -->
+                    <h5 class="fw-bold mb-3">Maklumat Asas</h5>
 
-                            <div class="row mb-3">
+                    <div class="row mb-3">
 
-                                <div class="col-md-6">
-                                    <label class="form-label">Date</label>
-                                    <input type="date" class="form-control">
-                                </div>
-
-                            </div>
-
-                            <div class="row mb-3">
-
-                                <div class="col-md-6">
-                                    <label class="form-label">Age Value</label>
-                                    <input type="number" class="form-control" min="0" step="1">
-                                </div>
-
-                                <div class="col-md-6">
-                                    <label class="form-label">Unit</label><br>
-
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="age_unit" id="month">
-                                        <label class="form-check-label" for="month">Month</label>
-                                    </div>
-
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="age_unit" id="year">
-                                        <label class="form-check-label" for="year">Year</label>
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                            <div class="mb-3">
-                                <label class="form-label">Age Group</label>
-                                <div class="row">
-
-                                    <div class="col-md-2">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="age_group" id="g1">
-                                            <label class="form-check-label" for="g1">&lt;1</label>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-2">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="age_group" id="g2">
-                                            <label class="form-check-label" for="g2">1-4</label>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-2">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="age_group" id="g3">
-                                            <label class="form-check-label" for="g3">5-17</label>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-3">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="age_group" id="g4">
-                                            <label class="form-check-label" for="g4">18-64</label>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-3">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="age_group" id="g5">
-                                            <label class="form-check-label" for="g5">65+</label>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <div class="mb-4">
-                                <label class="form-label fw-semibold">Sex</label>
-
-                                <div class="form-check">
-                                    <input type="radio" class="form-check-input" name="sex" id="male">
-                                    <label class="form-check-label" for="male">Male</label>
-                                </div>
-
-                                <div class="form-check">
-                                    <input type="radio" class="form-check-input" name="sex" id="female_non">
-                                    <label class="form-check-label" for="female_non">Female (Non-pregnant)</label>
-                                </div>
-
-                                <div class="form-check">
-                                    <input type="radio" class="form-check-input" name="sex" id="female_preg">
-                                    <label class="form-check-label" for="female_preg">Female (Pregnant)</label>
-                                </div>
-                            </div>
-
-                            <hr>
-
-                            <!-- ================= CLINICAL CLASSIFICATION ================= -->
-                            <h5 class="fw-bold mb-3">Clinical Classification</h5>
-
-                            <!-- TRAUMA -->
-                            <div class="mb-3">
-                                <h6 class="fw-bold">Trauma</h6>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-check"><input class="form-check-input" type="checkbox"> Major head / spine injury</div>
-                                        <div class="form-check"><input class="form-check-input" type="checkbox"> Major torso injury</div>
-                                        <div class="form-check"><input class="form-check-input" type="checkbox"> Major extremity injury</div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-check"><input class="form-check-input" type="checkbox"> Moderate injury</div>
-                                        <div class="form-check"><input class="form-check-input" type="checkbox"> Minor injury</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- INFECTIOUS -->
-                            <div class="mb-3">
-                                <h6 class="fw-bold">Infectious Disease</h6>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-check"><input type="checkbox"> Acute respiratory infection</div>
-                                        <div class="form-check"><input type="checkbox"> Acute watery diarrhea</div>
-                                        <div class="form-check"><input type="checkbox"> Acute bloody diarrhea</div>
-                                        <div class="form-check"><input type="checkbox"> Acute jaundice syndrome</div>
-                                        <div class="form-check"><input type="checkbox"> Suspected measles</div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-check"><input type="checkbox"> Suspected meningitis</div>
-                                        <div class="form-check"><input type="checkbox"> Suspected tetanus</div>
-                                        <div class="form-check"><input type="checkbox"> Acute flaccid paralysis</div>
-                                        <div class="form-check"><input type="checkbox"> Acute haemorrhagic fever</div>
-                                        <div class="form-check"><input type="checkbox"> Fever of unknown origin</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- ADDITIONAL -->
-                            <div class="mb-3">
-                                <h6 class="fw-bold">Additional Conditions</h6>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-check"><input type="checkbox"> Dengue Fever / DHF</div>
-                                        <div class="form-check"><input type="checkbox"> Hazardous Materials Injury</div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-check"><input type="checkbox"> Leptospirosis</div>
-                                        <div class="form-check"><input type="checkbox"> (Added item 4)</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- EMERGENCY -->
-                            <div class="mb-3">
-                                <h6 class="fw-bold">Emergency</h6>
-                                <div class="form-check"><input type="radio" name="emergency"> Surgical emergency (Non-trauma)</div>
-                                <div class="form-check"><input type="radio" name="emergency"> Medical emergency (Non-infectious)</div>
-                            </div>
-
-                            <!-- OTHER KEY DISEASE -->
-                            <div class="mb-3">
-                                <h6 class="fw-bold">Other key diseases  </h6>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-check"><input type="checkbox"> Skin disease</div>
-                                        <div class="form-check"><input type="checkbox"> Acute mental health problem</div>
-                                        <div class="form-check"><input type="checkbox"> Obstetric complications</div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <div class="form-check"><input type="checkbox"> Severe Acute Malnutrition (SAM)</div>
-                                        <div class="form-check"><input type="checkbox"> Other diagnosis, not specified above</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <hr>
-
-                            <!-- ================= OUTCOME ================= -->
-                            <h5 class="fw-bold mb-3">Outcome & Procedures</h5>
-
-                            <div class="row">
-                                <div class="col-md-6">
-
-                                    <h6 class="fw-semibold">Procedures</h6>
-                                    <div class="form-check"><input type="checkbox"> Major procedure (excluding MDS31)</div>
-                                    <div class="form-check"><input type="checkbox"> Limb amputation excluding digits </div>
-                                    <div class="form-check"><input type="checkbox"> Minor surgical procedure</div>
-                                    <div class="form-check"><input type="checkbox"> Normal Vaginal Delivery (NVD)</div>
-                                    <div class="form-check"><input type="checkbox"> Caesarean section</div>
-                                    <div class="form-check"><input type="checkbox"> Obstetrics others</div>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <h6 class="fw-semibold">Outcome</h6>
-                                    <div class="form-check"><input type="checkbox"> Discharge without medical follow-up</div>
-                                    <div class="form-check"><input type="checkbox"> Discharge with medical follow-up</div>
-                                    <div class="form-check"><input type="checkbox"> Discharge against medical advice</div>
-                                    <div class="form-check"><input type="checkbox"> Referral</div>
-                                    <div class="form-check"><input type="checkbox"> Admission</div>
-                                    <div class="form-check"><input type="checkbox"> Dead on arrival</div>
-                                    <div class="form-check"><input type="checkbox"> Death within facility</div>
-                                    <div class="form-check"><input type="checkbox"> Requiring long-term rehabilitation</div>
-                                </div>
-                            </div>
-
-                            <hr>
-
-                            <!-- ================= RISK & CONTEXT ================= -->
-                            <h5 class="fw-bold mb-3">Risk, Context & Protection</h5>
-
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <h6>Context</h6>
-                                    <div class="form-check"><input type="checkbox"> Directly related to event</div>
-                                    <div class="form-check"><input type="checkbox"> Indirectly related to event</div>
-                                    <div class="form-check"><input type="checkbox"> Not related to event</div>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <h6>Protection</h6>
-                                    <div class="form-check"><input type="checkbox"> Vulnerable child</div>
-                                    <div class="form-check"><input type="checkbox"> Vulnerable adult</div>
-                                    <div class="form-check"><input type="checkbox"> Sexual Gender Based Violence (SGBV)</div>
-                                    <div class="form-check"><input type="checkbox"> Violence (non-SGBV)</div>
-                                </div>
-                            </div>
-
-                            <hr>
-
-                            <!-- ================= NEEDS & RISKS ================= -->
-                            <h5 class="fw-bold mb-3">Needs & Risks</h5>
-
-                            <div class="row">
-
-                                <div class="col-md-4">
-                                    <h6>Immediate Report</h6>
-                                    <div class="form-check"><input type="checkbox"> Unexpected death</div>
-                                    <div class="form-check"><input type="checkbox"> Notifiable disease</div>
-                                    <div class="form-check"><input type="checkbox"> Protection issue</div>
-                                    <div class="form-check"><input type="checkbox"> Critical incident</div>
-                                    <div class="form-check"><input type="checkbox"> Other urgent issue</div>
-                                </div>
-
-                                <div class="col-md-4">
-                                    <h6>Operational Constraints</h6>
-                                    <div class="form-check"><input type="checkbox"> Logistics / operational support</div>
-                                    <div class="form-check"><input type="checkbox"> Supply</div>
-                                    <div class="form-check"><input type="checkbox"> Human resources</div>
-                                    <div class="form-check"><input type="checkbox"> Finance</div>
-                                    <div class="form-check"><input type="checkbox"> Others</div>
-                                </div>
-                                <br>
-
-                                <div class="col-md-4">
-                                    <h6>Community Risks</h6>
-                                    <div class="row">
-                                            <div class="form-check"><input type="checkbox"> WASH</div>
-                                            <div class="form-check"><input type="checkbox"> Disease cluster</div>
-                                            <div class="form-check"><input type="checkbox"> Environmental risk</div>
-                                            <div class="form-check"><input type="checkbox"> Shelter / NFI</div>
-                                            <div class="form-check"><input type="checkbox"> Food insecurity</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <br>
-
-                            <div class="mb-3">
-                                <h6>Comments</h6>
-                                <textarea class="form-control" rows="4" placeholder="Write any additional notes..."></textarea>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ================= SECTION 2 ================= -->
-                <div class="card shadow-sm mb-4 w-100">
-                    <div class="card-header bg-primary text-white">
-                        <strong>EMT Patient Case Report</strong>
-                    </div>
-
-                    <div class="card-body">
-                        <div class="row mb-3">
-                            <div class="col-md-6">
-                                <label class="form-label">Date</label>
-                                <input type="date" class="form-control">
-                            </div>
-
-                            <div class="col-md-6">
-                                <label class="form-label">ID</label>
-                                <input type="text" class="form-control">
-                            </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Tarikh</label>
+                            <input type="date" class="form-control">
                         </div>
 
-                        <div class="mb-3">
-                            <label class="form-label">Name (Nickname)</label>
+                        <div class="col-md-6">
+                            <label class="form-label">Nama (Nama Panggilan)</label>
                             <input type="text" class="form-control">
                         </div>
 
-                        <!-- ADDRESS -->
-                        <div class="card border-0 bg-light mb-3">
-                            <div class="card-body">
+                    </div>
 
-                                <h6 class="fw-bold mb-3">
-                                    <i class="bi bi-geo-alt me-2"></i>
-                                    Present Address
-                                </h6>
+                    <div class="row mb-3">
 
-                                <div class="mb-3">
-                                    <label class="form-label">Address Line 1</label>
-                                    <input type="text" class="form-control"
-                                        placeholder="House No., Street Name">
+                        <div class="col-md-6">
+                            <label class="form-label">Nilai Umur</label>
+                            <input type="number" class="form-control" min="0" step="1">
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label">Unit</label><br>
+
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="age_unit" id="month">
+                                <label class="form-check-label" for="month">Bulan</label>
+                            </div>
+
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="age_unit" id="year">
+                                <label class="form-check-label" for="year">Tahun</label>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div cl ass="mb-3">
+                        <label class="form-label">Kumpulan Umur</label>
+
+                        <div class="row">
+
+                            <div class="col-md-2">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="age_group" id="g1">
+                                    <label class="form-check-label" for="g1">&lt;1</label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-2">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="age_group" id="g2">
+                                    <label class="form-check-label" for="g2">1-4</label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-2">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="age_group" id="g3">
+                                    <label class="form-check-label" for="g3">5-17</label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="age_group" id="g4">
+                                    <label class="form-check-label" for="g4">18-64</label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="age_group" id="g5">
+                                    <label class="form-check-label" for="g5">65+</label>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label fw-semibold">Jantina</label>
+
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" name="sex" id="male">
+                            <label class="form-check-label" for="male">Lelaki</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" name="sex" id="female_non">
+                            <label class="form-check-label" for="female_non">Perempuan (Tidak hamil)</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" name="sex" id="female_preg">
+                            <label class="form-check-label" for="female_preg">Perempuan (Hamil)</label>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <!-- ================= PENGELASAN KLINIKAL ================= -->
+                    <h5 class="fw-bold mb-3">Pengelasan Klinikal</h5>
+
+                    <!-- TRAUMA -->
+                    <div class="mb-3">
+                        <h6 class="fw-bold">Trauma</h6>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-check"><input class="form-check-input" type="checkbox"> Kecederaan kepala / tulang belakang yang teruk</div>
+                                <div class="form-check"><input class="form-check-input" type="checkbox"> Kecederaan torso yang teruk</div>
+                                <div class="form-check"><input class="form-check-input" type="checkbox"> Kecederaan anggota badan yang teruk</div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-check"><input class="form-check-input" type="checkbox"> Kecederaan sederhana</div>
+                                <div class="form-check"><input class="form-check-input" type="checkbox"> Kecederaan ringan</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PENYAKIT BERJANGKIT -->
+                    <div class="mb-3">
+                        <h6 class="fw-bold">Penyakit Berjangkit</h6>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-check"><input type="checkbox"> Jangkitan pernafasan akut</div>
+                                <div class="form-check"><input type="checkbox"> Cirit-birit berair akut</div>
+                                <div class="form-check"><input type="checkbox"> Cirit-birit berdarah akut</div>
+                                <div class="form-check"><input type="checkbox"> Sindrom jaundis akut</div>
+                                <div class="form-check"><input type="checkbox"> Disyaki campak</div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-check"><input type="checkbox"> Disyaki meningitis</div>
+                                <div class="form-check"><input type="checkbox"> Disyaki tetanus</div>
+                                <div class="form-check"><input type="checkbox"> Paralisis lembik akut</div>
+                                <div class="form-check"><input type="checkbox"> Demam berdarah akut</div>
+                                <div class="form-check"><input type="checkbox"> Demam punca tidak diketahui</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- KES TAMBAHAN -->
+                    <div class="mb-3">
+                        <h6 class="fw-bold">Kes Tambahan</h6>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-check"><input type="checkbox"> Demam Denggi / DHF</div>
+                                <div class="form-check"><input type="checkbox"> Kecederaan bahan berbahaya (Hazardous Materials)</div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-check"><input type="checkbox"> Leptospirosis</div>
+                                <div class="form-check"><input type="checkbox"> (Item tambahan 4)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- KECEMASAN -->
+                    <div class="mb-3">
+                        <h6 class="fw-bold">Kecemasan</h6>
+                        <div class="form-check"><input type="radio" name="emergency"> Kecemasan pembedahan (Bukan trauma)</div>
+                        <div class="form-check"><input type="radio" name="emergency"> Kecemasan perubatan (Bukan berjangkit)</div>
+                    </div>
+
+                    <!-- PENYAKIT LAIN PENTING -->
+                    <div class="mb-3">
+                        <h6 class="fw-bold">Penyakit Penting Lain</h6>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-check"><input type="checkbox"> Penyakit kulit</div>
+                                <div class="form-check"><input type="checkbox"> Masalah kesihatan mental akut</div>
+                                <div class="form-check"><input type="checkbox"> Komplikasi obstetrik</div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-check"><input type="checkbox"> Malnutrisi akut teruk (SAM)</div>
+                                <div class="form-check"><input type="checkbox"> Diagnosis lain yang tidak dinyatakan</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <!-- ================= HASIL & PROSEDUR ================= -->
+                    <h5 class="fw-bold mb-3">Hasil & Prosedur</h5>
+
+                    <div class="row">
+                        <div class="col-md-6">
+
+                            <h6 class="fw-semibold">Prosedur</h6>
+                            <div class="form-check"><input type="checkbox"> Prosedur utama (tidak termasuk MDS31)</div>
+                            <div class="form-check"><input type="checkbox"> Amputasi anggota badan tidak termasuk jari</div>
+                            <div class="form-check"><input type="checkbox"> Prosedur pembedahan minor</div>
+                            <div class="form-check"><input type="checkbox"> Kelahiran normal (Normal Vaginal Delivery - NVD)</div>
+                            <div class="form-check"><input type="checkbox"> Pembedahan caesarean</div>
+                            <div class="form-check"><input type="checkbox"> Lain-lain obstetrik</div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <h6 class="fw-semibold">Hasil</h6>
+                            <div class="form-check"><input type="checkbox"> Discaj tanpa susulan perubatan</div>
+                            <div class="form-check"><input type="checkbox"> Discaj dengan susulan perubatan</div>
+                            <div class="form-check"><input type="checkbox"> Discaj atas risiko sendiri (AOR)</div>
+                            <div class="form-check"><input type="checkbox"> Rujukan</div>
+                            <div class="form-check"><input type="checkbox"> Kemasukan ke wad</div>
+                            <div class="form-check"><input type="checkbox"> Kematian semasa ketibaan</div>
+                            <div class="form-check"><input type="checkbox"> Kematian dalam fasiliti</div>
+                            <div class="form-check"><input type="checkbox"> Memerlukan pemulihan jangka panjang</div>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <!-- ================= KONTEKS DAN PERLINDUNGAN ================= -->
+                    <h5 class="fw-bold mb-3">Konteks & Perlindungan</h5>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6>Konteks</h6>
+                            <div class="form-check"><input type="checkbox"> Berkaitan secara langsung dengan kejadian</div>
+                            <div class="form-check"><input type="checkbox"> Berkaitan secara tidak langsung dengan kejadian</div>
+                            <div class="form-check"><input type="checkbox"> Tidak berkaitan dengan kejadian</div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <h6>Perlindungan</h6>
+                            <div class="form-check"><input type="checkbox"> Kanak-kanak rentan</div>
+                            <div class="form-check"><input type="checkbox"> Dewasa rentan</div>
+                            <div class="form-check"><input type="checkbox"> Keganasan Berasaskan Gender Seksual (SGBV)</div>
+                            <div class="form-check"><input type="checkbox"> Keganasan (bukan SGBV)</div>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <!-- ================= KEPERLUAN & RISIKO ================= -->
+                    <h5 class="fw-bold mb-3">Keperluan & Risiko</h5>
+
+                    <div class="row">
+
+                        <div class="col-md-4">
+                            <h6>Laporan Segera</h6>
+                            <div class="form-check"><input type="checkbox"> Kematian tidak dijangka</div>
+                            <div class="form-check"><input type="checkbox"> Penyakit wajib lapor</div>
+                            <div class="form-check"><input type="checkbox"> Isu perlindungan</div>
+                            <div class="form-check"><input type="checkbox"> Insiden kritikal</div>
+                            <div class="form-check"><input type="checkbox"> Isu kecemasan lain</div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <h6>Had Operasi</h6>
+                            <div class="form-check"><input type="checkbox"> Logistik / sokongan operasi</div>
+                            <div class="form-check"><input type="checkbox"> Bekalan</div>
+                            <div class="form-check"><input type="checkbox"> Sumber manusia</div>
+                            <div class="form-check"><input type="checkbox"> Kewangan</div>
+                            <div class="form-check"><input type="checkbox"> Lain-lain</div>
+                        </div>
+
+                        <br>
+
+                        <div class="col-md-4">
+                            <h6>Risiko Komuniti</h6>
+                            <div class="row">
+                                <div class="form-check"><input type="checkbox"> WASH (Air, Sanitasi & Kebersihan)</div>
+                                <div class="form-check"><input type="checkbox"> Kluster penyakit</div>
+                                <div class="form-check"><input type="checkbox"> Risiko persekitaran</div>
+                                <div class="form-check"><input type="checkbox"> Tempat perlindungan / NFI</div>
+                                <div class="form-check"><input type="checkbox"> Ketidakjaminan makanan</div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <br>
+
+                    <div class="mb-3">
+                        <h6>Komen</h6>
+                        <textarea class="form-control" rows="4" placeholder="Tulis sebarang nota tambahan..."></textarea>
+                    </div>
+
+
+                    <!-- ================= SEKSYEN 2 ================= -->
+                    <div class="card shadow-sm mb-4 w-100">
+                        <div class="card-header bg-primary text-white">
+                            <strong>Laporan Kes Pesakit EMT</strong>
+                        </div>
+
+                        <div class="card-body">
+                            <div class="row mb-3">
+
+                                <div class="col-md-6">
+                                    <label class="form-label">No IC</label>
+                                    <input type="text" class="form-control">
                                 </div>
 
-                                <div class="mb-3">
-                                    <label class="form-label">Address Line 2</label>
-                                    <input type="text" class="form-control"
-                                        placeholder="Apartment, Building, Unit (Optional)">
+                                <div class="col-md-6">
+                                    <label class="form-label">Nama Penuh</label>
+                                    <input type="text" class="form-control">
                                 </div>
+                            </div>
 
-                                <div class="row g-3">
 
-                                    <div class="col-md-4">
-                                        <label class="form-label">Postcode</label>
-                                        <input type="text"
-                                            class="form-control"
-                                            maxlength="10"
-                                            placeholder="15050">
+
+                            <!-- ALAMAT -->
+                            <div class="card border-0 bg-light mb-3">
+                                <div class="card-body">
+
+                                    <h6 class="fw-bold mb-3">
+                                        <i class="bi bi-geo-alt me-2"></i>
+                                        Alamat Semasa
+                                    </h6>
+
+                                    <div class="mb-3">
+                                        <label class="form-label">Baris Alamat 1</label>
+                                        <input type="text" class="form-control"
+                                            placeholder="No Rumah, Nama Jalan">
                                     </div>
 
-                                    <div class="col-md-4">
-                                        <label class="form-label">City / District</label>
-                                        <input type="text"
-                                            class="form-control"
-                                            placeholder="Kota Bharu">
+                                    <div class="mb-3">
+                                        <label class="form-label">Baris Alamat 2</label>
+                                        <input type="text" class="form-control"
+                                            placeholder="Apartmen, Bangunan, Unit (Pilihan)">
                                     </div>
 
-                                    <div class="col-md-4">
-                                        <label class="form-label">State</label>
-                                        <select class="form-select">
-                                            <option selected disabled>Select State</option>
-                                            <option>Johor</option>
-                                            <option>Kedah</option>
-                                            <option>Kelantan</option>
-                                            <option>Melaka</option>
-                                            <option>Negeri Sembilan</option>
-                                            <option>Pahang</option>
-                                            <option>Perak</option>
-                                            <option>Perlis</option>
-                                            <option>Pulau Pinang</option>
-                                            <option>Sabah</option>
-                                            <option>Sarawak</option>
-                                            <option>Selangor</option>
-                                            <option>Terengganu</option>
-                                            <option>WP Kuala Lumpur</option>
-                                            <option>WP Labuan</option>
-                                            <option>WP Putrajaya</option>
-                                        </select>
+                                    <div class="row g-3">
+
+                                        <div class="col-md-4">
+                                            <label class="form-label">Poskod</label>
+                                            <input type="text"
+                                                class="form-control"
+                                                maxlength="10"
+                                                placeholder="15050">
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <label class="form-label">Bandar / Daerah</label>
+                                            <input type="text"
+                                                class="form-control"
+                                                placeholder="Kota Bharu">
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <label class="form-label">Negeri</label>
+                                            <select class="form-select">
+                                                <option selected disabled>Pilih</option>
+                                                <option>Johor</option>
+                                                <option>Kedah</option>
+                                                <option>Kelantan</option>
+                                                <option>Melaka</option>
+                                                <option>Negeri Sembilan</option>
+                                                <option>Pahang</option>
+                                                <option>Perak</option>
+                                                <option>Perlis</option>
+                                                <option>Pulau Pinang</option>
+                                                <option>Sabah</option>
+                                                <option>Sarawak</option>
+                                                <option>Selangor</option>
+                                                <option>Terengganu</option>
+                                                <option>WP Kuala Lumpur</option>
+                                                <option>WP Labuan</option>
+                                                <option>WP Putrajaya</option>
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <hr>
 
-                        <h6 class="fw-bold">Vitals</h6>
+                            <hr>
 
-                        <div class="row g-2 mb-3">
-                            <div class="col-md-3"><input class="form-control" placeholder="BT ℃"></div>
-                            <div class="col-md-3"><input class="form-control" placeholder="BP /	mmHg"></div>
-                            <div class="col-md-3"><input class="form-control" placeholder="PR / min"></div>
-                            <div class="col-md-3"><input class="form-control" placeholder="RR / min"></div>
-                        </div>
+                            <h6 class="fw-bold">Tanda Vital</h6>
 
-                        <div class="row g-2 mb-3">
-                            <div class="col-md-6"><input class="form-control" placeholder="Weight (kg)"></div>
-                            <div class="col-md-6"><input class="form-control" placeholder="Height (cm)"></div>
-                        </div>
+                            <div class="row g-2 mb-3">
+                                <div class="col-md-3"><input class="form-control" placeholder="Suhu Badan ℃"></div>
+                                <div class="col-md-3"><input class="form-control" placeholder="Tekanan Darah / mmHg"></div>
+                                <div class="col-md-3"><input class="form-control" placeholder="Nadi / minit"></div>
+                                <div class="col-md-3"><input class="form-control" placeholder="Kadar Pernafasan / minit"></div>
+                            </div>
 
-                        <div class="mb-3">
-                            <label class="form-label">History of Present Illness</label>
-                            <textarea class="form-control"></textarea>
-                        </div>
+                            <div class="row g-2 mb-3">
+                                <div class="col-md-6"><input class="form-control" placeholder="Berat (kg)"></div>
+                                <div class="col-md-6"><input class="form-control" placeholder="Tinggi (cm)"></div>
+                            </div>
 
-                        <div class="mb-3">
-                            <label class="form-label">Chief Complaint</label>
-                            <textarea class="form-control"></textarea>
-                        </div>
+                            <div class="mb-3">
+                                <label class="form-label">Sejarah Penyakit Semasa</label>
+                                <textarea class="form-control"></textarea>
+                            </div>
 
-                        <div class="mb-3">
-                            <label class="form-label">Diagnosis</label>
-                            <input class="form-control">
-                        </div>
+                            <div class="mb-3">
+                                <label class="form-label">Aduan Utama</label>
+                                <textarea class="form-control"></textarea>
+                            </div>
 
-                        <div class="mb-3">
-                            <label class="form-label">Drug name / Dose</label>
-                            <textarea class="form-control"></textarea>
-                        </div>
+                            <div class="mb-3">
+                                <label class="form-label">Diagnosis</label>
+                                <input class="form-control">
+                            </div>
 
-                        <hr>
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Maklumat Ubat</label>
 
-                        <h6 class="fw-bold">Signature</h6>
+                                <div id="ubatContainer">
 
-                        <div class="row">
-                            <div class="col-md-3"><input class="form-control" placeholder="Reception"></div>
-                            <div class="col-md-3"><input class="form-control" placeholder="Doctor"></div>
-                            <div class="col-md-3"><input class="form-control" placeholder="MDS"></div>
-                            <div class="col-md-3"><input class="form-control" placeholder="Nurse"></div>
+                                    <!-- Ubat 1 (default) -->
+                                    <div class="row g-2 ubat-item mb-2 border rounded p-2">
+
+                                        <div class="col-md-4">
+                                            <label class="form-label">Nama Ubat</label>
+                                            <input type="text" class="form-control" name="nama_ubat[]" placeholder="Contoh: Paracetamol">
+                                        </div>
+
+                                        <div class="col-md-2">
+                                            <label class="form-label">Dos</label>
+                                            <input type="text" class="form-control" name="dos[]" placeholder="500mg">
+                                        </div>
+
+                                        <div class="col-md-3">
+                                            <label class="form-label">Kekerapan</label>
+                                            <input type="text" class="form-control" name="kekerapan[]" placeholder="3 kali sehari">
+                                        </div>
+
+                                        <div class="col-md-3">
+                                            <label class="form-label">Nota</label>
+                                            <input type="text" class="form-control" name="nota[]" placeholder="Nota">
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <!-- BUTTON TAMBAH -->
+                                <button type="button" class="btn btn-outline-primary btn-sm mt-2" onclick="tambahUbat()">
+                                    + Tambah Ubat
+                                </button>
+                            </div>
+
+                            <hr>
+                            
+                            <h6 class="fw-bold">Tandatangan</h6>
+
+                            <div class="row g-3">
+
+                                <div class="col-md-6">
+                                    <label class="form-label">Nama Pegawai Penulis Rekod</label>
+                                    <input class="form-control" placeholder="Contoh: Muhammad Ali bin Abu Bakar">
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label">Jawatan</label>
+                                    <input class="form-control" placeholder="Contoh: Pegawai Perubatan / Jururawat / Paramedik">
+                                </div>
+
+                            </div>
+
                         </div>
                     </div>
-                </div>
 
-                <!-- SUBMIT BUTTON -->
-                <div class="d-flex justify-content-end mt-3 mb-5">
-                    <button type="submit" class="btn btn-primary px-4">
-                        <i class="bi bi-send me-1"></i> Submit Report
-                    </button>
+                    <!-- SUBMIT BUTTON -->
+                    <div class="d-flex justify-content-end mt-3 mb-5">
+                        <button type="submit" class="btn btn-primary px-4">
+                            <i class="bi bi-send me-1"></i> Hantar
+                        </button>
+                    </div>
                 </div>
             </form>
         </div>
@@ -556,5 +604,45 @@ fetch("sidebar.html")
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<!--ubat-->
+
+<script>
+function tambahUbat() {
+
+    const container = document.getElementById("ubatContainer");
+
+    const html = `
+    <div class="row g-2 ubat-item mb-2 border rounded p-2">
+
+        <div class="col-md-4">
+            <input type="text" class="form-control" name="nama_ubat[]" placeholder="Nama ubat">
+        </div>
+
+        <div class="col-md-2">
+            <input type="text" class="form-control" name="dos[]" placeholder="Dos">
+        </div>
+
+        <div class="col-md-3">
+            <input type="text" class="form-control" name="kekerapan[]" placeholder="Kekerapan">
+        </div>
+
+        <div class="col-md-2">
+            <input type="text" class="form-control" name="nota[]" placeholder="Nota">
+        </div>
+
+        <div class="col-md-1 d-flex align-items-end">
+            <button type="button" class="btn btn-danger btn-sm" onclick="this.closest('.ubat-item').remove()">
+                X
+            </button>
+        </div>
+
+    </div>
+    `;
+
+    container.insertAdjacentHTML("beforeend", html);
+}
+</script>
 </body>
 </html>

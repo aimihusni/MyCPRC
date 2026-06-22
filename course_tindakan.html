@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tindakan Pemohon</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link href="assets/css/main.css" rel="stylesheet">
+
+    <style>
+    .mds-card{
+        border:1px solid #dee2e6;
+        border-radius:12px;
+        overflow:hidden;
+        margin-bottom:1rem;
+        box-shadow:0 .125rem .25rem rgba(0,0,0,.075);
+    }
+
+    .mds-card .card-header{
+        background:#0d6efd;
+        color:#fff;
+        font-weight:600;
+        padding:.75rem 1rem;
+    }
+
+    .mds-card .card-body{
+        background:#fff;
+        padding:1rem;
+    }
+
+    .form-check{
+        margin-bottom:.5rem;
+    }
+
+    .form-label{
+        font-weight:600;
+    }
+
+    .badge-soft{
+        background:#e9ecef;
+        color:#495057;
+        font-weight:500;
+    }
+
+    .section-title{
+        font-size:1.1rem;
+        font-weight:700;
+        margin-bottom:1rem;
+        padding-bottom:.5rem;
+        border-bottom:2px solid #dee2e6;
+    }
+
+    textarea{
+        resize:vertical;
+    }
+    </style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div id="header"></div>
+
+<div class="container-fluid">
+  <div class="row">
+
+    <!-- SIDEBAR -->
+    <aside class="col-md-3 col-lg-2 sidebar p-0" id="sidebar-placeholder"></aside>
+
+<!-- MAIN CONTENT -->
+<main class="col-md-9 col-lg-10 px-4 py-4">
+
+    <!-- PAGE HEADER -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h4 class="mb-0">Laporan Kesihatan Pemohon</h4>
+            <small class="text-muted">
+                Paparan Laporan Kesihatan Ahli EMT
+            </small>
+        </div>
+
+        <a href="course_application.html" class="btn btn-primary">
+            <i class="bi bi-arrow-left me-1"></i> Kembali
+        </a>
+    </div>
+
+    <!-- MAKLUMAT PEMOHON -->
+    <div class="card shadow-sm mb-4">
+        <div class="card-header bg-white fw-bold">
+            🧍 Maklumat Pemohon
+        </div>
+
+        <div class="card-body">
+            <div class="row g-3">
+
+                <div class="col-12">
+                    <div class="p-3 border rounded bg-light">
+                        <small class="text-muted d-block">Nama Penuh</small>
+                        <div class="fw-semibold">Muhammad Ali bin Abu Bakar</div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="p-3 border rounded bg-light">
+                        <small class="text-muted d-block">No. Kad Pengenalan</small>
+                        <div class="fw-semibold">900101-10-1234</div>
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <div class="p-3 border rounded bg-light">
+                        <small class="text-muted d-block">Umur</small>
+                        <div class="fw-semibold">30 Tahun</div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="p-3 border rounded bg-light">
+                        <small class="text-muted d-block">Jantina</small>
+                        <div class="fw-semibold">Lelaki</div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="p-3 border rounded bg-light">
+                        <small class="text-muted d-block">Tempoh Perkhidmatan</small>
+                        <div class="fw-semibold">5 Tahun</div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="p-3 border rounded bg-light">
+                        <small class="text-muted d-block">No. Telefon</small>
+                        <div class="fw-semibold">012-3456789</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- MAKLUMAT PERKHIDMATAN -->
+    <div class="card shadow-sm mb-4">
+        <div class="card-header bg-white fw-bold">
+            🏥 Maklumat Perkhidmatan
+        </div>
+
+        <div class="card-body">
+            <div class="row g-3">
+
+                <div class="col-md-4">
+                    <div class="p-3 border rounded bg-light">
+                        <small class="text-muted d-block">Jawatan</small>
+                        <div class="fw-semibold">Doktor</div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="p-3 border rounded bg-light">
+                        <small class="text-muted d-block">Fasiliti</small>
+                        <div class="fw-semibold">Hospital Kuala Lumpur</div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="p-3 border rounded bg-light">
+                        <small class="text-muted d-block">Negeri</small>
+                        <div class="fw-semibold">Wilayah Persekutuan Kuala Lumpur</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- VAKSINASI -->
+    <div class="card shadow-sm mb-4">
+        <div class="card-header bg-white fw-bold">
+            💉 Vaksinasi (WAJIB EMT)
+        </div>
+
+        <div class="card-body">
+            <div class="row g-3">
+
+                <div class="col-md-3">
+                    <div class="p-3 border rounded bg-light">
+                        <small class="text-muted d-block">Tetanus</small>
+                        <span class="badge bg-success">Lengkap</span>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="p-3 border rounded bg-light">
+                        <small class="text-muted d-block">Hepatitis B</small>
+                        <span class="badge bg-success">Lengkap</span>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="p-3 border rounded bg-light">
+                        <small class="text-muted d-block">Influenza</small>
+                        <span class="badge bg-success">Lengkap</span>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="p-3 border rounded bg-light">
+                        <small class="text-muted d-block">COVID-19 (Booster)</small>
+                        <span class="badge bg-success">Lengkap</span>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="p-3 border rounded bg-light">
+                        <small class="text-muted d-block">Vaksin Lain-lain</small>
+                        <div class="fw-semibold">Tiada</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- STATUS KECERGASAN -->
+    <div class="card shadow-sm mb-4">
+        <div class="card-header bg-white fw-bold">
+            🧪 Status Kecergasan Perubatan
+        </div>
+
+        <div class="card-body">
+            <div class="row g-3">
+
+                <div class="col-md-4">
+                    <div class="p-3 border rounded bg-light">
+                        <small class="text-muted d-block">Status Fit</small>
+                        <span class="badge bg-success">Fit</span>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="p-3 border rounded bg-light">
+                        <small class="text-muted d-block">Tarikh Pemeriksaan Terakhir</small>
+                        <div class="fw-semibold">01/01/2026</div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="p-3 border rounded bg-light">
+                        <small class="text-muted d-block">Tarikh Sah Laku Kesihatan</small>
+                        <div class="fw-semibold">01/01/2027</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- TANDA VITAL -->
+    <div class="card shadow-sm mb-4">
+        <div class="card-header bg-white fw-bold">
+            🫀 Tanda Vital Asas
+        </div>
+
+        <div class="card-body">
+            <div class="row g-3">
+
+                <div class="col-md-2">
+                    <div class="p-3 border rounded bg-light">
+                        <small class="text-muted d-block">Berat</small>
+                        <div class="fw-semibold">60 kg</div>
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <div class="p-3 border rounded bg-light">
+                        <small class="text-muted d-block">Tinggi</small>
+                        <div class="fw-semibold">165 cm</div>
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <div class="p-3 border rounded bg-light">
+                        <small class="text-muted d-block">BMI</small>
+                        <div class="fw-semibold">22.0</div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="p-3 border rounded bg-light">
+                        <small class="text-muted d-block">Keadaan Jantung</small>
+                        <div class="fw-semibold">Normal</div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="p-3 border rounded bg-light">
+                        <small class="text-muted d-block">Keadaan Pernafasan</small>
+                        <div class="fw-semibold">Normal</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- MENTAL & STRES -->
+    <div class="card shadow-sm mb-4">
+        <div class="card-header bg-white fw-bold">
+            🧠 Mental & Stres (Kesiapsiagaan Psikologi)
+        </div>
+
+        <div class="card-body">
+            <div class="row g-3">
+
+                <div class="col-md-3">
+                    <div class="p-3 border rounded bg-light">
+                        <small class="text-muted d-block">Tahap Stres Semasa</small>
+                        <div class="fw-semibold">Rendah</div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="p-3 border rounded bg-light">
+                        <small class="text-muted d-block">Risiko PTSD</small>
+                        <div class="fw-semibold">Tiada</div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="p-3 border rounded bg-light">
+                        <small class="text-muted d-block">Keletihan / Gangguan Tidur</small>
+                        <div class="fw-semibold">Tiada</div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="p-3 border rounded bg-light">
+                        <small class="text-muted d-block">Keupayaan Mengurus Tekanan</small>
+                        <div class="fw-semibold">Baik</div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="p-3 border rounded bg-light">
+                        <small class="text-muted d-block">Sejarah Trauma Psikologi</small>
+                        <div class="fw-semibold">Tiada rekod trauma psikologi.</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- SEJARAH UBAT -->
+    <div class="card shadow-sm mb-4">
+        <div class="card-header bg-white fw-bold">
+            💊 Sejarah Ubat
+        </div>
+
+        <div class="card-body">
+
+            <div class="table-responsive">
+                <table class="table table-bordered align-middle">
+
+                    <thead class="table-light">
+                        <tr>
+                            <th>Nama Ubat</th>
+                            <th>Dos</th>
+                            <th>Kekerapan</th>
+                            <th>Tujuan / Diagnosis</th>
+                            <th>Tempoh Pengambilan</th>
+                            <th>Kesan Sampingan / Alergi</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Bisoprolol</td>
+                            <td>500mg</td>
+                            <td>1 kali sehari</td>
+                            <td>Darah tinggi</td>
+                            <td>Sehingga Sihat</td>
+                            <td>Tiada</td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="6" class="text-center text-muted">
+                                Tiada ubat lain direkodkan
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- KESESUAIAN DEPLOYMENT -->
+    <div class="card shadow-sm mb-4">
+        <div class="card-header bg-white fw-bold">
+            🌍 Kesesuaian Deployment
+        </div>
+
+        <div class="card-body">
+
+            <div class="row g-3">
+
+                <div class="col-md-3">
+                    <div class="p-3 border rounded bg-light text-center">
+                        <div class="fw-semibold">Misi Banjir</div>
+                        <span class="badge bg-success">Sesuai</span>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="p-3 border rounded bg-light text-center">
+                        <div class="fw-semibold">Kawasan Luar Bandar</div>
+                        <span class="badge bg-success">Sesuai</span>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="p-3 border rounded bg-light text-center">
+                        <div class="fw-semibold">Misi Luar Negara</div>
+                        <span class="badge bg-success">Sesuai</span>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="p-3 border rounded bg-light text-center">
+                        <div class="fw-semibold">Sekatan</div>
+                        <span class="badge bg-secondary">Tiada</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- CATATAN -->
+    <div class="card shadow-sm mb-4">
+        <div class="card-header bg-white fw-bold">
+            🏥 Nota / Catatan
+        </div>
+
+        <div class="card-body">
+
+            <div class="p-3 border rounded bg-light">
+                <small class="text-muted d-block mb-2">
+                    Kecederaan Kekal / Catatan Tambahan
+                </small>
+
+                <div class="fw-semibold">
+                    Tiada kecederaan kekal direkodkan. 
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+<!-- ================= STATUS PERMOHONAN MYEMT ================= -->
+<div class="card shadow-sm mb-4">
+
+    <div class="card-body">
+
+        <div class="d-flex justify-content-between align-items-center flex-wrap">
+
+            <!-- INFO -->
+            <div>
+                <small class="text-muted d-block">
+                    Status Permohonan MyEMT
+                </small>
+
+                <h5 class="fw-bold mb-0">
+                    Permohonan Telah Diluluskan
+                </h5>
+
+            </div>
+
+            <!-- BADGE STATUS -->
+            <div class="text-end mt-2 mt-md-0">
+
+                <!-- Tukar ikut status -->
+                <!-- bg-warning = dalam semakan -->
+                <!-- bg-success = lulus -->
+                <!-- bg-danger = gagal -->
+
+
+                <!-- CONTOH DALAM SEMAKAN -->
+                 <!--
+                 <span class="badge bg-warning text-dark fs-6 px-3 py-2">
+                    Dalam Semakan
+                </span>
+                -->
+
+                
+                
+                <span class="badge bg-success fs-6 px-3 py-2">
+                    Lulus
+                </span>
+                
+
+                <!-- CONTOH GAGAL -->
+                <!--
+                <span class="badge bg-danger fs-6 px-3 py-2">
+                    Tidak Lulus
+                </span>
+                -->
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================= KEPUTUSAN PERMOHONAN ================= -->
+<div class="card shadow-sm border-success mt-4">
+
+    <div class="card-header bg-success-subtle">
+        <strong>Keputusan Permohonan B-Course & C-Course</strong>
+    </div>
+
+    <div class="card-body bg-light">
+
+        <div class="alert alert-info mb-4">
+            Sila semak maklumat pemohon sebelum membuat keputusan kelulusan.
+        </div>
+
+        <div class="row align-items-center">
+
+            <div class="col-md-8">
+                <h6 class="mb-1">Status Semasa</h6>
+                <span class="badge bg-warning text-dark fs-6">
+                    Dalam Semakan
+                </span>
+            </div>
+
+            <div class="col-md-4 text-end">
+
+                <button type="button"
+                    class="btn btn-success me-2"
+                    data-bs-toggle="modal"
+                    data-bs-target="#lulusModal">
+                    <i class="bi bi-check-circle-fill me-1"></i>
+                    Lulus
+                </button>
+
+                <button type="button"
+                    class="btn btn-danger"
+                    data-bs-toggle="modal"
+                    data-bs-target="#gagalModal">
+                    <i class="bi bi-x-circle-fill me-1"></i>
+                    Gagal
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="modal fade" id="lulusModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-header bg-success text-white">
+                <h5 class="modal-title">Lulus Permohonan</h5>
+                <button type="button" class="btn-close btn-close-white"
+                    data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+                Adakah anda pasti ingin meluluskan permohonan
+                B-Course & C-Course ini?
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-secondary"
+                    data-bs-dismiss="modal">
+                    Batal
+                </button>
+
+                <button class="btn btn-success">
+                    Ya, Luluskan
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="gagalModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-header bg-danger text-white">
+                <h5 class="modal-title">Gagal Permohonan</h5>
+                <button type="button" class="btn-close btn-close-white"
+                    data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+
+                <div class="mb-3">
+                    <label class="form-label">
+                        Sebab Penolakan
+                    </label>
+
+                    <textarea class="form-control" rows="4"
+                        placeholder="Nyatakan sebab permohonan ditolak..."></textarea>
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-secondary"
+                    data-bs-dismiss="modal">
+                    Batal
+                </button>
+
+                <button class="btn btn-danger">
+                    Ya, Tolak Permohonan
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</main>
+
+
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div id="footer"></div>
+
+<!-- LOAD HEADER / FOOTER / SIDEBAR -->
+<script>
+fetch("header.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("header").innerHTML = data);
+
+fetch("footer.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("footer").innerHTML = data);
+
+fetch("sidebar.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("sidebar-placeholder").innerHTML = data);
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

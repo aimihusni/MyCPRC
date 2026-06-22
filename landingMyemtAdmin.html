@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Pengurusan</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link href="assets/css/main.css" rel="stylesheet">
+
+    <style>
+    .mds-card{
+        border:1px solid #dee2e6;
+        border-radius:12px;
+        overflow:hidden;
+        margin-bottom:1rem;
+        box-shadow:0 .125rem .25rem rgba(0,0,0,.075);
+    }
+
+    .mds-card .card-header{
+        background:#0d6efd;
+        color:#fff;
+        font-weight:600;
+        padding:.75rem 1rem;
+    }
+
+    .mds-card .card-body{
+        background:#fff;
+        padding:1rem;
+    }
+
+    .form-check{
+        margin-bottom:.5rem;
+    }
+
+    .form-label{
+        font-weight:600;
+    }
+
+    .badge-soft{
+        background:#e9ecef;
+        color:#495057;
+        font-weight:500;
+    }
+
+    .section-title{
+        font-size:1.1rem;
+        font-weight:700;
+        margin-bottom:1rem;
+        padding-bottom:.5rem;
+        border-bottom:2px solid #dee2e6;
+    }
+
+    textarea{
+        resize:vertical;
+    }
+    </style>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div id="header"></div>
+
+<div class="container-fluid">
+  <div class="row">
+
+    <!-- SIDEBAR -->
+    <aside class="col-md-3 col-lg-2 sidebar p-0" id="sidebar-placeholder"></aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="col-md-9 col-lg-10 px-4 py-4">
+
+<!-- PAGE HEADER -->
+<div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
+
+    <div>
+        <h4 class="mb-0">Pengurusan Ahli MyEMT</h4>
+        <small class="text-muted">
+            Administrasi bagi Pengurusan Ahli dan Permohonan MyEMT
+        </small>
+    </div>
+
+    <div class="d-flex gap-2 flex-wrap">
+        <a href="emt_ahli.html" class="btn btn-outline-secondary">
+            <i class="bi bi-people me-1"></i>
+            Pengurusan Ahli
+        </a>
+
+        <a href="course_application.html" class="btn btn-primary">
+            <i class="bi bi-mortarboard me-1"></i>
+            Pengurusan B-Course & C-Course
+        </a>
+    </div>
+
+</div>
+
+      
+      <div class="row g-3 mb-4">
+
+
+        <!-- ================= KATEGORI AHLI ================= -->
+        <div class="card shadow-sm mb-4 border-0">
+
+            <div class="card-header bg-white">
+                <strong>Kategori Ahli MyEMT</strong>
+            </div>
+
+            <div class="card-body">
+
+                <div class="row g-3">
+
+                    <!-- Semua -->
+                    <div class="col-md-3">
+                    <div class="border rounded p-3 h-100 bg-light"
+                        role="button"
+                        data-bs-toggle="modal"
+                        data-bs-target="#analyticsModal">
+
+                        <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <small class="text-muted d-block">Semua</small>
+                            <h4 class="fw-bold mb-0">117</h4>
+                        </div>
+                        <i class="bi bi-heart-pulse-fill fs-3 text-secondary"></i>
+                        </div>
+
+                    </div>
+                    </div>
+
+                    <div class="modal fade" id="analyticsModal" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                        <div class="modal-content">
+
+                        <!-- Header -->
+                        <div class="modal-header">
+                            <h5 class="modal-title">Analitik Ahli Berdaftar</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+
+                        <!-- Body -->
+                        <div class="modal-body">
+
+                            <div class="row g-3">
+
+                            <div class="col-md-6">
+                                <div class="border rounded p-3">
+                                <div class="d-flex justify-content-between">
+                                    <span>Doktor</span>
+                                    <strong>45</strong>
+                                </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="border rounded p-3">
+                                <div class="d-flex justify-content-between">
+                                    <span>Jururawat</span>
+                                    <strong>72</strong>
+                                </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="border rounded p-3">
+                                <div class="d-flex justify-content-between">
+                                    <span>Paramedik</span>
+                                    <strong>38</strong>
+                                </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="border rounded p-3">
+                                <div class="d-flex justify-content-between">
+                                    <span>Pegawai Farmasi</span>
+                                    <strong>24</strong>
+                                </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="border rounded p-3">
+                                <div class="d-flex justify-content-between">
+                                    <span>Pegawai Kesihatan Awam</span>
+                                    <strong>19</strong>
+                                </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="border rounded p-3">
+                                <div class="d-flex justify-content-between">
+                                    <span>Staf Sokongan</span>
+                                    <strong>56</strong>
+                                </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="border rounded p-3">
+                                <div class="d-flex justify-content-between">
+                                    <span>Lain-lain</span>
+                                    <strong>31</strong>
+                                </div>
+                                </div>
+                            </div>
+
+                            </div>
+
+                        </div>
+
+                        </div>
+                    </div>
+                    </div>
+
+                    <!-- Doktor -->
+                    <div class="col-md-3">
+                    <div class="border rounded p-3 h-100 bg-light"
+                        role="button"
+                        data-bs-toggle="modal"
+                        data-bs-target="#doktorModal">
+
+                        <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <small class="text-muted d-block">Doktor</small>
+                            <h4 class="fw-bold mb-0">45</h4>
+                        </div>
+                        <i class="bi bi-heart-pulse-fill fs-3 text-secondary"></i>
+                        </div>
+
+                    </div>
+                    </div>
+
+                    <div class="modal fade" id="doktorModal" tabindex="-1">
+                    <div class="modal-dialog modal-xl modal-dialog-centered">
+                        <div class="modal-content">
+
+                        <!-- HEADER -->
+                        <div class="modal-header">
+                            <h5 class="modal-title">Senarai Doktor Berdaftar</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+
+                        <!-- BODY -->
+                        <div class="modal-body">
+
+                            <div class="table-responsive">
+                            <table class="table table-hover align-middle">
+
+                                <thead class="table-light">
+                                <tr>
+                                    <th>Tarikh</th>
+                                    <th>Nama Pemohon</th>
+                                    <th>Jawatan</th>
+                                    <th>Fasiliti</th>
+                                    <th>Negeri</th>
+                                    <th class="text-end">Tindakan</th>
+                                </tr>
+                                </thead>
+
+                                <tbody>
+
+                                <tr>
+                                    <td>12/01/2026</td>
+                                    <td>Siti Khadijah</td>
+                                    <td>Doktor</td>
+                                    <td>Klinik Kesihatan Kuala Lumpur</td>
+                                    <td>WP Kuala Lumpur</td>
+                                    <td class="text-end">
+                                    <a href="emt_deployform.html" class="btn btn-sm btn-outline-primary">
+                                        Papar
+                                    </a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>10/01/2026</td>
+                                    <td>Nur Huda</td>
+                                    <td>Doktor</td>
+                                    <td>Hospital Melaka</td>
+                                    <td>Melaka</td>
+                                    <td class="text-end">
+                                    <a href="emt_deployform.html" class="btn btn-sm btn-outline-primary">
+                                        Papar
+                                    </a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>08/01/2026</td>
+                                    <td>Ahmad Faiz</td>
+                                    <td>Doktor</td>
+                                    <td>Klinik Kesihatan Johor Bahru</td>
+                                    <td>Johor</td>
+                                    <td class="text-end">
+                                    <a href="emt_deployform.html" class="btn btn-sm btn-outline-primary">
+                                        Papar
+                                    </a>
+                                    </td>
+                                </tr>
+
+                                </tbody>
+
+                            </table>
+                            </div>
+
+                        </div>
+
+                        </div>
+                    </div>
+                    </div>
+
+                    <!-- Jururawat -->
+                    <div class="col-md-3">
+                    <div class="border rounded p-3 h-100 bg-light"
+                        role="button"
+                        data-bs-toggle="modal"
+                        data-bs-target="#jururawatModal">
+
+                        <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <small class="text-muted d-block">Jururawat</small>
+                            <h4 class="fw-bold mb-0">72</h4>
+                        </div>
+                        <i class="bi bi-hospital-fill fs-3 text-secondary"></i>
+                        </div>
+
+                    </div>
+                    </div>
+
+                    <div class="modal fade" id="jururawatModal" tabindex="-1">
+                    <div class="modal-dialog modal-xl modal-dialog-centered">
+                        <div class="modal-content">
+
+                        <!-- HEADER -->
+                        <div class="modal-header">
+                            <h5 class="modal-title">Senarai Jururawat Berdaftar</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+
+                        <!-- BODY -->
+                        <div class="modal-body">
+
+                            <div class="table-responsive">
+                            <table class="table table-hover align-middle">
+
+                                <thead class="table-light">
+                                <tr>
+                                    <th>Tarikh</th>
+                                    <th>Nama Pemohon</th>
+                                    <th>Jawatan</th>
+                                    <th>Fasiliti</th>
+                                    <th>Negeri</th>
+                                    <th class="text-end">Tindakan</th>
+                                </tr>
+                                </thead>
+
+                                <tbody>
+
+                                <tr>
+                                    <td>15/01/2026</td>
+                                    <td>Nur Aisyah</td>
+                                    <td>Jururawat</td>
+                                    <td>Hospital Sultanah Bahiyah</td>
+                                    <td>Kedah</td>
+                                    <td class="text-end">
+                                    <a href="emt_deployform.html" class="btn btn-sm btn-outline-primary">
+                                        Papar
+                                    </a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>12/01/2026</td>
+                                    <td>Siti Aminah</td>
+                                    <td>Jururawat</td>
+                                    <td>Klinik Kesihatan Kota Bharu</td>
+                                    <td>Kelantan</td>
+                                    <td class="text-end">
+                                    <a href="emt_deployform.html" class="btn btn-sm btn-outline-primary">
+                                        Papar
+                                    </a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>10/01/2026</td>
+                                    <td>Farah Nadia</td>
+                                    <td>Jururawat</td>
+                                    <td>Hospital Melaka</td>
+                                    <td>Melaka</td>
+                                    <td class="text-end">
+                                    <a href="emt_deployform.html" class="btn btn-sm btn-outline-primary">
+                                        Papar
+                                    </a>
+                                    </td>
+                                </tr>
+
+                                </tbody>
+
+                            </table>
+                            </div>
+
+                        </div>
+
+                        </div>
+                    </div>
+                    </div>
+
+                    <!-- Paramedik -->
+                    <div class="col-md-3">
+                    <div class="border rounded p-3 h-100 bg-light"
+                        role="button"
+                        data-bs-toggle="modal"
+                        data-bs-target="#paramedikModal">
+
+                        <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <small class="text-muted d-block">Paramedik</small>
+                            <h4 class="fw-bold mb-0">38</h4>
+                        </div>
+                        <i class="bi bi-truck-front-fill fs-3 text-secondary"></i>
+                        </div>
+
+                    </div>
+                    </div>
+
+                    <div class="modal fade" id="paramedikModal" tabindex="-1">
+                    <div class="modal-dialog modal-xl modal-dialog-centered">
+                        <div class="modal-content">
+
+                        <!-- HEADER -->
+                        <div class="modal-header">
+                            <h5 class="modal-title">Senarai Paramedik Berdaftar</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+
+                        <!-- BODY -->
+                        <div class="modal-body">
+
+                            <div class="table-responsive">
+                            <table class="table table-hover align-middle">
+
+                                <thead class="table-light">
+                                <tr>
+                                    <th>Tarikh</th>
+                                    <th>Nama Pemohon</th>
+                                    <th>Jawatan</th>
+                                    <th>Fasiliti</th>
+                                    <th>Negeri</th>
+                                    <th class="text-end">Tindakan</th>
+                                </tr>
+                                </thead>
+
+                                <tbody>
+
+                                <tr>
+                                    <td>14/01/2026</td>
+                                    <td>Mohd Azhar</td>
+                                    <td>Paramedik</td>
+                                    <td>Ambulans EMS Kota Bharu</td>
+                                    <td>Kelantan</td>
+                                    <td class="text-end">
+                                    <a href="emt_deployform.html" class="btn btn-sm btn-outline-primary">
+                                        Papar
+                                    </a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>11/01/2026</td>
+                                    <td>Nur Syuhada</td>
+                                    <td>Paramedik</td>
+                                    <td>Hospital Sultanah Aminah</td>
+                                    <td>Johor</td>
+                                    <td class="text-end">
+                                    <a href="emt_deployform.html" class="btn btn-sm btn-outline-primary">
+                                        Papar
+                                    </a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>09/01/2026</td>
+                                    <td>Hafiz Rahman</td>
+                                    <td>Paramedik</td>
+                                    <td>Unit EMS Melaka</td>
+                                    <td>Melaka</td>
+                                    <td class="text-end">
+                                    <a href="emt_deployform.html" class="btn btn-sm btn-outline-primary">
+                                        Papar
+                                    </a>
+                                    </td>
+                                </tr>
+
+                                </tbody>
+
+                            </table>
+                            </div>
+
+                        </div>
+
+                        </div>
+                    </div>
+                    </div>
+
+                    <!-- Pegawai Farmasi -->
+                    <div class="col-md-3">
+                    <div class="border rounded p-3 h-100 bg-light"
+                        role="button"
+                        data-bs-toggle="modal"
+                        data-bs-target="#farmasiModal">
+
+                        <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <small class="text-muted d-block">Pegawai Farmasi</small>
+                            <h4 class="fw-bold mb-0">24</h4>
+                        </div>
+                        <i class="bi bi-capsule-pill fs-3 text-secondary"></i>
+                        </div>
+
+                    </div>
+                    </div>
+
+                    <div class="modal fade" id="farmasiModal" tabindex="-1">
+                    <div class="modal-dialog modal-xl modal-dialog-centered">
+                        <div class="modal-content">
+
+                        <!-- HEADER -->
+                        <div class="modal-header">
+                            <h5 class="modal-title">Senarai Pegawai Farmasi Berdaftar</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+
+                        <!-- BODY -->
+                        <div class="modal-body">
+
+                            <div class="table-responsive">
+                            <table class="table table-hover align-middle">
+
+                                <thead class="table-light">
+                                <tr>
+                                    <th>Tarikh</th>
+                                    <th>Nama Pemohon</th>
+                                    <th>Jawatan</th>
+                                    <th>Fasiliti</th>
+                                    <th>Negeri</th>
+                                    <th class="text-end">Tindakan</th>
+                                </tr>
+                                </thead>
+
+                                <tbody>
+
+                                <tr>
+                                    <td>13/01/2026</td>
+                                    <td>Dr Nur Amalina</td>
+                                    <td>Pegawai Farmasi</td>
+                                    <td>Hospital Kuala Lumpur</td>
+                                    <td>WP Kuala Lumpur</td>
+                                    <td class="text-end">
+                                    <a href="emt_deployform.html" class="btn btn-sm btn-outline-primary">
+                                        Papar
+                                    </a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>10/01/2026</td>
+                                    <td>Farah Hanani</td>
+                                    <td>Pegawai Farmasi</td>
+                                    <td>Klinik Kesihatan Kota Bharu</td>
+                                    <td>Kelantan</td>
+                                    <td class="text-end">
+                                    <a href="emt_deployform.html" class="btn btn-sm btn-outline-primary">
+                                        Papar
+                                    </a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>08/01/2026</td>
+                                    <td>Ahmad Syafiq</td>
+                                    <td>Pegawai Farmasi</td>
+                                    <td>Hospital Melaka</td>
+                                    <td>Melaka</td>
+                                    <td class="text-end">
+                                    <a href="emt_deployform.html" class="btn btn-sm btn-outline-primary">
+                                        Papar
+                                    </a>
+                                    </td>
+                                </tr>
+
+                                </tbody>
+
+                            </table>
+                            </div>
+
+                        </div>
+
+                        </div>
+                    </div>
+                    </div>
+
+                    <!-- Pegawai Kesihatan Awam -->
+                    <div class="col-md-3">
+                    <div class="border rounded p-3 h-100 bg-light"
+                        role="button"
+                        data-bs-toggle="modal"
+                        data-bs-target="#kesihatanAwamModal">
+
+                        <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <small class="text-muted d-block">Pegawai Kesihatan Awam</small>
+                            <h4 class="fw-bold mb-0">19</h4>
+                        </div>
+                        <i class="bi bi-shield-check fs-3 text-secondary"></i>
+                        </div>
+
+                    </div>
+                    </div>
+
+                    <div class="modal fade" id="kesihatanAwamModal" tabindex="-1">
+                    <div class="modal-dialog modal-xl modal-dialog-centered">
+                        <div class="modal-content">
+
+                        <!-- HEADER -->
+                        <div class="modal-header">
+                            <h5 class="modal-title">Senarai Pegawai Kesihatan Awam Berdaftar</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+
+                        <!-- BODY -->
+                        <div class="modal-body">
+
+                            <div class="table-responsive">
+                            <table class="table table-hover align-middle">
+
+                                <thead class="table-light">
+                                <tr>
+                                    <th>Tarikh</th>
+                                    <th>Nama Pemohon</th>
+                                    <th>Jawatan</th>
+                                    <th>Fasiliti</th>
+                                    <th>Negeri</th>
+                                    <th class="text-end">Tindakan</th>
+                                </tr>
+                                </thead>
+
+                                <tbody>
+
+                                <tr>
+                                    <td>12/01/2026</td>
+                                    <td>Dr Siti Rahmah</td>
+                                    <td>Pegawai Kesihatan Awam</td>
+                                    <td>Pejabat Kesihatan Daerah Kota Bharu</td>
+                                    <td>Kelantan</td>
+                                    <td class="text-end">
+                                    <a href="emt_deployform.html" class="btn btn-sm btn-outline-primary">
+                                        Papar
+                                    </a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>09/01/2026</td>
+                                    <td>Nur Hidayah</td>
+                                    <td>Pegawai Kesihatan Awam</td>
+                                    <td>KKM Putrajaya</td>
+                                    <td>WP Putrajaya</td>
+                                    <td class="text-end">
+                                    <a href="emt_deployform.html" class="btn btn-sm btn-outline-primary">
+                                        Papar
+                                    </a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>05/01/2026</td>
+                                    <td>Ahmad Zaki</td>
+                                    <td>Pegawai Kesihatan Awam</td>
+                                    <td>Pejabat Kesihatan Johor Bahru</td>
+                                    <td>Johor</td>
+                                    <td class="text-end">
+                                    <a href="emt_deployform.html" class="btn btn-sm btn-outline-primary">
+                                        Papar
+                                    </a>
+                                    </td>
+                                </tr>
+
+                                </tbody>
+
+                            </table>
+                            </div>
+
+                        </div>
+
+                        </div>
+                    </div>
+                    </div>
+
+                    <!-- Staf Sokongan -->
+                    <div class="col-md-3">
+                    <div class="border rounded p-3 h-100 bg-light"
+                        role="button"
+                        data-bs-toggle="modal"
+                        data-bs-target="#stafSokonganModal">
+
+                        <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <small class="text-muted d-block">Staf Sokongan</small>
+                            <h4 class="fw-bold mb-0">56</h4>
+                        </div>
+                        <i class="bi bi-people-fill fs-3 text-secondary"></i>
+                        </div>
+
+                    </div>
+                    </div>
+
+                    <div class="modal fade" id="stafSokonganModal" tabindex="-1">
+                    <div class="modal-dialog modal-xl modal-dialog-centered">
+                        <div class="modal-content">
+
+                        <!-- HEADER -->
+                        <div class="modal-header">
+                            <h5 class="modal-title">Senarai Staf Sokongan Berdaftar</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+
+                        <!-- BODY -->
+                        <div class="modal-body">
+
+                            <div class="table-responsive">
+                            <table class="table table-hover align-middle">
+
+                                <thead class="table-light">
+                                <tr>
+                                    <th>Tarikh</th>
+                                    <th>Nama Pemohon</th>
+                                    <th>Jawatan</th>
+                                    <th>Fasiliti</th>
+                                    <th>Negeri</th>
+                                    <th class="text-end">Tindakan</th>
+                                </tr>
+                                </thead>
+
+                                <tbody>
+
+                                <tr>
+                                    <td>15/01/2026</td>
+                                    <td>Abdul Rahman</td>
+                                    <td>Staf Sokongan</td>
+                                    <td>Hospital Sultan Ismail</td>
+                                    <td>Johor</td>
+                                    <td class="text-end">
+                                    <a href="emt_deployform.html" class="btn btn-sm btn-outline-primary">
+                                        Papar
+                                    </a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>11/01/2026</td>
+                                    <td>Siti Aishah</td>
+                                    <td>Staf Sokongan</td>
+                                    <td>Klinik Kesihatan Kota Bharu</td>
+                                    <td>Kelantan</td>
+                                    <td class="text-end">
+                                    <a href="emt_deployform.html" class="btn btn-sm btn-outline-primary">
+                                        Papar
+                                    </a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>07/01/2026</td>
+                                    <td>Mohd Firdaus</td>
+                                    <td>Staf Sokongan</td>  
+                                    <td>Hospital Kuala Lumpur</td>
+                                    <td>WP Kuala Lumpur</td>
+                                    <td class="text-end">
+                                    <a href="emt_deployform.html" class="btn btn-sm btn-outline-primary">
+                                        Papar
+                                    </a>
+                                    </td>
+                                </tr>
+
+                                </tbody>
+
+                            </table>
+                            </div>
+
+                        </div>
+
+                        </div>
+                    </div>
+                    </div>
+                    
+                    <!-- Lain-lain -->
+                    <div class="col-md-3">
+                        <div class="border rounded p-3 h-100 bg-light"
+                            role="button"
+                            data-bs-toggle="modal"
+                            data-bs-target="#modalLainLain">
+
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <small class="text-muted d-block">Lain-lain (Vendor / NGO)</small>
+                                    <h4 class="fw-bold mb-0">31</h4>
+                                </div>
+                                <i class="bi bi-person-badge-fill fs-3 text-secondary"></i>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="modal fade" id="modalLainLain" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
+
+                        <div class="modal-content">
+
+                        <div class="modal-header">
+                            <h5 class="modal-title">Senarai Lain-lain (Vendor / NGO / Kontraktor)</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+
+                        <div class="modal-body">
+
+                            <div class="table-responsive">
+                            <table class="table table-sm align-middle">
+                                <thead class="table-light">
+                                <tr>
+                                    <th>Tarikh</th>
+                                    <th>Nama</th>
+                                    <th>Kategori</th>
+                                    <th>Organisasi</th>
+                                    <th>Negeri</th>
+                                    <th class="text-end">Tindakan</th>
+                                </tr>
+                                </thead>
+
+                                <tbody>
+                                <tr>
+                                    <td>12/01/2026</td>
+                                    <td>Ali Hassan</td>
+                                    <td>Vendor</td>
+                                    <td>ABC Medical Supply</td>
+                                    <td>Kelantan</td>
+                                    <td class="text-end">
+                                    <a href="emt_deployform.html" class="btn btn-sm btn-outline-primary">
+                                        Papar
+                                    </a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>10/01/2026</td>
+                                    <td>Syarikat Meditech</td>
+                                    <td>NGO</td>
+                                    <td>Relief Care Malaysia</td>
+                                    <td>Selangor</td>
+                                    <td class="text-end">
+                                    <a href="emt_deployform.html" class="btn btn-sm btn-outline-primary">
+                                        Papar
+                                    </a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>08/01/2026</td>
+                                    <td>Rahman Ismail</td>
+                                    <td>Kontraktor</td>
+                                    <td>BuildSafe Services</td>
+                                    <td>Johor</td>
+                                    <td class="text-end">
+                                    <a href="emt_deployform.html" class="btn btn-sm btn-outline-primary">
+                                        Papar
+                                    </a>
+                                    </td>
+                                </tr>
+
+                                </tbody>
+                            </table>
+                            </div>
+
+                        </div>
+
+                        </div>
+                    </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!--chart analisis-->
+        <div class="card shadow-sm border-0 mb-4">
+
+            <div class="card-header bg-white">
+                <strong>Analisis Ahli MyEMT</strong>
+            </div>
+
+            <div class="card-body">
+
+                <div class="row g-4">
+
+                    <!-- BAR CHART -->
+                    <div class="col-md-7">
+                        <h6 class="text-muted mb-3">Taburan Ahli (Bar Chart)</h6>
+                        <canvas id="ahliBarChart"></canvas>
+                    </div>
+
+                    <!-- DONUT CHART -->
+                    <div class="col-md-5">
+                        <h6 class="text-muted mb-3">Peratusan Ahli</h6>
+                        <canvas id="ahliDonutChart"></canvas>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+      </div>      
+
+        <!--chart ikut negeri-->
+        <div class="card shadow-sm border-0 mb-4">
+
+            <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                <strong>Ahli MyEMT Mengikut Negeri</strong>
+
+                <!-- FILTER NEGERI -->
+                <select id="negeriFilter" class="form-select form-select-sm w-auto">
+                    <option value="all">Semua Negeri (Malaysia)</option>
+
+                    <option value="johor">Johor</option>
+                    <option value="kedah">Kedah</option>
+                    <option value="kelantan">Kelantan</option>
+                    <option value="melaka">Melaka</option>
+                    <option value="negeri_sembilan">Negeri Sembilan</option>
+                    <option value="pahang">Pahang</option>
+                    <option value="perak">Perak</option>
+                    <option value="perlis">Perlis</option>
+                    <option value="pulau_pinang">Pulau Pinang</option>
+                    <option value="sabah">Sabah</option>
+                    <option value="sarawak">Sarawak</option>
+                    <option value="selangor">Selangor</option>
+                    <option value="terengganu">Terengganu</option>
+
+                    <option value="wp_kuala_lumpur">W.P. Kuala Lumpur</option>
+                    <option value="wp_labuan">W.P. Labuan</option>
+                    <option value="wp_putrajaya">W.P. Putrajaya</option>
+                </select>
+            </div>
+
+            <div class="card-body">
+                <canvas id="negeriChart"></canvas>
+            </div>
+
+        </div>
+
+
+
+
+    </main>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div id="footer"></div>
+
+<!-- LOAD HEADER / FOOTER / SIDEBAR -->
+<script>
+fetch("header.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("header").innerHTML = data);
+
+fetch("footer.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("footer").innerHTML = data);
+
+fetch("sidebar.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("sidebar-placeholder").innerHTML = data);
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<!--chart analisis-->
+<script>
+
+    // DATA AHLI
+    const labels = [
+        'Doktor',
+        'Jururawat',
+        'Paramedik',
+        'Pegawai Farmasi',
+        'Pegawai Kesihatan Awam',
+        'Staf Sokongan',
+        'Lain-lain'
+    ];
+
+    const dataValues = [
+        45, // Doktor
+        72, // Jururawat
+        38, // Paramedik
+        24, // Pegawai Farmasi
+        19, // Pegawai Kesihatan Awam
+        56, // Staf Sokongan
+        31  // Lain-lain
+    ];
+
+    // BAR CHART
+    new Chart(document.getElementById('ahliBarChart'), {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Bilangan Ahli',
+                data: dataValues,
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    display: false
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        precision: 0
+                    }
+                }
+            }
+        }
+    });
+
+    // DONUT CHART
+    new Chart(document.getElementById('ahliDonutChart'), {
+        type: 'doughnut',
+        data: {
+            labels: labels,
+            datasets: [{
+                data: dataValues
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'bottom'
+                }
+            }
+        }
+    });
+
+</script>
+
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!--chart ikut negeri-->
+<script>
+
+    const kategoriAhli = [
+        'Doktor',
+        'Jururawat',
+        'Paramedik',
+        'Pegawai Farmasi',
+        'Pegawai Kesihatan Awam',
+        'Staf Sokongan',
+        'Lain-lain'
+    ];
+
+    const negeriData = {
+
+        all: {
+            labels: [
+                'Johor',
+                'Kedah',
+                'Kelantan',
+                'Melaka',
+                'Negeri Sembilan',
+                'Pahang',
+                'Perak',
+                'Perlis',
+                'Pulau Pinang',
+                'Sabah',
+                'Sarawak',
+                'Selangor',
+                'Terengganu',
+                'W.P. Kuala Lumpur',
+                'W.P. Labuan',
+                'W.P. Putrajaya'
+            ],
+            data: [35, 22, 25, 18, 20, 21, 28, 10, 20, 30, 26, 40, 17, 24, 8, 12]
+        },
+
+        johor: {
+            labels: kategoriAhli,
+            data: [12, 10, 8, 4, 3, 5, 2]
+        },
+
+        kedah: {
+            labels: kategoriAhli,
+            data: [8, 7, 5, 2, 2, 4, 1]
+        },
+
+        kelantan: {
+            labels: kategoriAhli,
+            data: [8, 9, 6, 3, 2, 5, 2]
+        },
+
+        melaka: {
+            labels: kategoriAhli,
+            data: [5, 4, 3, 1, 1, 3, 1]
+        },
+
+        negeri_sembilan: {
+            labels: kategoriAhli,
+            data: [6, 5, 3, 2, 1, 2, 1]
+        },
+
+        pahang: {
+            labels: kategoriAhli,
+            data: [6, 6, 3, 2, 1, 2, 1]
+        },
+
+        perak: {
+            labels: kategoriAhli,
+            data: [8, 7, 4, 2, 2, 4, 1]
+        },
+
+        perlis: {
+            labels: kategoriAhli,
+            data: [2, 2, 1, 1, 1, 2, 1]
+        },
+
+        pulau_pinang: {
+            labels: kategoriAhli,
+            data: [5, 7, 4, 1, 1, 1, 1]
+        },
+
+        sabah: {
+            labels: kategoriAhli,
+            data: [10, 12, 5, 1, 1, 1, 0]
+        },
+
+        sarawak: {
+            labels: kategoriAhli,
+            data: [8, 8, 4, 2, 1, 2, 1]
+        },
+
+        selangor: {
+            labels: kategoriAhli,
+            data: [15, 18, 10, 5, 4, 7, 3]
+        },
+
+        terengganu: {
+            labels: kategoriAhli,
+            data: [4, 5, 3, 1, 1, 2, 1]
+        },
+
+        wp_kuala_lumpur: {
+            labels: kategoriAhli,
+            data: [8, 6, 3, 2, 1, 3, 1]
+        },
+
+        wp_labuan: {
+            labels: kategoriAhli,
+            data: [2, 2, 1, 1, 0, 1, 1]
+        },
+
+        wp_putrajaya: {
+            labels: kategoriAhli,
+            data: [3, 3, 2, 1, 1, 1, 1]
+        }
+    };
+
+    const ctx = document.getElementById('negeriChart');
+
+    let negeriChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: negeriData.all.labels,
+            datasets: [{
+                label: 'Bilangan Ahli',
+                data: negeriData.all.data,
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    display: false
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    document.getElementById('negeriFilter').addEventListener('change', function () {
+
+        const selected = this.value;
+
+        negeriChart.data.labels = negeriData[selected].labels;
+        negeriChart.data.datasets[0].data = negeriData[selected].data;
+
+        negeriChart.update();
+
+    });
+
+</script>
+
+
+
+</body>
+</html>

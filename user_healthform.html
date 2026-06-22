@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Borang Kesihatan Ahli</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link href="assets/css/main.css" rel="stylesheet">
+
+    <style>
+    .mds-card{
+        border:1px solid #dee2e6;
+        border-radius:12px;
+        overflow:hidden;
+        margin-bottom:1rem;
+        box-shadow:0 .125rem .25rem rgba(0,0,0,.075);
+    }
+
+    .mds-card .card-header{
+        background:#0d6efd;
+        color:#fff;
+        font-weight:600;
+        padding:.75rem 1rem;
+    }
+
+    .mds-card .card-body{
+        background:#fff;
+        padding:1rem;
+    }
+
+    .form-check{
+        margin-bottom:.5rem;
+    }
+
+    .form-label{
+        font-weight:600;
+    }
+
+    .badge-soft{
+        background:#e9ecef;
+        color:#495057;
+        font-weight:500;
+    }
+
+    .section-title{
+        font-size:1.1rem;
+        font-weight:700;
+        margin-bottom:1rem;
+        padding-bottom:.5rem;
+        border-bottom:2px solid #dee2e6;
+    }
+
+    textarea{
+        resize:vertical;
+    }
+    </style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div id="header"></div>
+
+<div class="container-fluid">
+  <div class="row">
+
+    <!-- SIDEBAR -->
+    <aside class="col-md-3 col-lg-2 sidebar p-0" id="sidebar-placeholder"></aside>
+
+
+    <main class="col-md-9 col-lg-10 px-4 py-4">
+
+  <!-- PAGE HEADER -->
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+      <h4 class="mb-0">Borang Kesihatan Ahli MyEMT</h4>
+      <small class="text-muted">
+        Rekod Perubatan Pasukan Perubatan Kecemasan (Set Data Minimum Plus - MDS+)
+      </small>
+    </div>
+
+    <a href="landingMyemt.html" class="btn btn-primary">
+      <i class="bi bi-arrow-left me-1"></i> Kembali
+    </a>
+  </div>
+
+  <!-- FORM -->
+  <form>
+
+    <div class="card shadow-sm mb-3">
+
+        <div class="card-header bg-white fw-bold">
+            🧍 Maklumat Pemohon
+        </div>
+
+        <div class="card-body">
+
+            <div class="row g-3">
+
+                <!-- NAMA -->
+                <div class="col-md-6">
+                    <label class="form-label">Nama Penuh</label>
+                    <input type="text" class="form-control" placeholder="Contoh: Muhammad Ali bin Abu Bakar">
+                </div>
+
+                <!-- IC -->
+                <div class="col-md-6">
+                    <label class="form-label">No. Kad Pengenalan</label>
+                    <input type="text" class="form-control" placeholder="000000-00-0000">
+                </div>
+
+                <!-- UMUR -->
+                <div class="col-md-3">
+                    <label class="form-label">Umur</label>
+                    <input type="number" min="0" class="form-control" placeholder="Contoh: 30">
+                </div>
+
+                <!-- JANTINA -->
+                <div class="col-md-3">
+                    <label class="form-label">Jantina</label>
+                    <select class="form-select">
+                        <option selected disabled>Pilih Jantina</option>
+                        <option>Lelaki</option>
+                        <option>Perempuan</option>
+                    </select>
+                </div>
+
+                <!-- TEMPOH PERKHIDMATAN -->
+                <div class="col-md-3">
+                    <label class="form-label">Tempoh Perkhidmatan (Tahun)</label>
+                    <input type="number" min="0" class="form-control" placeholder="Contoh: 5">
+                </div>
+
+                <!-- TELEFON -->
+                <div class="col-md-3">
+                    <label class="form-label">No Telefon</label>
+                    <input type="text" class="form-control" placeholder="01X-XXXXXXX">
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- ================= PERKHIDMATAN ================= -->
+    <div class="card shadow-sm mb-3">
+
+        <div class="card-header bg-white fw-bold">
+            🏥 Maklumat Perkhidmatan
+        </div>
+
+        <div class="card-body">
+
+            <div class="row g-3">
+
+                <!-- JAWATAN -->
+                <div class="col-md-4">
+                    <label class="form-label">Jawatan</label>
+                    <select class="form-select">
+                        <option selected disabled>Pilih Jawatan</option>
+                        <option>Doktor</option>
+                        <option>Jururawat</option>
+                        <option>Paramedik</option>
+                        <option>Pegawai Farmasi</option>
+                        <option>Pegawai Kesihatan Awam</option>
+                        <option>Staf Sokongan</option>
+                        <option>Lain-lain</option>
+                    </select>
+                </div>
+
+                <!-- FASILITI -->
+                <div class="col-md-4">
+                    <label class="form-label">Fasiliti</label>
+                    <input type="text" class="form-control" placeholder="Contoh: Hospital Kuala Lumpur">
+                </div>
+
+                <!-- NEGERI -->
+                <div class="col-md-4">
+                    <label class="form-label">Negeri</label>
+                    <select class="form-select">
+                        <option selected disabled>Pilih Negeri</option>
+                        <option>Johor</option>
+                        <option>Kedah</option>
+                        <option>Kelantan</option>
+                        <option>Melaka</option>
+                        <option>Negeri Sembilan</option>
+                        <option>Pahang</option>
+                        <option>Perak</option>
+                        <option>Perlis</option>
+                        <option>Pulau Pinang</option>
+                        <option>Sabah</option>
+                        <option>Sarawak</option>
+                        <option>Selangor</option>
+                        <option>Terengganu</option>
+                        <option>WP Kuala Lumpur</option>
+                        <option>WP Labuan</option>
+                        <option>WP Putrajaya</option>
+                    </select>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 2. VACCINATION -->
+    <div class="card shadow-sm mb-3">
+      <div class="card-header bg-white fw-bold">💉 Vaksinasi (WAJIB EMT)</div>
+      <div class="card-body">
+
+        <div class="form-check"><input class="form-check-input" type="checkbox"> Tetanus</div>
+        <div class="form-check"><input class="form-check-input" type="checkbox"> Hepatitis B</div>
+        <div class="form-check"><input class="form-check-input" type="checkbox"> Influenza</div>
+        <div class="form-check"><input class="form-check-input" type="checkbox"> COVID-19 (Booster)</div>
+        <div class="form-check"><input class="form-check-input" type="checkbox"> Lain-lain</div>
+
+      </div>
+    </div>
+
+    <!-- 3. FITNESS -->
+    <div class="card shadow-sm mb-3">
+      <div class="card-header bg-white fw-bold">🧪 Status Kecergasan Perubatan</div>
+      <div class="card-body">
+
+        <div class="mb-3">
+          <label class="form-label">Status Fit</label>
+          <select class="form-select">
+            <option>Fit</option>
+            <option>Fit dengan sekatan</option>
+            <option>Tidak Fit</option>
+          </select>
+        </div>
+
+        <div class="row g-3">
+
+          <div class="col-md-6">
+            <label class="form-label">Tarikh Pemeriksaan Terakhir</label>
+            <input type="date" class="form-control">
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label">Tarikh Sah Laku Kesihatan</label>
+            <input type="date" class="form-control">
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 4. VITALS -->
+    <div class="card shadow-sm mb-3">
+
+        <div class="card-header bg-white fw-bold">
+            🫀 Tanda Vital Asas
+        </div>
+
+        <div class="card-body">
+
+            <div class="row g-3">
+
+                <!-- BLOOD PRESSURE -->
+                <div class="col-md-3">
+                    <label class="form-label">Tekanan Darah (BP)</label>
+                    <input type="text" class="form-control" placeholder="120/80 mmHg">
+                </div>
+
+                <!-- PULSE -->
+                <div class="col-md-3">
+                    <label class="form-label">Denyutan Nadi (PR)</label>
+                    <input type="text" class="form-control" placeholder="80 bpm">
+                </div>
+
+                <!-- RESPIRATION -->
+                <div class="col-md-3">
+                    <label class="form-label">Kadar Pernafasan (RR)</label>
+                    <input type="text" class="form-control" placeholder="18 / min">
+                </div>
+
+                <!-- TEMPERATURE -->
+                <div class="col-md-3">
+                    <label class="form-label">Suhu Badan (BT)</label>
+                    <input type="text" class="form-control" placeholder="37°C">
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div class="row g-3">
+
+                <!-- WEIGHT -->
+                <div class="col-md-3">
+                    <label class="form-label">Berat (kg)</label>
+                    <input type="number" min="0" class="form-control" placeholder="60">
+                </div>
+
+                <!-- HEIGHT -->
+                <div class="col-md-3">
+                    <label class="form-label">Tinggi (cm)</label>
+                    <input type="number" min="0" class="form-control" placeholder="165">
+                </div>
+
+                <!-- BMI -->
+                <div class="col-md-3">
+                    <label class="form-label">BMI</label>
+                    <input type="text" class="form-control" placeholder="Auto / Manual">
+                </div>
+
+                <!-- OXYGEN -->
+                <div class="col-md-3">
+                    <label class="form-label">Saturasi Oksigen (SpO2)</label>
+                    <input type="text" class="form-control" placeholder="98%">
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div class="row g-3">
+
+                <!-- HEART CONDITION -->
+                <div class="col-md-6">
+                    <label class="form-label">Keadaan Jantung</label>
+                    <input type="text" class="form-control" placeholder="Normal / History penyakit jantung">
+                </div>
+
+                <!-- RESP CONDITION -->
+                <div class="col-md-6">
+                    <label class="form-label">Keadaan Pernafasan</label>
+                    <input type="text" class="form-control" placeholder="Normal / Asma / COPD">
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 5. MENTAL -->
+    <div class="card shadow-sm mb-3">
+
+        <div class="card-header bg-white fw-bold">
+            🧠 Mental & Stres (Kesiapsiagaan Psikologi)
+        </div>
+
+        <div class="card-body">
+
+            <div class="row g-3">
+
+                <!-- STRESS LEVEL -->
+                <div class="col-md-4">
+                    <label class="form-label">Tahap Stres Semasa</label>
+                    <select class="form-select">
+                        <option selected disabled>Pilih tahap</option>
+                        <option>Rendah</option>
+                        <option>Sederhana</option>
+                        <option>Tinggi</option>
+                        <option>Sangat Tinggi (kritikal)</option>
+                    </select>
+                </div>
+
+                <!-- PTSD RISK -->
+                <div class="col-md-4">
+                    <label class="form-label">Risiko PTSD</label>
+                    <select class="form-select">
+                        <option selected disabled>Pilih risiko</option>
+                        <option>Tiada</option>
+                        <option>Rendah</option>
+                        <option>Sederhana</option>
+                        <option>Tinggi</option>
+                    </select>
+                </div>
+
+                <!-- SLEEP / FATIGUE -->
+                <div class="col-md-4">
+                    <label class="form-label">Keletihan / Gangguan Tidur</label>
+                    <select class="form-select">
+                        <option selected disabled>Pilih keadaan</option>
+                        <option>Tiada</option>
+                        <option>Keletihan ringan</option>
+                        <option>Keletihan sederhana</option>
+                        <option>Keletihan teruk</option>
+                        <option>Insomnia / Gangguan tidur</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div class="row g-3">
+
+                <!-- COPING -->
+                <div class="col-md-6">
+                    <label class="form-label">Keupayaan Mengurus Tekanan (Coping Ability)</label>
+                    <select class="form-select">
+                        <option selected disabled>Pilih tahap</option>
+                        <option>Baik</option>
+                        <option>Sederhana</option>
+                        <option>Lemah</option>
+                    </select>
+                </div>
+
+                <!-- TRAUMA HISTORY -->
+                <div class="col-md-6">
+                    <label class="form-label">Sejarah Trauma Psikologi (jika ada)</label>
+                    <input type="text" class="form-control" placeholder="Contoh: PTSD lama, pengalaman bencana besar">
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div class="row g-3">
+
+                <!-- STRESSORS -->
+                <div class="col-12">
+                    <label class="form-label">Faktor Tekanan (Stressor Semasa)</label>
+                    <textarea class="form-control" rows="2"
+                        placeholder="Contoh: kerja shift panjang, misi banjir, kurang tidur, tekanan keluarga"></textarea>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 6. MEDICATION -->
+    <div class="card shadow-sm mb-3">
+        <div class="card-header bg-white fw-bold d-flex justify-content-between align-items-center">
+            💊 Sejarah Ubat
+
+            <button type="button" class="btn btn-sm btn-outline-primary" onclick="addMedication()">
+                <i class="bi bi-plus-circle me-1"></i> Tambah Ubat
+            </button>
+        </div>
+
+        <div class="card-body">
+
+            <div id="medicationContainer">
+
+                <!-- ITEM 1 -->
+                <div class="border rounded p-3 mb-3 medication-item">
+
+                    <div class="row g-3">
+
+                        <div class="col-md-6">
+                            <label class="form-label">Nama Ubat</label>
+                            <input type="text" class="form-control" placeholder="Contoh: Paracetamol">
+                        </div>
+
+                        <div class="col-md-3">
+                            <label class="form-label">Dos</label>
+                            <input type="text" class="form-control" placeholder="500mg / 1 tablet">
+                        </div>
+
+                        <div class="col-md-3">
+                            <label class="form-label">Kekerapan</label>
+                            <select class="form-select">
+                                <option>Sekali sehari</option>
+                                <option>Dua kali sehari</option>
+                                <option>Tiga kali sehari</option>
+                                <option>PRN (jika perlu)</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label">Tujuan / Diagnosis</label>
+                            <input type="text" class="form-control" placeholder="Sakit demam / darah tinggi">
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label">Tempoh Pengambilan</label>
+                            <input type="text" class="form-control" placeholder="Contoh: 5 hari / berterusan">
+                        </div>
+
+                        <div class="col-12">
+                            <label class="form-label">Kesan Sampingan / Alergi</label>
+                            <textarea class="form-control" rows="2"></textarea>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 7. RISK -->
+    <div class="card shadow-sm mb-3">
+      <div class="card-header bg-white fw-bold">⚠️ Klasifikasi Risiko</div>
+      <div class="card-body">
+
+        <select class="form-select">
+          <option>High risk responder</option>
+          <option>Moderate risk</option>
+          <option>Low risk</option>
+        </select>
+
+      </div>
+    </div>
+
+    <!-- 8. DEPLOYMENT -->
+    <div class="card shadow-sm mb-3">
+      <div class="card-header bg-white fw-bold">🌍 Kesesuaian Deployment</div>
+      <div class="card-body">
+
+        <div class="form-check"><input class="form-check-input" type="checkbox"> Misi banjir</div>
+        <div class="form-check"><input class="form-check-input" type="checkbox"> Kawasan luar bandar</div>
+        <div class="form-check"><input class="form-check-input" type="checkbox"> Misi luar negara</div>
+        <div class="form-check"><input class="form-check-input" type="checkbox"> Sekatan tertentu</div>
+
+      </div>
+    </div>
+
+    <!-- 9. INCIDENT -->
+    <div class="card shadow-sm mb-3">
+      <div class="card-header bg-white fw-bold">🏥 Rekod Insiden Perubatan</div>
+      <div class="card-body">
+
+        <textarea class="form-control mb-3" rows="2" placeholder="Sila masukkan maklumat insiden perubatan (Jika ada)"></textarea>
+
+      </div>
+    </div>
+
+    <!-- SUBMIT -->
+    <div class="text-end">
+      <button class="btn btn-success px-4">
+        Daftar Borang Kesihatan
+      </button>
+    </div>
+
+  </form>
+
+</main>
+
+
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div id="footer"></div>
+
+<!-- LOAD HEADER / FOOTER / SIDEBAR -->
+<script>
+fetch("header.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("header").innerHTML = data);
+
+fetch("footer.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("footer").innerHTML = data);
+
+fetch("sidebar.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("sidebar-placeholder").innerHTML = data);
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<!--ubat-->
+
+<script>
+function tambahUbat() {
+
+    const container = document.getElementById("ubatContainer");
+
+    const html = `
+    <div class="row g-2 ubat-item mb-2 border rounded p-2">
+
+        <div class="col-md-4">
+            <input type="text" class="form-control" name="nama_ubat[]" placeholder="Nama ubat">
+        </div>
+
+        <div class="col-md-2">
+            <input type="text" class="form-control" name="dos[]" placeholder="Dos">
+        </div>
+
+        <div class="col-md-3">
+            <input type="text" class="form-control" name="kekerapan[]" placeholder="Kekerapan">
+        </div>
+
+        <div class="col-md-2">
+            <input type="text" class="form-control" name="nota[]" placeholder="Nota">
+        </div>
+
+        <div class="col-md-1 d-flex align-items-end">
+            <button type="button" class="btn btn-danger btn-sm" onclick="this.closest('.ubat-item').remove()">
+                X
+            </button>
+        </div>
+
+    </div>
+    `;
+
+    container.insertAdjacentHTML("beforeend", html);
+}
+</script>
+
+<!--6. medication-->
+<script>
+function addMedication() {
+    const container = document.getElementById("medicationContainer");
+
+    const html = `
+    <div class="border rounded p-3 mb-3 medication-item">
+
+        <div class="d-flex justify-content-end mb-2">
+            <button type="button" class="btn btn-sm btn-outline-danger"
+                onclick="this.closest('.medication-item').remove()">
+                Buang
+            </button>
+        </div>
+
+        <div class="row g-3">
+
+            <div class="col-md-6">
+                <label class="form-label">Nama Ubat</label>
+                <input type="text" class="form-control">
+            </div>
+
+            <div class="col-md-3">
+                <label class="form-label">Dos</label>
+                <input type="text" class="form-control">
+            </div>
+
+            <div class="col-md-3">
+                <label class="form-label">Kekerapan</label>
+                <select class="form-select">
+                    <option>Sekali sehari</option>
+                    <option>Dua kali sehari</option>
+                    <option>Tiga kali sehari</option>
+                    <option>PRN</option>
+                </select>
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label">Tujuan</label>
+                <input type="text" class="form-control">
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label">Tempoh</label>
+                <input type="text" class="form-control">
+            </div>
+
+            <div class="col-12">
+                <label class="form-label">Kesan Sampingan</label>
+                <textarea class="form-control" rows="2"></textarea>
+            </div>
+
+        </div>
+    </div>
+    `;
+
+    container.insertAdjacentHTML("beforeend", html);
+}
+</script>
+
+
+</body>
+</html>

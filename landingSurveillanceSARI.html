@@ -33,6 +33,25 @@
         </a>
       </div>
 
+      <!--CHART-->
+      <div style="display:flex; gap:16px; width:100%;">
+
+        <!-- LINE CHART CARD -->
+        <div style="flex:1; padding:16px; border-radius:12px; box-shadow:0 2px 10px rgba(0,0,0,0.1);">
+          <h3>Trend Terkini Kes SARI</h3>
+          <canvas id="sariLineChart"></canvas>
+        </div>
+
+        <!-- BAR CHART CARD -->
+        <div style="flex:1; padding:16px; border-radius:12px; box-shadow:0 2px 10px rgba(0,0,0,0.1);">
+          <h3>Kes SARI mengikut Hospital</h3>
+          <canvas id="sariBarChart"></canvas>
+        </div>
+
+      </div>
+      <br>
+
+
       <!-- FILTER -->
       <div class="card shadow-sm mb-4">
         <div class="card-body">
@@ -91,7 +110,7 @@
           <div class="card shadow-sm">
             <div class="card-body">
               <h6 class="text-muted">Jumlah Kes SARI</h6>
-              <h3>12</h3>
+              <h3>152</h3>
             </div>
           </div>
         </div>
@@ -100,7 +119,7 @@
           <div class="card shadow-sm">
             <div class="card-body">
               <h6 class="text-muted">Dalam Proses</h6>
-              <h3>3</h3>
+              <h3>32</h3>
             </div>
           </div>
         </div>
@@ -109,7 +128,7 @@
           <div class="card shadow-sm">
             <div class="card-body">
               <h6 class="text-muted">Disahkan</h6>
-              <h3>9</h3>
+              <h3>111</h3>
             </div>
           </div>
         </div>
@@ -329,6 +348,39 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
+
+<!--CHART-->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+  // LINE CHART (Trend over time)
+  new Chart(document.getElementById('sariLineChart'), {
+    type: 'line',
+    data: {
+      labels: ['Bulan 1', 'Bulan 2', 'Bulan 3', 'Bulan 4', 'Bulan 5'],
+      datasets: [{
+        label: 'Kes SARI',
+        data: [120, 150, 180, 140, 200],
+        borderColor: '#ff4d4d',
+        tension: 0.3,
+        fill: false
+      }]
+    }
+  });
+
+  // BAR CHART (Comparison)
+  new Chart(document.getElementById('sariBarChart'), {
+    type: 'bar',
+    data: {
+      labels: ['Hospital A', 'Hospital B', 'Hospital C', 'Hospital D'],
+      datasets: [{
+        label: 'Kes SARI',
+        data: [80, 120, 60, 150],
+        backgroundColor: '#4d79ff'
+      }]
+    }
+  });
+</script>
 
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>MyEMT Reporting</title>
+  <title>MyEMT Ahli</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Bootstrap CSS -->
@@ -29,554 +29,417 @@
 
     <!-- MAIN CONTENT -->
     <main class="col-md-9 col-lg-10 px-4 py-4">
-
-      <!-- HEADER -->
-      <div class="d-flex justify-content-between align-items-center mb-4">
-        <h4 class="mb-0">Pengurusan Malaysia Emergency Medical Team (MyEMT)</h4>
-
-        <!-- ACTION BUTTONS -->
-        <div class="d-flex justify-content-end mb-3">
-          <div class="dropdown">
-            <button class="btn btn-outline-secondary rounded-pill px-3 shadow-sm dropdown-toggle"
-                    type="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false">
-
-              <i class="bi bi-grid me-1"></i>
-              MyEMT Modul
-            </button>
-
-            <ul class="dropdown-menu dropdown-menu-end shadow-sm">
-              <li>
-                <a class="dropdown-item" href="emt_ahli.html">
-                  <i class="bi bi-people me-2"></i>
-                  Pengurusan Ahli MyEMT
-                </a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="emt_crud.html">
-                  <i class="bi bi-diagram-3 me-2"></i>
-                  Pengurusan Misi EMT CRUD
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      
-      <div class="row g-3 mb-4">
-
-          <div class="col-md-3">
-              <div class="card border-0 shadow-sm h-100">
-                  <div class="card-body">
-                      <div class="d-flex justify-content-between align-items-center">
-
-                          <div>
-                              <small class="text-muted d-block">
-                                  Jumlah Ahli MyEMT
-                              </small>
-                              <h3 class="fw-bold mb-0">186</h3>
-                          </div>
-
-                          <div class="border rounded-circle p-3 bg-light">
-                              <i class="bi bi-people-fill fs-4"></i>
-                          </div>
-
-                      </div>
-                  </div>
-              </div>
-          </div>
-
-          <div class="col-md-3">
-              <div class="card border-0 shadow-sm h-100">
-                  <div class="card-body">
-                      <div class="d-flex justify-content-between align-items-center">
-
-                          <div>
-                              <small class="text-muted d-block">
-                                  Misi Aktif
-                              </small>
-                              <h3 class="fw-bold mb-0">5</h3>
-                          </div>
-
-                          <div class="border rounded-circle p-3 bg-light">
-                              <i class="bi bi-broadcast-pin fs-4"></i>
-                          </div>
-
-                      </div>
-                  </div>
-              </div>
-          </div>
-
-          <div class="col-md-3">
-              <div class="card border-0 shadow-sm h-100">
-                  <div class="card-body">
-                      <div class="d-flex justify-content-between align-items-center">
-
-                          <div>
-                              <small class="text-muted d-block">
-                                  Jumlah Rekod MDS
-                              </small>
-                              <h3 class="fw-bold mb-0">1,254</h3>
-                          </div>
-
-                          <div class="border rounded-circle p-3 bg-light">
-                              <i class="bi bi-clipboard2-pulse-fill fs-4"></i>
-                          </div>
-
-                      </div>
-                  </div>
-              </div>
-          </div>
-
-          <div class="col-md-3">
-              <div class="card border-0 shadow-sm h-100">
-                  <div class="card-body">
-                      <div class="d-flex justify-content-between align-items-center">
-
-                          <div>
-                              <small class="text-muted d-block">
-                                  Asset Berdaftar
-                              </small>
-                              <h3 class="fw-bold mb-0">342</h3>
-                          </div>
-
-                          <div class="border rounded-circle p-3 bg-light">
-                              <i class="bi bi-box-seam-fill fs-4"></i>
-                          </div>
-
-                      </div>
-                  </div>
-              </div>
-          </div>
-
-      </div>      
-
-      <div class="card shadow-sm mb-4 border-0">
-
-          <div class="card-header bg-white">
-              <strong>Status Ahli MyEMT</strong>
-          </div>
-
-          <div class="card-body">
-
-              <div class="row g-3">
-
-                  <div class="col-md-3">
-                      <div class="border rounded p-3 h-100 bg-light">
-                          <div class="d-flex justify-content-between align-items-center">
-                              <div>
-                                  <small class="text-muted d-block">Doktor</small>
-                                  <h4 class="fw-bold mb-0">45</h4>
-                              </div>
-                              <i class="bi bi-heart-pulse fs-3 text-secondary"></i>
-                          </div>
-                      </div>
-                  </div>
-
-                  <div class="col-md-3">
-                      <div class="border rounded p-3 h-100 bg-light">
-                          <div class="d-flex justify-content-between align-items-center">
-                              <div>
-                                  <small class="text-muted d-block">Jururawat</small>
-                                  <h4 class="fw-bold mb-0">72</h4>
-                              </div>
-                              <i class="bi bi-hospital fs-3 text-secondary"></i>
-                          </div>
-                      </div>
-                  </div>
-
-                  <div class="col-md-3">
-                      <div class="border rounded p-3 h-100 bg-light">
-                          <div class="d-flex justify-content-between align-items-center">
-                              <div>
-                                  <small class="text-muted d-block">Paramedik</small>
-                                  <h4 class="fw-bold mb-0">38</h4>
-                              </div>
-                              <i class="bi bi-truck-front fs-3 text-secondary"></i>
-                          </div>
-                      </div>
-                  </div>
-
-                  <div class="col-md-3">
-                      <div class="border rounded p-3 h-100 bg-light">
-                          <div class="d-flex justify-content-between align-items-center">
-                              <div>
-                                  <small class="text-muted d-block">Lain-lain</small>
-                                  <h4 class="fw-bold mb-0">31</h4>
-                              </div>
-                              <i class="bi bi-people fs-3 text-secondary"></i>
-                          </div>
-                      </div>
-                  </div>
-
-              </div>
-
-          </div>
-
-      </div>
-
-      <div class="card shadow-sm mb-4 border-0">
-
-          <div class="card-header bg-white d-flex justify-content-between align-items-center">
-              <strong>Misi EMT Sedang Berjalan</strong>
-
-              <span class="badge text-bg-light border">
-                  2 Misi
-              </span>
-          </div>
-
-          <div class="table-responsive">
-
-              <table class="table table-hover align-middle mb-0">
-
-                  <thead class="table-light">
-                      <tr>
-                          <th>Misi</th>
-                          <th>Lokasi</th>
-                          <th>Tarikh Mula</th>
-                          <th>Status</th>
-                          <th class="text-center">Tindakan</th>
-                      </tr>
-                  </thead>
-
-                  <tbody>
-
-                      <tr>
-                          <td>
-                              <div class="fw-semibold">
-                                  EMT Sabah Flood Response
-                              </div>
-                              <small class="text-muted">
-                                  Operasi bantuan banjir
-                              </small>
-                          </td>
-
-                          <td>
-                              <i class="bi bi-geo-alt me-1"></i>
-                              Sabah
-                          </td>
-
-                          <td>01/06/2026</td>
-
-                          <td>
-                              <span class="badge bg-primary">
-                                  Sedang Dijalankan
-                              </span>
-                          </td>
-
-                          <td class="text-center">
-                              <a href="mission_detail.html"
-                                class="btn btn-sm btn-outline-secondary">
-                                  Lihat
-                              </a>
-                          </td>
-                      </tr>
-
-                      <tr>
-                          <td>
-                              <div class="fw-semibold">
-                                  EMT Johor Emergency Ops
-                              </div>
-                              <small class="text-muted">
-                                  Persediaan operasi kecemasan
-                              </small>
-                          </td>
-
-                          <td>
-                              <i class="bi bi-geo-alt me-1"></i>
-                              Johor
-                          </td>
-
-                          <td>20/06/2026</td>
-
-                          <td>
-                              <span class="badge bg-warning text-dark">
-                                  Dalam Perancangan
-                              </span>
-                          </td>
-
-                          <td class="text-center">
-                              <a href="mission_detail.html"
-                                class="btn btn-sm btn-outline-secondary">
-                                  Lihat
-                              </a>
-                          </td>
-                      </tr>
-
-                  </tbody>
-
-              </table>
-
-          </div>
-
-      </div>
-
-      
-      
-      <!--line nak bahagi dulu, nnti dah filter admin user boleh buang-->
-      <hr class="my-4">
       
       <!-- SEMUA USER  -->
       <div class="d-flex justify-content-between align-items-center mb-4">
         <h4 class="mb-0">Permohonan Malaysia Emergency Medical Team (MyEMT)</h4>
 
-        <div class="dropdown">
-
-          <button class="btn btn-outline-secondary rounded-pill px-3 shadow-sm dropdown-toggle"
-                    type="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false">
-            <i class="bi bi-grid-3x3-gap-fill me-1"></i>
-            MyEMT Modul
-          </button>
-
-          <ul class="dropdown-menu dropdown-menu-end shadow">
-
-            <li>
-              <a class="dropdown-item" href="emt_form.html">
-                <i class="bi bi-person-plus-fill me-2 text-success"></i>
-                Daftar MyEMT
-              </a>
-            </li>
-            
-            <li>
-              <a class="dropdown-item" href="emt_healthform.html">
-                <i class="bi bi-file-medical-fill me-2 text-primary"></i>
-                Rekod Kesihatan MyEMT
-              </a>
-            </li>
-
-            <!--tengok balik, takde borang-->
-            
-            <li><hr class="dropdown-divider"></li>
-            
-            <li>
-              <a class="dropdown-item" href="#">
-                <i class="bi bi-clipboard2-pulse-fill me-2 text-dark"></i>
-                Borang B-Course
-              </a>
-            </li>
-
-            <li>
-              <a class="dropdown-item" href="#">
-                <i class="bi bi-clipboard2-data-fill me-2 text-secondary"></i>
-                Borang C-Course
-              </a>
-            </li>
-          
-          </ul>
-
-        </div>
       </div>
 
-
-      <!-- 
-      <div class="row g-3 mb-4">
-
-        <div class="row g-3">
-
-          <div class="col-md-4">
-            <div class="card shadow-sm border-0 h-100">
-              <div class="card-body d-flex align-items-center justify-content-between">
-
-                <div>
-                  <h6 class="text-muted mb-1">Status Permohonan</h6>
-                  <h5 class="mb-0 fw-bold text-warning">
-                    Dalam Semakan
-                  </h5>
-                </div>
-
-                <div class="fs-3 text-warning">
-                  <i class="bi bi-hourglass-split"></i>
-                </div>
-
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="card shadow-sm border-0 h-100">
-              <div class="card-body d-flex align-items-center justify-content-between">
-
-                <div>
-                  <h6 class="text-muted mb-1">Tarikh Hantar</h6>
-                  <h5 class="mb-0 fw-bold">
-                    12/01/2026
-                  </h5>
-                </div>
-
-                <div class="fs-3 text-primary">
-                  <i class="bi bi-calendar-event"></i>
-                </div>
-
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="card shadow-sm border-0 h-100">
-              <div class="card-body d-flex align-items-center justify-content-between">
-
-                <div>
-                  <h6 class="text-muted mb-1">Kelayakan EMT</h6>
-                  <h5 class="mb-0 fw-bold text-secondary">
-                    Belum Disahkan
-                  </h5>
-                </div>
-
-                <div class="fs-3 text-primary">
-                  <i class="bi bi-shield-check"></i>
-                </div>
-
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-      -->
 
       <!-- USER PROFILE CARD -->
       <div class="card shadow-sm mb-4">
+
         <div class="card-body">
 
-          <!-- HEADER PROFILE -->
-          <div class="d-flex align-items-center mb-4 pb-3 border-bottom">
+          <!-- TOP SECTION -->
+          <div class="d-flex justify-content-between align-items-start mb-4">
+
+            <!-- PROFILE INFO -->
+            <div class="d-flex align-items-center">
 
               <div class="rounded-circle bg-light border d-flex align-items-center justify-content-center"
-                  style="width:70px;height:70px;">
-                  <i class="bi bi-person-fill fs-2 text-secondary"></i>
+                  style="width:64px;height:64px;">
+                <i class="bi bi-person-fill fs-3 text-secondary"></i>
               </div>
 
               <div class="ms-3">
-                  <h5 class="mb-1">Aimi Afifah</h5>
-                  <div class="d-flex align-items-center gap-2">
-                      <span class="badge bg-dark-subtle text-dark border">Pegawai Perubatan</span>
-                      <span class="badge bg-success">Aktif</span>
-                  </div>
+                <h5 class="mb-1">Muhammad Bin Abdullah</h5>
+
+                <div class="d-flex flex-wrap gap-2">
+                  <span class="badge bg-light text-dark border">
+                    Pegawai Perubatan
+                  </span>
+                  <span class="badge bg-success">
+                    Aktif
+                  </span>
+                </div>
               </div>
+
+            </div>
+
+            <!-- ACTION 
+            <div class="d-flex gap-2">
+
+              <a href="user_healthview.html"
+                class="btn btn-sm btn-outline-dark px-3">
+                Lihat Maklumat
+              </a>
+
+              <a href="user_healthform.html"
+                class="btn btn-sm btn-primary px-3">
+                Kemaskini Maklumat
+              </a>
+
+            </div>-->
 
           </div>
 
-          <!-- CONTENT -->
-          <div class="row g-3">
+          <!-- INFO GRID -->
+          <div class="row g-4">
 
-              <!-- LEFT -->
-              <div class="col-md-6">
+            <div class="col-md-6">
 
-                  <div class="border rounded p-3 h-100 bg-light">
+              <div class="border-start ps-3">
 
-                      <div class="fw-semibold mb-3">
-                          <i class="bi bi-person-vcard me-1"></i>
-                          Maklumat Peribadi
-                      </div>
+                <div class="text-muted small mb-2">
+                  Maklumat Peribadi
+                </div>
 
-                      <div class="mb-3">
-                          <small class="text-muted">Nama</small>
-                          <div class="fw-semibold">Aimi Afifah</div>
-                      </div>
+                <div class="mb-2">
+                  <small class="text-muted">Nama</small>
+                  <div class="fw-semibold">Muhammad Bin Abdullah</div>
+                </div>
 
-                      <div class="mb-3">
-                          <small class="text-muted">No. Kad Pengenalan</small>
-                          <div class="fw-semibold">101010101010</div>
-                      </div>
+                <div class="mb-2">
+                  <small class="text-muted">No. Kad Pengenalan</small>
+                  <div class="fw-semibold">101010101010</div>
+                </div>
 
-                      <div>
-                          <small class="text-muted">Tempoh Perkhidmatan</small>
-                          <div class="fw-semibold">3 Tahun</div>
-                      </div>
-
-                  </div>
+                <div>
+                  <small class="text-muted">Tempoh Perkhidmatan</small>
+                  <div class="fw-semibold">3 Tahun</div>
+                </div>
 
               </div>
 
-              <!-- RIGHT -->
-              <div class="col-md-6">
+            </div>
 
-                  <div class="border rounded p-3 h-100 bg-light">
+            <div class="col-md-6">
 
-                      <div class="fw-semibold mb-3">
-                          <i class="bi bi-building me-1"></i>
-                          Maklumat Perkhidmatan
-                      </div>
+              <div class="border-start ps-3">
 
-                      <div class="mb-3">
-                          <small class="text-muted">Jawatan</small>
-                          <div class="fw-semibold">Pegawai Perubatan</div>
-                      </div>
+                <div class="text-muted small mb-2">
+                  Maklumat Perkhidmatan
+                </div>
 
-                      <div class="mb-3">
-                          <small class="text-muted">Fasiliti</small>
-                          <div class="fw-semibold">Klinik Kesihatan Kuala Lumpur</div>
-                      </div>
+                <div class="mb-2">
+                  <small class="text-muted">Jawatan</small>
+                  <div class="fw-semibold">Pegawai Perubatan</div>
+                </div>
 
-                      <div>
-                          <small class="text-muted">Negeri</small>
-                          <div class="fw-semibold">WP Kuala Lumpur</div>
-                      </div>
+                <div class="mb-2">
+                  <small class="text-muted">Fasiliti</small>
+                  <div class="fw-semibold">Klinik Kesihatan Kuala Lumpur</div>
+                </div>
 
-                  </div>
+                <div>
+                  <small class="text-muted">Negeri</small>
+                  <div class="fw-semibold">WP Kuala Lumpur</div>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+
+
+      <!-- DAFTAR PERMOHONAN MYEMT & COURSE -->
+      <div class="card shadow-sm mb-4">
+
+          <div class="card-header bg-white fw-bold">
+              📝 Pendaftaran MyEMT & Kursus
+          </div>
+
+          <div class="card-body">
+
+              <div class="row g-4">
+
+                <!-- MYEMT REGISTRATION -->
+                <div class="col-md-6">
+                    <div class="border rounded p-3 h-100">
+
+                        <h6 class="fw-bold mb-3">
+                            📌 Daftar Permohonan MyEMT
+                        </h6>
+
+                        <p class="text-muted small">
+                            Permohonan sebagai ahli EMT baharu. Sila lengkapkan maklumat peribadi dan kesihatan.
+                        </p>
+
+                        <ul class="small text-muted mb-3">
+                            <li>Maklumat peribadi</li>
+                            <li>Maklumat kesihatan</li>
+                            <li>Pengesahan jawatan</li>
+                        </ul>
+
+                        <!-- BUTTONS -->
+                        <div class="d-grid gap-2">
+
+                            <a href="emt_form.html" class="btn btn-primary">
+                                Daftar MyEMT
+                            </a>
+
+                            <a href="emt_submitform.html" class="btn btn-outline-secondary">
+                                Lihat Status Permohonan
+                            </a>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- B & C COURSE -->
+                <div class="col-md-6">
+                    <div class="border rounded p-3 h-100">
+
+                        <h6 class="fw-bold mb-3">
+                            🎓 Daftar B-Course & C-Course
+                        </h6>
+
+                        <p class="text-muted small">
+                            Kursus wajib dan lanjutan untuk kelayakan operasi EMT.
+                        </p>
+
+                        <ul class="small text-muted mb-3">
+                            <li>B-Course: Asas EMT & keselamatan operasi</li>
+                            <li>C-Course: Klinikal & Kemahiran Operasional</li>
+                            <li>TTX: Latihan Tabletop</li>
+                            <li>FTX: Latihan Simulasi Lapangan</li>
+                        </ul>
+
+                        <!-- BUTTONS -->
+                        <div class="d-grid gap-2">
+
+                            <a href="course_apply.html" class="btn btn-success">
+                                Daftar Kursus
+                            </a>
+
+                            <a href="user_healthview.html" class="btn btn-outline-secondary">
+                                Lihat Maklumat Kesihatan
+                            </a>
+
+                        </div>
+
+                    </div>
+                </div>
 
               </div>
 
           </div>
 
       </div>
+
+      <!-- STEP PERMOHONAN MYEMT (INFO SAHAJA) -->
+      <div class="card shadow-sm mb-4">
+
+          <div class="card-header bg-white fw-bold">
+              📌 Proses Permohonan MyEMT
+          </div>
+
+          <div class="card-body">
+
+              <p class="text-muted mb-3">
+                  Makluman langkah-langkah yang perlu dilalui oleh pemohon untuk menyertai EMT.
+              </p>
+
+              <div class="table-responsive">
+
+                  <table class="table table-bordered align-middle">
+
+                      <thead class="table-light">
+                          <tr>
+                              <th>Bil</th>
+                              <th>Proses</th>
+                              <th>Keterangan</th>
+                          </tr>
+                      </thead>
+
+                      <tbody>
+
+                          <tr>
+                              <td>1</td>
+                              <td>Permohonan MyEMT</td>
+                              <td>Hantar permohonan sebagai ahli EMT melalui sistem</td>
+                          </tr>
+
+                          <tr>
+                              <td>2</td>
+                              <td>Lulus B-Course</td>
+                              <td>Latihan asas EMT sebelum layak menyertai operasi</td>
+                          </tr>
+
+                          <tr>
+                              <td>3</td>
+                              <td>Lulus C-Course</td>
+                              <td>Latihan lanjutan klinikal dan pengurusan bencana</td>
+                          </tr>
+
+                          <tr>
+                              <td>4</td>
+                              <td>Aktif EMT</td>
+                              <td>Layak ditempatkan dalam misi dan operasi EMT</td>
+                          </tr>
+
+                      </tbody>
+
+                  </table>
+
+              </div>
+
+          </div>
+
+      </div>
+
+
+      <!-- STATUS PERMOHONAN MYEMT -->
+      <div class="card shadow-sm mb-4">
+
+          <div class="card-header bg-white fw-bold">
+              📊 Status Permohonan MyEMT
+          </div>
+
+          <div class="card-body">
+
+              <p class="text-muted mb-3">
+                  Semakan status kelayakan pemohon untuk menyertai aktiviti EMT.
+              </p>
+
+              <div class="table-responsive">
+
+                  <table class="table table-bordered align-middle">
+
+                      <thead class="table-light">
+                          <tr>
+                              <th>Proses</th>
+                              <th>Status</th>
+                              <th>Catatan</th>
+                          </tr>
+                      </thead>
+
+                      <tbody>
+
+                          <tr>
+                              <td>Permohonan MyEMT</td>
+                              <td><span class="badge bg-success">Lulus</span></td>
+                              <td>Permohonan telah diterima dan disahkan</td>
+                          </tr>
+
+                          <tr>
+                              <td>Lulus B-Course</td>
+                              <td><span class="badge bg-success">Lulus</span></td>
+                              <td>Telah melengkapkan latihan asas EMT</td>
+                          </tr>
+
+                          <tr>
+                              <td>Lulus C-Course</td>
+                              <td><span class="badge bg-success">Lulus</span></td>
+                              <td>Telah melengkapkan latihan lanjutan klinikal</td>
+                          </tr>
+
+                          <tr>
+                              <td>Aktif EMT</td>
+                              <td><span class="badge bg-success">Aktif</span></td>
+                              <td>Layak menyertai semua aktiviti dan misi EMT</td>
+                          </tr>
+
+                      </tbody>
+
+                  </table>
+
+              </div>
+
+              <hr>
+
+              <div class="alert alert-success mb-0">
+                  ✅ Pemohon telah <strong>LULUS SEMUA TAHAP</strong> dan layak menyertai aktiviti EMT.
+              </div>
+
+          </div>
+
       </div>
 
       <!-- APPLICATION STATUS TABLE -->
       <div class="card shadow-sm">
 
-        <div class="card-header bg-white">
-          <strong>Status Permohonan MyEMT</strong>
-        </div>
+        <div class="card shadow-sm border-0">
 
-        <div class="table-responsive">
+          <div class="card-header bg-white fw-bold">
+            📊 Status Permohonan
+          </div>
 
-          <table class="table table-striped mb-0">
+          <div class="table-responsive">
 
-            <thead class="table-light">
-              <tr>
-                <th>Tarikh Hantar</th>
-                <th>Fasa</th>
-                <th>Status</th>
-                <th>Komen</th>
-                <th class="text-end">Tindakan</th>
-              </tr>
-            </thead>
+            <table class="table align-middle mb-0">
 
-            <tbody>
+              <thead class="table-light">
+                <tr>
+                  <th>Tarikh Hantar</th>
+                  <th>Fasa Permohonan</th>
+                  <th>Status</th>
+                  <th>Komen</th>
+                  <th class="text-end">Tindakan</th>
+                </tr>
+              </thead>
 
-              <tr>
-                <td>12/01/2026</td>
-                <td>Pendaftaran</td>
-                <td><span class="badge bg-warning text-dark">Dalam Semakan</span></td>
-                <td>-</td>
-                <td class="text-end">
-                  <a href="emt_submitform.html" class="btn btn-sm btn-outline-primary">
-                    View
-                  </a>
-                </td>
-              </tr>
+              <tbody>
 
-              <tr>
-                <td>--</td>
-                <td>Penilaian Kelayakan</td>
-                <td><span class="badge bg-secondary">Belum Bermula</span></td>
-                <td>-</td>
-                <td class="text-end">
-                  <a href="emt_submitform.html" class="btn btn-sm btn-outline-primary">
-                    View
-                  </a>
-                </td>
-              </tr>
+                <!-- ROW 1 -->
+                <tr>
+                  <td class="fw-semibold">8/12/2025</td>
 
-            </tbody>
+                  <td>
+                    <div class="fw-semibold">Pendaftaran Ahli MyEMT</div>
+                    <small class="text-muted">Permohonan keahlian EMT</small>
+                  </td>
 
-          </table>
+                  <td>
+                      Berjaya Dihantar
+                  </td>
+
+                  <td class="text-muted">Tiada komen</td>
+
+                  <td class="text-end">
+                    <a href="emt_submitform.html"
+                      class="btn btn-sm btn-outline-secondary">
+                      Lihat
+                    </a>
+                  </td>
+                </tr>
+
+                <!-- ROW 2 -->
+                <tr>
+                  <td class="fw-semibold">12/01/2026</td>
+
+                  <td>
+                    <div class="fw-semibold">Pendaftaran Kursus MyEMT</div>
+                    <small class="text-muted">B-Course & C-Course</small>
+                  </td>
+
+                  <td>
+                      Dalam Semakan
+                  </td>
+
+                  <td class="text-muted">Tiada Komen</td>
+
+                  <td class="text-end">
+                    <a href="user_healthview.html"
+                      class="btn btn-sm btn-outline-secondary">
+                      Lihat
+                    </a>
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
 
         </div>
 
@@ -682,6 +545,26 @@ document.getElementById("statusFilter").addEventListener("change", function () {
 
 });
 </script>
+
+<!--daftar myemt-->
+<script>
+function submitMyEMT() {
+
+    // tutup modal
+    const modal = bootstrap.Modal.getInstance(document.getElementById('confirmMyEMTModal'));
+    modal.hide();
+
+    // simulate hantar ke admin
+    setTimeout(() => {
+        alert("Permohonan berjaya dihantar kepada admin untuk diproses.");
+
+        // optional redirect
+        window.location.href = "user_healthview.html";
+
+    }, 500);
+}
+</script>
+
 
 </body>
 </html>

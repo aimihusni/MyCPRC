@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Misi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link href="assets/css/main.css" rel="stylesheet">
+
+    <style>
+    .mds-card{
+        border:1px solid #dee2e6;
+        border-radius:12px;
+        overflow:hidden;
+        margin-bottom:1rem;
+        box-shadow:0 .125rem .25rem rgba(0,0,0,.075);
+    }
+
+    .mds-card .card-header{
+        background:#0d6efd;
+        color:#fff;
+        font-weight:600;
+        padding:.75rem 1rem;
+    }
+
+    .mds-card .card-body{
+        background:#fff;
+        padding:1rem;
+    }
+
+    .form-check{
+        margin-bottom:.5rem;
+    }
+
+    .form-label{
+        font-weight:600;
+    }
+
+    .badge-soft{
+        background:#e9ecef;
+        color:#495057;
+        font-weight:500;
+    }
+
+    .section-title{
+        font-size:1.1rem;
+        font-weight:700;
+        margin-bottom:1rem;
+        padding-bottom:.5rem;
+        border-bottom:2px solid #dee2e6;
+    }
+
+    textarea{
+        resize:vertical;
+    }
+    </style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div id="header"></div>
+
+<div class="container-fluid">
+  <div class="row">
+
+    <!-- SIDEBAR -->
+    <aside class="col-md-3 col-lg-2 sidebar p-0" id="sidebar-placeholder"></aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="col-md-9 col-lg-10 px-4 py-4">
+
+      <!-- PAGE HEADER -->
+      <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <!-- LEFT: TITLE -->
+        <div>
+            <h4 class="mb-1">Pengurusan Misi MyEMT</h4>
+            <small class="text-muted">
+            Administrasi bagi Pengurusan Misi MyEMT
+            </small>
+        </div>
+
+        <!-- RIGHT: ACTION -->
+<a href="emt_crud.html"
+   class="btn btn-primary btn-sm px-4 rounded-pill shadow-sm">
+  Pengurusan Misi
+</a>
+
+
+
+
+      </div>
+
+      <!-- STATUS / ACTION CARD -->
+      <div class="card shadow-sm mb-3">
+        <div class="card-body d-flex justify-content-between align-items-center">
+
+            <div class="row g-3 mb-4">
+
+                <!--chart-->
+                <div class="col-md-3">
+                    <div class="card border-0 shadow-sm h-100 cursor-pointer"
+                        data-bs-toggle="modal"
+                        data-bs-target="#missionModal">
+
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+
+                                <div>
+                                    <small class="text-muted d-block">Semua Misi</small>
+                                    <h3 class="fw-bold mb-0">30</h3>
+                                </div>
+
+                                <div class="border rounded-circle p-3 bg-light">
+                                    <i class="bi bi-list-task fs-4"></i>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!--modal misi-->
+                <div class="modal fade" id="missionModal" tabindex="-1">
+                    <div class="modal-dialog modal-xl modal-dialog-scrollable">
+                        <div class="modal-content">
+
+                            <!-- HEADER -->
+                            <div class="modal-header">
+                                <h5 class="modal-title">Dashboard Semua Misi EMT</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+
+                            <div class="modal-body">
+
+                                <!-- FILTER NEGERI -->
+                                <div class="row mb-3">
+                                    <div class="col-md-4">
+                                        <select id="stateFilter" class="form-select">
+                                            <option value="all">Semua Negeri</option>
+
+                                            <option value="johor">Johor</option>
+                                            <option value="kedah">Kedah</option>
+                                            <option value="kelantan">Kelantan</option>
+                                            <option value="melaka">Melaka</option>
+                                            <option value="negeri-sembilan">Negeri Sembilan</option>
+                                            <option value="pahang">Pahang</option>
+                                            <option value="perak">Perak</option>
+                                            <option value="perlis">Perlis</option>
+                                            <option value="pulau-pinang">Pulau Pinang</option>
+                                            <option value="sabah">Sabah</option>
+                                            <option value="sarawak">Sarawak</option>
+                                            <option value="selangor">Selangor</option>
+                                            <option value="terengganu">Terengganu</option>
+
+                                            <option value="wp-kuala-lumpur">Wilayah Persekutuan Kuala Lumpur</option>
+                                            <option value="wp-labuan">Wilayah Persekutuan Labuan</option>
+                                            <option value="wp-putrajaya">Wilayah Persekutuan Putrajaya</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <!-- CHARTS -->
+                                <div class="row g-3">
+
+                                    <div class="col-md-6">
+                                        <div class="card p-3">
+                                            <h6>Asset EMT</h6>
+                                            <div style="height:250px;">
+                                                <canvas id="assetChart"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="card p-3">
+                                            <h6>Logistik & Storage</h6>
+                                            <div style="height:250px;">
+                                                <canvas id="logisticChart"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 mt-3">
+                                        <div class="card p-3">
+                                            <h6>MDS Pesakit</h6>
+                                            <div style="height:250px;">
+                                                <canvas id="mdsChart"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 mt-3">
+                                        <div class="card p-3">
+                                            <h6>Status Misi</h6>
+                                            <div style="height:250px;">
+                                                <canvas id="missionChart"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <!-- TABLE MISI -->
+                                <hr>
+
+                                <h6 class="fw-bold">Senarai Misi</h6>
+
+                                <table class="table table-hover align-middle">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>Nama Misi</th>
+                                            <th>Negeri</th>
+                                            <th>Status</th>
+                                            <th>Tindakan</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr>
+                                            <td>EMT Sabah Flood Ops</td>
+                                            <td>Sabah</td>
+                                            <td><span class="badge bg-primary">Aktif</span></td>
+                                            <td>
+                                                <a href="mission_detail.html" class="btn btn-sm btn-outline-primary">
+                                                    Papar
+                                                </a>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>EMT Kelantan Flood Ops</td>
+                                            <td>Kelantan</td>
+                                            <td><span class="badge bg-success">Selesai</span></td>
+                                            <td>
+                                                <a href="mission_detail.html" class="btn btn-sm btn-outline-primary">
+                                                    Papar
+                                                </a>
+                                            </td>   
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MISI BERJAYA -->
+                <div class="col-md-3">
+                    <div class="card border-0 shadow-sm h-100 cursor-pointer"
+                        data-bs-toggle="modal"
+                        data-bs-target="#missionModal">
+
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+
+                                <div>
+                                    <small class="text-muted d-block">
+                                        Misi Berjaya Disiapkan
+                                    </small>
+                                    <h3 class="fw-bold mb-0">18</h3>
+                                </div>
+
+                                <div class="border rounded-circle p-3 bg-light">
+                                    <i class="bi bi-check-circle-fill fs-4 text-success"></i>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- MISI AKTIF -->
+                <div class="col-md-3">
+                    <div class="card border-0 shadow-sm h-100 cursor-pointer"
+                        data-bs-toggle="modal"
+                        data-bs-target="#missionModal">
+
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+
+                                <div>
+                                    <small class="text-muted d-block">
+                                        Misi Sedang Aktif
+                                    </small>
+                                    <h3 class="fw-bold mb-0">5</h3>
+                                </div>
+
+                                <div class="border rounded-circle p-3 bg-light">
+                                    <i class="bi bi-hourglass-split fs-4"></i>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+
+                <!-- PERANCANGAN MISI -->
+                <div class="col-md-3">
+                    <div class="card border-0 shadow-sm h-100 cursor-pointer"
+                        data-bs-toggle="modal"
+                        data-bs-target="#planningModal">
+
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+
+                                <div>
+                                    <small class="text-muted d-block">
+                                        Misi Dalam Perancangan
+                                    </small>
+                                    <h3 class="fw-bold mb-0">7</h3>
+                                </div>
+
+                                <div class="border rounded-circle p-3 bg-light">
+                                    <i class="bi bi-calendar2-week-fill fs-4 text-warning"></i>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="modal fade" id="planningModal" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                        <div class="modal-content">
+
+                            <!-- HEADER -->
+                            <div class="modal-header">
+                                <h5 class="modal-title">Misi Dalam Perancangan</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+
+                            <!-- BODY -->
+                            <div class="modal-body">
+
+                                <p class="text-muted mb-3">
+                                    Senarai misi yang masih dalam fasa perancangan. Sila lengkapkan maklumat sebelum misi dimulakan.
+                                </p>
+
+                                <!-- TABLE -->
+                                <div class="table-responsive">
+                                    <table class="table table-hover align-middle">
+
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Nama Misi</th>
+                                                <th>Negeri</th>
+                                                <th>Tarikh Dijangka</th>
+                                                <th>Status</th>
+                                                <th class="text-end">Tindakan</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+
+                                            <tr>
+                                                <td>EMT Sabah Flood Ops</td>
+                                                <td>Sabah</td>
+                                                <td>20/06/2026</td>
+                                                <td>
+                                                    <span class="badge bg-warning text-dark">Perancangan</span>
+                                                </td>
+                                                <td class="text-end">
+                                                    <a href="mission_detail.html?id=1"
+                                                    class="btn btn-sm btn-outline-primary">
+                                                        Kemaskini
+                                                    </a>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>EMT Johor Emergency Ops</td>
+                                                <td>Johor</td>
+                                                <td>25/06/2026</td>
+                                                <td>
+                                                    <span class="badge bg-warning text-dark">Perancangan</span>
+                                                </td>
+                                                <td class="text-end">
+                                                    <a href="mission_detail.html?id=2"
+                                                    class="btn btn-sm btn-outline-primary">
+                                                        Kemaskini
+                                                    </a>
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+
+                                    </table>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ASSET -->
+                <div class="col-md-3">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+
+                                <div>
+                                    <small class="text-muted d-block">
+                                        Jumlah Asset EMT
+                                    </small>
+                                    <h3 class="fw-bold mb-0">342</h3>
+                                </div>
+
+                                <div class="border rounded-circle p-3 bg-light">
+                                    <i class="bi bi-box-seam-fill fs-4"></i>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LOGISTIK -->
+                <div class="col-md-3">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+
+                                <div>
+                                    <small class="text-muted d-block">
+                                        Logistik Aktif
+                                    </small>
+                                    <h3 class="fw-bold mb-0">26</h3>
+                                </div>
+
+                                <div class="border rounded-circle p-3 bg-light">
+                                    <i class="bi bi-truck-front-fill fs-4"></i>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STORAGE -->
+                <div class="col-md-3">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+
+                                <div>
+                                    <small class="text-muted d-block">
+                                        Lokasi Storan
+                                    </small>
+                                    <h3 class="fw-bold mb-0">12</h3>
+                                </div>
+
+                                <div class="border rounded-circle p-3 bg-light">
+                                    <i class="bi bi-house-gear-fill fs-4"></i>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- MDS REPORT -->
+                <div class="col-md-3">
+                    <a href="emt_mdsdaily.html" class="text-decoration-none text-dark">
+                        <div class="card border-0 shadow-sm h-100">
+
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center">
+
+                                    <div>
+                                        <small class="text-muted d-block">
+                                            Laporan MDS EMT
+                                        </small>
+                                        <h3 class="fw-bold mb-0">1,254</h3>
+                                    </div>
+
+                                    <div class="border rounded-circle p-3 bg-light">
+                                        <i class="bi bi-clipboard2-pulse-fill fs-4"></i>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </a>
+                </div>
+
+
+
+
+                <!--charts-->
+                <div class="row g-3 mb-4">
+
+                    <!-- LEFT: PIE CHART -->
+                    <div class="col-md-5">
+                        <div class="card shadow-sm border-0 h-100">
+                            <div class="card-body d-flex justify-content-center align-items-center">
+                                
+                                <div style="width: 220px; height: 220px;">
+                                    <canvas id="missionPieChart"></canvas>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT: INFO -->
+                    <div class="col-md-7">
+                        <div class="card shadow-sm border-0 h-100">
+                            <div class="card-body">
+
+                                <h5 class="fw-bold mb-3">Ringkasan Misi</h5>
+
+                                <div class="mb-3">
+                                    <small class="text-muted">Jumlah Semua Misi</small>
+                                    <h4 class="fw-bold mb-0">34</h4>
+                                </div>
+
+                                <hr>
+
+                                <div class="mb-3">
+                                    <small class="text-muted">Misi Sedang Berjalan</small>
+                                    <h5 class="fw-bold mb-0">5</h5>
+                                </div>
+
+                                <div class="mb-3">
+                                    <small class="text-muted">Misi Berjaya Disiapkan</small>
+                                    <h5 class="fw-bold mb-0">18</h5>
+                                </div>
+
+                                <div class="mb-3">
+                                    <small class="text-muted">Misi Dalam Perancangan</small>
+                                    <h5 class="fw-bold mb-0">11</h5>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+      </div>
+
+      
+    </main>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div id="footer"></div>
+
+<!-- LOAD HEADER / FOOTER / SIDEBAR -->
+<script>
+fetch("header.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("header").innerHTML = data);
+
+fetch("footer.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("footer").innerHTML = data);
+
+fetch("sidebar.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("sidebar-placeholder").innerHTML = data);
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<!-- CHARTS -->
+ <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    // ===== ASSET =====
+    const assetChart = new Chart(document.getElementById('assetChart'), {
+        type: 'bar',
+        data: {
+            labels: ['Asset', 'Logistik', 'Storage', 'MDS'],
+            datasets: [{
+                label: 'Jumlah',
+                data: [342, 26, 12, 1254]
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false
+        }
+    });
+
+    // ===== LOGISTIC =====
+    const logisticChart = new Chart(document.getElementById('logisticChart'), {
+        type: 'bar',
+        data: {
+            labels: ['Aktif', 'In Transit', 'Idle'],
+            datasets: [{
+                label: 'Logistik',
+                data: [10, 8, 8]
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false
+        }
+    });
+
+    // ===== MDS =====
+    const mdsChart = new Chart(document.getElementById('mdsChart'), {
+        type: 'bar',
+        data: {
+            labels: ['Trauma', 'Infeksi', 'Kecemasan', 'Lain-lain'],
+            datasets: [{
+                label: 'Kes',
+                data: [120, 300, 150, 80]
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false
+        }
+    });
+
+    // ===== MISI STATUS =====
+    const missionChart = new Chart(document.getElementById('missionChart'), {
+        type: 'doughnut',
+        data: {
+            labels: ['Aktif', 'Berjaya', 'Belum Siap', 'Perancangan'],
+            datasets: [{
+                data: [5, 18, 7, 4]
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false
+        }
+    });
+
+});
+</script>
+
+
+<!--dalam perancangan-->\
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const planningModal = document.getElementById('planningModal');
+
+    planningModal.addEventListener('shown.bs.modal', function () {
+        console.log("Planning modal opened");
+    });
+
+});
+</script>
+
+
+
+<!--charts-->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+const ctx = document.getElementById('missionPieChart');
+
+new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        labels: [
+            'Sedang Berjalan',
+            'Berjaya',
+            'Perancangan'
+        ],
+        datasets: [{
+            data: [5, 18, 11],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+            legend: {
+                position: 'bottom'
+            }
+        }
+    }
+});
+</script>
+
+</body>
+</html>

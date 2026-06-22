@@ -35,7 +35,7 @@
         <h4 class="mb-0">Pengurusan Malaysia Emergency Medical Team (MyEMT)</h4>
 
         <div class="mb-3 d-flex justify-content-end">
-            <a href="landingMyemt.html" class="btn btn-primary">
+            <a href="landingMyemtAdmin.html" class="btn btn-primary">
                 <i class="bi bi-arrow-left me-1"></i> Kembali
             </a>
         </div>
@@ -46,28 +46,163 @@
       <div class="row g-3 mb-4">
 
         <div class="col-md-3">
-          <div class="card shadow-sm border-0 border-start border-primary border-4">
+          <div class="card shadow-sm border-0 border-start border-primary border-4 h-100"
+              role="button"
+              data-bs-toggle="modal"
+              data-bs-target="#modalJumlahPendaftaran">
+
             <div class="card-body d-flex align-items-center justify-content-between">
 
               <div>
                 <h6 class="text-muted mb-1">Jumlah Pendaftaran</h6>
-                <h3 class="mb-0 fw-bold">12</h3>
+                <h3 class="mb-0 fw-bold">155</h3>
               </div>
 
               <div class="text-primary fs-3">
                 <i class="bi bi-clipboard-data"></i>
               </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- MODAL JUMLAH PENDAFTARAN -->
+        <div class="modal fade" id="modalJumlahPendaftaran" tabindex="-1">
+          <div class="modal-dialog modal-xl modal-dialog-scrollable">
+            <div class="modal-content">
+
+              <div class="modal-header">
+                <h5 class="modal-title">
+                  Senarai Semua Ahli MyEMT Berdaftar
+                </h5>
+
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal">
+                </button>
+              </div>
+
+              <div class="modal-body">
+
+                <div class="table-responsive">
+
+                  <table class="table table-hover align-middle">
+
+                    <thead class="table-light">
+                      <tr>
+                        <th>Nama Pemohon</th>
+                        <th>Jawatan</th>
+                        <th>Fasiliti</th>
+                        <th>Negeri</th>
+                        <th>Status</th>
+                        <th class="text-end">Tindakan</th>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+
+                      <tr>
+                        <td>Muhammad Bin Abdullah</td>
+                        <td>Pegawai Perubatan</td>
+                        <td>Klinik Kesihatan Kuala Lumpur</td>
+                        <td>WP Kuala Lumpur</td>
+                        <td>
+                          <span class="badge bg-warning text-dark">
+                            Dalam Semakan
+                          </span>
+                        </td>
+                        <td class="text-end">
+                          <a href="emt_deployform.html"
+                            class="btn btn-sm btn-outline-secondary">
+                            Papar
+                          </a>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>Nur Huda</td>
+                        <td>Jururawat</td>
+                        <td>Hospital Melaka</td>
+                        <td>Melaka</td>
+                        <td>
+                          <span class="badge bg-success">
+                            Diluluskan
+                          </span>
+                        </td>
+                        <td class="text-end">
+                          <a href="emt_deployform.html"
+                            class="btn btn-sm btn-outline-secondary">
+                            Papar
+                          </a>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>Ahmad Faiz</td>
+                        <td>Paramedik</td>
+                        <td>Klinik Kesihatan Johor Bahru</td>
+                        <td>Johor</td>
+                        <td>
+                          <span class="badge bg-success">
+                            Diluluskan
+                          </span>
+                        </td>
+                        <td class="text-end">
+                          <a href="emt_deployform.html"
+                            class="btn btn-sm btn-outline-secondary">
+                            Papar
+                          </a>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>Siti Khadijah</td>
+                        <td>Doktor</td>
+                        <td>Hospital Putrajaya</td>
+                        <td>WP Putrajaya</td>
+                        <td>
+                          <span class="badge bg-secondary">
+                            Tidak Aktif
+                          </span>
+                        </td>
+                        <td class="text-end">
+                          <a href="emt_deployform.html"
+                            class="btn btn-sm btn-outline-secondary">
+                            Papar
+                          </a>
+                        </td>
+                      </tr>
+
+                    </tbody>
+
+                  </table>
+
+                </div>
+
+              </div>
+
+              <div class="modal-footer">
+                <button class="btn btn-outline-secondary"
+                        data-bs-dismiss="modal">
+                  Tutup
+                </button>
+              </div>
+
             </div>
           </div>
         </div>
 
         <div class="col-md-3">
-          <div class="card shadow-sm border-0 border-start border-warning border-4">
+          <div class="card shadow-sm border-0 border-start border-warning border-4 h-100"
+              role="button"
+              data-bs-toggle="modal"
+              data-bs-target="#modalDalamSemakan">
+
             <div class="card-body d-flex align-items-center justify-content-between">
 
               <div>
                 <h6 class="text-muted mb-1">Dalam Semakan</h6>
-                <h3 class="mb-0 fw-bold">3</h3>
+                <h3 class="mb-0 fw-bold">33</h3>
               </div>
 
               <div class="text-warning fs-3">
@@ -78,13 +213,153 @@
           </div>
         </div>
 
+        <!-- MODAL DALAM SEMAKAN -->
+        <div class="modal fade" id="modalDalamSemakan" tabindex="-1">
+          <div class="modal-dialog modal-xl modal-dialog-scrollable">
+            <div class="modal-content">
+
+              <div class="modal-header">
+                <h5 class="modal-title">
+                  Senarai Pemohon Dalam Semakan
+                </h5>
+
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal">
+                </button>
+              </div>
+
+              <div class="modal-body">
+
+                <!-- Ringkasan -->
+                <div class="alert alert-warning border mb-4">
+                  <strong>33 Permohonan</strong> sedang menunggu semakan dan kelulusan admin MyEMT.
+                </div>
+
+                <div class="table-responsive">
+
+                  <table class="table table-hover align-middle">
+
+                    <thead class="table-light">
+                      <tr>
+                        <th>Tarikh Mohon</th>
+                        <th>Nama Pemohon</th>
+                        <th>Jawatan</th>
+                        <th>Fasiliti</th>
+                        <th>Negeri</th>
+                        <th>Status</th>
+                        <th class="text-end">Tindakan</th>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+
+                      <tr>
+                        <td>15/06/2026</td>
+                        <td>Muhammad Bin Abdullah</td>
+                        <td>Pegawai Perubatan</td>
+                        <td>Klinik Kesihatan Kuala Lumpur</td>
+                        <td>WP Kuala Lumpur</td>
+                        <td>
+                          <span class="badge bg-warning text-dark">
+                            Dalam Semakan
+                          </span>
+                        </td>
+                        <td class="text-end">
+                          <a href="emt_deployform.html"
+                            class="btn btn-sm btn-outline-secondary">
+                            Papar
+                          </a>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>14/06/2026</td>
+                        <td>Nur Huda</td>
+                        <td>Jururawat</td>
+                        <td>Hospital Melaka</td>
+                        <td>Melaka</td>
+                        <td>
+                          <span class="badge bg-warning text-dark">
+                            Dalam Semakan
+                          </span>
+                        </td>
+                        <td class="text-end">
+                          <a href="emt_deployform.html"
+                            class="btn btn-sm btn-outline-secondary">
+                            Papar
+                          </a>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>13/06/2026</td>
+                        <td>Ahmad Faiz</td>
+                        <td>Paramedik</td>
+                        <td>Klinik Kesihatan Johor Bahru</td>
+                        <td>Johor</td>
+                        <td>
+                          <span class="badge bg-warning text-dark">
+                            Dalam Semakan
+                          </span>
+                        </td>
+                        <td class="text-end">
+                          <a href="emt_deployform.html"
+                            class="btn btn-sm btn-outline-secondary">
+                            Papar
+                          </a>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>12/06/2026</td>
+                        <td>Siti Khadijah</td>
+                        <td>Doktor</td>
+                        <td>Hospital Putrajaya</td>
+                        <td>WP Putrajaya</td>
+                        <td>
+                          <span class="badge bg-warning text-dark">
+                            Dalam Semakan
+                          </span>
+                        </td>
+                        <td class="text-end">
+                          <a href="emt_deployform.html"
+                            class="btn btn-sm btn-outline-secondary">
+                            Papar
+                          </a>
+                        </td>
+                      </tr>
+
+                    </tbody>
+
+                  </table>
+
+                </div>
+
+              </div>
+
+              <div class="modal-footer">
+                <button class="btn btn-outline-secondary"
+                        data-bs-dismiss="modal">
+                  Tutup
+                </button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
         <div class="col-md-3">
-          <div class="card shadow-sm border-0 border-start border-success border-4">
+          <div class="card shadow-sm border-0 border-start border-success border-4 h-100"
+              role="button"
+              data-bs-toggle="modal"
+              data-bs-target="#modalDiluluskan">
+
             <div class="card-body d-flex align-items-center justify-content-between">
 
               <div>
                 <h6 class="text-muted mb-1">Diluluskan</h6>
-                <h3 class="mb-0 fw-bold">9</h3>
+                <h3 class="mb-0 fw-bold">87</h3>
               </div>
 
               <div class="text-success fs-3">
@@ -95,17 +370,275 @@
           </div>
         </div>
 
+        <!-- MODAL DILULUSKAN -->
+        <div class="modal fade" id="modalDiluluskan" tabindex="-1">
+          <div class="modal-dialog modal-xl modal-dialog-scrollable">
+            <div class="modal-content">
+
+              <div class="modal-header">
+                <h5 class="modal-title">
+                  Senarai Pemohon Diluluskan
+                </h5>
+
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal">
+                </button>
+              </div>
+
+              <div class="modal-body">
+
+                <div class="alert alert-success border mb-4">
+                  <strong>87 Permohonan</strong> telah diluluskan dan layak menyertai MyEMT.
+                </div>
+
+                <div class="table-responsive">
+
+                  <table class="table table-hover align-middle">
+
+                    <thead class="table-light">
+                      <tr>
+                        <th>Tarikh Lulus</th>
+                        <th>Nama Pemohon</th>
+                        <th>Jawatan</th>
+                        <th>Fasiliti</th>
+                        <th>Negeri</th>
+                        <th>Status</th>
+                        <th class="text-end">Tindakan</th>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+
+                      <tr>
+                        <td>18/06/2026</td>
+                        <td>Muhammad Bin Abdullah</td>
+                        <td>Pegawai Perubatan</td>
+                        <td>Klinik Kesihatan Kuala Lumpur</td>
+                        <td>WP Kuala Lumpur</td>
+                        <td>
+                          <span class="badge bg-success">
+                            Diluluskan
+                          </span>
+                        </td>
+                        <td class="text-end">
+                          <a href="emt_deployform.html"
+                            class="btn btn-sm btn-outline-secondary">
+                            Papar
+                          </a>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>17/06/2026</td>
+                        <td>Nur Huda</td>
+                        <td>Jururawat</td>
+                        <td>Hospital Melaka</td>
+                        <td>Melaka</td>
+                        <td>
+                          <span class="badge bg-success">
+                            Diluluskan
+                          </span>
+                        </td>
+                        <td class="text-end">
+                          <a href="emt_deployform.html"
+                            class="btn btn-sm btn-outline-secondary">
+                            Papar
+                          </a>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>16/06/2026</td>
+                        <td>Ahmad Faiz</td>
+                        <td>Paramedik</td>
+                        <td>Klinik Kesihatan Johor Bahru</td>
+                        <td>Johor</td>
+                        <td>
+                          <span class="badge bg-success">
+                            Diluluskan
+                          </span>
+                        </td>
+                        <td class="text-end">
+                          <a href="emt_deployform.html"
+                            class="btn btn-sm btn-outline-secondary">
+                            Papar
+                          </a>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>15/06/2026</td>
+                        <td>Siti Khadijah</td>
+                        <td>Doktor</td>
+                        <td>Hospital Putrajaya</td>
+                        <td>WP Putrajaya</td>
+                        <td>
+                          <span class="badge bg-success">
+                            Diluluskan
+                          </span>
+                        </td>
+                        <td class="text-end">
+                          <a href="emt_deployform.html"
+                            class="btn btn-sm btn-outline-secondary">
+                            Papar
+                          </a>
+                        </td>
+                      </tr>
+
+                    </tbody>
+
+                  </table>
+
+                </div>
+
+              </div>
+
+              <div class="modal-footer">
+                <button class="btn btn-outline-secondary"
+                        data-bs-dismiss="modal">
+                  Tutup
+                </button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
         <div class="col-md-3">
-          <div class="card shadow-sm border-0 border-start border-danger border-4">
+          <div class="card shadow-sm border-0 border-start border-danger border-4 h-100"
+              role="button"
+              data-bs-toggle="modal"
+              data-bs-target="#modalDitolak">
+
             <div class="card-body d-flex align-items-center justify-content-between">
 
               <div>
                 <h6 class="text-muted mb-1">Ditolak</h6>
-                <h3 class="mb-0 fw-bold">1</h3>
+                <h3 class="mb-0 fw-bold">35</h3>
               </div>
 
               <div class="text-danger fs-3">
                 <i class="bi bi-x-circle"></i>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- MODAL DITOLAK -->
+        <div class="modal fade" id="modalDitolak" tabindex="-1">
+          <div class="modal-dialog modal-xl modal-dialog-scrollable">
+            <div class="modal-content">
+
+              <div class="modal-header">
+                <h5 class="modal-title">
+                  Senarai Pemohon Ditolak
+                </h5>
+
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal">
+                </button>
+              </div>
+
+              <div class="modal-body">
+
+                <div class="alert alert-danger border mb-4">
+                  <strong>35 Permohonan</strong> telah ditolak selepas proses semakan.
+                </div>
+
+                <div class="table-responsive">
+
+                  <table class="table table-hover align-middle">
+
+                    <thead class="table-light">
+                      <tr>
+                        <th>Tarikh Keputusan</th>
+                        <th>Nama Pemohon</th>
+                        <th>Jawatan</th>
+                        <th>Fasiliti</th>
+                        <th>Negeri</th>
+                        <th>Sebab Penolakan</th>
+                        <th class="text-end">Tindakan</th>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+
+                      <tr>
+                        <td>18/06/2026</td>
+                        <td>Mohd Hafiz</td>
+                        <td>Paramedik</td>
+                        <td>Hospital Sultanah Aminah</td>
+                        <td>Johor</td>
+                        <td>Dokumen tidak lengkap</td>
+                        <td class="text-end">
+                          <a href="emt_deployform.html"
+                            class="btn btn-sm btn-outline-secondary">
+                            Papar
+                          </a>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>17/06/2026</td>
+                        <td>Nurul Izzah</td>
+                        <td>Jururawat</td>
+                        <td>Hospital Melaka</td>
+                        <td>Melaka</td>
+                        <td>Tidak memenuhi syarat pengalaman</td>
+                        <td class="text-end">
+                          <a href="emt_deployform.html"
+                            class="btn btn-sm btn-outline-secondary">
+                            Papar
+                          </a>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>16/06/2026</td>
+                        <td>Ahmad Syakir</td>
+                        <td>Pegawai Farmasi</td>
+                        <td>Hospital Tengku Ampuan Rahimah</td>
+                        <td>Selangor</td>
+                        <td>Maklumat permohonan tidak sah</td>
+                        <td class="text-end">
+                          <a href="emt_deployform.html"
+                            class="btn btn-sm btn-outline-secondary">
+                            Papar
+                          </a>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>15/06/2026</td>
+                        <td>Siti Aminah</td>
+                        <td>Doktor</td>
+                        <td>Hospital Kuala Lumpur</td>
+                        <td>WP Kuala Lumpur</td>
+                        <td>Tidak lulus penilaian kesihatan</td>
+                        <td class="text-end">
+                          <a href="emt_deployform.html"
+                            class="btn btn-sm btn-outline-secondary">
+                            Papar
+                          </a>
+                        </td>
+                      </tr>
+
+                    </tbody>
+
+                  </table>
+
+                </div>
+
+              </div>
+
+              <div class="modal-footer">
+                <button class="btn btn-outline-secondary"
+                        data-bs-dismiss="modal">
+                  Tutup
+                </button>
               </div>
 
             </div>
@@ -146,7 +679,7 @@
           <!-- CONTOH 1 -->
           <tr>
             <td>12/01/2026</td>
-            <td>Aimi Afifah</td>
+            <td>Muhammad Bin Abdullah</td>
             <td>Pegawai Perubatan</td>
             <td>Klinik Kesihatan Kuala Lumpur</td>
             <td>WP Kuala Lumpur</td>
@@ -161,7 +694,7 @@
               <a href="emt_deployform.html?id=1"
                 class="btn btn-sm btn-primary rounded-pill px-3">
                 <i class="bi bi-file-earmark-text me-1"></i>
-                Review
+                Papar
               </a>
             </td>
 
@@ -181,7 +714,7 @@
 
             <td class="text-end">
               <a href="emt_deployform.html?id=2" class="btn btn-sm btn-outline-primary">
-                View
+                Papar
               </a>
             </td>
           </tr>
@@ -202,7 +735,7 @@
 
             <td class="text-end">
               <a href="emt_deployform.html?id=3" class="btn btn-sm btn-outline-primary">
-                View
+                Papar
               </a>
             </td>
           </tr>

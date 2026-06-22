@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pendaftaran Kursus</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link href="assets/css/main.css" rel="stylesheet">
+
+    <style>
+    .mds-card{
+        border:1px solid #dee2e6;
+        border-radius:12px;
+        overflow:hidden;
+        margin-bottom:1rem;
+        box-shadow:0 .125rem .25rem rgba(0,0,0,.075);
+    }
+
+    .mds-card .card-header{
+        background:#0d6efd;
+        color:#fff;
+        font-weight:600;
+        padding:.75rem 1rem;
+    }
+
+    .mds-card .card-body{
+        background:#fff;
+        padding:1rem;
+    }
+
+    .form-check{
+        margin-bottom:.5rem;
+    }
+
+    .form-label{
+        font-weight:600;
+    }
+
+    .badge-soft{
+        background:#e9ecef;
+        color:#495057;
+        font-weight:500;
+    }
+
+    .section-title{
+        font-size:1.1rem;
+        font-weight:700;
+        margin-bottom:1rem;
+        padding-bottom:.5rem;
+        border-bottom:2px solid #dee2e6;
+    }
+
+    textarea{
+        resize:vertical;
+    }
+    </style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div id="header"></div>
+
+<div class="container-fluid">
+  <div class="row">
+
+    <!-- SIDEBAR -->
+    <aside class="col-md-3 col-lg-2 sidebar p-0" id="sidebar-placeholder"></aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="col-md-9 col-lg-10 px-4 py-4">
+
+      <!-- PAGE HEADER -->
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+          <h4 class="mb-0">Daftar Kursus B-Course & C-Course</h4>
+          <small class="text-muted">
+            Pendaftaran Kursus MyEMT (B-Course + C-Course + TTX + FTX)
+          </small>
+        </div>
+
+        <a href="landingMyemt.html" class="btn btn-primary">
+          <i class="bi bi-arrow-left me-1"></i> Kembali
+        </a>
+      </div>
+
+      <!-- INFO CARD -->
+      <div class="card shadow-sm mb-3">
+        <div class="card-body">
+
+          <h6 class="fw-bold">📌 Struktur Kursus MyEMT</h6>
+
+          <ul class="mb-2">
+            <li><strong>Level:</strong> National / State</li>
+            <li><strong>Tempoh:</strong> 5 Hari</li>
+            <li><strong>Struktur:</strong></li>
+          </ul>
+
+          <ol class="mb-3">
+            <li>B-Course (Pengetahuan asas: bencana, koordinasi & sistem MyEMT)</li>
+            <li>C-Course (Kemahiran klinikal & operasi lapangan)</li>
+            <li>TTX (Tabletop Exercise)</li>
+            <li>FTX (Field Training Exercise - simulasi lapangan)</li>
+          </ol>
+
+          <div class="alert alert-info mb-0">
+            🎯 Objektif:
+            <ul class="mb-0">
+              <li>Memperkasa kompetensi operasi, klinikal & koordinasi MyEMT</li>
+              <li>Memahami struktur, command system & koordinasi agensi</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+    <!-- STATUS PERMOHONAN AHLI EMT -->
+    <div class="card shadow-sm mb-3">
+
+      <div class="card-header bg-white fw-bold">
+        📋 Status Permohonan Ahli EMT
+      </div>
+
+      <div class="card-body">
+
+        <!-- MAKLUMAT AHLI -->
+        <h6 class="fw-bold mb-3">Maklumat Ahli</h6>
+
+        <div class="row g-3 mb-4">
+
+          <div class="col-md-4">
+            <small class="text-muted d-block">Nama Ahli</small>
+            <div class="fw-semibold">Abdul Rahman Bin Ghazali</div>
+          </div>
+
+          <div class="col-md-4">
+            <small class="text-muted d-block">No. Kad Pengenalan</small>
+            <div class="fw-semibold">900101-10-1234</div>
+          </div>
+
+          <div class="col-md-4">
+            <small class="text-muted d-block">Jawatan</small>
+            <div class="fw-semibold">Doktor</div>
+          </div>
+
+          <div class="col-md-4">
+            <small class="text-muted d-block">Fasiliti</small>
+            <div class="fw-semibold">Hospital Kota Bharu</div>
+          </div>
+
+        </div>
+
+        <hr>
+
+        <!-- MAKLUMAT SESI DIPILIH -->
+        <h6 class="fw-bold mb-3">Sesi Dipilih</h6>
+
+        <div class="row g-3 mb-4">
+
+          <div class="col-md-4">
+            <small class="text-muted d-block">Sesi</small>
+            <div class="fw-semibold">Sesi 1 / 2026</div>
+          </div>
+
+          <div class="col-md-4">
+            <small class="text-muted d-block">Tarikh</small>
+            <div class="fw-semibold">15 - 19 Mac 2026</div>
+          </div>
+
+          <div class="col-md-4">
+            <small class="text-muted d-block">Lokasi</small>
+            <div class="fw-semibold">Kuala Lumpur</div>
+          </div>
+
+          <div class="col-md-4">
+            <small class="text-muted d-block">Level</small>
+            <div class="fw-semibold">National</div>
+          </div>
+
+        </div>
+
+        <hr>
+
+        <!-- STATUS PERMOHONAN -->
+        <h6 class="fw-bold mb-3">Status Permohonan</h6>
+
+        <div class="p-3 border rounded bg-light">
+
+          <div class="d-flex justify-content-between align-items-center">
+
+            <div>
+              <small class="text-muted d-block">Status Semasa</small>
+              <span class="badge bg-warning text-dark fs-6">
+                Menunggu Kelulusan
+              </span>
+            </div>
+
+            <i class="bi bi-hourglass-split fs-3 text-secondary"></i>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+      
+      <!-- SESSION LIST -->
+      <div class="card shadow-sm mb-3">
+        <div class="card-header bg-white fw-bold">
+          📅 Senarai Sesi Kursus
+        </div>
+
+        <div class="card-body">
+
+          <div class="table-responsive">
+            <table class="table table-hover align-middle">
+
+              <thead class="table-light">
+                <tr>
+                  <th>Sesi</th>
+                  <th>Tarikh</th>
+                  <th>Lokasi</th>
+                  <th>Level</th>
+                  <th>Status</th>
+                  <th class="text-end">Tindakan</th>
+                </tr>
+              </thead>
+
+              <tbody>
+
+                <tr>
+                  <td>Sesi 1 / 2026</td>
+                  <td>15 - 19 Mac 2026</td>
+                  <td>Kuala Lumpur</td>
+                  <td>National</td>
+                  <td><span class="badge bg-success">Dibuka</span></td>
+                  <td class="text-end">
+                    <a href="user_healthform.html"
+                      class="btn btn-sm btn-outline-primary">
+                      Daftar
+                    </a>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Sesi 2 / 2026</td>
+                  <td>10 - 14 Jun 2026</td>
+                  <td>Selangor</td>
+                  <td>State</td>
+                  <td><span class="badge bg-warning text-dark">Hampir Penuh</span></td>
+                  <td class="text-end">
+                    <a href="user_healthform.html"
+                      class="btn btn-sm btn-outline-primary">
+                      Daftar
+                    </a>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Sesi 3 / 2026</td>
+                  <td>20 - 24 September 2026</td>
+                  <td>Johor</td>
+                  <td>National</td>
+                  <td><span class="badge bg-secondary">Belum Dibuka</span></td>
+                  <td class="text-end">
+                    <button class="btn btn-sm btn-outline-secondary" disabled>
+                      Tidak Tersedia
+                    </button>
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+          </div>
+
+        </div>
+      </div>
+
+        
+
+    </main>
+
+
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div id="footer"></div>
+
+<!-- LOAD HEADER / FOOTER / SIDEBAR -->
+<script>
+fetch("header.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("header").innerHTML = data);
+
+fetch("footer.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("footer").innerHTML = data);
+
+fetch("sidebar.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("sidebar-placeholder").innerHTML = data);
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!--daftar kursus-->
+<script>
+function submitCourse() {
+
+    const modal = bootstrap.Modal.getInstance(
+        document.getElementById('registerCourseModal')
+    );
+
+    modal.hide();
+
+    setTimeout(() => {
+        alert("Pendaftaran kursus berjaya dihantar kepada admin.");
+
+        // optional redirect
+        window.location.href = "landingMyemt.html";
+
+    }, 500);
+}
+</script>
+
+</body>
+</html>

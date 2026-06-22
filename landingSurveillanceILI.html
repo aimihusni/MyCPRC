@@ -36,44 +36,67 @@
         </a>
       </div>
 
-<div class="row g-3 mb-4">
+      <!-- FILTER -->
+      <div class="row g-3 mb-4">
 
-  <!-- FILTER (LEFT SIDE) -->
-  <div class="col-md-4">
-    <div class="card shadow-sm h-100">
-      <div class="card-body">
+        <!-- FILTER (LEFT SIDE) -->
+        <div class="col-md-4">
+          <div class="card shadow-sm h-100">
+            <div class="card-body">
 
-        <h6 class="mb-3">Filter</h6>
+              <h6 class="mb-3">Filter</h6>
 
-        <label>Cari Hospital/Klinik</label>
-        <input type="text" id="searchHospital" class="form-control mb-3" placeholder="Klinik Kesihatan .....">
+              <!-- Hospital Dropdown -->
+              <label>Cari Hospital/Klinik</label>
+              <select id="hospitalFilter" class="form-control mb-3">
+                <option value="">Semua Hospital</option>
+                <option>Hospital Kuala Lumpur, Pathology</option>
+                <option>Hospital Melaka, Nephrology</option>
+                <option>Hospital Melaka, Pathology</option>
+                <option>Hospital Pulau Pinang, Pathology</option>
+                <option>Hospital Queen Elizabeth, Pathology</option>
+                <option>Hospital Raja Perempuan Zainab II (Kelantan), Pathology</option>
+                <option>Hospital Raja Permaisuri Bainun (Ipoh), Pathology</option>
+                <option>Hospital Sultanah Aminah (Johor Bahru), Pathology</option>
+                <option>Hospital Sultanah Bahiyah (Alor Setar), Pathology</option>
+                <option>Hospital Sultanah Nur Zahirah (Kuala Terengganu), Pathology</option>
+                <option>Hospital Tengku Ampuan Afzan (Pahang), Pathology</option>
+                <option>Hospital Tengku Ampuan Rahimah (Klang), Pathology</option>
+                <option>Hospital Tuanku Fauziah (Perlis), Pathology</option>
+                <option>Hospital Tuanku Jaafar (Seremban), Pathology</option>
+                <option>Hospital Umum Sarawak, Pathology</option>
+                <option>Hospital Wanita & Kanak Kanak (Hospital Kuala Lumpur), Pathology Diagnostic</option>
+                <option>Hospital Wanita & Kanak-Kanak Sabah (Likas), Pathology</option>
+              </select>
 
-        <label>Filter Tarikh</label>
-        <input type="date" id="filterDate" class="form-control mb-3">
+              <!-- Date Filter -->
+              <label>Filter Tarikh</label>
+              <input type="date" id="filterDate" class="form-control mb-3">
 
-        <button class="btn btn-secondary w-100" onclick="resetFilter()">Reset</button>
+              <!-- Reset Button -->
+              <button class="btn btn-secondary w-100" onclick="resetFilter()">Reset</button>
 
-      </div>
-    </div>
-  </div>
-
-  <!-- CHART (RIGHT SIDE) -->
-  <div class="col-md-8">
-    <div class="card shadow-sm h-100">
-      <div class="card-body">
-
-        <h6 class="mb-3">Trend Terkini Kes ILI</h6>
-
-        <!-- SMALLER CHART AREA -->
-        <div style="height: 260px;">
-          <canvas id="iliChart"></canvas>
+            </div>
+          </div>
         </div>
 
-      </div>
-    </div>
-  </div>
+        <!-- CHART (RIGHT SIDE) -->
+        <div class="col-md-8">
+          <div class="card shadow-sm h-100">
+            <div class="card-body">
 
-</div>  
+              <h6 class="mb-3">Trend Terkini Kes ILI</h6>
+
+              <!-- SMALLER CHART AREA -->
+              <div style="height: 260px;">
+                <canvas id="iliChart"></canvas>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>  
       <!-- TABLE -->
       <div class="card shadow-sm">
         <div class="card-header bg-white">
@@ -97,36 +120,36 @@
               <tr>
                 <td class="date">2026-01-12</td>
                 <td class="hospital">Klinik Kesihatan Sultan Ismail</td>
-                <td>Influenza A H1N1 Virus</td>
+                <td>Virus Influenza A H1N1</td>
                 <td>
                   <span class="badge status-badge">Disahkan</span>
                 </td>
                 <td class="text-end">
-                  <button class="btn btn-sm btn-outline-primary">View</button>
+                  <button class="btn btn-sm btn-outline-primary">Papar</button>
                 </td>
               </tr>
 
               <tr>
                 <td class="date">2026-01-10</td>
                 <td class="hospital">Klinik Kesihatan Taman Universiti</td>
-                <td>Coronavirus (COVID-19) Detected</td>
+                <td>Koronavirus (COVID-19) Dikesan</td>
                 <td>
                   <span class="badge status-badge">Dalam Proses</span>
                 </td>
                 <td class="text-end">
-                  <button class="btn btn-sm btn-outline-secondary">Edit</button>
+                  <button class="btn btn-sm btn-outline-secondary">Kemaskini</button>
                 </td>
               </tr>
 
               <tr>
                 <td class="date">2026-01-08</td>
                 <td class="hospital">Klinik Kesihatan Presint 9</td>
-                <td>Respiratory Syncytial Virus</td>
+                <td>Virus Sinsitium Pernafasan</td>
                 <td>
                   <span class="badge status-badge">Disahkan</span>  
                 </td>
                 <td class="text-end">
-                  <button class="btn btn-sm btn-outline-primary">View</button>
+                  <button class="btn btn-sm btn-outline-primary">Papar</button>
                 </td>
               </tr>
 
@@ -170,7 +193,7 @@
 </script>
 
 <script>
-const searchHospital = document.getElementById("searchHospital");
+const hospitalFilter = document.getElementById("hospitalFilter");
 const dateFilter = document.getElementById("filterDate");
 const rows = document.querySelectorAll("#iliTable tbody tr");
 
@@ -206,7 +229,7 @@ const ctx = document.getElementById('iliChart');
 new Chart(ctx, {
   type: 'line',
   data: {
-    labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+    labels: ['Bulan 1', 'Bulan 2', 'Bulan 3', 'Bulan 4'],
     datasets: [{
       label: 'Kes ILI',
       //DATA KENA TUKAR

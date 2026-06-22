@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EMT Misi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link href="assets/css/main.css" rel="stylesheet">
+
+    <style>
+    .mds-card{
+        border:1px solid #dee2e6;
+        border-radius:12px;
+        overflow:hidden;
+        margin-bottom:1rem;
+        box-shadow:0 .125rem .25rem rgba(0,0,0,.075);
+    }
+
+    .mds-card .card-header{
+        background:#0d6efd;
+        color:#fff;
+        font-weight:600;
+        padding:.75rem 1rem;
+    }
+
+    .mds-card .card-body{
+        background:#fff;
+        padding:1rem;
+    }
+
+    .form-check{
+        margin-bottom:.5rem;
+    }
+
+    .form-label{
+        font-weight:600;
+    }
+
+    .badge-soft{
+        background:#e9ecef;
+        color:#495057;
+        font-weight:500;
+    }
+
+    .section-title{
+        font-size:1.1rem;
+        font-weight:700;
+        margin-bottom:1rem;
+        padding-bottom:.5rem;
+        border-bottom:2px solid #dee2e6;
+    }
+
+    textarea{
+        resize:vertical;
+    }
+    </style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div id="header"></div>
+
+<div class="container-fluid">
+  <div class="row">
+
+    <!-- SIDEBAR -->
+    <aside class="col-md-3 col-lg-2 sidebar p-0" id="sidebar-placeholder"></aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="col-md-9 col-lg-10 px-4 py-4">
+
+        <!-- PAGE HEADER -->
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <div>
+            <h4 class="mb-0">Maklumat Misi EMT</h4>
+            <small class="text-muted">
+                Maklumat operasi dan Misi EMT oleh Kementerian Kerajaan Malaysia.
+            </small>
+            </div>
+
+            <a href="user_misilist.html" class="btn btn-primary">
+            <i class="bi bi-arrow-left me-1"></i> Kembali
+            </a>
+        </div>
+
+        <!-- ================= MISSION INFO ================= -->
+        <div class="card shadow-sm mb-4">
+        <div class="card-body">
+
+            <!-- HEADER -->
+            <div class="mb-4">
+            <h5 class="fw-bold mb-1">Maklumat Misi</h5>
+            <small class="text-muted">Butiran lengkap operasi EMT</small>
+            </div>
+
+            <!-- SECTION 1 -->
+            <div class="mb-4">
+            <h6 class="fw-semibold border-bottom pb-2 mb-3">Maklumat Asas Misi</h6>
+
+            <div class="row g-3">
+                <div class="col-md-6">
+                <small class="text-muted">Nama Misi</small>
+                <div class="fw-semibold">Operasi EMT Sabah</div>
+                </div>
+
+                <div class="col-md-3">
+                <small class="text-muted">Tarikh Mula</small>
+                <div class="fw-semibold">01/06/2026</div>
+                </div>
+
+                <div class="col-md-3">
+                <small class="text-muted">Anggaran Tamat</small>
+                <div class="fw-semibold">15/06/2026</div>
+                </div>
+
+                <div class="col-md-3">
+                <small class="text-muted">Tarikh Selesai</small>
+                <div class="fw-semibold text-muted">-</div>
+                </div>
+
+                <div class="col-md-3">
+                <small class="text-muted">Status</small><br>
+                <span class="badge bg-primary px-3 py-2">
+                    Sedang Dijalankan
+                </span>
+                </div>
+            </div>
+            </div>
+
+            <hr class="my-4">
+
+            <!-- SECTION 2 -->
+            <div>
+            <h6 class="fw-semibold border-bottom pb-2 mb-3">Butiran Operasi</h6>
+
+            <div class="row g-3">
+
+                <div class="col-md-6">
+                <small class="text-muted">Jenis Misi</small>
+                <div class="fw-semibold">Bantuan Banjir</div>
+                </div>
+
+                <div class="col-md-6">
+                <small class="text-muted">Ketua Misi</small>
+                <div class="fw-semibold">Dr. Ahmad</div>
+                </div>
+
+                <div class="col-md-6">
+                <small class="text-muted">Lokasi</small>
+                <div class="fw-semibold">Sabah, Malaysia</div>
+                </div>
+
+                <div class="col-md-6">
+                <small class="text-muted">Catatan</small>
+                <div class="fw-semibold text-dark">
+                    Misi bantuan banjir melibatkan pasukan perubatan kecemasan di kawasan terjejas.
+                </div>
+                </div>
+
+            </div>
+            </div>
+
+        </div>
+        </div>
+
+        <!-- ================= MDS ================= -->
+        <div class="card shadow-sm mb-4">
+            <div class="card-body">
+
+            <div class="d-flex justify-content-between align-items-center mb-3">
+
+            <div>
+                <h5 class="fw-bold mb-1">Laporan MDS</h5>
+                <small class="text-muted">
+                Rekod harian data pesakit dan aktiviti klinikal EMT.
+                </small>
+            </div>
+
+            <a href="emt_healthform2.html" class="btn btn-outline-secondary rounded-pill shadow-sm px-3">
+                <i class="bi bi-plus-circle me-1"></i>
+                Tambah Rekod
+            </a>
+
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-bordered align-middle">
+
+                <thead class="table-light">
+                    <tr>
+                    <th>Tarikh</th>
+                    <th>Nama</th>
+                    <th>Umur</th>
+                    <th>Jantina</th>
+                    <th>Diagnosis</th>
+                    <th>Ubat</th>
+                    <th>Hasil Rawatan</th>
+                    <th class="text-center">Tindakan</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                    <td>01/06/2026</td>
+                    <td>Ahmad bin Ali</td>
+                    <td>30</td>
+                    <td>Lelaki</td>
+                    <td>Kecederaan kepala ringan</td>
+                    <td>Balutan luka</td>
+                    <td>Discaj</td>
+                    <td class="text-center">
+                        <a href="emt_mdsview2.html" class="btn btn-sm btn-outline-primary">Lihat Rekod</a>
+                    </td>
+                    </tr>
+
+                    <tr>
+                    <td>02/06/2026</td>
+                    <td>Siti Nur Aisyah</td>
+                    <td>20</td>
+                    <td>Perempuan</td>
+                    <td>Jangkitan pernafasan</td>
+                    <td>Susulan</td>
+                    <td>Rujukan</td>
+                    <td class="text-center">
+                        <a href="emt_mdsview2.html" class="btn btn-sm btn-outline-primary">Lihat Rekod</a>
+                    </td>
+                    </tr>
+
+                </tbody>
+
+                </table>
+            </div>
+
+            </div>
+        </div>
+
+        <!-- ================= HR ================= -->
+        <div class="card shadow-sm mb-4">
+        <div class="card-body">
+
+            <div class="d-flex justify-content-between align-items-center mb-3">
+            <div>
+                <h5 class="fw-bold mb-0">Maklumat Human Resource EMT</h5>
+                <small class="text-muted">Read Only</small>
+            </div>
+            </div>
+
+            <div class="row g-4">
+
+            <!-- CHART -->
+            <div class="col-md-5">
+                <canvas id="chartHR"></canvas>
+            </div>
+
+            <!-- TABLE -->
+            <div class="col-md-7">
+
+                <table class="table table-sm align-middle">
+                <tbody>
+
+                    <tr>
+                    <td class="text-muted">Doktor</td>
+                    <td class="text-end fw-semibold">2</td>
+                    </tr>
+
+                    <tr>
+                    <td class="text-muted">Jururawat</td>
+                    <td class="text-end fw-semibold">5</td>
+                    </tr>
+
+                    <tr>
+                    <td class="text-muted">Paramedik</td>
+                    <td class="text-end fw-semibold">3</td>
+                    </tr>
+
+                    <tr>
+                    <td class="text-muted">Pegawai Farmasi</td>
+                    <td class="text-end fw-semibold">1</td>
+                    </tr>
+
+                    <tr>
+                    <td class="text-muted">Pegawai Kesihatan Awam</td>
+                    <td class="text-end fw-semibold">1</td>
+                    </tr>
+
+                    <tr>
+                    <td class="text-muted">Staf Sokongan</td>
+                    <td class="text-end fw-semibold">4</td>
+                    </tr>
+
+                    <tr>
+                    <td class="text-muted">Lain-lain</td>
+                    <td class="text-end fw-semibold">0</td>
+                    </tr>
+
+                    <tr class="table-light fw-bold">
+                    <td>Jumlah Keseluruhan</td>
+                    <td class="text-end text-primary">16</td>
+                    </tr>
+
+                </tbody>
+                </table>
+
+            </div>
+
+            </div>
+
+        </div>
+        </div>
+
+        <!-- ================= ASSET ================= -->
+        <div class="card shadow-sm mb-4">
+            <div class="card-body">
+
+            <h5 class="fw-bold mb-3">Asset EMT</h5>
+
+            <div class="row">
+                <div class="col-md-6">
+                <canvas id="chartAsset"></canvas>
+                </div>
+
+                <div class="col-md-6">
+                    <h6 class="fw-semibold mb-2">Senarai Aset EMT</h6>
+
+                    <table class="table table-sm">
+                        <tr><td>Generator</td><td class="text-end">2</td></tr>
+                        <tr><td>Silinder Oksigen</td><td class="text-end">10</td></tr>
+                        <tr><td>Kit Pertolongan Cemas</td><td class="text-end">5</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            </div>
+        </div>
+
+
+
+
+        <!-- ================= LOGISTICS ================= -->
+        <div class="card shadow-sm mb-4">
+        <div class="card-body">
+
+            <div class="mb-3">
+            <h5 class="fw-bold mb-0">Maklumat Logistik EMT</h5>
+            <small class="text-muted">Pengangkutan & penyimpanan aset logistik</small>
+            </div>
+
+            <div class="row g-4">
+
+            <!-- CHART -->
+            <div class="col-md-4">
+                <canvas id="chartLogistik"></canvas>
+            </div>
+
+            <!-- SUMMARY -->
+            <div class="col-md-8">
+
+                <!-- ================= TRANSPORT ================= -->
+                <div class="mb-4">
+                <h6 class="fw-semibold border-bottom pb-2">Pengangkutan EMT</h6>
+
+                <table class="table table-sm align-middle">
+                    <thead>
+                    <tr class="text-muted">
+                        <th>Kenderaan</th>
+                        <th>No. Pendaftaran</th>
+                        <th>Kapasiti</th>
+                        <th>Status</th>
+                        <th>Pemandu</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr>
+                        <td class="fw-semibold">Ambulans</td>
+                        <td>WXY1234</td>
+                        <td>4 Orang</td>
+                        <td><span class="badge bg-success">Digunakan</span></td>
+                        <td>Ahmad</td>
+                    </tr>
+                    </tbody>
+                </table>
+                </div>
+
+                <!-- ================= STORAGE ================= -->
+                <div>
+                <h6 class="fw-semibold border-bottom pb-2">Penyimpanan / Crates</h6>
+
+                <table class="table table-sm align-middle">
+                    <thead>
+                    <tr class="text-muted">
+                        <th>ID Crate</th>
+                        <th>Jenis</th>
+                        <th>Lokasi</th>
+                        <th>Status</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr>
+                        <td class="fw-semibold">CRT001</td>
+                        <td>Crates Bekalan Perubatan</td>
+                        <td>Gudang</td>
+                        <td><span class="badge bg-primary">Aktif</span></td>
+                    </tr>
+                    <tr>
+                        <td class="fw-semibold">CRT002</td>
+                        <td>Crates PPE & Safety Kit</td>
+                        <td>Gudang Utama</td>
+                        <td><span class="badge bg-success">Aktif</span></td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                </div>
+
+            </div>
+            </div>
+
+        </div>
+        </div>
+    </main>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div id="footer"></div>
+
+<!-- LOAD HEADER / FOOTER / SIDEBAR -->
+<script>
+fetch("header.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("header").innerHTML = data);
+
+fetch("footer.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("footer").innerHTML = data);
+
+fetch("sidebar.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("sidebar-placeholder").innerHTML = data);
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- step 3 hr total auto calc-->
+<script>
+function calculateHRTotal() {
+
+    let doctor = parseInt(document.getElementById('doctor').value) || 0;
+    let nurse = parseInt(document.getElementById('nurse').value) || 0;
+    let paramedic = parseInt(document.getElementById('paramedic').value) || 0;
+    let pharmacist = parseInt(document.getElementById('pharmacist').value) || 0;
+    let publicHealth = parseInt(document.getElementById('publicHealth').value) || 0;
+    let support = parseInt(document.getElementById('support').value) || 0;
+    let others = parseInt(document.getElementById('others').value) || 0;
+
+    let total = doctor + nurse + paramedic + pharmacist + publicHealth + support + others;
+
+    document.getElementById('totalHR').value = total;
+}
+
+document.querySelectorAll('.hr-input').forEach(input => {
+    input.addEventListener('input', calculateHRTotal);
+});
+
+// initial calc
+calculateHRTotal();
+</script>
+
+<!-- button wizard -->
+<script>
+const tabs = [
+  "#step1",
+  "#step2",
+  "#step3",
+  "#step4",
+  "#step5",
+  "#step6"
+];
+
+function getActiveIndex() {
+  for (let i = 0; i < tabs.length; i++) {
+    if (document.querySelector(tabs[i]).classList.contains("active")) {
+      return i;
+    }
+  }
+  return 0;
+}
+
+function showTab(index) {
+  if (index < 0 || index >= tabs.length) return;
+
+  let triggerEl = document.querySelector(
+    `[data-bs-target="${tabs[index]}"]`
+  );
+
+  bootstrap.Tab.getOrCreateInstance(triggerEl).show();
+}
+
+document.querySelector(".btn-outline-secondary").addEventListener("click", function () {
+  let current = getActiveIndex();
+  showTab(current - 1);
+});
+
+document.querySelector(".btn-primary").addEventListener("click", function () {
+  let current = getActiveIndex();
+  showTab(current + 1);
+});
+</script>
+
+
+
+<!-- ================= CHART JS ================= -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+  new Chart(document.getElementById('chartAsset'), {
+    type: 'bar',
+    data: {
+      labels: ['Generator', 'Oksigen', 'Kit'],
+      datasets: [{ data: [2, 10, 5] }]
+    }
+  });
+
+    new Chart(document.getElementById('chartHR'), {
+    type: 'doughnut',
+    data: {
+        labels: [
+        'Doktor',
+        'Jururawat',
+        'Paramedik',
+        'Pegawai Farmasi',
+        'Pegawai Kesihatan Awam',
+        'Staf Sokongan',
+        'Lain-lain'
+        ],
+        datasets: [{
+        data: [2, 5, 3, 1, 1, 4, 0]
+        }]
+    },
+    options: {
+        plugins: {
+        legend: {
+            position: 'bottom'
+        }
+        },
+        cutout: '60%'
+    }
+    });
+
+    new Chart(document.getElementById('chartLogistik'), {
+    type: 'doughnut',
+    data: {
+        labels: ['Pengangkutan', 'Penyimpanan'],
+        datasets: [{
+        data: [1, 2]
+        }]
+    },
+    options: {
+        plugins: {
+        legend: {
+            position: 'bottom'
+        }
+        },
+        cutout: '60%'
+    }
+    });
+</script>
+
+</body>
+</html>

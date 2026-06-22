@@ -84,76 +84,19 @@
         <div>
             <h4 class="mb-1">Pendaftaran Misi EMT</h4>
             <small class="text-muted">
-                Senarai misi aktif, selesai dan perancangan di bawah MyEMT Malaysia.
+                Senarai misi aktif di bawah MyEMT Malaysia.
             </small>
         </div>
 
-        <!-- 
+        
         <a href="landingMyemt_mission.html"
-           class="btn btn-primary rounded-pill px-3 shadow-sm">
+           class="btn btn-primary px-3 shadow-sm">
             <i class="bi bi-arrow-left me-1"></i> Kembali
         </a>
-        -->
+        
 
     </div>
 
-    <!-- ================= SUMMARY CARDS (AHLI EMT - PERSONAL VIEW) ================= -->
-    <div class="row g-3 mb-4">
-
-        <!-- MISI SAYA -->
-        <div class="col-md-6">
-            <a href="user_misilist.html"
-            class="text-decoration-none text-dark">
-
-                <div class="card border-0 shadow-sm h-100 hover-card">
-                    <div class="card-body text-center">
-
-                        <div class="mb-2">
-                            <i class="bi bi-person-check-fill fs-3 text-primary"></i>
-                        </div>
-
-                        <h4 class="fw-bold mb-0">2</h4>
-                        <small class="text-muted">Misi Saya</small>
-
-                        <div class="mt-2">
-                            <span class="badge bg-primary">
-                                Aktif & Sertai
-                            </span>
-                        </div>
-
-                    </div>
-                </div>
-
-            </a>
-        </div>
-
-        <!-- DAFTAR MISI -->
-        <div class="col-md-6">
-
-        <div class="card border-0 shadow-sm h-100 position-relative">
-
-            <div class="card-body text-center">
-
-            <div class="mb-2">
-                <i class="bi bi-bag-plus-fill fs-3 text-warning"></i>
-            </div>
-
-            <h4 class="fw-bold mb-0">1</h4>
-            <small class="text-muted">Daftar Misi</small>
-
-            <div class="mt-2">
-                <span class="badge bg-warning text-dark">Daftar Sekarang</span>
-            </div>
-
-            <!-- CLICKABLE AREA -->
-            <a href="user_misidaftar.html" class="stretched-link"></a>
-
-            </div>
-        </div>
-
-        </div>
-
-    </div>
 
       <!-- STATUS PERMOHONAN MYEMT -->
       <div class="card shadow-sm mb-4">
@@ -222,6 +165,87 @@
 
       </div>
 
+    <!-- ================= TABLE CARD ================= -->
+    <div class="card shadow-sm">
+
+        <div class="card-header bg-white d-flex justify-content-between align-items-center">
+            <strong>Pendaftaran Misi EMT</strong>
+
+            <!-- optional filter -->
+            <select class="form-select form-select-sm w-auto">
+                <option>Semua Status</option>
+                <option>Sedang Dijalankan</option>
+                <option>Selesai</option>
+                <option>Perancangan</option>
+            </select>
+        </div>
+
+        <!-- INFO NOTICE (UNDER HEADER) -->
+        <div class="px-3 pt-3">
+            <div class="alert alert-warning py-2 mb-0 d-flex align-items-center" role="alert">
+                <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                <small>
+                    Sila pastikan anda telah <strong>berdaftar sebagai ahli MyEMT</strong> dan telah <strong>menyertai serta lulus B-Course & C-Course</strong> sebelum membuat permohonan misi.
+                </small>
+            </div>
+        </div><br>
+
+        <div class="card-body p-0">
+
+            <div class="table-responsive">
+
+                <table class="table table-hover align-middle mb-0">
+
+                    <thead class="table-light">
+                        <tr>
+                            <th>Nama Misi</th>
+                            <th>Tarikh Mula</th>
+                            <th>Anggaran Tamat</th>
+                            <th>Tarikh Sebenar Tamat</th>
+                            <th>Status</th>
+                            <th class="text-center">Tindakan</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td class="fw-semibold">EMT Operasi Banjir Sabah</td>
+                            <td>01/06/2026</td>
+                            <td>15/06/2026</td>
+                            <td class="text-muted">-</td>
+                            <td><span class="badge bg-primary">Sedang Dijalankan</span></td>
+                            <td class="text-center">
+                                <a href="mission_apply.html"
+                                   class="btn btn-sm btn-outline-primary rounded-pill px-3">
+                                    Daftar Misi
+                                </a>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="fw-semibold">EMT Emergency Ops Johor</td>
+                            <td>20/06/2026</td>
+                            <td>05/07/2026</td>
+                            <td class="text-muted">-</td>
+                            <td><span class="badge bg-warning text-dark">Perancangan</span></td>
+                            <td class="text-center">
+                                <a href="mission_apply.html"
+                                   class="btn btn-sm btn-outline-primary rounded-pill px-3">
+                                    Daftar Misi
+                                </a>
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </main>
 

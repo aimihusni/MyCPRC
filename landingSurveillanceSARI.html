@@ -24,7 +24,7 @@
       <!-- HEADER -->
       <div class="d-flex justify-content-between align-items-center mb-4">
         <div>
-          <h4 class="mb-0">SARI Surveillance Dashboard</h4>
+          <h4 class="mb-0">Dashboard Pengawasan SARI</h4>
           <small class="text-muted">Sistem pemantauan kes SARI (Severe Acute Respiratory) hospital dan makmal</small>
         </div>
 
@@ -106,29 +106,56 @@
       <!-- SUMMARY -->
       <div class="row g-3 mb-4">
 
+        <!-- TOTAL CASES -->
         <div class="col-md-4">
-          <div class="card shadow-sm">
-            <div class="card-body">
-              <h6 class="text-muted">Jumlah Kes SARI</h6>
-              <h3>152</h3>
+          <div class="card shadow-sm border-0">
+            <div class="card-body d-flex align-items-center">
+
+              <div class="me-3 text-primary fs-3">
+                <i class="bi bi-activity"></i>
+              </div>
+
+              <div>
+                <small class="text-muted">Jumlah Kes SARI</small>
+                <h4 class="fw-bold mb-0">152</h4>
+              </div>
+
             </div>
           </div>
         </div>
 
+        <!-- IN PROGRESS -->
         <div class="col-md-4">
-          <div class="card shadow-sm">
-            <div class="card-body">
-              <h6 class="text-muted">Dalam Proses</h6>
-              <h3>32</h3>
+          <div class="card shadow-sm border-0">
+            <div class="card-body d-flex align-items-center">
+
+              <div class="me-3 text-warning fs-3">
+                <i class="bi bi-hourglass-split"></i>
+              </div>
+
+              <div>
+                <small class="text-muted">Dalam Proses</small>
+                <h4 class="fw-bold mb-0">32</h4>
+              </div>
+
             </div>
           </div>
         </div>
 
+        <!-- CONFIRMED -->
         <div class="col-md-4">
-          <div class="card shadow-sm">
-            <div class="card-body">
-              <h6 class="text-muted">Disahkan</h6>
-              <h3>111</h3>
+          <div class="card shadow-sm border-0">
+            <div class="card-body d-flex align-items-center">
+
+              <div class="me-3 text-success fs-3">
+                <i class="bi bi-check-circle"></i>
+              </div>
+
+              <div>
+                <small class="text-muted">Disahkan</small>
+                <h4 class="fw-bold mb-0">111</h4>
+              </div>
+
             </div>
           </div>
         </div>
@@ -163,7 +190,7 @@
               <td>Influenza A</td>
               <td class="status">Disahkan</td>
               <td class="text-end">
-                <button class="btn btn-sm btn-outline-primary">View</button>
+                <button class="btn btn-sm btn-outline-primary">Papar</button>
               </td>
             </tr>
 
@@ -173,7 +200,7 @@
               <td>COVID-19</td>
               <td class="status">Dalam Proses</td>
               <td class="text-end">
-                <button class="btn btn-sm btn-outline-secondary">Edit</button>
+                <button class="btn btn-sm btn-outline-primary">Papar</button>
               </td>
             </tr>
 
@@ -183,7 +210,7 @@
               <td>Pneumonia Severe</td>
               <td class="status">Disahkan</td>
               <td class="text-end">
-                <button class="btn btn-sm btn-outline-primary">View</button>
+                <button class="btn btn-sm btn-outline-primary">Papar</button>
               </td>
             </tr>
 
@@ -298,13 +325,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (statusText === "Disahkan") {
       actionCell.innerHTML = `
-        <button class="btn btn-sm btn-outline-primary">View</button>
+        <button class="btn btn-sm btn-outline-primary">Papar</button>
       `;
     }
 
     if (statusText === "Dalam Proses") {
       actionCell.innerHTML = `
-        <button class="btn btn-sm btn-outline-secondary">Edit</button>
+        <button class="btn btn-sm btn-outline-secondary">Papar</button>
       `;
     }
 
@@ -330,14 +357,14 @@ document.addEventListener("DOMContentLoaded", function () {
     if (status === "Disahkan") {
       badgeClass = "badge bg-success";
       actionCell.innerHTML = `
-        <button class="btn btn-sm btn-outline-primary">View</button>
+        <button class="btn btn-sm btn-outline-primary">Papar</button>
       `;
     }
 
     else if (status === "Dalam Proses") {
       badgeClass = "badge bg-warning text-dark";
       actionCell.innerHTML = `
-        <button class="btn btn-sm btn-outline-secondary">Edit</button>
+        <button class="btn btn-sm btn-outline-secondary">Papar</button>
       `;
     }
 

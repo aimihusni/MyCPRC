@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Senarai Lokasi Penyimpanan</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link href="assets/css/main.css" rel="stylesheet">
+
+    <style>
+    .mds-card{
+        border:1px solid #dee2e6;
+        border-radius:12px;
+        overflow:hidden;
+        margin-bottom:1rem;
+        box-shadow:0 .125rem .25rem rgba(0,0,0,.075);
+    }
+
+    .mds-card .card-header{
+        background:#0d6efd;
+        color:#fff;
+        font-weight:600;
+        padding:.75rem 1rem;
+    }
+
+    .mds-card .card-body{
+        background:#fff;
+        padding:1rem;
+    }
+
+    .form-check{
+        margin-bottom:.5rem;
+    }
+
+    .form-label{
+        font-weight:600;
+    }
+
+    .badge-soft{
+        background:#e9ecef;
+        color:#495057;
+        font-weight:500;
+    }
+
+    .section-title{
+        font-size:1.1rem;
+        font-weight:700;
+        margin-bottom:1rem;
+        padding-bottom:.5rem;
+        border-bottom:2px solid #dee2e6;
+    }
+
+    textarea{
+        resize:vertical;
+    }
+    </style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div id="header"></div>
+
+<div class="container-fluid">
+  <div class="row">
+
+    <!-- SIDEBAR -->
+    <aside class="col-md-3 col-lg-2 sidebar p-0" id="sidebar-placeholder"></aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="col-md-9 col-lg-10 px-4 py-4">
+
+    <!-- PAGE HEADER -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <div>
+        <h4 class="mb-0">Senarai Lokasi Penyimpanan EMT</h4>
+        <small class="text-muted">
+            Pengurusan warehouse, stor hospital dan lokasi aset EMT
+        </small>
+        </div>
+
+        <a href="landingMyemtAdmin_mission.html" class="btn btn-primary">
+        <i class="bi bi-arrow-left me-1"></i> Kembali
+        </a>
+
+
+    </div>
+
+    <!-- CHART SECTION
+    <div class="row g-4 mb-4">
+
+
+        <div class="col-lg-6">
+
+            <div class="card shadow-sm border-0 h-100">
+
+                <div class="card-header bg-white">
+                    <strong>Ringkasan Lokasi Penyimpanan</strong>
+                </div>
+
+                <div class="card-body">
+                    <div style="height:300px">
+                        <canvas id="ringkasanLokasiChart"></canvas>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-lg-6">
+
+            <div class="card shadow-sm border-0 h-100">
+
+                <div class="card-header bg-white">
+                    <strong>Status Lokasi Penyimpanan</strong>
+                </div>
+
+                <div class="card-body">
+                    <div style="height:300px">
+                        <canvas id="statusLokasiChart"></canvas>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    -->
+
+    <!-- CHART 3 -->
+    <div class="card shadow-sm">
+
+        <div class="card-header bg-white">
+            <strong>Peratusan Status Lokasi</strong>
+        </div>
+
+        <div class="card-body">
+
+            <div class="progress" style="height:35px;">
+
+                <div class="progress-bar bg-success"
+                    style="width:75%">
+                    75%
+                </div>
+
+                <div class="progress-bar bg-warning text-dark"
+                    style="width:16.7%">
+                    16.7%
+                </div>
+
+                <div class="progress-bar bg-danger"
+                    style="width:8.3%">
+                    8.3%
+                </div>
+
+            </div>
+
+            <div class="row text-center mt-4">
+
+                <div class="col-md-4">
+                    <span class="badge bg-success">Aktif</span>
+                    <div class="fw-bold mt-1">9 Lokasi</div>
+                </div>
+
+                <div class="col-md-4">
+                    <span class="badge bg-warning text-dark">
+                        Penyelenggaraan
+                    </span>
+                    <div class="fw-bold mt-1">2 Lokasi</div>
+                </div>
+
+                <div class="col-md-4">
+                    <span class="badge bg-danger">
+                        Tidak Aktif
+                    </span>
+                    <div class="fw-bold mt-1">1 Lokasi</div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div><br>
+
+    <!-- CHART 4 -->
+    <div class="card shadow-sm">
+
+        <div class="card-header bg-white">
+            <strong>Taburan Lokasi Mengikut Negeri</strong>
+        </div>
+
+        <div class="card-body">
+
+            <div style="height:350px">
+                <canvas id="negeriLokasiChart"></canvas>
+            </div>
+
+        </div>
+
+    </div><br>
+
+    <!-- TABLE CARD -->
+    <div class="card shadow-sm">
+
+        <div class="card-header bg-white">
+
+        <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+
+            <!-- TITLE -->
+            <div>
+            <strong>Senarai Lokasi Penyimpanan</strong>
+            </div>
+
+            <!-- SEARCH -->
+            <div class="flex-grow-1 mx-3" style="max-width: 300px;">
+            <input type="text"
+                    class="form-control form-control-sm"
+                    placeholder="Cari lokasi...">
+            </div>
+
+            <!-- BUTTON -->
+            <div>
+            <a href="store_add.html" class="btn btn-outline-secondary btn-sm rounded-pill px-3">
+                <i class="bi bi-plus-circle me-1"></i>
+                Tambah Lokasi
+            </a>
+            </div>
+
+        </div>
+
+        </div>
+
+        <div class="card-body">
+
+        <div class="table-responsive">
+
+            <table class="table table-hover align-middle">
+
+            <thead class="table-light">
+                <tr>
+                <th>Kod</th>
+                <th>Nama Lokasi</th>
+                <th>Jenis</th>
+                <th>Negeri</th>
+                <th>Kapasiti</th>
+                <th>Status</th>
+                <th class="text-end">Tindakan</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                <td>LOC-001</td>
+                <td class="fw-semibold">Warehouse EMT Sabah</td>
+                <td>Stor Lapangan</td>
+                <td>Sabah</td>
+                <td>150</td>
+                <td><span class="badge bg-success">Aktif</span></td>
+                <td class="text-end">
+                    <a href="store_view.html" class="btn btn-sm btn-outline-dark">Papar</a>
+                    <a href="store_edit.html" class="btn btn-sm btn-outline-secondary">Kemaskini</a>
+                </td>
+                </tr>
+
+                <tr>
+                <td>LOC-002</td>
+                <td class="fw-semibold">Hospital Kuala Lumpur Store</td>
+                <td>Stor Hospital</td>
+                <td>WP Kuala Lumpur</td>
+                <td>80</td>
+                <td><span class="badge bg-warning text-dark">Dalam Penyelenggaraan</span></td>
+                <td class="text-end">
+                    <a href="store_view.html" class="btn btn-sm btn-outline-dark">Papar</a>
+                    <a href="store_edit.html" class="btn btn-sm btn-outline-secondary">Kemaskini</a>
+                </td>
+                </tr>
+
+                <tr>
+                <td>LOC-003</td>
+                <td class="fw-semibold">Unit Logistik Johor</td>
+                <td>Unit Logistik</td>
+                <td>Johor</td>
+                <td>60</td>
+                <td><span class="badge bg-danger">Tidak Aktif</span></td>
+                <td class="text-end">
+                    <a href="store_view.html" class="btn btn-sm btn-outline-dark">Papar</a>
+                    <a href="store_edit.html" class="btn btn-sm btn-outline-secondary">Kemaskini</a>
+                </td>
+                </tr>
+
+            </tbody>
+
+            </table>
+
+        </div>
+
+        </div>
+
+    </div>
+
+    </main>
+
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div id="footer"></div>
+
+<!-- LOAD HEADER / FOOTER / SIDEBAR -->
+<script>
+fetch("header.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("header").innerHTML = data);
+
+fetch("footer.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("footer").innerHTML = data);
+
+fetch("sidebar.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("sidebar-placeholder").innerHTML = data);
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+
+/* ==========================
+   DONUT CHART
+========================== */
+
+new Chart(
+document.getElementById('ringkasanLokasiChart'),
+{
+    type: 'doughnut',
+    data: {
+        labels: [
+            'Aktif',
+            'Dalam Penyelenggaraan',
+            'Tidak Aktif'
+        ],
+        datasets: [{
+            data: [9,2,1],
+            backgroundColor: [
+                '#198754',
+                '#ffc107',
+                '#dc3545'
+            ],
+            borderWidth: 0
+        }]
+    },
+    options: {
+        maintainAspectRatio:false,
+        plugins:{
+            legend:{
+                position:'right'
+            }
+        }
+    }
+});
+
+</script>
+
+<script>
+
+/* ==========================
+   STATUS BAR CHART
+========================== */
+
+new Chart(
+document.getElementById('statusLokasiChart'),
+{
+    type: 'bar',
+    data: {
+        labels: [
+            'Jumlah Lokasi',
+            'Aktif',
+            'Penyelenggaraan',
+            'Tidak Aktif'
+        ],
+        datasets: [{
+            data: [12,9,2,1],
+            backgroundColor: [
+                '#0d6efd',
+                '#198754',
+                '#ffc107',
+                '#dc3545'
+            ],
+            borderRadius: 8
+        }]
+    },
+    options:{
+        maintainAspectRatio:false,
+        plugins:{
+            legend:{
+                display:false
+            }
+        },
+        scales:{
+            y:{
+                beginAtZero:true
+            }
+        }
+    }
+});
+
+</script>
+
+<script>
+
+/* ==========================
+   TABURAN NEGERI
+========================== */
+
+new Chart(
+document.getElementById('negeriLokasiChart'),
+{
+    type:'bar',
+    data:{
+        labels:[
+            'Johor',
+            'Kedah',
+            'Kelantan',
+            'Melaka',
+            'N. Sembilan',
+            'Pahang',
+            'Perak',
+            'Pulau Pinang',
+            'Sabah',
+            'Sarawak',
+            'Selangor',
+            'Terengganu',
+            'WP KL',
+            'Putrajaya'
+        ],
+        datasets:[{
+            label:'Bilangan Lokasi',
+            data:[
+                1,1,1,1,
+                1,1,2,1,
+                3,2,2,1,
+                1,1
+            ],
+            backgroundColor:'#0d6efd',
+            borderRadius:6
+        }]
+    },
+    options:{
+        maintainAspectRatio:false,
+        plugins:{
+            legend:{
+                display:false
+            }
+        },
+        scales:{
+            y:{
+                beginAtZero:true,
+                ticks:{
+                    stepSize:1
+                }
+            }
+        }
+    }
+});
+
+</script>
+
+
+</body>
+</html>

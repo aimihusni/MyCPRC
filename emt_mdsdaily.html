@@ -94,10 +94,9 @@
         </div>
       </div>
 
-      <!-- ================= DASHBOARD SUMMARY ================= -->
+      <!-- ================= DASHBOARD SUMMARY ================= 
       <div class="row g-3 mb-4">
 
-        <!-- JUMLAH REKOD -->
         <div class="col-md-3">
           <div class="card shadow-sm border-0 h-100">
             <div class="card-body">
@@ -115,7 +114,6 @@
           </div>
         </div>
 
-        <!-- TRAUMA -->
         <div class="col-md-3">
           <div class="card shadow-sm border-0 h-100">
             <div class="card-body">
@@ -133,7 +131,6 @@
           </div>
         </div>
 
-        <!-- INFECTIOUS -->
         <div class="col-md-3">
           <div class="card shadow-sm border-0 h-100">
             <div class="card-body">
@@ -151,7 +148,6 @@
           </div>
         </div>
 
-        <!-- EMERGENCY -->
         <div class="col-md-3">
           <div class="card shadow-sm border-0 h-100">
             <div class="card-body">
@@ -169,20 +165,41 @@
           </div>
         </div>
       </div>
+      -->
 
-      <!-- ================= SEKSYEN PENAPIS ================= -->
-      <div class="card shadow-sm mb-3">
+      <!-- ================= SEKSYEN PENAPIS (CLEAN DESIGN) ================= -->
+      <div class="card shadow-sm">
         <div class="card-body">
 
-          <div class="row g-3">
+          <!-- ROW 1: TARIKH + BUTTON -->
+          <div class="row g-3 mb-2">
 
-            <div class="col-md-3">
-              <label class="form-label">Tarikh</label>
+            <div class="col-md-4">
+              <label class="form-label fw-semibold">Tarikh</label>
               <input type="date" class="form-control">
             </div>
 
+            <div class="col-md-4 d-flex align-items-end">
+              <button class="btn btn-primary w-100">
+                <i class="bi bi-funnel me-1"></i> Tapis
+              </button>
+            </div>
+
+            <div class="col-md-4 d-flex align-items-end">
+              <button class="btn btn-outline-secondary w-100">
+                Reset
+              </button>
+            </div>
+
+          </div>
+
+          <hr class="my-3">
+
+          <!-- ROW 2: FILTER KLINIKAL -->
+          <div class="row g-3">
+
             <div class="col-md-3">
-              <label class="form-label">Pengelasan Klinikal</label>
+              <label class="form-label fw-semibold">Pengelasan Klinikal</label>
               <select class="form-select">
                 <option selected>Semua</option>
                 <option>Trauma</option>
@@ -194,33 +211,49 @@
             </div>
 
             <div class="col-md-3">
-              <label class="form-label">Hasil</label>
+              <label class="form-label fw-semibold">Hasil</label>
               <select class="form-select">
                 <option selected>Semua</option>
-                <option>Discaj tanpa susulan perubatan</option>
-                <option>Discaj dengan susulan perubatan</option>
-                <option>Discaj atas risiko sendiri (AOR)</option>
+                <option>Discaj tanpa susulan</option>
+                <option>Discaj dengan susulan</option>
+                <option>Discaj AOR</option>
                 <option>Rujukan</option>
                 <option>Kemasukan ke wad</option>
                 <option>Kematian semasa ketibaan</option>
                 <option>Kematian dalam fasiliti</option>
-                <option>Memerlukan pemulihan jangka panjang</option>
               </select>
             </div>
 
-            <div class="col-md-3 d-flex align-items-end">
-              <button class="btn btn-primary w-100">
-                <i class="bi bi-funnel me-1"></i> Tapis
-              </button>
+            <div class="col-md-3">
+              <label class="form-label fw-semibold">Jantina</label>
+              <select class="form-select">
+                <option selected>Semua</option>
+                <option>Lelaki</option>
+                <option>Perempuan (Tidak hamil)</option>
+                <option>Perempuan (Hamil)</option>
+              </select>
+            </div>
+
+            <div class="col-md-3">
+              <label class="form-label fw-semibold">Kumpulan Umur</label>
+              <select class="form-select">
+                <option selected>Semua</option>
+                <option>&lt;1</option>
+                <option>1-4</option>
+                <option>5-17</option>
+                <option>18-64</option>
+                <option>65+</option>
+              </select>
             </div>
 
           </div>
 
         </div>
       </div>
+      <br>
 
       <!-- ================= TABLE ================= -->
-      <div class="card shadow-sm border-0">
+      <div class="card shadow-sm">
 
         <div class="card-header bg-white">
           <strong>Senarai Ringkasan Laporan Harian MyEMT</strong>
@@ -228,93 +261,82 @@
 
         <div class="table-responsive">
 
-<table class="table align-middle mb-0">
-  <thead class="table-light">
-    <tr>
-      <th>ID</th>
-      <th>Pesakit</th>
-      <th>Demografi</th>
-      <th>Ringkasan Klinikal</th>
-      <th>Hasil</th>
-      <th>Risiko</th>
-      <th class="text-end">Tindakan</th>
-    </tr>
-  </thead>
+          <table class="table align-middle mb-0">
+            <thead class="table-light">
+              <tr>
+                <th>Tarikh</th>
+                <th>Pesakit</th>
+                <th>Umur</th>
+                <th>Jantina</th>
+                <th>Pengelasan Klinikal</th>
+                <th>Hasil</th>
+                <th>Konteks</th>
+                <th class="text-end">Tindakan</th>
+              </tr>
+            </thead>
 
-  <tbody>
-    <tr>
-      <td class="fw-semibold">MDS001</td>
-      <td>
-        <div class="fw-semibold">Muhammad Bin Abdullah</div>
-        <small class="text-muted">05/06/2026</small>
-      </td>
-      <td>
-        29 Tahun<br>
-        Perempuan (Tidak hamil)
-      </td>
-      <td>
-        Trauma<br>
-        <small class="text-muted">Kecederaan kepala / tulang belakang</small>
-      </td>
-      <td>Discaj</td>
-      <td>Penyakit wajib lapor</td>
-      <td class="text-end">
-        <a href="emt_mdsdailyview.html?id=1"
-          class="btn btn-sm btn-outline-primary">
-          Lihat
-        </a>
-      </td>
-    </tr>
+            <tbody>
+              <tr>
+                <td>05/06/2026</td>
+                <td>
+                  <div>Muhammad Bin Abdullah</div>
+                </td>
+                <td>29 Tahun</td>
+                <td>Lelaki</td>
+                <td>
+                  Trauma<br>
+                </td>
+                <td>Discaj tanpa susulan</td>
+                <td>Berkaitan secara langsung dengan kejadian</td>
+                <td class="text-end">
+                  <a href="emt_mdsdailyview.html?id=1"
+                    class="btn btn-sm btn-outline-primary">
+                    Lihat
+                  </a>
+                </td>
+              </tr>
 
-    <tr>
-      <td class="fw-semibold">MDS002</td>
-      <td>
-        <div class="fw-semibold">Siti Nur</div>
-        <small class="text-muted">05/06/2026</small>
-      </td>
-      <td>
-        27 Tahun<br>
-        Perempuan (Hamil)
-      </td>
-      <td>
-        Penyakit Berjangkit<br>
-        <small class="text-muted">Jangkitan pernafasan</small>
-      </td>
-      <td>Rujukan</td>
-      <td>Isu WASH</td>
-      <td class="text-end">
-        <a href="emt_mdsview.html?id=2"
-          class="btn btn-sm btn-outline-primary">
-          Lihat
-        </a>
-      </td>
-    </tr>
+              <tr>
+                <td>05/06/2026</td>
+                <td>
+                  <div>Siti Nur</div>
+                </td>
+                <td>27 Tahun</td>
+                <td>Perempuan (Hamil)</td>
+                <td>
+                  Penyakit Berjangkit<br>
+                </td>
+                <td>Rujukan</td>
+                <td>Berkaitan secara tidak langsung dengan kejadian</td>
+                <td class="text-end">
+                  <a href="emt_mdsview.html?id=2"
+                    class="btn btn-sm btn-outline-primary">
+                    Lihat
+                  </a>
+                </td>
+              </tr>
 
-    <tr>
-      <td class="fw-semibold">MDS003</td>
-      <td>
-        <div class="fw-semibold">John Lee</div>
-        <small class="text-muted">05/06/2026</small>
-      </td>
-      <td>
-        51 Tahun<br>
-        Lelaki
-      </td>
-      <td>
-        Kecemasan<br>
-        <small class="text-muted">Kecemasan perubatan</small>
-      </td>
-      <td>Kemasukan ke wad</td>
-      <td>Isu bekalan</td>
-      <td class="text-end">
-        <a href="emt_mdsview.html?id=3"
-          class="btn btn-sm btn-outline-primary">
-          Lihat
-        </a>
-      </td>
-    </tr>
-  </tbody>
-</table>
+              <tr>
+                <td>05/06/2026</td>
+                <td>
+                  <div>John Lee</div>
+                </td>
+                <td>51 Tahun</td>
+                <td>Lelaki</td>
+                <td>
+                  Kecemasan<br>
+                </td>
+                <td>Kemasukan ke wad</td>
+                <td>Tidak berkaitan dengan kejadian</td>
+                <td class="text-end">
+                  <a href="emt_mdsview.html?id=3"
+                    class="btn btn-sm btn-outline-primary">
+                    Lihat
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
           
         </div>
       </div>

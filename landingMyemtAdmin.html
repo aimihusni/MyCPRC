@@ -80,31 +80,31 @@
     <!-- MAIN CONTENT -->
     <main class="col-md-9 col-lg-10 px-4 py-4">
 
-<!-- PAGE HEADER -->
-<div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
+        <!-- PAGE HEADER -->
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
 
-    <div>
-        <h4 class="mb-0">Pengurusan Ahli MyEMT</h4>
-        <small class="text-muted">
-            Administrasi bagi Pengurusan Ahli dan Permohonan MyEMT
-        </small>
-    </div>
+            <div>
+                <h4 class="mb-0">Pengurusan Ahli MyEMT</h4>
+                <small class="text-muted">
+                    Administrasi bagi Pengurusan Ahli dan Permohonan MyEMT
+                </small>
+            </div>
 
-    <div class="d-flex gap-2 flex-wrap">
-        <a href="emt_ahli.html" class="btn btn-outline-secondary">
-            <i class="bi bi-people me-1"></i>
-            Pengurusan Ahli
-        </a>
+            <div class="d-flex gap-2 flex-wrap">
+                <a href="emt_ahli.html" class="btn btn-outline-secondary">
+                    <i class="bi bi-people me-1"></i>
+                    Pengurusan Ahli
+                </a>
 
-        <a href="course_application.html" class="btn btn-primary">
-            <i class="bi bi-mortarboard me-1"></i>
-            Pengurusan B-Course & C-Course
-        </a>
-    </div>
+                <a href="course_management.html" class="btn btn-primary">
+                    <i class="bi bi-mortarboard me-1"></i>
+                    Pengurusan B-Course & C-Course
+                </a>
+            </div>
 
-</div>
+        </div>
 
-      
+      <!-- CARD 1 -->
       <div class="row g-3 mb-4">
 
 
@@ -206,6 +206,7 @@
                                 </div>
                             </div>
 
+                            <!--
                             <div class="col-md-6">
                                 <div class="border rounded p-3">
                                 <div class="d-flex justify-content-between">
@@ -214,6 +215,7 @@
                                 </div>
                                 </div>
                             </div>
+                            -->
 
                             </div>
 
@@ -806,6 +808,7 @@
                     </div>
                     
                     <!-- Lain-lain -->
+                    <!--
                     <div class="col-md-3">
                         <div class="border rounded p-3 h-100 bg-light"
                             role="button"
@@ -822,6 +825,7 @@
 
                         </div>
                     </div>
+                    
 
                     <div class="modal fade" id="modalLainLain" tabindex="-1" aria-hidden="true">
                     <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -897,6 +901,7 @@
                         </div>
                     </div>
                     </div>
+                    -->
 
                 </div>
 
@@ -904,11 +909,19 @@
 
         </div>
 
+        <!-- CARD 2 -->
         <!--chart analisis-->
         <div class="card shadow-sm border-0 mb-4">
 
-            <div class="card-header bg-white">
+            <div class="card-header bg-white d-flex justify-content-between align-items-center">
+
                 <strong>Analisis Ahli MyEMT</strong>
+
+                <a href="emt_ahli.html"
+                class="btn btn-sm btn-outline-secondary">
+                    Senarai Ahli
+                </a>
+
             </div>
 
             <div class="card-body">
@@ -935,6 +948,7 @@
 
       </div>      
 
+        <!-- CARD 3-->
         <!--chart ikut negeri-->
         <div class="card shadow-sm border-0 mb-4">
 
@@ -970,9 +984,6 @@
             </div>
 
         </div>
-
-
-
 
     </main>
   </div>
@@ -1010,7 +1021,7 @@ fetch("sidebar.html")
         'Pegawai Farmasi',
         'Pegawai Kesihatan Awam',
         'Staf Sokongan',
-        'Lain-lain'
+        //'Lain-lain'
     ];
 
     const dataValues = [
@@ -1020,7 +1031,7 @@ fetch("sidebar.html")
         24, // Pegawai Farmasi
         19, // Pegawai Kesihatan Awam
         56, // Staf Sokongan
-        31  // Lain-lain
+        //31  // Lain-lain
     ];
 
     // BAR CHART
@@ -1087,7 +1098,7 @@ fetch("sidebar.html")
         'Pegawai Farmasi',
         'Pegawai Kesihatan Awam',
         'Staf Sokongan',
-        'Lain-lain'
+        //'Lain-lain'
     ];
 
     const negeriData = {

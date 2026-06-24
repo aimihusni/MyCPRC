@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Butiran Asset EMT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link href="assets/css/main.css" rel="stylesheet">
+
+    <style>
+    .mds-card{
+        border:1px solid #dee2e6;
+        border-radius:12px;
+        overflow:hidden;
+        margin-bottom:1rem;
+        box-shadow:0 .125rem .25rem rgba(0,0,0,.075);
+    }
+
+    .mds-card .card-header{
+        background:#0d6efd;
+        color:#fff;
+        font-weight:600;
+        padding:.75rem 1rem;
+    }
+
+    .mds-card .card-body{
+        background:#fff;
+        padding:1rem;
+    }
+
+    .form-check{
+        margin-bottom:.5rem;
+    }
+
+    .form-label{
+        font-weight:600;
+    }
+
+    .badge-soft{
+        background:#e9ecef;
+        color:#495057;
+        font-weight:500;
+    }
+
+    .section-title{
+        font-size:1.1rem;
+        font-weight:700;
+        margin-bottom:1rem;
+        padding-bottom:.5rem;
+        border-bottom:2px solid #dee2e6;
+    }
+
+    textarea{
+        resize:vertical;
+    }
+    </style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div id="header"></div>
+
+<div class="container-fluid">
+  <div class="row">
+
+    <!-- SIDEBAR -->
+    <aside class="col-md-3 col-lg-2 sidebar p-0" id="sidebar-placeholder"></aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="col-md-9 col-lg-10 px-4 py-4">
+
+        <!-- PAGE HEADER -->
+        <div class="d-flex justify-content-between align-items-center mb-4">
+
+            <div>
+                <h4 class="mb-0">Butiran Asset EMT</h4>
+                <small class="text-muted">
+                    Paparan maklumat lengkap asset EMT
+                </small>
+            </div>
+
+            <a href="asset_all.html" class="btn btn-primary">
+                <i class="bi bi-arrow-left me-1"></i> Kembali
+            </a>
+
+        </div>
+
+        <!-- CARD -->
+        <div class="card shadow-sm">
+
+            <!-- HEADER -->
+            <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                <div>
+                    <strong class="fs-6">Maklumat Aset EMT</strong><br>
+                    <small class="text-muted">Rekod lengkap aset dan peralatan operasi</small>
+                </div>
+            </div>
+
+            <div class="card-body">
+
+                <!-- SUMMARY TOP (IMPORTANT INFO HIGHLIGHT) -->
+                <div class="row g-3 mb-4">
+
+                    <div class="col-md-4">
+                        <div class="p-3 rounded bg-primary-subtle border-start border-4 border-primary">
+                            <small class="text-muted">Nama Aset</small>
+                            <div class="fw-bold fs-6">Silinder Oksigen</div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="p-3 rounded bg-light border-start border-4 border-success">
+                            <small class="text-muted">Status Aset</small><br>
+                            <span class="badge bg-success">Digunakan</span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="p-3 rounded bg-light border-start border-4 border-warning">
+                            <small class="text-muted">Tahap Kritikal</small>
+                            <div class="fw-bold">Sederhana</div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- TABULAR STYLE INFO (MORE DENSITY) -->
+                <div class="table-responsive mb-4">
+
+                    <table class="table table-sm table-borderless">
+
+                        <tbody>
+
+                            <tr>
+                                <td class="text-muted" style="width:220px;">No Siri</td>
+                                <td class="fw-semibold">SN-2026-AX9912</td>
+                            </tr>
+
+                            <tr>
+                                <td class="text-muted" style="width:220px;">Kuantiti Aset</td>
+                                <td>10</td>
+                            </tr>
+
+                            <tr>
+                                <td class="text-muted">Kategori</td>
+                                <td>Perubatan</td>
+                            </tr>
+
+                            <tr>
+                                <td class="text-muted">Sub Kategori</td>
+                                <td>Oxygen</td>
+                            </tr>
+
+                            <tr>
+                                <td class="text-muted">Jenis Aset</td>
+                                <td>Peralatan (Equipment)</td>
+                            </tr>
+
+                            <tr>
+                                <td class="text-muted">Lokasi Semasa</td>
+                                <td>Warehouse Sabah Ops</td>
+                            </tr>
+
+                            <tr>
+                                <td class="text-muted">Pegawai Bertanggungjawab</td>
+                                <td>Unit Logistik EMT</td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <!-- PROCUREMENT -->
+                <div class="mb-3">
+                    <h6 class="fw-bold text-dark mb-3">Maklumat Perolehan</h6>
+
+                    <div class="row g-3">
+
+                        <div class="col-md-4">
+                            <div class="border rounded p-3 bg-light">
+                                <small class="text-muted">Tarikh Perolehan</small>
+                                <div class="fw-semibold">10/01/2026</div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="border rounded p-3 bg-light">
+                                <small class="text-muted">Kos</small>
+                                <div class="fw-semibold">RM 50.00</div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="border rounded p-3 bg-light">
+                                <small class="text-muted">Pembekal</small>
+                                <div class="fw-semibold">MedEquip Sdn Bhd</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- MAINTENANCE -->
+                <div class="mb-3">
+                    <h6 class="fw-bold text-dark mb-3">Penyelenggaraan</h6>
+
+                    <div class="row g-3">
+
+                        <div class="col-md-4">
+                            <div class="border rounded p-3 bg-light">
+                                <small class="text-muted">Servis Terakhir</small>
+                                <div class="fw-semibold">15/12/2025</div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="border rounded p-3 bg-light">
+                                <small class="text-muted">Servis Seterusnya</small>
+                                <div class="fw-semibold">15/06/2026</div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="border rounded p-3 bg-light">
+                                <small class="text-muted">Warranty Tamat</small>
+                                <div class="fw-semibold">10/01/2027</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- NOTES (HIGHLIGHT BOX) -->
+                <div class="mt-4">
+
+                    <div class="p-3 rounded border bg-warning-subtle">
+
+                        <small class="text-muted">Catatan</small>
+
+                        <div class="fw-semibold">
+                            Aset dalam keadaan baik dan digunakan untuk operasi EMT Sabah.
+                        </div>
+
+                    </div>
+
+                    <!-- BUTTON KEMASKINI -->
+                    <div class="d-flex justify-content-end mt-3">
+
+                        <a href="asset_edit2.html"
+                        class="btn btn-primary px-4">
+                            Kemaskini
+                        </a>
+
+                    </div>
+
+                </div>
+
+                
+            </div>
+        </div>
+
+    </main>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div id="footer"></div>
+
+<!-- LOAD HEADER / FOOTER / SIDEBAR -->
+<script>
+fetch("header.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("header").innerHTML = data);
+
+fetch("footer.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("footer").innerHTML = data);
+
+fetch("sidebar.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("sidebar-placeholder").innerHTML = data);
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
